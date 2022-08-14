@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace peluqueria
+{
+    class Conexion
+    {
+        public static SqlConnection Conectar() //metodo para conectar la base de datos al c#
+        {
+            SqlConnection cn = new SqlConnection("SERVER=DESKTOP-COF6H2T;DATABASE=Peluqueria;");
+
+            cn.Open();
+
+            return cn;
+        }
+
+        public static SqlConnection Desconectar() //metodo para desconectar la base de datos al c#
+        {
+            SqlConnection cn = new SqlConnection("SERVER=DESKTOP-COF6H2T;DATABASE=Peluqueria;");
+
+            cn.Close();
+
+            return cn;
+        }
+
+        public static Boolean Conectado() //metodo para verificar si la base está conectada
+        {
+            SqlConnection cn = new SqlConnection("SERVER=DESKTOP-COF6H2T;DATABASE=Peluqueria;");
+            Boolean esVerdadero;
+
+            try //Coloco un comando simple para que interactue con la base de datos
+            {
+                string consulta = "select * from TiposdePago";
+                SqlCommand comando = new SqlCommand(consulta);
+                System.Windows.Forms.MessageBox.Show("La base de datos está conectada");
+                esVerdadero = true;
+            }
+            catch (SqlException) //En caso de no encontrar la tabla porque la bse de datos esta apagada, largará el error y con ello el msg
+            {
+                System.Windows.Forms.MessageBox.Show("La base de datos NO está conectada");
+                esVerdadero = false;
+            }
+
+            return esVerdadero;
+        }
+    }
+}
