@@ -36,7 +36,7 @@ namespace ProyectoPeluquería
         private void button1_Click(object sender, EventArgs e) 
         {
             conexion.Open();
-            string consulta = "select * From Administrador where Usuario ='"+txtNombreUsuario.Text+"' and Contraseña='"+txtContraseña.Text+"'"; //verifico que el usuario y contraseña estan registrados en la base de datos
+            string consulta = "select * From Empleados where Usuario ='"+txtNombreUsuario.Text+"' and Contraseña='"+txtContraseña.Text+"' and EsAdmin = 'True'"; //verifico que el usuario y contraseña estan registrados en la base de datos
             SqlCommand comando = new SqlCommand(consulta, conexion);
             SqlDataReader lector;
             lector = comando.ExecuteReader();
