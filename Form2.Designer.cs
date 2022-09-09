@@ -57,7 +57,6 @@ namespace ProyectoPeluquería
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(450, 29);
             this.txtContraseña.TabIndex = 2;
-            this.txtContraseña.TextChanged += new System.EventHandler(this.txtContraseña_TextChanged);
             // 
             // btnAceptar
             // 
@@ -133,7 +132,7 @@ namespace ProyectoPeluquería
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Mostrar);
             this.Controls.Add(this.btn_Ocultar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contraseña administrador";

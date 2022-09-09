@@ -17,6 +17,16 @@ namespace ProyectoPeluquería
             InitializeComponent();
         }
 
+        private void btnAdminServicios_Click(object sender, EventArgs e)
+        {
+            Ventas_y_Servicios f1 = new Ventas_y_Servicios();
+            f1.Show();
+        }
 
+        private void Form3_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form2 f3 = new Form2();
+            f3.Close();
+        }
     }
 }

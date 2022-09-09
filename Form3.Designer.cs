@@ -58,7 +58,6 @@ namespace ProyectoPeluquería
             this.btnAdminTurnos.TabIndex = 0;
             this.btnAdminTurnos.Text = "Administrar\r\nturnos";
             this.btnAdminTurnos.UseVisualStyleBackColor = false;
-            
             // 
             // btnAdminEmpleados
             // 
@@ -81,6 +80,7 @@ namespace ProyectoPeluquería
             this.btnAdminServicios.TabIndex = 2;
             this.btnAdminServicios.Text = "Administrar\r\nservicios";
             this.btnAdminServicios.UseVisualStyleBackColor = false;
+            this.btnAdminServicios.Click += new System.EventHandler(this.btnAdminServicios_Click);
             // 
             // btnAdminStock
             // 
@@ -92,7 +92,6 @@ namespace ProyectoPeluquería
             this.btnAdminStock.TabIndex = 3;
             this.btnAdminStock.Text = "Administrar\r\nstock";
             this.btnAdminStock.UseVisualStyleBackColor = false;
-            
             // 
             // panel1
             // 
@@ -135,7 +134,6 @@ namespace ProyectoPeluquería
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(161, 320);
             this.panel2.TabIndex = 0;
-            
             // 
             // label6
             // 
@@ -212,7 +210,6 @@ namespace ProyectoPeluquería
             this.button3.TabIndex = 8;
             this.button3.Text = "Volver";
             this.button3.UseVisualStyleBackColor = false;
-            
             // 
             // Form3
             // 
@@ -229,10 +226,11 @@ namespace ProyectoPeluquería
             this.Controls.Add(this.btnAdminTurnos);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario administrador";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form3_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
