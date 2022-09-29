@@ -26,7 +26,7 @@ namespace ProyectoPeluquería
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form2 f3 = new Form2();
-            f3.Close();
+            f3.Show();
         }
     }
 }
