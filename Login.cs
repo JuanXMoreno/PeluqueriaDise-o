@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ProyectoPeluquería
 {
-    public partial class Form2 : Form
+    public partial class Login : Form
     {
-        public Form2()
+        public Login()
         {
             InitializeComponent();
             txtContraseña.PasswordChar = '*';
@@ -33,7 +33,7 @@ namespace ProyectoPeluquería
 
             if (lector.HasRows == true) //verifico que el codigo se leyó para poder abrir el form
             {
-                Form3 f3 = new Form3();
+                FormAdmin f3 = new FormAdmin();
                 f3.Show();
                 this.Hide();
             }
