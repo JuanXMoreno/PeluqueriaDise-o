@@ -12,6 +12,8 @@ namespace ProyectoPeluquería
 {
     public partial class FormAdmin : Form
     {
+        AdminStock AS = new AdminStock();
+
         public FormAdmin()
         {
             InitializeComponent();
@@ -27,6 +29,20 @@ namespace ProyectoPeluquería
         {
             Login f3 = new Login();
             f3.Close();
+        }
+
+        private void btnAdminStock_Click(object sender, EventArgs e)
+        {
+            if(AS.Visible==false)
+            {
+                AS.Visible=true;
+                this.Visible=false;
+            }
+            else
+            {
+                this.Visible = true;
+                AS.Visible = false;
+            }
         }
     }
 }
