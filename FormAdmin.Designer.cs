@@ -92,6 +92,7 @@ namespace ProyectoPeluquería
             this.btnAdminStock.TabIndex = 3;
             this.btnAdminStock.Text = "Administrar\r\nstock";
             this.btnAdminStock.UseVisualStyleBackColor = false;
+            this.btnAdminStock.Click += new System.EventHandler(this.btnAdminStock_Click);
             // 
             // panel1
             // 
@@ -211,7 +212,7 @@ namespace ProyectoPeluquería
             this.button3.Text = "Volver";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // Form3
+            // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -227,7 +228,7 @@ namespace ProyectoPeluquería
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form3";
+            this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario administrador";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form3_FormClosed);

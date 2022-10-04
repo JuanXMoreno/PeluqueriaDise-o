@@ -28,23 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminStock));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Panelinf = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.Informacion = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ModStock = new System.Windows.Forms.Button();
+            this.AddPro = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnBusqueda = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.reloj = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Panelinf.SuspendLayout();
             this.Informacion.SuspendLayout();
@@ -54,43 +52,11 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.nombre,
-            this.cantidad,
-            this.precio});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(694, 305);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.Frozen = true;
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.Width = 43;
-            // 
-            // nombre
-            // 
-            this.nombre.Frozen = true;
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 69;
-            // 
-            // cantidad
-            // 
-            this.cantidad.Frozen = true;
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Width = 74;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.Width = 62;
             // 
             // Panelinf
             // 
@@ -112,7 +78,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(720, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Informacion Stock\'s: Total : 100 - Sin producto : 1";
+            this.label2.Text = "Informacion:  Productos Cargados : 100 ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Informacion
@@ -148,30 +114,33 @@
             this.button4.TabIndex = 16;
             this.button4.Text = "Borrar Item";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // ModStock
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.Orange;
-            this.button3.Location = new System.Drawing.Point(172, 380);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(154, 48);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Modificar Item";
-            this.button3.UseVisualStyleBackColor = true;
+            this.ModStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ModStock.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.ModStock.ForeColor = System.Drawing.Color.Orange;
+            this.ModStock.Location = new System.Drawing.Point(172, 380);
+            this.ModStock.Name = "ModStock";
+            this.ModStock.Size = new System.Drawing.Size(154, 48);
+            this.ModStock.TabIndex = 15;
+            this.ModStock.Text = "Modificar Item";
+            this.ModStock.UseVisualStyleBackColor = true;
+            this.ModStock.Click += new System.EventHandler(this.ModStock_Click);
             // 
-            // button2
+            // AddPro
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button2.Location = new System.Drawing.Point(12, 380);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 48);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Agregar Item";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AddPro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddPro.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.AddPro.ForeColor = System.Drawing.Color.ForestGreen;
+            this.AddPro.Location = new System.Drawing.Point(12, 380);
+            this.AddPro.Name = "AddPro";
+            this.AddPro.Size = new System.Drawing.Size(154, 48);
+            this.AddPro.TabIndex = 14;
+            this.AddPro.Text = "Agregar Item";
+            this.AddPro.UseVisualStyleBackColor = true;
+            this.AddPro.Click += new System.EventHandler(this.AddPro_Click);
             // 
             // panel2
             // 
@@ -217,6 +186,12 @@
             this.textBox1.Size = new System.Drawing.Size(608, 30);
             this.textBox1.TabIndex = 19;
             // 
+            // reloj
+            // 
+            this.reloj.Enabled = true;
+            this.reloj.Interval = 1000;
+            this.reloj.Tick += new System.EventHandler(this.reloj_Tick);
+            // 
             // AdminStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,13 +202,14 @@
             this.Controls.Add(this.Informacion);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ModStock);
+            this.Controls.Add(this.AddPro);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.BtnBusqueda);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Name = "AdminStock";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminStock";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.Panelinf.ResumeLayout(false);
@@ -246,20 +222,17 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.Panel Panelinf;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Informacion;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ModStock;
+        private System.Windows.Forms.Button AddPro;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnBusqueda;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Timer reloj;
     }
 }
