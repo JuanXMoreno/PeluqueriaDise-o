@@ -30,33 +30,36 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminStock));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Vista = new System.Windows.Forms.DataGridView();
             this.Panelinf = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.Informacion = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnBaja = new System.Windows.Forms.Button();
+            this.Btdel = new System.Windows.Forms.Button();
             this.ModStock = new System.Windows.Forms.Button();
             this.AddPro = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnBusqueda = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.reloj = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Reloj = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.Vista)).BeginInit();
             this.Panelinf.SuspendLayout();
             this.Informacion.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // Vista
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(694, 305);
-            this.dataGridView1.TabIndex = 0;
+            this.Vista.AllowUserToAddRows = false;
+            this.Vista.AllowUserToDeleteRows = false;
+            this.Vista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.Vista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Vista.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Vista.Location = new System.Drawing.Point(0, 0);
+            this.Vista.Name = "Vista";
+            this.Vista.ReadOnly = true;
+            this.Vista.Size = new System.Drawing.Size(694, 305);
+            this.Vista.TabIndex = 0;
             // 
             // Panelinf
             // 
@@ -86,35 +89,36 @@
             this.Informacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Informacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Informacion.Controls.Add(this.dataGridView1);
+            this.Informacion.Controls.Add(this.Vista);
             this.Informacion.Location = new System.Drawing.Point(12, 67);
             this.Informacion.Name = "Informacion";
             this.Informacion.Size = new System.Drawing.Size(696, 307);
             this.Informacion.TabIndex = 18;
             // 
-            // button5
+            // btnBaja
             // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(492, 380);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(216, 48);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Holi";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaja.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.btnBaja.Location = new System.Drawing.Point(492, 380);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(216, 48);
+            this.btnBaja.TabIndex = 17;
+            this.btnBaja.Text = "Datos de Baja";
+            this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
-            // button4
+            // Btdel
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.button4.ForeColor = System.Drawing.Color.Crimson;
-            this.button4.Location = new System.Drawing.Point(332, 380);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(154, 48);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Borrar Item";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.Btdel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btdel.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.Btdel.ForeColor = System.Drawing.Color.Crimson;
+            this.Btdel.Location = new System.Drawing.Point(332, 380);
+            this.Btdel.Name = "Btdel";
+            this.Btdel.Size = new System.Drawing.Size(154, 48);
+            this.Btdel.TabIndex = 16;
+            this.Btdel.Text = "Borrar Item";
+            this.Btdel.UseVisualStyleBackColor = true;
+            this.Btdel.Click += new System.EventHandler(this.BtnDelete);
             // 
             // ModStock
             // 
@@ -186,11 +190,11 @@
             this.textBox1.Size = new System.Drawing.Size(608, 30);
             this.textBox1.TabIndex = 19;
             // 
-            // reloj
+            // Reloj
             // 
-            this.reloj.Enabled = true;
-            this.reloj.Interval = 1000;
-            this.reloj.Tick += new System.EventHandler(this.reloj_Tick);
+            this.Reloj.Enabled = true;
+            this.Reloj.Interval = 1000;
+            this.Reloj.Tick += new System.EventHandler(this.reloj_Tick);
             // 
             // AdminStock
             // 
@@ -200,8 +204,8 @@
             this.ClientSize = new System.Drawing.Size(720, 460);
             this.Controls.Add(this.Panelinf);
             this.Controls.Add(this.Informacion);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnBaja);
+            this.Controls.Add(this.Btdel);
             this.Controls.Add(this.ModStock);
             this.Controls.Add(this.AddPro);
             this.Controls.Add(this.panel2);
@@ -211,7 +215,7 @@
             this.Name = "AdminStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminStock";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Vista)).EndInit();
             this.Panelinf.ResumeLayout(false);
             this.Informacion.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -221,18 +225,18 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Vista;
         private System.Windows.Forms.Panel Panelinf;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Informacion;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnBaja;
+        private System.Windows.Forms.Button Btdel;
         private System.Windows.Forms.Button ModStock;
         private System.Windows.Forms.Button AddPro;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnBusqueda;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Timer reloj;
+        private System.Windows.Forms.Timer Reloj;
     }
 }

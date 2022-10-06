@@ -58,6 +58,7 @@
     <Compile Include="AdminStock.Designer.cs">
       <DependentUpon>AdminStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataBase.cs" />
     <Compile Include="DeleteStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +91,12 @@
     <Compile Include="Ventas y Servicios.Designer.cs">
       <DependentUpon>Ventas y Servicios.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisorDeBajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisorDeBajas.Designer.cs">
+      <DependentUpon>VisorDeBajas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddStock.resx">
       <DependentUpon>AddStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="Ventas y Servicios.resx">
       <DependentUpon>Ventas y Servicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisorDeBajas.resx">
+      <DependentUpon>VisorDeBajas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
