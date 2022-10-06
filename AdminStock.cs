@@ -19,76 +19,25 @@ namespace ProyectoPeluquería
         AddStock AddS = new AddStock();
         ModStock ModS = new ModStock();
         DeleteStock DeleS = new DeleteStock();
+        //Clase
+        DataBase DataB=new DataBase();
 
         public AdminStock()
         {
             InitializeComponent();
-        }
-
-        //SQL
-        public static string Cadena = @"server=DESKTOP-GGALNHK\SQLEXPRESS01;database=Peluqueria;integrated security=true";
-        SqlConnection Conectarse = null;
-        SqlCommand cmd = null;
-        SqlDataReader Lector = null;
-        SqlTransaction Tran = null;
-        SqlDataAdapter Adaptador = null;
-
-        public void IniciarSesion()
-        {
-            Conectarse = new SqlConnection();
-            Conectarse.ConnectionString = Cadena;
-            Conectarse.Open();
-
-
-            Console.WriteLine("Se inicio correctamente.");
-
-        }
-
-        public void CerrarSesion()
-        {
-            Conectarse.Close();
-
-            Console.WriteLine("Se cerro correctamente.");
+            Vista.DataSource = DataB.ActualizarLista(null);
         }
 
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
-            IniciarSesion();
-
-            cmd = new SqlCommand();
-            cmd.CommandText = "Select * From Productos where Nombre like '%"+textBox1.Text+"%'";
-            cmd.Connection = Conectarse;
-            Adaptador = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            Adaptador.Fill(dt);
-
-            dataGridView1.DataSource = dt;
-
-            CerrarSesion();
+            Vista.DataSource = DataB.ActualizarLista(textBox1.Text);
         }
 
         private void reloj_Tick(object sender, EventArgs e)
         {
-            reloj.Interval = 300000;
-            Info();
+            label2.Text = DataB.InfoProductos();
+            Reloj.Interval = 300000;
         }
-
-        public void Info()
-        {
-            IniciarSesion();
-
-            cmd = new SqlCommand();
-            cmd.CommandText = "Select count(*) From Productos";
-            cmd.Connection = Conectarse;
-            Lector = cmd.ExecuteReader();
-            while (Lector.Read())
-            {
-                label2.Text = "Informacion:  Productos Cargados : " + Lector.GetInt32(0);
-            }
-
-            CerrarSesion();
-        }
-
         private void AddPro_Click(object sender, EventArgs e)
         {
             if (AddS.Visible == false)
@@ -99,7 +48,7 @@ namespace ProyectoPeluquería
             {
                 AddS.Visible = false;
             }
-        }
+        } // Boton Agregar
 
         private void ModStock_Click(object sender, EventArgs e)
         {
@@ -111,9 +60,9 @@ namespace ProyectoPeluquería
             {
                 ModS.Visible = false;
             }
-        }
+        } // Boton Modificar
 
-        private void button4_Click(object sender, EventArgs e)
+        private void BtnDelete(object sender, EventArgs e)
         {
             if (DeleS.Visible == false)
             {
@@ -123,6 +72,6 @@ namespace ProyectoPeluquería
             {
                 DeleS.Visible = false;
             }
-        }
+        } // Boton Delete
     }
 }

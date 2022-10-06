@@ -58,6 +58,7 @@
     <Compile Include="AdminStock.Designer.cs">
       <DependentUpon>AdminStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataBase.cs" />
     <Compile Include="DeleteStock.cs">
       <SubType>Form</SubType>
     </Compile>
