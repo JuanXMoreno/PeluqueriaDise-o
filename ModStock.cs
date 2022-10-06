@@ -7,42 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Sql;
-using System.Data.SqlClient;
 
 namespace ProyectoPeluquería
 {
     public partial class ModStock : Form
     {
+        //Clase
+        DataBase dt = new DataBase();
         public ModStock()
         {
             InitializeComponent();
-            MamiMehartedeprogramar();
+            Vistas.DataSource = dt.ActualizarLista(null);
         }
-        //SQL
-        public static string Cadena = @"server=DESKTOP-GGALNHK\SQLEXPRESS01;database=Peluqueria;integrated security=true";
-        SqlConnection Conectarse = null;
-        SqlCommand cmd = null;
-        SqlDataReader Lector = null;
-        SqlTransaction Tran = null;
-        SqlDataAdapter Adaptador = null;
 
-        public void MamiMehartedeprogramar()
+        private void BtnBusqueda_Click(object sender, EventArgs e)
         {
-            Conectarse = new SqlConnection();
-            Conectarse.ConnectionString = Cadena;
-            Conectarse.Open();
+            Vistas.DataSource = dt.ActualizarLista(textBox1.Text);
+        }
 
-            cmd = new SqlCommand();
-            cmd.CommandText = "Select * From Productos";
-            cmd.Connection = Conectarse;
-            Adaptador = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            Adaptador.Fill(dt);
+        private void Vistas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Idtex.Text = Vistas.Rows[e.RowIndex].Cells[0].Value.ToString();
+            Nombre.Text = Vistas.Rows[e.RowIndex].Cells[1].Value.ToString();
+            Stock.Text = Vistas.Rows[e.RowIndex].Cells[2].Value.ToString();
+            precio.Text = Vistas.Rows[e.RowIndex].Cells[3].Value.ToString();
+        }
 
-            dataGridView1.DataSource = dt;
-
-            Conectarse.Close();
+        private void btnMod_Click(object sender, EventArgs e)
+        {
+            dt.ModificarProducto(Idtex.Text,Nombre.Text,Stock.Text,precio.Text);
         }
     }
 }
