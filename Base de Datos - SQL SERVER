@@ -1,0 +1,407 @@
+USE [master]
+GO
+/****** Object:  Database [Peluqueria]    Script Date: 6/10/2022 15:10:57 ******/
+CREATE DATABASE [Peluqueria]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'Peluqueria', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS01\MSSQL\DATA\Peluqueria.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'Peluqueria_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS01\MSSQL\DATA\Peluqueria_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [Peluqueria] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [Peluqueria].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [Peluqueria] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [Peluqueria] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [Peluqueria] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [Peluqueria] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [Peluqueria] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [Peluqueria] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [Peluqueria] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [Peluqueria] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [Peluqueria] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [Peluqueria] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [Peluqueria] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [Peluqueria] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [Peluqueria] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [Peluqueria] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [Peluqueria] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [Peluqueria] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [Peluqueria] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [Peluqueria] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [Peluqueria] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [Peluqueria] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [Peluqueria] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [Peluqueria] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [Peluqueria] SET RECOVERY FULL 
+GO
+ALTER DATABASE [Peluqueria] SET  MULTI_USER 
+GO
+ALTER DATABASE [Peluqueria] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [Peluqueria] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [Peluqueria] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [Peluqueria] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [Peluqueria] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [Peluqueria] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+ALTER DATABASE [Peluqueria] SET QUERY_STORE = OFF
+GO
+USE [Peluqueria]
+GO
+/****** Object:  Table [dbo].[Clientes]    Script Date: 6/10/2022 15:10:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Clientes](
+	[Id_Cliente] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](50) NULL,
+	[Apellido] [varchar](50) NULL,
+	[FechaNac] [datetime] NULL,
+	[FechaAlta] [datetime] NULL,
+ CONSTRAINT [PK__Clientes__3DD0A8CB31A98917] PRIMARY KEY CLUSTERED 
+(
+	[Id_Cliente] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Empleados]    Script Date: 6/10/2022 15:10:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Empleados](
+	[Id_Empleado] [int] IDENTITY(1,1) NOT NULL,
+	[Id_TurnoLaboral] [int] NOT NULL,
+	[Nombre] [varchar](50) NULL,
+	[Apellido] [varchar](50) NULL,
+	[DNI] [int] NULL,
+	[Direccion] [varchar](100) NULL,
+	[Telefono] [int] NULL,
+	[FechaNac] [datetime] NULL,
+	[HorasAsignadas] [int] NULL,
+	[EsAdmin] [bit] NULL,
+	[Usuario] [varchar](50) NULL,
+	[Contraseña] [varchar](50) NULL,
+ CONSTRAINT [PK__Empleado__74056223DF3CE4DF] PRIMARY KEY CLUSTERED 
+(
+	[Id_Empleado] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Productos]    Script Date: 6/10/2022 15:10:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Productos](
+	[Id_Producto] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](100) NULL,
+	[Stock] [int] NULL,
+	[Precio] [decimal](12, 2) NULL,
+	[FechaAlta] [datetime] NULL,
+	[Estado] [bit] NOT NULL,
+ CONSTRAINT [PK__Producto__2085A9CFD93F4FFD] PRIMARY KEY CLUSTERED 
+(
+	[Id_Producto] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Servicios]    Script Date: 6/10/2022 15:10:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Servicios](
+	[Id_Servicio] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](50) NULL,
+	[Precio] [varchar](50) NULL,
+	[FechaAlta] [datetime] NULL,
+ CONSTRAINT [PK_Servicios] PRIMARY KEY CLUSTERED 
+(
+	[Id_Servicio] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[TiposdePago]    Script Date: 6/10/2022 15:10:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TiposdePago](
+	[Id_TipoDePago] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](50) NULL,
+	[Interes] [decimal](15, 2) NULL,
+	[Descuento] [decimal](15, 2) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id_TipoDePago] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[TurnosLaborales]    Script Date: 6/10/2022 15:10:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TurnosLaborales](
+	[Id_TurnoLaboral] [int] IDENTITY(1,1) NOT NULL,
+	[Dias] [varchar](20) NULL,
+	[HoraInicial] [time](7) NULL,
+	[HoraFinal] [time](7) NULL,
+	[FechaAlta] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id_TurnoLaboral] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Ventas]    Script Date: 6/10/2022 15:10:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Ventas](
+	[Id_Venta] [int] IDENTITY(1,1) NOT NULL,
+	[Id_Cliente] [int] NULL,
+	[Id_Empleado] [int] NULL,
+	[Id_TipoDePago] [int] NULL,
+	[FechaAlta] [datetime] NULL,
+	[Total] [decimal](12, 2) NULL,
+ CONSTRAINT [PK__Ventas__B3C9EABDF452890C] PRIMARY KEY CLUSTERED 
+(
+	[Id_Venta] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[VentasDetalles]    Script Date: 6/10/2022 15:10:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[VentasDetalles](
+	[Id_VentaDetalle] [int] IDENTITY(1,1) NOT NULL,
+	[Id_Producto] [int] NOT NULL,
+	[Id_Servicio] [int] NOT NULL,
+	[Id_Venta] [int] NOT NULL,
+	[Cantidad] [int] NULL,
+	[Precio] [decimal](12, 2) NULL,
+	[FechaBaja] [datetime] NULL,
+ CONSTRAINT [PK__VentaDet__B183C28802BE889F] PRIMARY KEY CLUSTERED 
+(
+	[Id_VentaDetalle] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Empleados] ON 
+GO
+INSERT [dbo].[Empleados] ([Id_Empleado], [Id_TurnoLaboral], [Nombre], [Apellido], [DNI], [Direccion], [Telefono], [FechaNac], [HorasAsignadas], [EsAdmin], [Usuario], [Contraseña]) VALUES (1, 1, N'jose', N'martines', 43674865, N'sarmiento 980', 354983, CAST(N'2000-09-27T00:00:00.000' AS DateTime), 7, 0, N'admin', N'admin')
+GO
+INSERT [dbo].[Empleados] ([Id_Empleado], [Id_TurnoLaboral], [Nombre], [Apellido], [DNI], [Direccion], [Telefono], [FechaNac], [HorasAsignadas], [EsAdmin], [Usuario], [Contraseña]) VALUES (2, 1, N'juan', N'moreno', 43657556, N'sarmiento 890', 352452, CAST(N'2000-08-27T00:00:00.000' AS DateTime), 7, 1, N'juancho', N'chojuan')
+GO
+SET IDENTITY_INSERT [dbo].[Empleados] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Productos] ON 
+GO
+INSERT [dbo].[Productos] ([Id_Producto], [Nombre], [Stock], [Precio], [FechaAlta], [Estado]) VALUES (1, N'Goma elastica para el cabello', 4, CAST(10.00 AS Decimal(12, 2)), CAST(N'2022-10-04T00:56:24.307' AS DateTime), 0)
+GO
+INSERT [dbo].[Productos] ([Id_Producto], [Nombre], [Stock], [Precio], [FechaAlta], [Estado]) VALUES (2, N'Cera Capilar', 300, CAST(450.00 AS Decimal(12, 2)), CAST(N'2022-10-06T13:05:56.027' AS DateTime), 1)
+GO
+INSERT [dbo].[Productos] ([Id_Producto], [Nombre], [Stock], [Precio], [FechaAlta], [Estado]) VALUES (3, N'Gel', 50, CAST(500.00 AS Decimal(12, 2)), CAST(N'2022-10-06T13:09:40.440' AS DateTime), 0)
+GO
+SET IDENTITY_INSERT [dbo].[Productos] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Servicios] ON 
+GO
+INSERT [dbo].[Servicios] ([Id_Servicio], [Nombre], [Precio], [FechaAlta]) VALUES (1, N'Corte clásico máquina', N'500', NULL)
+GO
+INSERT [dbo].[Servicios] ([Id_Servicio], [Nombre], [Precio], [FechaAlta]) VALUES (2, N'Corte clásico tijera', N'600', NULL)
+GO
+INSERT [dbo].[Servicios] ([Id_Servicio], [Nombre], [Precio], [FechaAlta]) VALUES (3, N'Corte americano', N'700', NULL)
+GO
+INSERT [dbo].[Servicios] ([Id_Servicio], [Nombre], [Precio], [FechaAlta]) VALUES (4, N'Corte fade o degrade', N'700', NULL)
+GO
+INSERT [dbo].[Servicios] ([Id_Servicio], [Nombre], [Precio], [FechaAlta]) VALUES (5, N'Corte fade navaja', N'800', NULL)
+GO
+INSERT [dbo].[Servicios] ([Id_Servicio], [Nombre], [Precio], [FechaAlta]) VALUES (6, N'Lineas', N'100', NULL)
+GO
+INSERT [dbo].[Servicios] ([Id_Servicio], [Nombre], [Precio], [FechaAlta]) VALUES (7, N'Ceja', N'100', NULL)
+GO
+INSERT [dbo].[Servicios] ([Id_Servicio], [Nombre], [Precio], [FechaAlta]) VALUES (8, N'Frente', N'100', NULL)
+GO
+INSERT [dbo].[Servicios] ([Id_Servicio], [Nombre], [Precio], [FechaAlta]) VALUES (9, N'Dibujo simple', N'200', NULL)
+GO
+INSERT [dbo].[Servicios] ([Id_Servicio], [Nombre], [Precio], [FechaAlta]) VALUES (10, N'Dibujo doble', N'400', NULL)
+GO
+INSERT [dbo].[Servicios] ([Id_Servicio], [Nombre], [Precio], [FechaAlta]) VALUES (11, N'Corte barba con máquina', N'200', NULL)
+GO
+INSERT [dbo].[Servicios] ([Id_Servicio], [Nombre], [Precio], [FechaAlta]) VALUES (12, N'Corte barba con navaja', N'400', NULL)
+GO
+INSERT [dbo].[Servicios] ([Id_Servicio], [Nombre], [Precio], [FechaAlta]) VALUES (13, N'Lavado', N'100', NULL)
+GO
+SET IDENTITY_INSERT [dbo].[Servicios] OFF
+GO
+SET IDENTITY_INSERT [dbo].[TurnosLaborales] ON 
+GO
+INSERT [dbo].[TurnosLaborales] ([Id_TurnoLaboral], [Dias], [HoraInicial], [HoraFinal], [FechaAlta]) VALUES (1, N'5', CAST(N'07:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL)
+GO
+SET IDENTITY_INSERT [dbo].[TurnosLaborales] OFF
+GO
+ALTER TABLE [dbo].[Productos] ADD  CONSTRAINT [DF_Productos_Estado]  DEFAULT ((1)) FOR [Estado]
+GO
+ALTER TABLE [dbo].[Empleados]  WITH CHECK ADD  CONSTRAINT [FK_Empleados_TurnosLaborales] FOREIGN KEY([Id_TurnoLaboral])
+REFERENCES [dbo].[TurnosLaborales] ([Id_TurnoLaboral])
+GO
+ALTER TABLE [dbo].[Empleados] CHECK CONSTRAINT [FK_Empleados_TurnosLaborales]
+GO
+ALTER TABLE [dbo].[Ventas]  WITH CHECK ADD  CONSTRAINT [FK_Ventas_Clientes] FOREIGN KEY([Id_Cliente])
+REFERENCES [dbo].[Clientes] ([Id_Cliente])
+GO
+ALTER TABLE [dbo].[Ventas] CHECK CONSTRAINT [FK_Ventas_Clientes]
+GO
+ALTER TABLE [dbo].[Ventas]  WITH CHECK ADD  CONSTRAINT [FK_Ventas_Empleados] FOREIGN KEY([Id_Empleado])
+REFERENCES [dbo].[Empleados] ([Id_Empleado])
+GO
+ALTER TABLE [dbo].[Ventas] CHECK CONSTRAINT [FK_Ventas_Empleados]
+GO
+ALTER TABLE [dbo].[Ventas]  WITH CHECK ADD  CONSTRAINT [FK_Ventas_TiposdePago] FOREIGN KEY([Id_TipoDePago])
+REFERENCES [dbo].[TiposdePago] ([Id_TipoDePago])
+GO
+ALTER TABLE [dbo].[Ventas] CHECK CONSTRAINT [FK_Ventas_TiposdePago]
+GO
+ALTER TABLE [dbo].[VentasDetalles]  WITH CHECK ADD  CONSTRAINT [FK_VentasDetalles_Productos] FOREIGN KEY([Id_Producto])
+REFERENCES [dbo].[Productos] ([Id_Producto])
+GO
+ALTER TABLE [dbo].[VentasDetalles] CHECK CONSTRAINT [FK_VentasDetalles_Productos]
+GO
+ALTER TABLE [dbo].[VentasDetalles]  WITH CHECK ADD  CONSTRAINT [FK_VentasDetalles_Servicios] FOREIGN KEY([Id_Servicio])
+REFERENCES [dbo].[Servicios] ([Id_Servicio])
+GO
+ALTER TABLE [dbo].[VentasDetalles] CHECK CONSTRAINT [FK_VentasDetalles_Servicios]
+GO
+ALTER TABLE [dbo].[VentasDetalles]  WITH CHECK ADD  CONSTRAINT [FK_VentasDetalles_Ventas] FOREIGN KEY([Id_Venta])
+REFERENCES [dbo].[Ventas] ([Id_Venta])
+GO
+ALTER TABLE [dbo].[VentasDetalles] CHECK CONSTRAINT [FK_VentasDetalles_Ventas]
+GO
+/****** Object:  StoredProcedure [dbo].[CrearProducto]    Script Date: 6/10/2022 15:10:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROC [dbo].[CrearProducto](
+@nombre varchar(100),
+@stock int,
+@precio decimal(12,2),
+@veri int output
+)
+as
+begin
+begin tran
+
+insert into Productos(Nombre,Stock,Precio,FechaAlta)
+values (@nombre,@stock,@precio,GETDATE())
+if @@ERROR > 0
+goto error
+
+commit tran 
+set @veri = 1
+return
+
+error:
+rollback tran
+set @veri = 0
+end
+GO
+/****** Object:  StoredProcedure [dbo].[EliminarProducto]    Script Date: 6/10/2022 15:10:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [dbo].[EliminarProducto](
+@id int,
+@veri int output
+)
+as
+begin
+begin tran
+Update Productos 
+set Estado = 0
+where Id_Producto = @id
+if @@ERROR >0
+goto error
+
+commit tran
+set @veri = 1
+return
+
+error:
+set @veri =0
+end
+GO
+/****** Object:  StoredProcedure [dbo].[MdfProduct]    Script Date: 6/10/2022 15:10:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create proc [dbo].[MdfProduct](
+@id int,
+@nombre varchar(100),
+@stock int,
+@precio decimal(12,2),
+@veri int output
+)
+as
+begin
+begin tran
+Update Productos
+set Nombre = @nombre,Stock=@stock,Precio=@precio
+where Id_Producto = @id
+if @@ERROR > 0 
+goto error
+
+commit tran
+set @veri = 1
+return
+
+error:
+rollback tran
+set @veri = 0
+end
+GO
+USE [master]
+GO
+ALTER DATABASE [Peluqueria] SET  READ_WRITE 
+GO
