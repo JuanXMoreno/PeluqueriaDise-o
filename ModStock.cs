@@ -37,11 +37,5 @@ namespace ProyectoPeluquería
         {
             dt.ModificarProducto(Idtex.Text,Nombre.Text,Stock.Text,precio.Text);
         }
-
-        private void btnF5_Click(object sender, EventArgs e)
-        {
-            textBox1.Clear();
-            Vistas.DataSource = dt.ActualizarLista(null);
-        }
     }
 }
