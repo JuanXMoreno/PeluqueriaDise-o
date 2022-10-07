@@ -69,7 +69,41 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Eliminar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Eliminar);
+            // 
+            // BtnBusqueda
+            // 
+            this.BtnBusqueda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnBusqueda.BackgroundImage")));
+            this.BtnBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBusqueda.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnBusqueda.ForeColor = System.Drawing.Color.White;
+            this.BtnBusqueda.Location = new System.Drawing.Point(582, 24);
+            this.BtnBusqueda.Name = "BtnBusqueda";
+            this.BtnBusqueda.Size = new System.Drawing.Size(82, 30);
+            this.BtnBusqueda.TabIndex = 24;
+            this.BtnBusqueda.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.BtnBusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnBusqueda.UseVisualStyleBackColor = true;
+            this.BtnBusqueda.Click += new System.EventHandler(this.Buscar);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 16);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Buscar Stock";
+            // 
+            // TexboxBuscador
+            // 
+            this.TexboxBuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.TexboxBuscador.Location = new System.Drawing.Point(12, 24);
+            this.TexboxBuscador.Name = "TexboxBuscador";
+            this.TexboxBuscador.Size = new System.Drawing.Size(564, 30);
+            this.TexboxBuscador.TabIndex = 25;
             // 
             // btnF5
             // 

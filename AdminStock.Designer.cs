@@ -34,7 +34,7 @@
             this.Panelinf = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.Informacion = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnBaja = new System.Windows.Forms.Button();
             this.Btdel = new System.Windows.Forms.Button();
             this.ModStock = new System.Windows.Forms.Button();
             this.AddPro = new System.Windows.Forms.Button();
@@ -97,7 +97,7 @@
             this.Informacion.Size = new System.Drawing.Size(696, 307);
             this.Informacion.TabIndex = 18;
             // 
-            // button5
+            // btnBaja
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
@@ -219,7 +219,7 @@
             this.Controls.Add(this.btnF5);
             this.Controls.Add(this.Panelinf);
             this.Controls.Add(this.Informacion);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.Btdel);
             this.Controls.Add(this.ModStock);
             this.Controls.Add(this.AddPro);
@@ -245,7 +245,7 @@
         private System.Windows.Forms.Panel Panelinf;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Informacion;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.Button Btdel;
         private System.Windows.Forms.Button ModStock;
         private System.Windows.Forms.Button AddPro;

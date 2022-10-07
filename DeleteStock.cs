@@ -34,7 +34,7 @@ namespace ProyectoPeluquería
             dataGridView1.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Buscar(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Esta seguro que desea eliminar el Producto ID:"+DeleteID+"?","Dar de Baja",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Warning);
             if(result == DialogResult.Yes)
