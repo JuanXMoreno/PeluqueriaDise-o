@@ -43,7 +43,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Idtex = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnF5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Vistas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnF5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -155,7 +157,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.textBox1.Location = new System.Drawing.Point(12, 30);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(513, 30);
+            this.textBox1.Size = new System.Drawing.Size(474, 30);
             this.textBox1.TabIndex = 22;
             // 
             // Idtex
@@ -174,12 +176,25 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "ID";
             // 
+            // btnF5
+            // 
+            this.btnF5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnF5.Image = ((System.Drawing.Image)(resources.GetObject("btnF5.Image")));
+            this.btnF5.Location = new System.Drawing.Point(492, 30);
+            this.btnF5.Name = "btnF5";
+            this.btnF5.Size = new System.Drawing.Size(30, 30);
+            this.btnF5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnF5.TabIndex = 26;
+            this.btnF5.TabStop = false;
+            this.btnF5.Click += new System.EventHandler(this.btnF5_Click);
+            // 
             // ModStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(622, 427);
+            this.Controls.Add(this.btnF5);
             this.Controls.Add(this.Idtex);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.BtnBusqueda);
@@ -197,6 +212,7 @@
             this.Name = "ModStock";
             this.Text = "Modificar stock";
             ((System.ComponentModel.ISupportInitialize)(this.Vistas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnF5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,5 +234,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox Idtex;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox btnF5;
     }
 }

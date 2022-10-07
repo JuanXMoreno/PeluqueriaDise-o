@@ -14,12 +14,11 @@ namespace ProyectoPeluquería
 {
     public partial class AdminStock : Form
     {
-
         //Forms
         AddStock AddS = new AddStock();
         ModStock ModS = new ModStock();
         DeleteStock DeleS = new DeleteStock();
-        VisorDeBajas Baja = new VisorDeBajas();
+        ProductoOFF POFF = new ProductoOFF();
         //Clase
         DataBase DataB=new DataBase();
 
@@ -31,7 +30,7 @@ namespace ProyectoPeluquería
 
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
-            Vista.DataSource = DataB.ActualizarLista(textBox1.Text);
+            Vista.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
         }
 
         private void reloj_Tick(object sender, EventArgs e)
@@ -75,16 +74,22 @@ namespace ProyectoPeluquería
             }
         } // Boton Delete
 
-        private void btnBaja_Click(object sender, EventArgs e)
+        private void btnProductOff(object sender, EventArgs e)
         {
-            if (Baja.Visible == false)
+            if (POFF.Visible == false)
             {
-                Baja.Visible = true;
+                POFF.Visible = true;
             }
             else
             {
-                Baja.Visible = false;
+                POFF.Visible = false;
             }
+        } //Btn Productos OFF
+
+        private void btnF5_Click(object sender, EventArgs e)
+        {
+            BoxBusqueda.Clear();
+            Vista.DataSource = DataB.ActualizarLista(null);
         }
     }
 }

@@ -13,26 +13,40 @@ namespace ProyectoPeluquería
 {
     public partial class DeleteStock : Form
     {
+        //Clase
         DataBase DataB = new DataBase();
+
+        int DeleteID = 0;
         public DeleteStock()
         {
             InitializeComponent();
             dataGridView1.DataSource = DataB.ActualizarLista(null);
         }
 
-        private void Eliminar(object sender, EventArgs e)
+        private void btnF5_Click(object sender, EventArgs e)
         {
-            DataB.BajaLogicaProducto(textBox1.Text);
+            BoxBusqueda.Clear();
+            dataGridView1.DataSource = DataB.ActualizarLista(null);
+        }
+
+        private void BtnBusqueda_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
         }
 
         private void Buscar(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = DataB.ActualizarLista(TexboxBuscador.Text);
+            DialogResult result = MessageBox.Show("Esta seguro que desea eliminar el Producto ID:"+DeleteID+"?","Dar de Baja",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Warning);
+            if(result == DialogResult.Yes)
+            {
+                DataB.EliminarProducto(DeleteID.ToString());
+            }
         }
 
-        private void SeleccionarVista(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            DeleteID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            Seleccion.Text = "Se selecciono: " + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
     }
 }
