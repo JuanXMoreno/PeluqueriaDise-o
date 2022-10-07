@@ -31,13 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteStock));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnF5 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnBusqueda = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.BoxBusqueda = new System.Windows.Forms.TextBox();
-            this.Seleccion = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnF5)).BeginInit();
             this.SuspendLayout();
@@ -58,18 +57,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(696, 1);
             this.panel1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(546, 314);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 31);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnF5
             // 
@@ -127,15 +114,17 @@
             this.BoxBusqueda.Size = new System.Drawing.Size(571, 30);
             this.BoxBusqueda.TabIndex = 23;
             // 
-            // Seleccion
+            // button1
             // 
-            this.Seleccion.AutoSize = true;
-            this.Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Seleccion.Location = new System.Drawing.Point(12, 322);
-            this.Seleccion.Name = "Seleccion";
-            this.Seleccion.Size = new System.Drawing.Size(100, 17);
-            this.Seleccion.TabIndex = 34;
-            this.Seleccion.Text = "Se selecciono:";
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button1.Location = new System.Drawing.Point(535, 314);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(172, 31);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DeleteStock
             // 
@@ -143,13 +132,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(720, 357);
-            this.Controls.Add(this.Seleccion);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.BtnBusqueda);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.BoxBusqueda);
             this.Controls.Add(this.btnF5);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "DeleteStock";
@@ -165,12 +153,11 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox btnF5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnBusqueda;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox BoxBusqueda;
-        private System.Windows.Forms.Label Seleccion;
+        private System.Windows.Forms.Button button1;
     }
 }

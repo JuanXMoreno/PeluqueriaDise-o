@@ -209,6 +209,7 @@
             this.btnBajaProduct.TabIndex = 30;
             this.btnBajaProduct.Text = "Bajas";
             this.btnBajaProduct.UseVisualStyleBackColor = true;
+            this.btnBajaProduct.Click += new System.EventHandler(this.btnProductOff);
             // 
             // AdminStock
             // 
