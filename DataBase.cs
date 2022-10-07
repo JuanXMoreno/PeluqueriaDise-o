@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -40,9 +36,9 @@ namespace ProyectoPeluquería
                 esVerdadero = true;
                 Console.WriteLine("Se conecto la base de datos");
             }
-            catch(SqlException sqlEx)
+            catch (SqlException sqlEx)
             {
-                MessageBox.Show("Error:"+sqlEx,"Error DataBase");
+                MessageBox.Show("Error:" + sqlEx, "Error DataBase");
                 esVerdadero = false;
             }
             finally
@@ -61,15 +57,15 @@ namespace ProyectoPeluquería
                 Conectar();
 
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "Select * From Productos where Nombre like '%" +Text+ "%' and Estado = 1";
+                cmd.CommandText = "Select * From Productos where Nombre like '%" + Text + "%' and Estado = 1";
                 cmd.Connection = Conectar();
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(Tabla);
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Error:\n"+ex);
+                MessageBox.Show("Error:\n" + ex);
             }
             finally
             {
@@ -94,9 +90,9 @@ namespace ProyectoPeluquería
                     Info = "Informacion:  Productos Cargados : " + Lector.GetInt32(0);
                 }
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Error:\n"+ex.Message);
+                MessageBox.Show("Error:\n" + ex.Message);
             }
             finally
             {
@@ -105,7 +101,7 @@ namespace ProyectoPeluquería
             return Info;
         }
 
-        public SqlTransaction AgregarProducto(String Nombre,String Stock,String precio)
+        public SqlTransaction AgregarProducto(String Nombre, String Stock, String precio)
         {
             bool Exito = false;
             try
@@ -338,7 +334,7 @@ namespace ProyectoPeluquería
                     Exito = true;
                 }
             }
-            catch(SqlException Errores)
+            catch (SqlException Errores)
             {
                 MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
                 Console.WriteLine("Se encontraron errores: " + Errores);

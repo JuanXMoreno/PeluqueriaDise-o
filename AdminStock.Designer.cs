@@ -34,7 +34,6 @@
             this.Panelinf = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.Informacion = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.Btdel = new System.Windows.Forms.Button();
             this.ModStock = new System.Windows.Forms.Button();
             this.AddPro = new System.Windows.Forms.Button();
@@ -44,6 +43,7 @@
             this.BoxBusqueda = new System.Windows.Forms.TextBox();
             this.Reloj = new System.Windows.Forms.Timer(this.components);
             this.btnF5 = new System.Windows.Forms.PictureBox();
+            this.btnBajaProduct = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Vista)).BeginInit();
             this.Panelinf.SuspendLayout();
             this.Informacion.SuspendLayout();
@@ -96,18 +96,6 @@
             this.Informacion.Name = "Informacion";
             this.Informacion.Size = new System.Drawing.Size(696, 307);
             this.Informacion.TabIndex = 18;
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(492, 380);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(216, 48);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Bajas";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.btnProductOff);
             // 
             // Btdel
             // 
@@ -210,16 +198,28 @@
             this.btnF5.TabStop = false;
             this.btnF5.Click += new System.EventHandler(this.btnF5_Click);
             // 
+            // btnBajaProduct
+            // 
+            this.btnBajaProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBajaProduct.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.btnBajaProduct.ForeColor = System.Drawing.Color.Black;
+            this.btnBajaProduct.Location = new System.Drawing.Point(492, 380);
+            this.btnBajaProduct.Name = "btnBajaProduct";
+            this.btnBajaProduct.Size = new System.Drawing.Size(215, 48);
+            this.btnBajaProduct.TabIndex = 30;
+            this.btnBajaProduct.Text = "Bajas";
+            this.btnBajaProduct.UseVisualStyleBackColor = true;
+            // 
             // AdminStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(720, 460);
+            this.Controls.Add(this.btnBajaProduct);
             this.Controls.Add(this.btnF5);
             this.Controls.Add(this.Panelinf);
             this.Controls.Add(this.Informacion);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.Btdel);
             this.Controls.Add(this.ModStock);
             this.Controls.Add(this.AddPro);
@@ -245,7 +245,6 @@
         private System.Windows.Forms.Panel Panelinf;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Informacion;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button Btdel;
         private System.Windows.Forms.Button ModStock;
         private System.Windows.Forms.Button AddPro;
@@ -255,5 +254,6 @@
         private System.Windows.Forms.TextBox BoxBusqueda;
         private System.Windows.Forms.Timer Reloj;
         private System.Windows.Forms.PictureBox btnF5;
+        private System.Windows.Forms.Button btnBajaProduct;
     }
 }

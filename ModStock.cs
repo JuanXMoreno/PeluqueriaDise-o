@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -35,7 +28,7 @@ namespace ProyectoPeluquería
 
         private void btnMod_Click(object sender, EventArgs e)
         {
-            dt.ModificarProducto(Idtex.Text,Nombre.Text,Stock.Text,precio.Text);
+            dt.ModificarProducto(Idtex.Text, Nombre.Text, Stock.Text, precio.Text);
         }
 
         private void btnF5_Click(object sender, EventArgs e)

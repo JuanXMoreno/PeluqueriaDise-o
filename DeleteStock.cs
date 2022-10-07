@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -36,8 +28,8 @@ namespace ProyectoPeluquería
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Esta seguro que desea eliminar el Producto ID:"+DeleteID+"?","Dar de Baja",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Warning);
-            if(result == DialogResult.Yes)
+            DialogResult result = MessageBox.Show("Esta seguro que desea eliminar el Producto ID:" + DeleteID + "?", "Dar de Baja", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
                 DataB.EliminarProducto(DeleteID.ToString());
             }

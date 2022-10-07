@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -33,10 +26,10 @@ namespace ProyectoPeluquería
 
         private void btnAdminStock_Click(object sender, EventArgs e)
         {
-            if(AS.Visible==false)
+            if (AS.Visible == false)
             {
-                AS.Visible=true;
-                this.Visible=false;
+                AS.Visible = true;
+                this.Visible = false;
             }
             else
             {
