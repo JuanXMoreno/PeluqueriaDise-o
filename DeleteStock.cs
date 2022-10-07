@@ -13,91 +13,40 @@ namespace ProyectoPeluquería
 {
     public partial class DeleteStock : Form
     {
+        //Clase
+        DataBase DataB = new DataBase();
+
+        int DeleteID = 0;
         public DeleteStock()
         {
             InitializeComponent();
-            MamiMehartedeprogramar();
+            dataGridView1.DataSource = DataB.ActualizarLista(null);
         }
-        //SQL
-        public static string Cadena = @"server=DESKTOP-GGALNHK\SQLEXPRESS01;database=Peluqueria;integrated security=true";
-        SqlConnection Conectarse = null;
-        SqlCommand cmd = null;
-        SqlDataReader Lector = null;
-        SqlTransaction Tran = null;
-        SqlDataAdapter Adaptador = null;
 
-        public void MamiMehartedeprogramar()
+        private void btnF5_Click(object sender, EventArgs e)
         {
-            Conectarse = new SqlConnection();
-            Conectarse.ConnectionString = Cadena;
-            Conectarse.Open();
+            BoxBusqueda.Clear();
+            dataGridView1.DataSource = DataB.ActualizarLista(null);
+        }
 
-            cmd = new SqlCommand();
-            cmd.CommandText = "Select * From Productos";
-            cmd.Connection = Conectarse;
-            Adaptador = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            Adaptador.Fill(dt);
-
-            dataGridView1.DataSource = dt;
-
-            Conectarse.Close();
+        private void BtnBusqueda_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool Exito = false;
-            try
+            DialogResult result = MessageBox.Show("Esta seguro que desea eliminar el Producto ID:"+DeleteID+"?","Dar de Baja",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Warning);
+            if(result == DialogResult.Yes)
             {
-                Conectarse = new SqlConnection();
-                Conectarse.ConnectionString = Cadena;
-                Conectarse.Open();
-
-                //se inicia la transacción
-                Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
-
-                cmd = new SqlCommand("EliminarProducto", Conectarse, Tran);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(textBox1.Text));
-
-                SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
-                Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
-                cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
-
-                cmd.ExecuteNonQuery(); //Ejecutamos el comando
-
-                int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
-
-                ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
-                if (ParametroDeEntrada == 1)
-                {
-                    Exito = true;
-                }
+                DataB.EliminarProducto(DeleteID.ToString());
             }
-            catch (SqlException Errores)
-            {
-                MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
-                Console.WriteLine("Se encontraron errores: " + Errores);
-            }
-            finally
-            {
-                if (Exito)
-                {
-                    Console.WriteLine("Salio bien.");
-                    Tran.Commit(); //Confirmacion de base de datos
-                    Conectarse.Close(); // Cierro la base de datos feliz de la vida :)
-                    MessageBox.Show("Se cargo el servicio con exito.", "Eso tilin :')");
-                }
-                else
-                {
-                    Console.WriteLine("Algo salio mal.");
-                    Tran.Rollback(); //Se deshace la transacion
-                    Conectarse.Close(); // Cierro la base de datos feliz pero enojado :(
-                    MessageBox.Show("Algo no salio bien.", "Ok. Nose que mierda paso.");
-                }
-            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DeleteID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            Seleccion.Text = "Se selecciono: " + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
     }
 }

@@ -41,11 +41,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnBusqueda = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BoxBusqueda = new System.Windows.Forms.TextBox();
             this.Reloj = new System.Windows.Forms.Timer(this.components);
+            this.btnF5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Vista)).BeginInit();
             this.Panelinf.SuspendLayout();
             this.Informacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnF5)).BeginInit();
             this.SuspendLayout();
             // 
             // Vista
@@ -97,14 +99,15 @@
             // 
             // button5
             // 
-            this.button5.Enabled = false;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
             this.button5.Location = new System.Drawing.Point(492, 380);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(216, 48);
             this.button5.TabIndex = 17;
+            this.button5.Text = "Bajas";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.btnProductOff);
             // 
             // Btdel
             // 
@@ -181,13 +184,13 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Buscar Stock";
             // 
-            // textBox1
+            // BoxBusqueda
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textBox1.Location = new System.Drawing.Point(12, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(608, 30);
-            this.textBox1.TabIndex = 19;
+            this.BoxBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.BoxBusqueda.Location = new System.Drawing.Point(12, 24);
+            this.BoxBusqueda.Name = "BoxBusqueda";
+            this.BoxBusqueda.Size = new System.Drawing.Size(571, 30);
+            this.BoxBusqueda.TabIndex = 19;
             // 
             // Reloj
             // 
@@ -195,12 +198,25 @@
             this.Reloj.Interval = 1000;
             this.Reloj.Tick += new System.EventHandler(this.reloj_Tick);
             // 
+            // btnF5
+            // 
+            this.btnF5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnF5.Image = ((System.Drawing.Image)(resources.GetObject("btnF5.Image")));
+            this.btnF5.Location = new System.Drawing.Point(589, 24);
+            this.btnF5.Name = "btnF5";
+            this.btnF5.Size = new System.Drawing.Size(30, 30);
+            this.btnF5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnF5.TabIndex = 28;
+            this.btnF5.TabStop = false;
+            this.btnF5.Click += new System.EventHandler(this.btnF5_Click);
+            // 
             // AdminStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(720, 460);
+            this.Controls.Add(this.btnF5);
             this.Controls.Add(this.Panelinf);
             this.Controls.Add(this.Informacion);
             this.Controls.Add(this.button5);
@@ -210,13 +226,14 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.BtnBusqueda);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.BoxBusqueda);
             this.Name = "AdminStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminStock";
             ((System.ComponentModel.ISupportInitialize)(this.Vista)).EndInit();
             this.Panelinf.ResumeLayout(false);
             this.Informacion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnF5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,7 +252,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnBusqueda;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox BoxBusqueda;
         private System.Windows.Forms.Timer Reloj;
+        private System.Windows.Forms.PictureBox btnF5;
     }
 }

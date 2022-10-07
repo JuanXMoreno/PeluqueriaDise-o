@@ -24,6 +24,9 @@ namespace ProyectoPeluquería
         private void BtnAgregar(object sender, EventArgs e)
         {
             DataB.AgregarProducto(Nombre.Text,Stock.Text,precio.Text);
+            Nombre.Clear();
+            Stock.Clear();
+            precio.Clear();
         }
     }
 }
