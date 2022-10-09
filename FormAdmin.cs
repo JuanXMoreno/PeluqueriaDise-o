@@ -6,10 +6,12 @@ namespace ProyectoPeluquería
     public partial class FormAdmin : Form
     {
         AdminStock AS = new AdminStock();
+        FormConfig config = new FormConfig();
 
         public FormAdmin()
         {
             InitializeComponent();
+            this.AddOwnedForm(config);
         }
 
         private void btnAdminServicios_Click(object sender, EventArgs e)
@@ -35,6 +37,20 @@ namespace ProyectoPeluquería
             {
                 this.Visible = true;
                 AS.Visible = false;
+            }
+        }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            if (config.Visible == false)
+            {
+                config.Visible = true;
+                this.Visible = false;
+            }
+            else
+            {
+                this.Visible = true;
+                config.Visible = false;
             }
         }
     }

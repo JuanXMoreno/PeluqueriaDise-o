@@ -58,12 +58,24 @@
     <Compile Include="AdminStock.Designer.cs">
       <DependentUpon>AdminStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="CambiarClaveAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambiarClaveAdmin.Designer.cs">
+      <DependentUpon>CambiarClaveAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="DeleteStock.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DeleteStock.Designer.cs">
       <DependentUpon>DeleteStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfig.Designer.cs">
+      <DependentUpon>FormConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -109,8 +121,14 @@
     <EmbeddedResource Include="AdminStock.resx">
       <DependentUpon>AdminStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CambiarClaveAdmin.resx">
+      <DependentUpon>CambiarClaveAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeleteStock.resx">
       <DependentUpon>DeleteStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfig.resx">
+      <DependentUpon>FormConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -152,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

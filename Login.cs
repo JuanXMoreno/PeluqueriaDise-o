@@ -6,11 +6,11 @@ namespace ProyectoPeluquería
 {
     public partial class Login : Form
     {
+        DataBase DataB = new DataBase();
         public Login()
         {
             InitializeComponent();
             txtContraseña.PasswordChar = '*';
-
         }
 
         SqlConnection conexion = new SqlConnection("server=DESKTOP-COF6H2T;database=Peluqueria; integrated security=true");
@@ -35,6 +35,7 @@ namespace ProyectoPeluquería
                 MessageBox.Show("Por favor, ingrese un usuario y/o contraseña válidos.");
             }
             conexion.Close();
+
         }
 
         private void btn_Mostrar_Click(object sender, EventArgs e)

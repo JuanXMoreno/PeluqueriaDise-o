@@ -42,7 +42,7 @@ namespace ProyectoPeluquería
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnConfig = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -116,13 +116,14 @@ namespace ProyectoPeluquería
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(255, 2);
+            this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 31);
+            this.label2.Size = new System.Drawing.Size(566, 31);
             this.label2.TabIndex = 0;
             this.label2.Text = "Hoy:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -190,16 +191,17 @@ namespace ProyectoPeluquería
             this.button1.Text = "Estadísticas";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnConfig
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(742, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 87);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Configuración";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnConfig.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnConfig.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfig.Location = new System.Drawing.Point(742, 3);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(161, 87);
+            this.btnConfig.TabIndex = 7;
+            this.btnConfig.Text = "Configuración";
+            this.btnConfig.UseVisualStyleBackColor = false;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // button3
             // 
@@ -219,7 +221,7 @@ namespace ProyectoPeluquería
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(909, 462);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnConfig);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAdminStock);
             this.Controls.Add(this.btnAdminEmpleados);
@@ -255,7 +257,7 @@ namespace ProyectoPeluquería
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnConfig;
         private System.Windows.Forms.Button button3;
     }
 }
