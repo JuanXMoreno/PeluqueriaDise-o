@@ -52,9 +52,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.btncambiarclave = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.InicioAutomatico = new System.Windows.Forms.Button();
             this.PanelTop.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -318,16 +316,7 @@
             this.label11.Text = "Server";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btncambiarclave
             // 
-            this.btncambiarclave.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btncambiarclave.ForeColor = System.Drawing.Color.Black;
-            this.btncambiarclave.Location = new System.Drawing.Point(14, 366);
-            this.btncambiarclave.Name = "btncambiarclave";
-            this.btncambiarclave.Size = new System.Drawing.Size(151, 36);
-            this.btncambiarclave.TabIndex = 10;
-            this.btncambiarclave.Text = "Cambiar clave";
-            this.btncambiarclave.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -340,17 +329,7 @@
             this.button2.Text = "Verificar SQL";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // InicioAutomatico
             // 
-            this.InicioAutomatico.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.InicioAutomatico.ForeColor = System.Drawing.Color.Black;
-            this.InicioAutomatico.Location = new System.Drawing.Point(330, 366);
-            this.InicioAutomatico.Name = "InicioAutomatico";
-            this.InicioAutomatico.Size = new System.Drawing.Size(235, 36);
-            this.InicioAutomatico.TabIndex = 12;
-            this.InicioAutomatico.Text = "Inicio automatico del programa";
-            this.InicioAutomatico.UseVisualStyleBackColor = true;
-            this.InicioAutomatico.Click += new System.EventHandler(this.InicioAutomatico_Click);
             // 
             // FormConfig
             // 
@@ -358,9 +337,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(579, 428);
-            this.Controls.Add(this.InicioAutomatico);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btncambiarclave);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -408,9 +385,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btncambiarclave;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button InicioAutomatico;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtBase;
         private System.Windows.Forms.TextBox textBox2;
