@@ -32,21 +32,14 @@ namespace ProyectoPeluquería
                 }
 
         public Turnos()
-            
-
         {
-            InitializeComponent();
-
-           
+            InitializeComponent(); 
         }
         SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
 
         private void Turnos_Load(object sender, EventArgs e)
         {
             consulta();
-         
-
-
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)
@@ -55,20 +48,13 @@ namespace ProyectoPeluquería
             if (txtCliente.Text =="" || cmbPeluquero.SelectedIndex == -1)
             {
                 MessageBox.Show("Faltan datos");
-           
             }else
             {
                 string sql = "insert into TurnosLaborales(Dias,HoraInicial,HoraFinal) values ('" + txtDia.Text + "','" + txtHora.Value + "')";
             }
-
-
-
-
         }
-
         
-
-         private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             n = e.RowIndex;
           
