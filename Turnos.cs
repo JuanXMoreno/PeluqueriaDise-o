@@ -21,7 +21,15 @@ namespace ProyectoPeluquería
     {
         private int n=0;
 
-
+        public void consulta()
+        {
+            String sql = "select Id_TurnoLaboral,Dias,HoraInicial,HoraFinal from TurnosLaborales";
+            SqlDataAdapter adaptador=new SqlDataAdapter(sql,conexion);
+            DataTable tabla =new DataTable();
+            adaptador.Fill(tabla);
+            dgvDatos.DataSource = tabla;
+            dgvDatos.Columns[0].Visible = false;
+                }
 
         public Turnos()
             
@@ -31,25 +39,28 @@ namespace ProyectoPeluquería
 
            
         }
+        SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
 
         private void Turnos_Load(object sender, EventArgs e)
-        {  
-
-            dgvDatos.Columns.Add("dia", "dia");
-            dgvDatos.Columns.Add("hora", "hora");
-            dgvDatos.Columns.Add("cliente", "cliente");
-            dgvDatos.Columns.Add("peluquero", "peluquero");
+        {
+            consulta();
+         
 
 
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            dgvDatos.Rows.Add(txtDia.Text, txtHora.Text, txtCliente.Text);
-            txtDia.Text = "";
-            txtHora.Text =String.Empty;
-            txtCliente.Text = String.Empty;
-            cmbPeluquero.Text=String.Empty; 
+           conexion.Open();
+            if (txtCliente.Text =="" || cmbPeluquero.SelectedIndex == -1)
+            {
+                MessageBox.Show("Faltan datos");
+           
+            }else
+            {
+                string sql = "insert into TurnosLaborales(Dias,HoraInicial,HoraFinal) values ('" + txtDia.Text + "','" + txtHora.Value + "')";
+            }
+
 
 
 
@@ -98,6 +109,11 @@ namespace ProyectoPeluquería
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
