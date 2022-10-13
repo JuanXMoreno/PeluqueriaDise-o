@@ -58,6 +58,7 @@ namespace ProyectoPeluquería
             this.btnAdminTurnos.TabIndex = 0;
             this.btnAdminTurnos.Text = "Administrar\r\nturnos";
             this.btnAdminTurnos.UseVisualStyleBackColor = false;
+            this.btnAdminTurnos.Click += new System.EventHandler(this.btnAdminTurnos_Click);
             // 
             // btnAdminEmpleados
             // 
@@ -230,6 +231,7 @@ namespace ProyectoPeluquería
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario administrador";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form3_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form3_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
