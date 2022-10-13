@@ -98,6 +98,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Ventas y Servicios.resx">
       <DependentUpon>Ventas y Servicios.cs</DependentUpon>
@@ -114,6 +115,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corte-clasico-tijera.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cortes-de-pelo-corto-para-hombres_056.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corte-americano-baixo-low-disfarcado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peinado-degradado-hombre-corte-de-pelo-castaño-ligeramente-rizado-partes-laterales-rapadas-sin-barba.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dibujos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hqdefault.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cejas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cortes-de-pelo-con-lineas-y-cejas-simple-500x621.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frente.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lavado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-plus-and-minus-signs-symbol-computer-icons-symbol-miscellaneous-logo-cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cruz.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

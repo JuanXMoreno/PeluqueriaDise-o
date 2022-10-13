@@ -26,7 +26,14 @@ namespace ProyectoPeluquería
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form2 f3 = new Form2();
-            f3.Close();
+            f3.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+            this.Close();
         }
 
         private void btnAdminEmpleados_Click(object sender, EventArgs e)
