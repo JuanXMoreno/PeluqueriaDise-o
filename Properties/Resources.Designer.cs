@@ -59,5 +59,15 @@ namespace ProyectoPeluquería.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gira_a_la_derecha_f5_negro {
+            get {
+                object obj = ResourceManager.GetObject("gira-a-la-derecha f5 negro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

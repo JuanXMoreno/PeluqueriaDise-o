@@ -61,7 +61,7 @@
             // btnF5
             // 
             this.btnF5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnF5.Image = ((System.Drawing.Image)(resources.GetObject("btnF5.Image")));
+            this.btnF5.Image = global::ProyectoPeluquería.Properties.Resources.gira_a_la_derecha_f5_negro;
             this.btnF5.Location = new System.Drawing.Point(589, 28);
             this.btnF5.Name = "btnF5";
             this.btnF5.Size = new System.Drawing.Size(30, 30);
