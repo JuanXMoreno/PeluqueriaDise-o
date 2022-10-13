@@ -58,6 +58,7 @@ namespace ProyectoPeluquería
             this.btnAdminTurnos.TabIndex = 0;
             this.btnAdminTurnos.Text = "Administrar\r\nturnos";
             this.btnAdminTurnos.UseVisualStyleBackColor = false;
+            this.btnAdminTurnos.Click += new System.EventHandler(this.btnAdminTurnos_Click);
             // 
             // btnAdminEmpleados
             // 
