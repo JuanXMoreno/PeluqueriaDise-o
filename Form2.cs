@@ -57,5 +57,10 @@ namespace ProyectoPeluquería
 
             txtContraseña.PasswordChar = '*';
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
