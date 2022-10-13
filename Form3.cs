@@ -28,5 +28,12 @@ namespace ProyectoPeluquería
             Form2 f3 = new Form2();
             f3.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+            this.Close();
+        }
     }
 }

@@ -16,6 +16,8 @@ namespace ProyectoPeluquería
         int contador;
         int contadorVentas;
 
+        int cantidad;
+
         int identificador;
         int valorCMBSeCortaCon;
         int valorCMBTipoDeDibujo = -1;
@@ -97,6 +99,64 @@ namespace ProyectoPeluquería
                 MessageBox.Show("por favor, seleccione una opción");
             }
 
+            lblTotal.Text = precio.ToString();
+        }
+
+        private void btn_AgregarVentas_Click(object sender, EventArgs e)
+        {
+            switch (contadorVentas)
+            {
+                case 1:
+                    LlenarSOV("Espuma / Afeitar Foamy Sensitive", valorbddVentas);
+                    precio = precio + (int)valorbddVentas;
+                    cantidad = 0;
+                    break;
+                case 2:
+                    LlenarSOV("ESpuma / Afeitar Foamy Regular", valorbddVentas);
+                    precio = precio + (int)valorbddVentas;
+                    cantidad = 0;
+                    break;
+                case 3:
+                    LlenarSOV("Shampoo Elvive Loreal Paris Arcilla Purificante", valorbddVentas);
+                    precio = precio + (int)valorbddVentas;
+                    cantidad = 0;
+                    break;
+                case 4:
+                    LlenarSOV("Shampoo Elvive Reparación Total Extreme Keratin Xs", valorbddVentas);
+                    precio = precio + (int)valorbddVentas;
+                    cantidad = 0;
+                    break;
+                case 5:
+                    LlenarSOV("Acondicionador Elvive Loreal Hidratación Hialurónico", valorbddVentas);
+                    precio = precio + (int)valorbddVentas;
+                    cantidad = 0;
+                    break;
+                case 6:
+                    LlenarSOV("Acondicionador Elvive Loreal Reparación Total Extreme", valorbddVentas);
+                    precio = precio + (int)valorbddVentas;
+                    cantidad = 0;
+                    break;
+                case 7:
+                    LlenarSOV("Gel Capilar Fijación Fuerte Algabo", valorbddVentas);
+                    precio = precio + (int)valorbddVentas;
+                    cantidad = 0;
+                    break;
+                case 8:
+                    LlenarSOV("Gel Capilar Efecto Húmedo Algabo", valorbddVentas);
+                    precio = precio + (int)valorbddVentas;
+                    cantidad = 0;
+                    break;
+                case 9:
+                    LlenarSOV("Iyosei Cera Capilar Hydro H2O Hard", valorbddVentas);
+                    precio = precio + (int)valorbddVentas;
+                    cantidad = 0;
+                    break;
+                case 10:
+                    LlenarSOV("Iyosei Cera Capilar Hydro Clásica", valorbddVentas);
+                    precio = precio + (int)valorbddVentas;
+                    cantidad = 0;
+                    break;
+            }
             lblTotal.Text = precio.ToString();
         }
 
@@ -241,6 +301,85 @@ namespace ProyectoPeluquería
             identificador = 8;
         }
 
+        private void pnl_EspumaFS_Click(object sender, EventArgs e)
+        {
+            ColoresParejosVentas();
+            pnl_EspumaFS.BackColor = Color.Aqua;
+            contadorVentas = 1;
+            bddBajaPrecioProducto();
+
+        }
+
+        private void pnl_EspumaFR_Click(object sender, EventArgs e)
+        {
+            ColoresParejosVentas();
+            pnl_EspumaFR.BackColor = Color.Aqua;
+            contadorVentas = 2;
+            bddBajaPrecioProducto();
+
+        }
+
+        private void pnl_ShampooAP_Click(object sender, EventArgs e)
+        {
+            ColoresParejosVentas();
+            pnl_ShampooAP.BackColor = Color.Aqua;
+            contadorVentas = 3;
+            bddBajaPrecioProducto();
+
+        }
+
+        private void pnl_ShampooEK_Click(object sender, EventArgs e)
+        {
+            ColoresParejosVentas();
+            pnl_ShampooEK.BackColor = Color.Aqua;
+            contadorVentas = 4;
+            bddBajaPrecioProducto();
+
+        }
+
+        private void pnl_AcondicionadorHH_Click(object sender, EventArgs e)
+        {
+            ColoresParejosVentas();
+            pnl_AcondicionadorHH.BackColor = Color.Aqua;
+            contadorVentas = 5;
+            bddBajaPrecioProducto();
+        }
+
+        private void pnl_AcondicionadorTE_Click(object sender, EventArgs e)
+        {
+            ColoresParejosVentas();
+            pnl_AcondicionadorTE.BackColor = Color.Aqua;
+            contadorVentas = 6;
+        }
+
+        private void pnl_GelFF_Click(object sender, EventArgs e)
+        {
+            ColoresParejosVentas();
+            pnl_GelFF.BackColor = Color.Aqua;
+            contadorVentas = 7;
+        }
+
+        private void pnl_GelEH_Click(object sender, EventArgs e)
+        {
+            ColoresParejosVentas();
+            pnl_GelEH.BackColor = Color.Aqua;
+            contadorVentas = 8;
+        }
+
+        private void pnl_CeraHH_Click(object sender, EventArgs e)
+        {
+            ColoresParejosVentas();
+            pnl_CeraHH.BackColor = Color.Aqua;
+            contadorVentas = 9;
+        }
+
+        private void pnl_CeraHC_Click(object sender, EventArgs e)
+        {
+            ColoresParejosVentas();
+            pnl_CeraHC.BackColor = Color.Aqua;
+            contadorVentas = 10;
+        }
+
         public void HabilitarCmb() //todos los cmb estan 
         {
             valorCMBSeCortaCon = -1;
@@ -377,130 +516,8 @@ namespace ProyectoPeluquería
             conexion.Close();
         }
 
-        private void btn_AgregarVentas_Click(object sender, EventArgs e)
-        {
-            switch (contadorVentas)
-            {
-                case 1:
-                    LlenarSOV("Espuma de Afeitar Foamy Sensitive 312gr", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    break;
-                case 2:
-                    LlenarSOV("ESpuma de Afeitar Foamy Regular 312gr", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    break;
-                case 3:
-                    LlenarSOV("Shampoo Elvive Loreal Paris Arcilla Purificante 400 Ml ", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    break;
-                case 4:
-                    LlenarSOV("Shampoo Elvive Reparación Total Extreme Keratin Xs 400ml", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    break;
-                case 5:
-                    LlenarSOV("Acondicionador Elvive Loreal Hidratación Hialurónico 400ml", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    break;
-                case 6:
-                    LlenarSOV("Acondicionador Elvive Loreal Reparación Total Extreme 400ml", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    break;
-                case 7:
-                    LlenarSOV("Gel Capilar Fijación Fuerte 350g Algabo", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    break;
-                case 8:
-                    LlenarSOV("Gel Capilar Efecto Húmedo 350g Algabo", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    break;
-                case 9:
-                    LlenarSOV("Iyosei Cera Capilar Hydro H2O Hard X 50g", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    break;
-                case 10:
-                    LlenarSOV("Iyosei Cera Capilar Hydro Clásica X50g", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    break;
-            }
-        }
+        
 
-        private void pnl_EspumaFS_Click(object sender, EventArgs e)
-        {
-            ColoresParejosVentas();
-            pnl_EspumaFS.BackColor = Color.Aqua;
-            contadorVentas = 1;
-            bddBajaPrecioProducto();
-
-        }
-
-        private void pnl_EspumaFR_Click(object sender, EventArgs e)
-        {
-            ColoresParejosVentas();
-            pnl_EspumaFR.BackColor = Color.Aqua;
-            contadorVentas = 2;
-            bddBajaPrecioProducto();
-
-        }
-
-        private void pnl_ShampooAP_Click(object sender, EventArgs e)
-        {
-            ColoresParejosVentas();
-            pnl_ShampooAP.BackColor = Color.Aqua;
-            contadorVentas = 3;
-            bddBajaPrecioProducto();
-
-        }
-
-        private void pnl_ShampooEK_Click(object sender, EventArgs e)
-        {
-            ColoresParejosVentas();
-            pnl_ShampooEK.BackColor = Color.Aqua;
-            contadorVentas = 4;
-            bddBajaPrecioProducto();
-
-        }
-
-        private void pnl_AcondicionadorHH_Click(object sender, EventArgs e)
-        {
-            ColoresParejosVentas();
-            pnl_AcondicionadorHH.BackColor = Color.Aqua;
-            contadorVentas = 5;
-            bddBajaPrecioProducto();
-        }
-
-        private void pnl_AcondicionadorTE_Click(object sender, EventArgs e)
-        {
-            ColoresParejosVentas();
-            pnl_AcondicionadorTE.BackColor = Color.Aqua;
-            contadorVentas = 6;
-        }
-
-        private void pnl_GelFF_Click(object sender, EventArgs e)
-        {
-            ColoresParejosVentas();
-            pnl_GelFF.BackColor = Color.Aqua;
-            contadorVentas = 7;
-        }
-
-        private void pnl_GelEH_Click(object sender, EventArgs e)
-        {
-            ColoresParejosVentas();
-            pnl_GelEH.BackColor = Color.Aqua;
-            contadorVentas = 8;
-        }
-
-        private void pnl_CeraHH_Click(object sender, EventArgs e)
-        {
-            ColoresParejosVentas();
-            pnl_CeraHH.BackColor = Color.Aqua;
-            contadorVentas = 9;
-        }
-
-        private void pnl_CeraHC_Click(object sender, EventArgs e)
-        {
-            ColoresParejosVentas();
-            pnl_CeraHC.BackColor = Color.Aqua;
-            contadorVentas = 10;
-        }
+        
     }
 }

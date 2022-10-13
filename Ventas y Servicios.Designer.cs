@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbc_Ventas_Servicios = new System.Windows.Forms.TabControl();
             this.tbp_Ventas = new System.Windows.Forms.TabPage();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btn_AgregarVentas = new System.Windows.Forms.Button();
             this.pnl_ShampooEK = new System.Windows.Forms.Panel();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -133,10 +135,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.btn_Volver = new System.Windows.Forms.Button();
-            this.btn_AgregarVentas = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.tbc_Ventas_Servicios.SuspendLayout();
             this.tbp_Ventas.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.pnl_ShampooEK.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
@@ -188,7 +189,6 @@
             this.pnl_CorteClasico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_Total.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -253,6 +253,27 @@
             this.tbp_Ventas.TabIndex = 0;
             this.tbp_Ventas.Text = "Ventas";
             this.tbp_Ventas.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.btn_AgregarVentas);
+            this.panel8.Location = new System.Drawing.Point(484, 10);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(180, 170);
+            this.panel8.TabIndex = 22;
+            // 
+            // btn_AgregarVentas
+            // 
+            this.btn_AgregarVentas.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btn_AgregarVentas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AgregarVentas.Location = new System.Drawing.Point(14, 63);
+            this.btn_AgregarVentas.Name = "btn_AgregarVentas";
+            this.btn_AgregarVentas.Size = new System.Drawing.Size(152, 53);
+            this.btn_AgregarVentas.TabIndex = 21;
+            this.btn_AgregarVentas.Text = "Agregar";
+            this.btn_AgregarVentas.UseVisualStyleBackColor = false;
+            this.btn_AgregarVentas.Click += new System.EventHandler(this.btn_AgregarVentas_Click);
             // 
             // pnl_ShampooEK
             // 
@@ -1184,7 +1205,7 @@
             // 
             this.lblPrecio6.AutoSize = true;
             this.lblPrecio6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio6.Location = new System.Drawing.Point(209, 184);
+            this.lblPrecio6.Location = new System.Drawing.Point(237, 184);
             this.lblPrecio6.Name = "lblPrecio6";
             this.lblPrecio6.Size = new System.Drawing.Size(15, 24);
             this.lblPrecio6.TabIndex = 14;
@@ -1194,7 +1215,7 @@
             // 
             this.lblPrecio5.AutoSize = true;
             this.lblPrecio5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio5.Location = new System.Drawing.Point(209, 158);
+            this.lblPrecio5.Location = new System.Drawing.Point(237, 158);
             this.lblPrecio5.Name = "lblPrecio5";
             this.lblPrecio5.Size = new System.Drawing.Size(15, 24);
             this.lblPrecio5.TabIndex = 13;
@@ -1204,7 +1225,7 @@
             // 
             this.lblPrecio4.AutoSize = true;
             this.lblPrecio4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio4.Location = new System.Drawing.Point(209, 133);
+            this.lblPrecio4.Location = new System.Drawing.Point(237, 133);
             this.lblPrecio4.Name = "lblPrecio4";
             this.lblPrecio4.Size = new System.Drawing.Size(15, 24);
             this.lblPrecio4.TabIndex = 12;
@@ -1214,7 +1235,7 @@
             // 
             this.lblPrecio3.AutoSize = true;
             this.lblPrecio3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio3.Location = new System.Drawing.Point(209, 105);
+            this.lblPrecio3.Location = new System.Drawing.Point(237, 105);
             this.lblPrecio3.Name = "lblPrecio3";
             this.lblPrecio3.Size = new System.Drawing.Size(15, 24);
             this.lblPrecio3.TabIndex = 11;
@@ -1224,7 +1245,7 @@
             // 
             this.lblPrecio2.AutoSize = true;
             this.lblPrecio2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio2.Location = new System.Drawing.Point(209, 76);
+            this.lblPrecio2.Location = new System.Drawing.Point(237, 76);
             this.lblPrecio2.Name = "lblPrecio2";
             this.lblPrecio2.Size = new System.Drawing.Size(15, 24);
             this.lblPrecio2.TabIndex = 10;
@@ -1234,7 +1255,7 @@
             // 
             this.lblPrecio1.AutoSize = true;
             this.lblPrecio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio1.Location = new System.Drawing.Point(209, 47);
+            this.lblPrecio1.Location = new System.Drawing.Point(237, 47);
             this.lblPrecio1.Name = "lblPrecio1";
             this.lblPrecio1.Size = new System.Drawing.Size(15, 24);
             this.lblPrecio1.TabIndex = 9;
@@ -1353,27 +1374,6 @@
             this.btn_Volver.UseVisualStyleBackColor = false;
             this.btn_Volver.Click += new System.EventHandler(this.btn_Volver_Click);
             // 
-            // btn_AgregarVentas
-            // 
-            this.btn_AgregarVentas.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btn_AgregarVentas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarVentas.Location = new System.Drawing.Point(14, 63);
-            this.btn_AgregarVentas.Name = "btn_AgregarVentas";
-            this.btn_AgregarVentas.Size = new System.Drawing.Size(152, 53);
-            this.btn_AgregarVentas.TabIndex = 21;
-            this.btn_AgregarVentas.Text = "Agregar";
-            this.btn_AgregarVentas.UseVisualStyleBackColor = false;
-            this.btn_AgregarVentas.Click += new System.EventHandler(this.btn_AgregarVentas_Click);
-            // 
-            // panel8
-            // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.btn_AgregarVentas);
-            this.panel8.Location = new System.Drawing.Point(484, 10);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(180, 170);
-            this.panel8.TabIndex = 22;
-            // 
             // Ventas_y_Servicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1392,6 +1392,7 @@
             this.tbc_Ventas_Servicios.ResumeLayout(false);
             this.tbp_Ventas.ResumeLayout(false);
             this.tbp_Ventas.PerformLayout();
+            this.panel8.ResumeLayout(false);
             this.pnl_ShampooEK.ResumeLayout(false);
             this.pnl_ShampooEK.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
@@ -1464,7 +1465,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_Total.ResumeLayout(false);
             this.pnl_Total.PerformLayout();
-            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
