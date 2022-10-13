@@ -41,5 +41,18 @@ namespace ProyectoPeluquería
             Empleados form4 = new Empleados();
             form4.Show();
         }
+
+        private void btnAdminTurnos_Click(object sender, EventArgs e)
+        {
+            Turnos turn = new Turnos();
+            turn.Show();
+            //this.Hide();
+        }
+
+        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form2 frm = new Form2();
+            frm.Show();
+        }
     }
 }
