@@ -118,7 +118,7 @@ namespace ProyectoPeluquería
             this.label3.TabIndex = 5;
             this.label3.Text = "¡Bienvenido!";
             // 
-            // Form2
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -133,7 +133,7 @@ namespace ProyectoPeluquería
             this.Controls.Add(this.btn_Mostrar);
             this.Controls.Add(this.btn_Ocultar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form2";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contraseña administrador";
             this.ResumeLayout(false);

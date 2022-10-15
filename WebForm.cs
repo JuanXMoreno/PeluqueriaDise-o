@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CefSharp;
+﻿using CefSharp;
 using CefSharp.WinForms;
+using System;
+using System.ComponentModel;
+using System.IO;
+using System.Windows.Forms;
 
 namespace ProyectoPeluquería
 {
@@ -40,7 +34,7 @@ namespace ProyectoPeluquería
             this.Hide();
         }
 
-        public void EnviarMensaje(String Numero,string Texto)
+        public void EnviarMensaje(String Numero, string Texto)
         {
             chromeBrowser.Load("https://web.whatsapp.com/send?phone=" + Numero);
 

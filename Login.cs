@@ -6,11 +6,12 @@ namespace ProyectoPeluquería
 {
     public partial class Login : Form
     {
+        DataBase DataB = new DataBase();
         public Login()
         {
+            DataB.Verificacion();
             InitializeComponent();
             txtContraseña.PasswordChar = '*';
-
         }
 
         SqlConnection conexion = new SqlConnection("server=DESKTOP-COF6H2T;database=Peluqueria; integrated security=true");
