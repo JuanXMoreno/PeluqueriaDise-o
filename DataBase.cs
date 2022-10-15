@@ -40,6 +40,7 @@ namespace ProyectoPeluquería
             {
                 MessageBox.Show("Error:" + sqlEx, "Error DataBase");
                 esVerdadero = false;
+                Environment.Exit(-1);
             }
             finally
             {
