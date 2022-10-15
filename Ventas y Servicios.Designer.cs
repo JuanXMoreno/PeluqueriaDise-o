@@ -36,44 +36,24 @@
             this.pnl_ShampooEK = new System.Windows.Forms.Panel();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.label33 = new System.Windows.Forms.Label();
             this.pnl_CeraHH = new System.Windows.Forms.Panel();
             this.label34 = new System.Windows.Forms.Label();
             this.pictureBox29 = new System.Windows.Forms.PictureBox();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
-            this.pictureBox24 = new System.Windows.Forms.PictureBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.pnl_GelEH = new System.Windows.Forms.Panel();
             this.label32 = new System.Windows.Forms.Label();
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.pnl_GelFF = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            this.pictureBox22 = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.pnl_AcondicionadorTE = new System.Windows.Forms.Panel();
             this.label28 = new System.Windows.Forms.Label();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pnl_AcondicionadorHH = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.pnl_CeraHC = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.pnl_ShampooAP = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
@@ -135,33 +115,33 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.btn_Volver = new System.Windows.Forms.Button();
+            this.dgv_VentasServicios = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.btn_AceptarCantidad = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cmna_VentasServicios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmna_Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.tbc_Ventas_Servicios.SuspendLayout();
             this.tbp_Ventas.SuspendLayout();
             this.panel8.SuspendLayout();
             this.pnl_ShampooEK.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             this.pnl_CeraHH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             this.pnl_GelEH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.pnl_GelFF.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.pnl_AcondicionadorTE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             this.pnl_AcondicionadorHH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.pnl_CeraHC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.pnl_ShampooAP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.pnl_EspumaFR.SuspendLayout();
@@ -189,6 +169,7 @@
             this.pnl_CorteClasico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_Total.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_VentasServicios)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -216,32 +197,12 @@
             this.tbp_Ventas.AutoScroll = true;
             this.tbp_Ventas.Controls.Add(this.panel8);
             this.tbp_Ventas.Controls.Add(this.pnl_ShampooEK);
-            this.tbp_Ventas.Controls.Add(this.pictureBox28);
-            this.tbp_Ventas.Controls.Add(this.label33);
             this.tbp_Ventas.Controls.Add(this.pnl_CeraHH);
-            this.tbp_Ventas.Controls.Add(this.pictureBox26);
-            this.tbp_Ventas.Controls.Add(this.pictureBox24);
-            this.tbp_Ventas.Controls.Add(this.label31);
-            this.tbp_Ventas.Controls.Add(this.label29);
             this.tbp_Ventas.Controls.Add(this.pnl_GelEH);
             this.tbp_Ventas.Controls.Add(this.pnl_GelFF);
-            this.tbp_Ventas.Controls.Add(this.pictureBox22);
-            this.tbp_Ventas.Controls.Add(this.pictureBox20);
-            this.tbp_Ventas.Controls.Add(this.label27);
-            this.tbp_Ventas.Controls.Add(this.label25);
             this.tbp_Ventas.Controls.Add(this.pnl_AcondicionadorTE);
             this.tbp_Ventas.Controls.Add(this.pnl_AcondicionadorHH);
-            this.tbp_Ventas.Controls.Add(this.pictureBox18);
-            this.tbp_Ventas.Controls.Add(this.label22);
             this.tbp_Ventas.Controls.Add(this.pnl_CeraHC);
-            this.tbp_Ventas.Controls.Add(this.pictureBox13);
-            this.tbp_Ventas.Controls.Add(this.label20);
-            this.tbp_Ventas.Controls.Add(this.pictureBox12);
-            this.tbp_Ventas.Controls.Add(this.label19);
-            this.tbp_Ventas.Controls.Add(this.pictureBox11);
-            this.tbp_Ventas.Controls.Add(this.label18);
-            this.tbp_Ventas.Controls.Add(this.pictureBox8);
-            this.tbp_Ventas.Controls.Add(this.label12);
             this.tbp_Ventas.Controls.Add(this.pnl_ShampooAP);
             this.tbp_Ventas.Controls.Add(this.pnl_EspumaFR);
             this.tbp_Ventas.Controls.Add(this.pnl_EspumaFS);
@@ -257,19 +218,25 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.button3);
+            this.panel8.Controls.Add(this.button1);
+            this.panel8.Controls.Add(this.btn_AceptarCantidad);
+            this.panel8.Controls.Add(this.lblCantidad);
+            this.panel8.Controls.Add(this.label12);
+            this.panel8.Controls.Add(this.textBox1);
             this.panel8.Controls.Add(this.btn_AgregarVentas);
             this.panel8.Location = new System.Drawing.Point(484, 10);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(180, 170);
+            this.panel8.Size = new System.Drawing.Size(180, 271);
             this.panel8.TabIndex = 22;
             // 
             // btn_AgregarVentas
             // 
             this.btn_AgregarVentas.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btn_AgregarVentas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarVentas.Location = new System.Drawing.Point(14, 63);
+            this.btn_AgregarVentas.Location = new System.Drawing.Point(14, 168);
             this.btn_AgregarVentas.Name = "btn_AgregarVentas";
-            this.btn_AgregarVentas.Size = new System.Drawing.Size(152, 53);
+            this.btn_AgregarVentas.Size = new System.Drawing.Size(152, 37);
             this.btn_AgregarVentas.TabIndex = 21;
             this.btn_AgregarVentas.Text = "Agregar";
             this.btn_AgregarVentas.UseVisualStyleBackColor = false;
@@ -307,26 +274,6 @@
             this.label21.TabIndex = 5;
             this.label21.Text = "Shampoo Elvive Reparación \r\nTotal Extreme Keratin Xs - 400ml";
             // 
-            // pictureBox28
-            // 
-            this.pictureBox28.Image = global::ProyectoPeluquería.Properties.Resources.cruz;
-            this.pictureBox28.Location = new System.Drawing.Point(438, 714);
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox28.TabIndex = 20;
-            this.pictureBox28.TabStop = false;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(438, 751);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(23, 25);
-            this.label33.TabIndex = 19;
-            this.label33.Text = "0";
-            // 
             // pnl_CeraHH
             // 
             this.pnl_CeraHH.BackColor = System.Drawing.Color.DarkGray;
@@ -357,46 +304,6 @@
             this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox29.TabIndex = 4;
             this.pictureBox29.TabStop = false;
-            // 
-            // pictureBox26
-            // 
-            this.pictureBox26.Image = global::ProyectoPeluquería.Properties.Resources.cruz;
-            this.pictureBox26.Location = new System.Drawing.Point(438, 626);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox26.TabIndex = 11;
-            this.pictureBox26.TabStop = false;
-            // 
-            // pictureBox24
-            // 
-            this.pictureBox24.Image = global::ProyectoPeluquería.Properties.Resources.cruz;
-            this.pictureBox24.Location = new System.Drawing.Point(438, 538);
-            this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox24.TabIndex = 17;
-            this.pictureBox24.TabStop = false;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(438, 663);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(23, 25);
-            this.label31.TabIndex = 10;
-            this.label31.Text = "0";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(438, 575);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(23, 25);
-            this.label29.TabIndex = 16;
-            this.label29.Text = "0";
             // 
             // pnl_GelEH
             // 
@@ -460,46 +367,6 @@
             this.pictureBox25.TabIndex = 4;
             this.pictureBox25.TabStop = false;
             // 
-            // pictureBox22
-            // 
-            this.pictureBox22.Image = global::ProyectoPeluquería.Properties.Resources.cruz;
-            this.pictureBox22.Location = new System.Drawing.Point(438, 450);
-            this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox22.TabIndex = 11;
-            this.pictureBox22.TabStop = false;
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.Image = global::ProyectoPeluquería.Properties.Resources.cruz;
-            this.pictureBox20.Location = new System.Drawing.Point(438, 362);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox20.TabIndex = 14;
-            this.pictureBox20.TabStop = false;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(438, 487);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(23, 25);
-            this.label27.TabIndex = 10;
-            this.label27.Text = "0";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(438, 399);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(23, 25);
-            this.label25.TabIndex = 13;
-            this.label25.Text = "0";
-            // 
             // pnl_AcondicionadorTE
             // 
             this.pnl_AcondicionadorTE.BackColor = System.Drawing.Color.DarkGray;
@@ -562,26 +429,6 @@
             this.pictureBox21.TabIndex = 4;
             this.pictureBox21.TabStop = false;
             // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Image = global::ProyectoPeluquería.Properties.Resources.cruz;
-            this.pictureBox18.Location = new System.Drawing.Point(438, 802);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox18.TabIndex = 11;
-            this.pictureBox18.TabStop = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(438, 839);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(23, 25);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "0";
-            // 
             // pnl_CeraHC
             // 
             this.pnl_CeraHC.BackColor = System.Drawing.Color.DarkGray;
@@ -612,86 +459,6 @@
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox19.TabIndex = 4;
             this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::ProyectoPeluquería.Properties.Resources.cruz;
-            this.pictureBox13.Location = new System.Drawing.Point(438, 274);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 8;
-            this.pictureBox13.TabStop = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(438, 311);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(23, 25);
-            this.label20.TabIndex = 7;
-            this.label20.Text = "0";
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = global::ProyectoPeluquería.Properties.Resources.cruz;
-            this.pictureBox12.Location = new System.Drawing.Point(438, 186);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox12.TabIndex = 8;
-            this.pictureBox12.TabStop = false;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(438, 221);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(23, 25);
-            this.label19.TabIndex = 7;
-            this.label19.Text = "0";
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::ProyectoPeluquería.Properties.Resources.cruz;
-            this.pictureBox11.Location = new System.Drawing.Point(438, 98);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 6;
-            this.pictureBox11.TabStop = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(438, 133);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(23, 25);
-            this.label18.TabIndex = 5;
-            this.label18.Text = "0";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::ProyectoPeluquería.Properties.Resources.cruz;
-            this.pictureBox8.Location = new System.Drawing.Point(438, 10);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 4;
-            this.pictureBox8.TabStop = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(438, 45);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(23, 25);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "0";
             // 
             // pnl_ShampooAP
             // 
@@ -1009,6 +776,7 @@
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Window;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.button2);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.cmb_TipoDeDibujo);
@@ -1016,7 +784,7 @@
             this.panel5.Controls.Add(this.cmb_SeCortaCon);
             this.panel5.Location = new System.Drawing.Point(435, 10);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(212, 263);
+            this.panel5.Size = new System.Drawing.Size(212, 293);
             this.panel5.TabIndex = 5;
             // 
             // label5
@@ -1187,7 +955,6 @@
             this.pnl_Total.Controls.Add(this.lblPrecio3);
             this.pnl_Total.Controls.Add(this.lblPrecio2);
             this.pnl_Total.Controls.Add(this.lblPrecio1);
-            this.pnl_Total.Controls.Add(this.lblTotal);
             this.pnl_Total.Controls.Add(this.lblSOV6);
             this.pnl_Total.Controls.Add(this.lblSOV5);
             this.pnl_Total.Controls.Add(this.lblSOV4);
@@ -1265,11 +1032,11 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(3, 251);
+            this.lblTotal.Location = new System.Drawing.Point(741, 408);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(15, 24);
+            this.lblTotal.Size = new System.Drawing.Size(115, 24);
             this.lblTotal.TabIndex = 8;
-            this.lblTotal.Text = ".";
+            this.lblTotal.Text = "Precio Total:";
             // 
             // lblSOV6
             // 
@@ -1355,9 +1122,9 @@
             // 
             this.btn_Aceptar.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btn_Aceptar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Aceptar.Location = new System.Drawing.Point(820, 396);
+            this.btn_Aceptar.Location = new System.Drawing.Point(745, 508);
             this.btn_Aceptar.Name = "btn_Aceptar";
-            this.btn_Aceptar.Size = new System.Drawing.Size(161, 37);
+            this.btn_Aceptar.Size = new System.Drawing.Size(118, 37);
             this.btn_Aceptar.TabIndex = 7;
             this.btn_Aceptar.Text = "Aceptar";
             this.btn_Aceptar.UseVisualStyleBackColor = false;
@@ -1366,13 +1133,107 @@
             // 
             this.btn_Volver.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btn_Volver.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Volver.Location = new System.Drawing.Point(820, 448);
+            this.btn_Volver.Location = new System.Drawing.Point(923, 508);
             this.btn_Volver.Name = "btn_Volver";
-            this.btn_Volver.Size = new System.Drawing.Size(161, 37);
+            this.btn_Volver.Size = new System.Drawing.Size(118, 37);
             this.btn_Volver.TabIndex = 8;
             this.btn_Volver.Text = "Volver";
             this.btn_Volver.UseVisualStyleBackColor = false;
             this.btn_Volver.Click += new System.EventHandler(this.btn_Volver_Click);
+            // 
+            // dgv_VentasServicios
+            // 
+            this.dgv_VentasServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_VentasServicios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cmna_VentasServicios,
+            this.cmna_Precio});
+            this.dgv_VentasServicios.Location = new System.Drawing.Point(737, 94);
+            this.dgv_VentasServicios.Name = "dgv_VentasServicios";
+            this.dgv_VentasServicios.Size = new System.Drawing.Size(304, 306);
+            this.dgv_VentasServicios.TabIndex = 9;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(4, 37);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 22;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(0, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(84, 24);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Cantidad";
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.Location = new System.Drawing.Point(3, 78);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(20, 24);
+            this.lblCantidad.TabIndex = 24;
+            this.lblCantidad.Text = "0";
+            // 
+            // btn_AceptarCantidad
+            // 
+            this.btn_AceptarCantidad.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AceptarCantidad.Location = new System.Drawing.Point(111, 34);
+            this.btn_AceptarCantidad.Name = "btn_AceptarCantidad";
+            this.btn_AceptarCantidad.Size = new System.Drawing.Size(64, 23);
+            this.btn_AceptarCantidad.TabIndex = 25;
+            this.btn_AceptarCantidad.Text = "Aceptar";
+            this.btn_AceptarCantidad.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(141, 79);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(34, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // cmna_VentasServicios
+            // 
+            this.cmna_VentasServicios.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cmna_VentasServicios.HeaderText = "Ventas/Servicios";
+            this.cmna_VentasServicios.Name = "cmna_VentasServicios";
+            this.cmna_VentasServicios.Width = 113;
+            // 
+            // cmna_Precio
+            // 
+            this.cmna_Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cmna_Precio.HeaderText = "Precio";
+            this.cmna_Precio.Name = "cmna_Precio";
+            this.cmna_Precio.Width = 62;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(26, 225);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(161, 37);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Eliminar";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(14, 220);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(148, 37);
+            this.button3.TabIndex = 27;
+            this.button3.Text = "Eliminar";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // Ventas_y_Servicios
             // 
@@ -1380,50 +1241,42 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1053, 557);
+            this.Controls.Add(this.dgv_VentasServicios);
             this.Controls.Add(this.btn_Volver);
             this.Controls.Add(this.btn_Aceptar);
             this.Controls.Add(this.pnl_Total);
             this.Controls.Add(this.tbc_Ventas_Servicios);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTotal);
             this.MaximizeBox = false;
             this.Name = "Ventas_y_Servicios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas_y_Servicios";
             this.tbc_Ventas_Servicios.ResumeLayout(false);
             this.tbp_Ventas.ResumeLayout(false);
-            this.tbp_Ventas.PerformLayout();
             this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.pnl_ShampooEK.ResumeLayout(false);
             this.pnl_ShampooEK.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             this.pnl_CeraHH.ResumeLayout(false);
             this.pnl_CeraHH.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             this.pnl_GelEH.ResumeLayout(false);
             this.pnl_GelEH.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.pnl_GelFF.ResumeLayout(false);
             this.pnl_GelFF.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             this.pnl_AcondicionadorTE.ResumeLayout(false);
             this.pnl_AcondicionadorTE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             this.pnl_AcondicionadorHH.ResumeLayout(false);
             this.pnl_AcondicionadorHH.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             this.pnl_CeraHC.ResumeLayout(false);
             this.pnl_CeraHC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.pnl_ShampooAP.ResumeLayout(false);
             this.pnl_ShampooAP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
@@ -1465,6 +1318,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_Total.ResumeLayout(false);
             this.pnl_Total.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_VentasServicios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1531,43 +1385,23 @@
         private System.Windows.Forms.Label lblPrecio3;
         private System.Windows.Forms.Label lblPrecio2;
         private System.Windows.Forms.Label lblPrecio1;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox28;
-        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Panel pnl_CeraHH;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.PictureBox pictureBox29;
-        private System.Windows.Forms.PictureBox pictureBox26;
-        private System.Windows.Forms.PictureBox pictureBox24;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Panel pnl_GelEH;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.PictureBox pictureBox27;
         private System.Windows.Forms.Panel pnl_GelFF;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.PictureBox pictureBox25;
-        private System.Windows.Forms.PictureBox pictureBox22;
-        private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Panel pnl_AcondicionadorTE;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.PictureBox pictureBox23;
         private System.Windows.Forms.Panel pnl_AcondicionadorHH;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.PictureBox pictureBox21;
-        private System.Windows.Forms.PictureBox pictureBox18;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel pnl_CeraHC;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.PictureBox pictureBox19;
@@ -1579,5 +1413,15 @@
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btn_AgregarVentas;
+        private System.Windows.Forms.DataGridView dgv_VentasServicios;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_AceptarCantidad;
+        private System.Windows.Forms.Label lblCantidad;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmna_VentasServicios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmna_Precio;
     }
 }

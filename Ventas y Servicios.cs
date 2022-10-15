@@ -43,6 +43,7 @@ namespace ProyectoPeluquería
                     break;
                 case 1:
                     contador = 3;
+                    BddBajaPrecio();
                     LlenarSOV("Corte Americano", valorbdd);
                     precio = precio + (int)valorbdd;
                     break;
@@ -107,12 +108,12 @@ namespace ProyectoPeluquería
             switch (contadorVentas)
             {
                 case 1:
-                    LlenarSOV("Espuma / Afeitar Foamy Sensitive", valorbddVentas);
+                    LlenarSOV("Espuma/Afeitar Foamy Sensitive", valorbddVentas);
                     precio = precio + (int)valorbddVentas;
                     cantidad = 0;
                     break;
                 case 2:
-                    LlenarSOV("ESpuma / Afeitar Foamy Regular", valorbddVentas);
+                    LlenarSOV("ESpuma/Afeitar Foamy Regular", valorbddVentas);
                     precio = precio + (int)valorbddVentas;
                     cantidad = 0;
                     break;
@@ -157,7 +158,7 @@ namespace ProyectoPeluquería
                     cantidad = 0;
                     break;
             }
-            lblTotal.Text = precio.ToString();
+            lblTotal.Text ="Precio Total " + precio.ToString();
         }
 
         private void btn_Volver_Click(object sender, EventArgs e)
@@ -307,7 +308,8 @@ namespace ProyectoPeluquería
             pnl_EspumaFS.BackColor = Color.Aqua;
             contadorVentas = 1;
             bddBajaPrecioProducto();
-
+            cantidad = 1;
+            lblCantidad.Text = "1";
         }
 
         private void pnl_EspumaFR_Click(object sender, EventArgs e)
@@ -316,7 +318,8 @@ namespace ProyectoPeluquería
             pnl_EspumaFR.BackColor = Color.Aqua;
             contadorVentas = 2;
             bddBajaPrecioProducto();
-
+            cantidad = 1;
+            lblCantidad.Text = "1";
         }
 
         private void pnl_ShampooAP_Click(object sender, EventArgs e)
@@ -325,7 +328,8 @@ namespace ProyectoPeluquería
             pnl_ShampooAP.BackColor = Color.Aqua;
             contadorVentas = 3;
             bddBajaPrecioProducto();
-
+            cantidad = 1; 
+            lblCantidad.Text = "1";
         }
 
         private void pnl_ShampooEK_Click(object sender, EventArgs e)
@@ -334,7 +338,8 @@ namespace ProyectoPeluquería
             pnl_ShampooEK.BackColor = Color.Aqua;
             contadorVentas = 4;
             bddBajaPrecioProducto();
-
+            cantidad = 1;
+            lblCantidad.Text = "1";
         }
 
         private void pnl_AcondicionadorHH_Click(object sender, EventArgs e)
@@ -343,6 +348,8 @@ namespace ProyectoPeluquería
             pnl_AcondicionadorHH.BackColor = Color.Aqua;
             contadorVentas = 5;
             bddBajaPrecioProducto();
+            cantidad = 1;
+            lblCantidad.Text = "1";
         }
 
         private void pnl_AcondicionadorTE_Click(object sender, EventArgs e)
@@ -350,6 +357,9 @@ namespace ProyectoPeluquería
             ColoresParejosVentas();
             pnl_AcondicionadorTE.BackColor = Color.Aqua;
             contadorVentas = 6;
+            bddBajaPrecioProducto();
+            cantidad = 1;
+            lblCantidad.Text = "1";
         }
 
         private void pnl_GelFF_Click(object sender, EventArgs e)
@@ -357,6 +367,9 @@ namespace ProyectoPeluquería
             ColoresParejosVentas();
             pnl_GelFF.BackColor = Color.Aqua;
             contadorVentas = 7;
+            bddBajaPrecioProducto();
+            cantidad = 1;
+            lblCantidad.Text = "1";
         }
 
         private void pnl_GelEH_Click(object sender, EventArgs e)
@@ -364,6 +377,9 @@ namespace ProyectoPeluquería
             ColoresParejosVentas();
             pnl_GelEH.BackColor = Color.Aqua;
             contadorVentas = 8;
+            bddBajaPrecioProducto();
+            cantidad = 1;
+            lblCantidad.Text = "1";
         }
 
         private void pnl_CeraHH_Click(object sender, EventArgs e)
@@ -371,6 +387,9 @@ namespace ProyectoPeluquería
             ColoresParejosVentas();
             pnl_CeraHH.BackColor = Color.Aqua;
             contadorVentas = 9;
+            bddBajaPrecioProducto();
+            cantidad = 1;
+            lblCantidad.Text = "1";
         }
 
         private void pnl_CeraHC_Click(object sender, EventArgs e)
@@ -378,6 +397,9 @@ namespace ProyectoPeluquería
             ColoresParejosVentas();
             pnl_CeraHC.BackColor = Color.Aqua;
             contadorVentas = 10;
+            bddBajaPrecioProducto();
+            cantidad = 1;
+            lblCantidad.Text = "1";
         }
 
         public void HabilitarCmb() //todos los cmb estan 
@@ -450,38 +472,14 @@ namespace ProyectoPeluquería
             valorCMBTipoDeDibujo = cmb_TipoDeDibujo.SelectedIndex;            
         }
 
-        public void LlenarSOV(string valor, float ValorVentaServicio)
+        public void LlenarSOV(string valor, float valorVentaServicio)
         {
-            if (lblSOV1.Text.Equals("."))
-            {
-                lblSOV1.Text = valor;
-                lblPrecio1.Text = ValorVentaServicio.ToString();
-            }
-            else if (!lblSOV1.Text.Equals(".") && lblSOV2.Text.Equals("."))
-            {
-                lblSOV2.Text = valor;
-                lblPrecio2.Text = ValorVentaServicio.ToString();
-            }
-            else if (!lblSOV2.Text.Equals(".") && lblSOV3.Text.Equals("."))
-            {
-                lblSOV3.Text = valor;
-                lblPrecio3.Text = ValorVentaServicio.ToString();
-            }
-            else if (!lblSOV3.Text.Equals(".") && lblSOV4.Text.Equals("."))
-            {
-                lblSOV4.Text = valor;
-                lblPrecio4.Text = ValorVentaServicio.ToString();
-            }
-            else if (!lblSOV4.Text.Equals(".") && lblSOV5.Text.Equals("."))
-            {
-                lblSOV5.Text = valor;
-                lblPrecio5.Text = ValorVentaServicio.ToString();
-            }
-            else if (!lblSOV5.Text.Equals(".") && lblSOV6.Text.Equals("."))
-            {
-                lblSOV6.Text = valor;
-                lblPrecio6.Text = ValorVentaServicio.ToString();
-            }
+            int rowEscribir = dgv_VentasServicios.Rows.Count - 1;
+
+            dgv_VentasServicios.Rows.Add(1);
+
+            dgv_VentasServicios.Rows[rowEscribir].Cells[0].Value = valor;
+            dgv_VentasServicios.Rows[rowEscribir].Cells[1].Value = valorVentaServicio;
         }
 
         public void BddBajaPrecio()
