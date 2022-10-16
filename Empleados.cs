@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.Sql; 
 using System.Data.SqlClient;
-using System.ComponentModel.Design;
+using System.Windows.Forms;
 
 namespace ProyectoPeluquería
-{   
+{
     public partial class Empleados : Form
     {
         int indice;
@@ -54,7 +46,9 @@ namespace ProyectoPeluquería
             if (txtNombre.Text.Equals("") || txtApellido.Text.Equals("") || txtDni.Text.Equals("") || txtDireccion.Text.Equals("") || txtNumeroDeTelefono.Text.Equals("") || txtHsAsignadas.Text.Equals(""))
             {
                 MessageBox.Show("Faltan ingresar datos");
-            }else{
+            }
+            else
+            {
                 String sql = "insert into Empleados (Id_TurnoLaboral, Nombre, Apellido ,DNI ,Direccion ,Telefono ,FechaNac ,HorasAsignadas) values('1','" + txtNombre.Text + "','" + txtApellido.Text + "'," + txtDni.Text + ",'" + txtDireccion.Text + "'," + txtNumeroDeTelefono.Text + ",'" + txtFechaDeNacimiento.Text + "'," + txtHsAsignadas.Text + ")";
                 SqlCommand comando = new SqlCommand(sql, conexion);
                 comando.ExecuteNonQuery();
@@ -82,8 +76,10 @@ namespace ProyectoPeluquería
             if (txtNombre.Text.Equals("") || txtApellido.Text.Equals("") || txtDni.Text.Equals("") || txtDireccion.Text.Equals("") || txtNumeroDeTelefono.Text.Equals("") || txtHsAsignadas.Text.Equals(""))
             {
                 MessageBox.Show("No se puede modificar porque hay datos incompletos");
-            }else{
-            conexion.Open();
+            }
+            else
+            {
+                conexion.Open();
                 String sql = "update Empleados set Id_TurnoLaboral='1', Nombre='" + txtNombre.Text + "',Apellido='" + txtApellido.Text + "',DNI=" + txtDni.Text + ",Direccion='" + txtDireccion.Text + "',Telefono=" + txtNumeroDeTelefono.Text + ",FechaNac='" + txtFechaDeNacimiento.Text + "',HorasAsignadas=" + txtHsAsignadas.Text + "where Id_Empleado=" + indice + "";
                 SqlCommand comando = new SqlCommand(sql, conexion);
 
@@ -111,7 +107,7 @@ namespace ProyectoPeluquería
             txtNumeroDeTelefono.Text = tablaBD.SelectedCells[5].Value.ToString();
             txtFechaDeNacimiento.Text = tablaBD.SelectedCells[6].Value.ToString();
             txtHsAsignadas.Text = tablaBD.SelectedCells[7].Value.ToString();
-       
+
         }
 
         private void btnMas_Click(object sender, EventArgs e)
@@ -148,5 +144,5 @@ namespace ProyectoPeluquería
 
 
 
-    
-    }
+
+}

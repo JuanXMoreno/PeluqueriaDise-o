@@ -32,6 +32,12 @@
             this.tbc_Ventas_Servicios = new System.Windows.Forms.TabControl();
             this.tbp_Ventas = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btn_SumarCantidad = new System.Windows.Forms.Button();
+            this.btn_AceptarCantidad = new System.Windows.Forms.Button();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_Cantidad = new System.Windows.Forms.TextBox();
             this.btn_AgregarVentas = new System.Windows.Forms.Button();
             this.pnl_ShampooEK = new System.Windows.Forms.Panel();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
@@ -83,6 +89,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_TipoDeDibujo = new System.Windows.Forms.ComboBox();
@@ -104,7 +111,6 @@
             this.lblPrecio3 = new System.Windows.Forms.Label();
             this.lblPrecio2 = new System.Windows.Forms.Label();
             this.lblPrecio1 = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.lblSOV6 = new System.Windows.Forms.Label();
             this.lblSOV5 = new System.Windows.Forms.Label();
             this.lblSOV4 = new System.Windows.Forms.Label();
@@ -113,18 +119,14 @@
             this.lblSOV1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.btn_Volver = new System.Windows.Forms.Button();
             this.dgv_VentasServicios = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblCantidad = new System.Windows.Forms.Label();
-            this.btn_AceptarCantidad = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_RestarCantidad = new System.Windows.Forms.Button();
             this.cmna_VentasServicios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmna_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmna_Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.tbc_Ventas_Servicios.SuspendLayout();
             this.tbp_Ventas.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -218,17 +220,78 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.btn_RestarCantidad);
             this.panel8.Controls.Add(this.button3);
-            this.panel8.Controls.Add(this.button1);
+            this.panel8.Controls.Add(this.btn_SumarCantidad);
             this.panel8.Controls.Add(this.btn_AceptarCantidad);
             this.panel8.Controls.Add(this.lblCantidad);
             this.panel8.Controls.Add(this.label12);
-            this.panel8.Controls.Add(this.textBox1);
+            this.panel8.Controls.Add(this.txt_Cantidad);
             this.panel8.Controls.Add(this.btn_AgregarVentas);
             this.panel8.Location = new System.Drawing.Point(484, 10);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(180, 271);
             this.panel8.TabIndex = 22;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(14, 220);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(148, 37);
+            this.button3.TabIndex = 27;
+            this.button3.Text = "Eliminar";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // btn_SumarCantidad
+            // 
+            this.btn_SumarCantidad.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SumarCantidad.Location = new System.Drawing.Point(141, 79);
+            this.btn_SumarCantidad.Name = "btn_SumarCantidad";
+            this.btn_SumarCantidad.Size = new System.Drawing.Size(34, 23);
+            this.btn_SumarCantidad.TabIndex = 26;
+            this.btn_SumarCantidad.Text = "+";
+            this.btn_SumarCantidad.UseVisualStyleBackColor = true;
+            this.btn_SumarCantidad.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_AceptarCantidad
+            // 
+            this.btn_AceptarCantidad.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AceptarCantidad.Location = new System.Drawing.Point(111, 34);
+            this.btn_AceptarCantidad.Name = "btn_AceptarCantidad";
+            this.btn_AceptarCantidad.Size = new System.Drawing.Size(64, 23);
+            this.btn_AceptarCantidad.TabIndex = 25;
+            this.btn_AceptarCantidad.Text = "Aceptar";
+            this.btn_AceptarCantidad.UseVisualStyleBackColor = true;
+            this.btn_AceptarCantidad.Click += new System.EventHandler(this.btn_AceptarCantidad_Click);
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.Location = new System.Drawing.Point(3, 78);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(20, 24);
+            this.lblCantidad.TabIndex = 24;
+            this.lblCantidad.Text = "0";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(0, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(84, 24);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Cantidad";
+            // 
+            // txt_Cantidad
+            // 
+            this.txt_Cantidad.Location = new System.Drawing.Point(4, 37);
+            this.txt_Cantidad.Name = "txt_Cantidad";
+            this.txt_Cantidad.Size = new System.Drawing.Size(100, 21);
+            this.txt_Cantidad.TabIndex = 22;
             // 
             // btn_AgregarVentas
             // 
@@ -787,6 +850,17 @@
             this.panel5.Size = new System.Drawing.Size(212, 293);
             this.panel5.TabIndex = 5;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(26, 225);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(161, 37);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Eliminar";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -1028,16 +1102,6 @@
             this.lblPrecio1.TabIndex = 9;
             this.lblPrecio1.Text = ".";
             // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(741, 408);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(115, 24);
-            this.lblTotal.TabIndex = 8;
-            this.lblTotal.Text = "Precio Total:";
-            // 
             // lblSOV6
             // 
             this.lblSOV6.AutoSize = true;
@@ -1118,6 +1182,16 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Servicios/Ventas:";
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(741, 408);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(115, 24);
+            this.lblTotal.TabIndex = 8;
+            this.lblTotal.Text = "Precio Total:";
+            // 
             // btn_Aceptar
             // 
             this.btn_Aceptar.BackColor = System.Drawing.SystemColors.ButtonShadow;
@@ -1146,58 +1220,23 @@
             this.dgv_VentasServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_VentasServicios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cmna_VentasServicios,
+            this.cmna_Cantidad,
             this.cmna_Precio});
             this.dgv_VentasServicios.Location = new System.Drawing.Point(737, 94);
             this.dgv_VentasServicios.Name = "dgv_VentasServicios";
             this.dgv_VentasServicios.Size = new System.Drawing.Size(304, 306);
             this.dgv_VentasServicios.TabIndex = 9;
             // 
-            // textBox1
+            // btn_RestarCantidad
             // 
-            this.textBox1.Location = new System.Drawing.Point(4, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 22;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(0, 10);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(84, 24);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Cantidad";
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.Location = new System.Drawing.Point(3, 78);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(20, 24);
-            this.lblCantidad.TabIndex = 24;
-            this.lblCantidad.Text = "0";
-            // 
-            // btn_AceptarCantidad
-            // 
-            this.btn_AceptarCantidad.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AceptarCantidad.Location = new System.Drawing.Point(111, 34);
-            this.btn_AceptarCantidad.Name = "btn_AceptarCantidad";
-            this.btn_AceptarCantidad.Size = new System.Drawing.Size(64, 23);
-            this.btn_AceptarCantidad.TabIndex = 25;
-            this.btn_AceptarCantidad.Text = "Aceptar";
-            this.btn_AceptarCantidad.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(141, 79);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 23);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_RestarCantidad.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_RestarCantidad.Location = new System.Drawing.Point(141, 108);
+            this.btn_RestarCantidad.Name = "btn_RestarCantidad";
+            this.btn_RestarCantidad.Size = new System.Drawing.Size(34, 23);
+            this.btn_RestarCantidad.TabIndex = 28;
+            this.btn_RestarCantidad.Text = "-";
+            this.btn_RestarCantidad.UseVisualStyleBackColor = true;
+            this.btn_RestarCantidad.Click += new System.EventHandler(this.btn_RestarCantidad_Click);
             // 
             // cmna_VentasServicios
             // 
@@ -1206,34 +1245,17 @@
             this.cmna_VentasServicios.Name = "cmna_VentasServicios";
             this.cmna_VentasServicios.Width = 113;
             // 
+            // cmna_Cantidad
+            // 
+            this.cmna_Cantidad.HeaderText = "Cantidad";
+            this.cmna_Cantidad.Name = "cmna_Cantidad";
+            // 
             // cmna_Precio
             // 
             this.cmna_Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cmna_Precio.HeaderText = "Precio";
             this.cmna_Precio.Name = "cmna_Precio";
             this.cmna_Precio.Width = 62;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(26, 225);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 37);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(14, 220);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 37);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // Ventas_y_Servicios
             // 
@@ -1414,14 +1436,16 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btn_AgregarVentas;
         private System.Windows.Forms.DataGridView dgv_VentasServicios;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_SumarCantidad;
         private System.Windows.Forms.Button btn_AceptarCantidad;
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Cantidad;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_RestarCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn cmna_VentasServicios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmna_Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn cmna_Precio;
     }
 }

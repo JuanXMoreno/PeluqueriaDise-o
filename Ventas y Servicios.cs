@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -39,7 +33,7 @@ namespace ProyectoPeluquería
             switch (identificador)
             {
                 case 0:
-                    Sentencia(1, 2,"Corte Clasico Maquina","Corte Clasico Tijera");
+                    Sentencia(1, 2, "Corte Clasico Maquina", "Corte Clasico Tijera");
                     break;
                 case 1:
                     contador = 3;
@@ -48,7 +42,7 @@ namespace ProyectoPeluquería
                     precio = precio + (int)valorbdd;
                     break;
                 case 2:
-                    Sentencia(4, 5,"Degrade Maquina","Degrade Navaja");
+                    Sentencia(4, 5, "Degrade Maquina", "Degrade Navaja");
                     break;
                 case 3:
                     if (valorCMBTipoDeDibujo == 0)
@@ -68,7 +62,7 @@ namespace ProyectoPeluquería
                     valorCMBTipoDeDibujo = -1;
                     break;
                 case 4:
-                    Sentencia(11, 12,"Corte Barba Maquina","Corte Barba Navaja");
+                    Sentencia(11, 12, "Corte Barba Maquina", "Corte Barba Navaja");
                     break;
                 case 5:
                     contador = 6;
@@ -105,60 +99,62 @@ namespace ProyectoPeluquería
 
         private void btn_AgregarVentas_Click(object sender, EventArgs e)
         {
+            int calculoMultiplicado = Convert.ToInt32(valorbddVentas) * cantidad;
+
             switch (contadorVentas)
             {
                 case 1:
                     LlenarSOV("Espuma/Afeitar Foamy Sensitive", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
+                    precio = precio + calculoMultiplicado;
                     cantidad = 0;
                     break;
                 case 2:
                     LlenarSOV("ESpuma/Afeitar Foamy Regular", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
+                    precio = precio + calculoMultiplicado;
                     cantidad = 0;
                     break;
                 case 3:
                     LlenarSOV("Shampoo Elvive Loreal Paris Arcilla Purificante", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
+                    precio = precio + calculoMultiplicado;
                     cantidad = 0;
                     break;
                 case 4:
                     LlenarSOV("Shampoo Elvive Reparación Total Extreme Keratin Xs", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
+                    precio = precio + calculoMultiplicado;
                     cantidad = 0;
                     break;
                 case 5:
                     LlenarSOV("Acondicionador Elvive Loreal Hidratación Hialurónico", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
+                    precio = precio + calculoMultiplicado;
                     cantidad = 0;
                     break;
                 case 6:
                     LlenarSOV("Acondicionador Elvive Loreal Reparación Total Extreme", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
+                    precio = precio + calculoMultiplicado;
                     cantidad = 0;
                     break;
                 case 7:
                     LlenarSOV("Gel Capilar Fijación Fuerte Algabo", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
+                    precio = precio + calculoMultiplicado;
                     cantidad = 0;
                     break;
                 case 8:
                     LlenarSOV("Gel Capilar Efecto Húmedo Algabo", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
+                    precio = precio + calculoMultiplicado;
                     cantidad = 0;
                     break;
                 case 9:
                     LlenarSOV("Iyosei Cera Capilar Hydro H2O Hard", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
+                    precio = precio + calculoMultiplicado;
                     cantidad = 0;
                     break;
                 case 10:
                     LlenarSOV("Iyosei Cera Capilar Hydro Clásica", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
+                    precio = precio + calculoMultiplicado;
                     cantidad = 0;
                     break;
             }
-            lblTotal.Text ="Precio Total " + precio.ToString();
+            lblTotal.Text = "Precio Total " + precio.ToString();
         }
 
         private void btn_Volver_Click(object sender, EventArgs e)
@@ -261,7 +257,7 @@ namespace ProyectoPeluquería
         private void pnl_Lineas_Click(object sender, EventArgs e)
         {
             ColoresParejos();
-            
+
             pnl_Lineas.BackColor = Color.Aqua;
 
             CambiarTextoCMB();
@@ -328,7 +324,7 @@ namespace ProyectoPeluquería
             pnl_ShampooAP.BackColor = Color.Aqua;
             contadorVentas = 3;
             bddBajaPrecioProducto();
-            cantidad = 1; 
+            cantidad = 1;
             lblCantidad.Text = "1";
         }
 
@@ -469,7 +465,7 @@ namespace ProyectoPeluquería
 
         private void cmb_TipoDeDibujo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            valorCMBTipoDeDibujo = cmb_TipoDeDibujo.SelectedIndex;            
+            valorCMBTipoDeDibujo = cmb_TipoDeDibujo.SelectedIndex;
         }
 
         public void LlenarSOV(string valor, float valorVentaServicio)
@@ -479,7 +475,9 @@ namespace ProyectoPeluquería
             dgv_VentasServicios.Rows.Add(1);
 
             dgv_VentasServicios.Rows[rowEscribir].Cells[0].Value = valor;
-            dgv_VentasServicios.Rows[rowEscribir].Cells[1].Value = valorVentaServicio;
+            dgv_VentasServicios.Rows[rowEscribir].Cells[1].Value = cantidad;
+            dgv_VentasServicios.Rows[rowEscribir].Cells[2].Value = valorVentaServicio;
+           
         }
 
         public void BddBajaPrecio()
@@ -492,7 +490,7 @@ namespace ProyectoPeluquería
             {
                 while (lector.Read())
                 {
-                    valorbdd = float.Parse(lector.GetString(0));                   
+                    valorbdd = float.Parse(lector.GetString(0));
                 }
             }
             conexion.Close();
@@ -514,8 +512,23 @@ namespace ProyectoPeluquería
             conexion.Close();
         }
 
-        
+        private void btn_AceptarCantidad_Click(object sender, EventArgs e)
+        {
+            cantidad = Convert.ToInt32(txt_Cantidad.Text);
+            lblCantidad.Text = cantidad.ToString();
+            txt_Cantidad.Clear();
+        }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cantidad = cantidad + 1;
+            lblCantidad.Text = cantidad.ToString();
+        }
+
+        private void btn_RestarCantidad_Click(object sender, EventArgs e)
+        {
+            cantidad = cantidad - 1;
+            lblCantidad.Text = cantidad.ToString();
+        }
     }
 }
