@@ -241,111 +241,71 @@ namespace ProyectoPeluquería
 
         private void pnl_EspumaFS_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(1);
             pnl_EspumaFS.BackColor = Color.Aqua;
-            contadorVentas = 1;
-            bddBajaPrecioProducto();
-            cantidad = 1;
-            lblCantidad.Text = "1";
             label6.Enabled = true;
         }
 
         private void pnl_EspumaFR_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(2);
             pnl_EspumaFR.BackColor = Color.Aqua;
-            contadorVentas = 2;
-            bddBajaPrecioProducto();
-            cantidad = 1;
-            lblCantidad.Text = "1";
             label7.Enabled = true;
         }
 
         private void pnl_ShampooAP_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(3);
             pnl_ShampooAP.BackColor = Color.Aqua;
-            contadorVentas = 3;
-            bddBajaPrecioProducto();
-            cantidad = 1;
-            lblCantidad.Text = "1";
             label8.Enabled = true;
         }
 
         private void pnl_ShampooEK_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(4);
             pnl_ShampooEK.BackColor = Color.Aqua;
-            contadorVentas = 4;
-            bddBajaPrecioProducto();
-            cantidad = 1;
-            lblCantidad.Text = "1";
             label21.Enabled = true;
         }
 
         private void pnl_AcondicionadorHH_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(5);
             pnl_AcondicionadorHH.BackColor = Color.Aqua;
-            contadorVentas = 5;
-            bddBajaPrecioProducto();
-            cantidad = 1;
-            lblCantidad.Text = "1";
             label26.Enabled = true;
         }
 
         private void pnl_AcondicionadorTE_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(6);
             pnl_AcondicionadorTE.BackColor = Color.Aqua;
-            contadorVentas = 6;
-            bddBajaPrecioProducto();
-            cantidad = 1;
-            lblCantidad.Text = "1";
             label28.Enabled = true;
         }
 
         private void pnl_GelFF_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(7);
             pnl_GelFF.BackColor = Color.Aqua;
-            contadorVentas = 7;
-            bddBajaPrecioProducto();
-            cantidad = 1;
-            lblCantidad.Text = "1";
             label30.Enabled = true;
         }
 
         private void pnl_GelEH_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(8);
             pnl_GelEH.BackColor = Color.Aqua;
-            contadorVentas = 8;
-            bddBajaPrecioProducto();
-            cantidad = 1;
-            lblCantidad.Text = "1";
             label32.Enabled = true;
         }
 
         private void pnl_CeraHH_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(9);
             pnl_CeraHH.BackColor = Color.Aqua;
-            contadorVentas = 9;
-            bddBajaPrecioProducto();
-            cantidad = 1;
-            lblCantidad.Text = "1";
             label34.Enabled = true;
         }
 
         private void pnl_CeraHC_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(10);
             pnl_CeraHC.BackColor = Color.Aqua;
-            contadorVentas = 10;
-            bddBajaPrecioProducto();
-            cantidad = 1;
-            lblCantidad.Text = "1";
             label23.Enabled = true;
         }
 
@@ -459,6 +419,7 @@ namespace ProyectoPeluquería
 
         public void CodigoRepetidoServicios(int valorId)
         {
+            InhabilitarNombres();
             contador = -1;
             ColoresParejos();
             HabilitarCmb();
@@ -467,6 +428,16 @@ namespace ProyectoPeluquería
             cantidad = 1;
             cmb_TipoDeDibujo.Items.Clear();
             cmb_SeCortaCon.Items.Clear();
+        }
+
+        public void CodigoRepetidoVentas(int contadorventas)
+        {
+            InhabilitarNombres();
+            ColoresParejosVentas();
+            contadorVentas = contadorventas;
+            bddBajaPrecioProducto();
+            cantidad = 1;
+            lblCantidad.Text = "1";
         }
 
         public void CodigoRepetidoCaseServicios(int contadorId, string nombre)
@@ -484,6 +455,29 @@ namespace ProyectoPeluquería
             precio = precio + calculoMultiplicado;
             cantidad = 0;
 
+        }
+
+        public void InhabilitarNombres()
+        {
+            label9.Enabled = false;
+            label10.Enabled = false;
+            label11.Enabled = false;
+            label24.Enabled = false;
+            label13.Enabled = false;
+            label15.Enabled = false;
+            label16.Enabled = false;
+            label17.Enabled = false;
+            label14.Enabled = false;
+            label6.Enabled = false;
+            label7.Enabled = false;
+            label8.Enabled = false;
+            label21.Enabled = false;
+            label26.Enabled = false;
+            label28.Enabled = false;
+            label30.Enabled = false;
+            label32.Enabled = false;
+            label34.Enabled = false;
+            label23.Enabled = false;
         }
 
         private void btn_AceptarCantidad_Click(object sender, EventArgs e)
