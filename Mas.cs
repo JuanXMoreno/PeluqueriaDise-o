@@ -18,12 +18,12 @@ namespace ProyectoPeluquería
         private void Mas_Load(object sender, EventArgs e)
         {
             conexion.Open();
+
             String sql = "select Nombre, Apellido, DNI, Direccion, Telefono, FechaNac as 'Fecha de nacimiento',HorasAsignadas as 'Horas asignadas' from Empleados";
             SqlDataAdapter adaptador = new SqlDataAdapter(sql, conexion);
             DataTable tabla = new DataTable();
             adaptador.Fill(tabla);
             tablaMas.DataSource = tabla;
-
 
             conexion.Close();
         }

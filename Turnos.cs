@@ -5,12 +5,7 @@ using System.Windows.Forms;
 
 
 namespace ProyectoPeluquería
-
 {
-
-
-
-
     public partial class Turnos : Form
     {
         private int n = 0;
@@ -52,7 +47,6 @@ namespace ProyectoPeluquería
         private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             n = e.RowIndex;
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

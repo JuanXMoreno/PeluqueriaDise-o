@@ -66,10 +66,6 @@ namespace ProyectoPeluquería
             consulta();
         }
 
-        private void tablaBD_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
 
@@ -116,10 +112,6 @@ namespace ProyectoPeluquería
             form5.Show();
         }
 
-        private void tablaBD_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {

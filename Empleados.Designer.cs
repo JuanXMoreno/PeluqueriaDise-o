@@ -274,7 +274,6 @@ namespace ProyectoPeluquería
             this.tablaBD.Size = new System.Drawing.Size(449, 305);
             this.tablaBD.TabIndex = 40;
             this.tablaBD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaBD_CellClick);
-            this.tablaBD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaBD_CellContentClick_1);
             // 
             // txtFechaDeNacimiento
             // 
