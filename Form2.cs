@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -17,16 +10,15 @@ namespace ProyectoPeluquería
         {
             InitializeComponent();
             txtContraseña.PasswordChar = '*';
-
         }
 
-        SqlConnection conexion = new SqlConnection("server=CELE-PC;database=Peluqueria; integrated security=true");
+        SqlConnection conexion = new SqlConnection("server=DESKTOP-COF6H2T;database=Peluqueria; integrated security=true");
 
         //boton para ingresar al administrador con el usuario y contraseña guardadas en la base de datos
-        private void button1_Click(object sender, EventArgs e) 
+        private void button1_Click(object sender, EventArgs e)
         {
             conexion.Open();
-            string consulta = "select * From Empleados where Usuario ='"+txtNombreUsuario.Text+"' and Contraseña='"+txtContraseña.Text+"' and EsAdmin = 'True'"; //verifico que el usuario y contraseña estan registrados en la base de datos
+            string consulta = "select * From Empleados where Usuario ='" + txtNombreUsuario.Text + "' and Contraseña='" + txtContraseña.Text + "' and EsAdmin = 'True'"; //verifico que el usuario y contraseña estan registrados en la base de datos
             SqlCommand comando = new SqlCommand(consulta, conexion);
             SqlDataReader lector;
             lector = comando.ExecuteReader();
@@ -58,9 +50,6 @@ namespace ProyectoPeluquería
             txtContraseña.PasswordChar = '*';
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }
