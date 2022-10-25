@@ -875,6 +875,7 @@
             this.btn_EliminarTablaServicios.TabIndex = 13;
             this.btn_EliminarTablaServicios.Text = "Eliminar";
             this.btn_EliminarTablaServicios.UseVisualStyleBackColor = false;
+            this.btn_EliminarTablaServicios.Click += new System.EventHandler(this.btn_EliminarTablaServicios_Click);
             // 
             // label5
             // 
@@ -1060,6 +1061,7 @@
             this.btn_Aceptar.TabIndex = 16;
             this.btn_Aceptar.Text = "Aceptar";
             this.btn_Aceptar.UseVisualStyleBackColor = false;
+            this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
             // btn_Volver
             // 

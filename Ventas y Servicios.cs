@@ -508,5 +508,16 @@ namespace ProyectoPeluquería
         {
             indiceCeldasDGV = dgv_VentasServicios.CurrentRow.Index;
         }
+
+        private void btn_EliminarTablaServicios_Click(object sender, EventArgs e)
+        {
+            dgv_VentasServicios.Rows.RemoveAt(indiceCeldasDGV);
+        }
+
+        private void btn_Aceptar_Click(object sender, EventArgs e)
+        {
+            FormaDePago fdp = new FormaDePago();
+            fdp.Show();
+        }
     }
 }
