@@ -36,7 +36,7 @@ namespace ProyectoPeluquería
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.btnMas = new System.Windows.Forms.Button();
+            this.btnSueldos = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,8 +50,8 @@ namespace ProyectoPeluquería
             this.txtNumeroDeTelefono = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtHsAsignadas = new System.Windows.Forms.TextBox();
-            this.tablaBD = new System.Windows.Forms.DataGridView();
             this.txtFechaDeNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.tablaBD = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.tablaBD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,9 +70,9 @@ namespace ProyectoPeluquería
             // 
             this.btnInsertar.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnInsertar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertar.Location = new System.Drawing.Point(12, 408);
+            this.btnInsertar.Location = new System.Drawing.Point(17, 408);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(146, 42);
+            this.btnInsertar.Size = new System.Drawing.Size(240, 42);
             this.btnInsertar.TabIndex = 1;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = false;
@@ -82,9 +82,9 @@ namespace ProyectoPeluquería
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnModificar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(197, 408);
+            this.btnModificar.Location = new System.Drawing.Point(289, 408);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(146, 42);
+            this.btnModificar.Size = new System.Drawing.Size(240, 42);
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -94,9 +94,9 @@ namespace ProyectoPeluquería
             // 
             this.btnEliminar.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnEliminar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(380, 408);
+            this.btnEliminar.Location = new System.Drawing.Point(564, 408);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(146, 42);
+            this.btnEliminar.Size = new System.Drawing.Size(240, 42);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -106,24 +106,24 @@ namespace ProyectoPeluquería
             // 
             this.btnVolver.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnVolver.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(751, 408);
+            this.btnVolver.Location = new System.Drawing.Point(1113, 408);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(146, 42);
+            this.btnVolver.Size = new System.Drawing.Size(240, 42);
             this.btnVolver.TabIndex = 22;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // btnMas
+            // btnSueldos
             // 
-            this.btnMas.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnMas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMas.Location = new System.Drawing.Point(567, 408);
-            this.btnMas.Name = "btnMas";
-            this.btnMas.Size = new System.Drawing.Size(146, 42);
-            this.btnMas.TabIndex = 23;
-            this.btnMas.Text = "Más";
-            this.btnMas.UseVisualStyleBackColor = false;
-            this.btnMas.Click += new System.EventHandler(this.btnMas_Click);
+            this.btnSueldos.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnSueldos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSueldos.Location = new System.Drawing.Point(844, 408);
+            this.btnSueldos.Name = "btnSueldos";
+            this.btnSueldos.Size = new System.Drawing.Size(240, 42);
+            this.btnSueldos.TabIndex = 23;
+            this.btnSueldos.Text = "Sueldos";
+            this.btnSueldos.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -243,38 +243,6 @@ namespace ProyectoPeluquería
             this.txtHsAsignadas.Size = new System.Drawing.Size(275, 29);
             this.txtHsAsignadas.TabIndex = 39;
             // 
-            // tablaBD
-            // 
-            this.tablaBD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.tablaBD.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.tablaBD.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tablaBD.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaBD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.tablaBD.ColumnHeadersHeight = 40;
-            this.tablaBD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.tablaBD.EnableHeadersVisualStyles = false;
-            this.tablaBD.Location = new System.Drawing.Point(457, 77);
-            this.tablaBD.Name = "tablaBD";
-            this.tablaBD.ReadOnly = true;
-            this.tablaBD.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.tablaBD.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaBD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaBD.Size = new System.Drawing.Size(449, 305);
-            this.tablaBD.TabIndex = 40;
-            this.tablaBD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaBD_CellClick);
-            // 
             // txtFechaDeNacimiento
             // 
             this.txtFechaDeNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -284,14 +252,47 @@ namespace ProyectoPeluquería
             this.txtFechaDeNacimiento.Size = new System.Drawing.Size(275, 29);
             this.txtFechaDeNacimiento.TabIndex = 41;
             // 
+            // tablaBD
+            // 
+            this.tablaBD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.tablaBD.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tablaBD.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaBD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaBD.ColumnHeadersHeight = 40;
+            this.tablaBD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.tablaBD.EnableHeadersVisualStyles = false;
+            this.tablaBD.Location = new System.Drawing.Point(457, 77);
+            this.tablaBD.Name = "tablaBD";
+            this.tablaBD.ReadOnly = true;
+            this.tablaBD.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.tablaBD.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.tablaBD.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaBD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tablaBD.Size = new System.Drawing.Size(896, 305);
+            this.tablaBD.TabIndex = 42;
+            this.tablaBD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaBD_CellClick);
+            // 
             // Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(909, 462);
-            this.Controls.Add(this.txtFechaDeNacimiento);
+            this.ClientSize = new System.Drawing.Size(1365, 462);
             this.Controls.Add(this.tablaBD);
+            this.Controls.Add(this.txtFechaDeNacimiento);
             this.Controls.Add(this.txtHsAsignadas);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtNumeroDeTelefono);
@@ -305,7 +306,7 @@ namespace ProyectoPeluquería
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnMas);
+            this.Controls.Add(this.btnSueldos);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -315,6 +316,7 @@ namespace ProyectoPeluquería
             this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Name = "Empleados";
             this.Text = "Empleados";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Empleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaBD)).EndInit();
             this.ResumeLayout(false);
@@ -329,7 +331,7 @@ namespace ProyectoPeluquería
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Button btnMas;
+        private System.Windows.Forms.Button btnSueldos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -343,7 +345,7 @@ namespace ProyectoPeluquería
         private System.Windows.Forms.TextBox txtNumeroDeTelefono;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtHsAsignadas;
-        private System.Windows.Forms.DataGridView tablaBD;
         private System.Windows.Forms.DateTimePicker txtFechaDeNacimiento;
+        private System.Windows.Forms.DataGridView tablaBD;
     }
 }
