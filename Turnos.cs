@@ -18,13 +18,15 @@ namespace ProyectoPeluquería
             adaptador.Fill(tabla);
             dgvDatos.DataSource = tabla;
             dgvDatos.Columns[0].Visible = false;
+            //dgvDatos.Columns[3].Visible = false;
+            //dgvDatos.Columns[4].Visible = false;
         }
 
         public Turnos()
         {
             InitializeComponent();
         }
-        SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
+        SqlConnection conexion = new SqlConnection("server=DESKTOP-COF6H2T;database=Peluqueria; integrated security=true");
 
         private void Turnos_Load(object sender, EventArgs e)
         {
@@ -43,7 +45,7 @@ namespace ProyectoPeluquería
                 string sql = "insert into TurnosLaborales(Dias,HoraInicial,HoraFinal) values ('" + txtDia.Text + "','" + txtHora.Value + "')";
             }
         }
-
+        
         private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             n = e.RowIndex;

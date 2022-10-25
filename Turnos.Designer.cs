@@ -94,6 +94,9 @@
             // 
             this.cmbPeluquero.FormattingEnabled = true;
             this.cmbPeluquero.ItemHeight = 13;
+            this.cmbPeluquero.Items.AddRange(new object[] {
+            "Juan",
+            "Jose"});
             this.cmbPeluquero.Location = new System.Drawing.Point(73, 100);
             this.cmbPeluquero.Name = "cmbPeluquero";
             this.cmbPeluquero.Size = new System.Drawing.Size(183, 21);

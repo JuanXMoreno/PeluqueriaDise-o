@@ -1063,7 +1063,7 @@
             this.btn_Aceptar.UseVisualStyleBackColor = false;
             this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
-            // btn_Volver
+            // button2
             // 
             this.btn_Volver.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btn_Volver.Cursor = System.Windows.Forms.Cursors.Hand;

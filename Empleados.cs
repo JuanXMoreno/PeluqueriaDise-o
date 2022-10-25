@@ -25,8 +25,7 @@ namespace ProyectoPeluquería
             InitializeComponent();
         }
 
-        //Conexión a la base de datos.
-        SqlConnection conexion = new SqlConnection("server=CELE-PC;database=Peluqueria;integrated security=true");
+        SqlConnection conexion = new SqlConnection("server=DESKTOP-COF6H2T;database=Peluqueria;integrated security=true");
 
         public void limpiar_celdas()
         {

@@ -49,7 +49,5 @@ namespace ProyectoPeluquería
 
             txtContraseña.PasswordChar = '*';
         }
-
-
     }
 }
