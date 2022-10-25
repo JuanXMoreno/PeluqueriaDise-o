@@ -18,7 +18,7 @@ namespace ProyectoPeluquería
             adaptador.Fill(tabla);
             tablaBD.DataSource = tabla;
             tablaBD.Columns[0].Visible = false;
-           
+
         }
         public Empleados()
         {
@@ -71,7 +71,7 @@ namespace ProyectoPeluquería
             consulta();
         }
 
-      
+
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -101,12 +101,12 @@ namespace ProyectoPeluquería
             }
         }
 
-        
-           
-        
 
-      
-        
+
+
+
+
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -134,7 +134,7 @@ namespace ProyectoPeluquería
         }
 
         private void tablaBD_CellClick(object sender, DataGridViewCellEventArgs e)
-        { 
+        {
             //Envío los datos de una fila seleccionada a sus respectivos TextBoxs.
 
             indice = int.Parse(tablaBD.SelectedCells[0].Value.ToString());
@@ -148,5 +148,5 @@ namespace ProyectoPeluquería
 
         }
 
-
+    }
 }
