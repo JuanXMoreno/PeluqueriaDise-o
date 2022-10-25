@@ -15,10 +15,12 @@ namespace ProyectoPeluquería
             dataGridView1.DataSource = DataB.ActualizarLista(null);
         }
 
+        int PosY = 0;
+        int PosX = 0;
+
         private void btnF5_Click(object sender, EventArgs e)
         {
             BoxBusqueda.Clear();
-            dataGridView1.DataSource = DataB.ActualizarLista(null);
         }
 
         private void BtnBusqueda_Click(object sender, EventArgs e)
@@ -43,6 +45,41 @@ namespace ProyectoPeluquería
         private void button1_Click(object sender, EventArgs e)
         {
             DataB.EliminarProducto(DeleteID.ToString());
+        }
+
+        private void MoverPanel(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        }
+
+        private void MoverXTitu(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        }
+
+        private void cerrar(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            AdminStock AS = Owner as AdminStock;
+            AS.Visible = true;
         }
     }
 }

@@ -10,6 +10,7 @@ namespace ProyectoPeluquería
         public FormAdmin()
         {
             InitializeComponent();
+            this.AddOwnedForm(AS);
         }
 
         private void btnAdminServicios_Click(object sender, EventArgs e)

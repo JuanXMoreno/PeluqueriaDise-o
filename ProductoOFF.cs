@@ -13,6 +13,9 @@ namespace ProyectoPeluquería
             dataGridView1.DataSource = DataB.ProductosOFF(null);
         }
         int ID = 0;
+        int PosY = 0;
+        int PosX = 0;
+
 
         private void BtnBusqueda_Click(object sender, EventArgs e)
         {
@@ -33,6 +36,41 @@ namespace ProyectoPeluquería
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             Seleccion.Text = "Se selecciono: " + ID;
+        }
+
+        private void Cerrar(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            AdminStock AS = Owner as AdminStock;
+            AS.Visible = true;
+        }
+
+        private void MoverXPanel(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        }
+
+        private void MoverXTitu(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
         }
     }
 }

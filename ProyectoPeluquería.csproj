@@ -179,6 +179,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Datos\Script.txt" />
+    <None Include="Resources\tiempo-pasado.png" />
+    <None Include="Resources\agregar %282%29.png" />
+    <None Include="Resources\basura %282%29.png" />
+    <None Include="Resources\seleccione.png" />
+    <None Include="Resources\x b.png" />
+    <None Include="Resources\busqueda.png" />
+    <None Include="Resources\x.png" />
+    <None Include="Resources\ojos-cruzados %281%29.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\editar %282%29.png" />
+    <None Include="Resources\fuego %288%29.png" />
     <None Include="Resources\gira-a-la-derecha f5 negro.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
