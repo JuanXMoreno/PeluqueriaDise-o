@@ -12,6 +12,11 @@ namespace ProyectoPeluquería
 
         SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
 
+        public Turnos()
+        {
+            InitializeComponent();
+        }
+
         public void consulta()
         {
 
@@ -26,11 +31,6 @@ namespace ProyectoPeluquería
             dgvDatos.Columns[4].Visible = false;
             //dgvDatos.Columns[3].Visible= false;
             conexion.Close();
-        }
-
-        public Turnos()
-        {
-            InitializeComponent();
         }
 
         private void Turnos_Load(object sender, EventArgs e)
