@@ -10,10 +10,13 @@ namespace ProyectoPeluquería
     {
         private int n = 0;
 
+        SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
+
         public void consulta()
         {
+
             String sql = "select " +  "Id_Turnos,Dia,Hora,Turnos.Id_Cliente,Id_Empleado, Clientes.Nombre AS Cliente from Turnos INNER JOIN Clientes ON Turnos.Id_Cliente = Clientes.Id_Cliente";
-           
+            conexion.Open();
             SqlDataAdapter adaptador=new SqlDataAdapter(sql,conexion);
             DataTable tabla =new DataTable();
             adaptador.Fill(tabla);
@@ -22,14 +25,13 @@ namespace ProyectoPeluquería
             dgvDatos.Columns[3].Visible = false;
             dgvDatos.Columns[4].Visible = false;
             //dgvDatos.Columns[3].Visible= false;
-
+            conexion.Close();
         }
 
         public Turnos()
         {
             InitializeComponent();
         }
-        SqlConnection conexion = new SqlConnection("server=DESKTOP-COF6H2T;database=Peluqueria; integrated security=true");
 
         private void Turnos_Load(object sender, EventArgs e)
         {
