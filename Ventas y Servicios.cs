@@ -31,7 +31,7 @@ namespace ProyectoPeluquería
             InitializeComponent();
         }
 
-        SqlConnection conexion = new SqlConnection("server=DESKTOP-COF6H2T;database=Peluqueria; integrated security=true");
+        SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
 
 
         private void btn_Agregar_Click(object sender, EventArgs e)

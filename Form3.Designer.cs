@@ -44,15 +44,21 @@ namespace ProyectoPeluquería
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.PanelSup = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Panelinf = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.PanelSup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdminTurnos
             // 
             this.btnAdminTurnos.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnAdminTurnos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminTurnos.Location = new System.Drawing.Point(3, 3);
+            this.btnAdminTurnos.Location = new System.Drawing.Point(3, 43);
             this.btnAdminTurnos.Name = "btnAdminTurnos";
             this.btnAdminTurnos.Size = new System.Drawing.Size(161, 87);
             this.btnAdminTurnos.TabIndex = 0;
@@ -64,7 +70,7 @@ namespace ProyectoPeluquería
             // 
             this.btnAdminEmpleados.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnAdminEmpleados.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminEmpleados.Location = new System.Drawing.Point(3, 94);
+            this.btnAdminEmpleados.Location = new System.Drawing.Point(3, 134);
             this.btnAdminEmpleados.Name = "btnAdminEmpleados";
             this.btnAdminEmpleados.Size = new System.Drawing.Size(161, 87);
             this.btnAdminEmpleados.TabIndex = 1;
@@ -76,7 +82,7 @@ namespace ProyectoPeluquería
             // 
             this.btnAdminServicios.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnAdminServicios.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminServicios.Location = new System.Drawing.Point(3, 278);
+            this.btnAdminServicios.Location = new System.Drawing.Point(3, 318);
             this.btnAdminServicios.Name = "btnAdminServicios";
             this.btnAdminServicios.Size = new System.Drawing.Size(161, 87);
             this.btnAdminServicios.TabIndex = 2;
@@ -88,7 +94,7 @@ namespace ProyectoPeluquería
             // 
             this.btnAdminStock.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnAdminStock.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminStock.Location = new System.Drawing.Point(3, 185);
+            this.btnAdminStock.Location = new System.Drawing.Point(3, 225);
             this.btnAdminStock.Name = "btnAdminStock";
             this.btnAdminStock.Size = new System.Drawing.Size(161, 87);
             this.btnAdminStock.TabIndex = 3;
@@ -102,7 +108,7 @@ namespace ProyectoPeluquería
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(170, 3);
+            this.panel1.Location = new System.Drawing.Point(170, 43);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(560, 455);
             this.panel1.TabIndex = 5;
@@ -113,7 +119,7 @@ namespace ProyectoPeluquería
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(184, 26);
+            this.label3.Size = new System.Drawing.Size(184, 28);
             this.label3.TabIndex = 5;
             this.label3.Text = "Turnos actuales:";
             // 
@@ -123,7 +129,7 @@ namespace ProyectoPeluquería
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(255, 2);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 30);
+            this.label2.Size = new System.Drawing.Size(71, 31);
             this.label2.TabIndex = 0;
             this.label2.Text = "Hoy:";
             // 
@@ -135,7 +141,7 @@ namespace ProyectoPeluquería
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(742, 94);
+            this.panel2.Location = new System.Drawing.Point(742, 134);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(161, 320);
             this.panel2.TabIndex = 0;
@@ -146,7 +152,7 @@ namespace ProyectoPeluquería
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 227);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 40);
+            this.label6.Size = new System.Drawing.Size(126, 44);
             this.label6.TabIndex = 3;
             this.label6.Text = "Ganancia total\r\nde stock:";
             // 
@@ -156,7 +162,7 @@ namespace ProyectoPeluquería
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 151);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 40);
+            this.label1.Size = new System.Drawing.Size(126, 44);
             this.label1.TabIndex = 2;
             this.label1.Text = "Ganancia total\r\nde servivios:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,7 +173,7 @@ namespace ProyectoPeluquería
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 20);
+            this.label5.Size = new System.Drawing.Size(154, 22);
             this.label5.TabIndex = 1;
             this.label5.Text = "Ventas realizadas:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -178,7 +184,7 @@ namespace ProyectoPeluquería
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 20);
+            this.label4.Size = new System.Drawing.Size(164, 22);
             this.label4.TabIndex = 0;
             this.label4.Text = "Turnos cancelados:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -187,7 +193,7 @@ namespace ProyectoPeluquería
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 371);
+            this.button1.Location = new System.Drawing.Point(3, 411);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 87);
             this.button1.TabIndex = 6;
@@ -199,7 +205,7 @@ namespace ProyectoPeluquería
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(736, 12);
+            this.button2.Location = new System.Drawing.Point(736, 52);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(161, 87);
             this.button2.TabIndex = 7;
@@ -211,7 +217,7 @@ namespace ProyectoPeluquería
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackColor = System.Drawing.SystemColors.ControlDark;
             this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(742, 420);
+            this.button3.Location = new System.Drawing.Point(742, 460);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(161, 37);
             this.button3.TabIndex = 8;
@@ -219,12 +225,55 @@ namespace ProyectoPeluquería
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // PanelSup
+            // 
+            this.PanelSup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.PanelSup.Controls.Add(this.label7);
+            this.PanelSup.Controls.Add(this.pictureBox1);
+            this.PanelSup.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelSup.Location = new System.Drawing.Point(0, 0);
+            this.PanelSup.Name = "PanelSup";
+            this.PanelSup.Size = new System.Drawing.Size(909, 25);
+            this.PanelSup.TabIndex = 33;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(11, 4);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 16);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Stock";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(695, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Panelinf
+            // 
+            this.Panelinf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.Panelinf.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Panelinf.Location = new System.Drawing.Point(0, 507);
+            this.Panelinf.Name = "Panelinf";
+            this.Panelinf.Size = new System.Drawing.Size(909, 20);
+            this.Panelinf.TabIndex = 32;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(909, 462);
+            this.ClientSize = new System.Drawing.Size(909, 527);
+            this.Controls.Add(this.PanelSup);
+            this.Controls.Add(this.Panelinf);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -234,7 +283,7 @@ namespace ProyectoPeluquería
             this.Controls.Add(this.btnAdminTurnos);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario administrador";
@@ -244,6 +293,9 @@ namespace ProyectoPeluquería
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.PanelSup.ResumeLayout(false);
+            this.PanelSup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,5 +317,9 @@ namespace ProyectoPeluquería
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel PanelSup;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel Panelinf;
     }
 }

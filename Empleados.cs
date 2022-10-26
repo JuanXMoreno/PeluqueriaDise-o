@@ -34,7 +34,7 @@ namespace ProyectoPeluquería
             InitializeComponent();
         }
 
-        SqlConnection conexion = new SqlConnection("server=CELE-PC;database=Peluqueria;integrated security=true");
+        SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria;integrated security=true");
 
         public void limpiar_celdas()
         {
@@ -63,8 +63,9 @@ namespace ProyectoPeluquería
                 consulta();
                 limpiar_celdas();
 
-                conexion.Close();
+                
             }
+            conexion.Close();
         }
 
         private void Empleados_Load(object sender, EventArgs e)

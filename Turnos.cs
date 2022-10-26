@@ -23,13 +23,18 @@ namespace ProyectoPeluquería
 
         public void consulta()
         {
-            String sql = "select Id_TurnoLaboral,Dias,HoraInicial,HoraFinal from TurnosLaborales";
+            String sql = "select " +  "Id_Turnos,Dia,Hora,Turnos.Id_Cliente,Id_Empleado, Clientes.Nombre AS Cliente from Turnos INNER JOIN Clientes ON Turnos.Id_Cliente = Clientes.Id_Cliente";
+           
             SqlDataAdapter adaptador=new SqlDataAdapter(sql,conexion);
             DataTable tabla =new DataTable();
             adaptador.Fill(tabla);
             dgvDatos.DataSource = tabla;
             dgvDatos.Columns[0].Visible = false;
-                }
+            dgvDatos.Columns[3].Visible = false;
+            dgvDatos.Columns[4].Visible = false;
+            //dgvDatos.Columns[3].Visible= false;
+
+        }
 
         public Turnos()
             
@@ -58,7 +63,7 @@ namespace ProyectoPeluquería
            
             }else
             {
-                string sql = "insert into TurnosLaborales(Dias,HoraInicial,HoraFinal) values ('" + txtDia.Text + "','" + txtHora.Value + "')";
+                string sql = "insert into Turnos(Dia,Hora,Id_Cliente,Id_Empleado) values ('" + txtDia.Text + "','" + txtHora.Value + "')";
             }
 
 
