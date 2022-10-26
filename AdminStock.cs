@@ -114,7 +114,7 @@ namespace ProyectoPeluquería
 
         private void Cerrar(object sender, EventArgs e)
         {
-            FormAdmin FA= Owner as FormAdmin;
+            FormAdmin FA = Owner as FormAdmin;
             this.Visible = false;
             FA.Visible = true;
         }
