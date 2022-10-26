@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -15,6 +9,8 @@ namespace ProyectoPeluquería
     {
         int contador;
         int contadorVentas;
+
+        int indiceCeldasDGV;
 
         int cantidad;
 
@@ -33,65 +29,44 @@ namespace ProyectoPeluquería
 
         SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
 
-
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             switch (identificador)
             {
                 case 0:
-                    Sentencia(1, 2,"Corte Clasico Maquina","Corte Clasico Tijera");
+                    Sentencia(1, 2, "Corte Clasico Maquina", "Corte Clasico Tijera");
                     break;
                 case 1:
-                    contador = 3;
-                    LlenarSOV("Corte Americano", valorbdd);
-                    precio = precio + (int)valorbdd;
+                    CodigoRepetidoCaseServicios(3,"Corte Americano");
                     break;
                 case 2:
-                    Sentencia(4, 5,"Degrade Maquina","Degrade Navaja");
+                    Sentencia(4, 5, "Degrade Maquina", "Degrade Navaja");
                     break;
                 case 3:
                     if (valorCMBTipoDeDibujo == 0)
                     {
-                        contador = 9;
-                        BddBajaPrecio();
-                        LlenarSOV("Dibujo Simple", valorbdd);
-                        precio = precio + (int)valorbdd;
+                        CodigoRepetidoCaseServicios(9, "Dibujo Simple");
                     }
                     else if (valorCMBTipoDeDibujo == 1)
                     {
-                        contador = 10;
-                        BddBajaPrecio();
-                        LlenarSOV("Dibujo Doble", valorbdd);
-                        precio = precio + (int)valorbdd;
+                        CodigoRepetidoCaseServicios(10, "Dibujo Doble");
                     }
                     valorCMBTipoDeDibujo = -1;
                     break;
                 case 4:
-                    Sentencia(11, 12,"Corte Barba Maquina","Corte Barba Navaja");
+                    Sentencia(11, 12, "Corte Barba Maquina", "Corte Barba Navaja");
                     break;
                 case 5:
-                    contador = 6;
-                    BddBajaPrecio();
-                    LlenarSOV("Lineas", valorbdd);
-                    precio = precio + (int)valorbdd;
+                    CodigoRepetidoCaseServicios(6, "Lineas");
                     break;
                 case 6:
-                    contador = 7;
-                    BddBajaPrecio();
-                    LlenarSOV("Cejas", valorbdd);
-                    precio = precio + (int)valorbdd;
+                    CodigoRepetidoCaseServicios(7, "Cejas");
                     break;
                 case 7:
-                    contador = 8;
-                    BddBajaPrecio();
-                    LlenarSOV("Frente", valorbdd);
-                    precio = precio + (int)valorbdd;
+                    CodigoRepetidoCaseServicios(8, "Frente");
                     break;
                 case 8:
-                    contador = 13;
-                    BddBajaPrecio();
-                    LlenarSOV("Lavado", valorbdd);
-                    precio = precio + (int)valorbdd;
+                    CodigoRepetidoCaseServicios(13, "Lavado");
                     break;
             }
             if (contador == -1)
@@ -99,65 +74,47 @@ namespace ProyectoPeluquería
                 MessageBox.Show("por favor, seleccione una opción");
             }
 
-            lblTotal.Text = precio.ToString();
+            lblTotal.Text ="Precio Total: " + precio.ToString();
         }
 
         private void btn_AgregarVentas_Click(object sender, EventArgs e)
         {
+            
+
             switch (contadorVentas)
             {
                 case 1:
-                    LlenarSOV("Espuma / Afeitar Foamy Sensitive", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    cantidad = 0;
+                    CodigoRepetidoCaseVentas("Espuma/Afeitar Foamy Sensitive");
                     break;
                 case 2:
-                    LlenarSOV("ESpuma / Afeitar Foamy Regular", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    cantidad = 0;
+                    CodigoRepetidoCaseVentas("Espuma/Afeitar Foamy Regular");
                     break;
                 case 3:
-                    LlenarSOV("Shampoo Elvive Loreal Paris Arcilla Purificante", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    cantidad = 0;
+                    CodigoRepetidoCaseVentas("Shampoo Elvive Loreal Paris Arcilla Purificante");
                     break;
                 case 4:
-                    LlenarSOV("Shampoo Elvive Reparación Total Extreme Keratin Xs", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    cantidad = 0;
+                    CodigoRepetidoCaseVentas("Shampoo Elvive Reparación Total Extreme Keratin Xs");
                     break;
                 case 5:
-                    LlenarSOV("Acondicionador Elvive Loreal Hidratación Hialurónico", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    cantidad = 0;
+                    CodigoRepetidoCaseVentas("Acondicionador Elvive Loreal Hidratación Hialurónico");
                     break;
                 case 6:
-                    LlenarSOV("Acondicionador Elvive Loreal Reparación Total Extreme", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    cantidad = 0;
+                    CodigoRepetidoCaseVentas("Acondicionador Elvive Loreal Reparación Total Extreme");
                     break;
                 case 7:
-                    LlenarSOV("Gel Capilar Fijación Fuerte Algabo", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    cantidad = 0;
+                    CodigoRepetidoCaseVentas("Gel Capilar Fijación Fuerte Algabo");
                     break;
                 case 8:
-                    LlenarSOV("Gel Capilar Efecto Húmedo Algabo", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    cantidad = 0;
+                    CodigoRepetidoCaseVentas("Gel Capilar Efecto Húmedo Algabo");
                     break;
                 case 9:
-                    LlenarSOV("Iyosei Cera Capilar Hydro H2O Hard", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    cantidad = 0;
+                    CodigoRepetidoCaseVentas("Iyosei Cera Capilar Hydro H2O Hard");
                     break;
                 case 10:
-                    LlenarSOV("Iyosei Cera Capilar Hydro Clásica", valorbddVentas);
-                    precio = precio + (int)valorbddVentas;
-                    cantidad = 0;
+                    CodigoRepetidoCaseVentas("Iyosei Cera Capilar Hydro Clásica");
                     break;
             }
-            lblTotal.Text = precio.ToString();
+            lblTotal.Text = "Precio Total " + precio.ToString();
         }
 
         private void btn_Volver_Click(object sender, EventArgs e)
@@ -167,105 +124,80 @@ namespace ProyectoPeluquería
 
         private void pnl_CorteClasico_Click(object sender, EventArgs e)
         {
-            contador = -1;
-            ColoresParejos();
-            HabilitarCmb();
+            CodigoRepetidoServicios(0);
+
             cmb_TipoDeDibujo.Enabled = false;
-
-            cmb_SeCortaCon.Items.Clear();
-
-            CambiarTextoCMB();
 
             cmb_SeCortaCon.Items.Add("Maquina");
             cmb_SeCortaCon.Items.Add("Tijera");
             pnl_CorteClasico.BackColor = Color.Aqua;
-
-            identificador = 0;
+            label9.Enabled = true;
         }
 
         private void pnl_CorteAmericano_Click(object sender, EventArgs e)
         {
-            contador = -1;
-            ColoresParejos();
-            HabilitarCmb();
+            CodigoRepetidoServicios(1);
+
             cmb_SeCortaCon.Enabled = false;
             cmb_TipoDeDibujo.Enabled = false;
 
-            CambiarTextoCMB();
-
             pnl_CorteAmericano.BackColor = Color.Aqua;
 
-            identificador = 1;
+            label10.Enabled = true;
         }
 
         private void pnl_Degrade_Click(object sender, EventArgs e)
         {
-            contador = -1;
-            ColoresParejos();
-            HabilitarCmb();
+            CodigoRepetidoServicios(2);
+
             cmb_TipoDeDibujo.Enabled = false;
-
-            cmb_SeCortaCon.Items.Clear();
-
-            CambiarTextoCMB();
-
             cmb_SeCortaCon.Items.Add("Maquina");
             cmb_SeCortaCon.Items.Add("Navaja");
 
             pnl_Degrade.BackColor = Color.Aqua;
 
-            identificador = 2;
-
+            label11.Enabled = true;
         }
 
         private void pnl_Dibujo_Click(object sender, EventArgs e)
         {
-            contador = -1;
-            ColoresParejos();
-            HabilitarCmb();
+            CodigoRepetidoServicios(3);
 
             cmb_SeCortaCon.Enabled = false;
-
-            cmb_TipoDeDibujo.Items.Clear();
-
-            CambiarTextoCMB();
 
             cmb_TipoDeDibujo.Items.Add("Simple");
             cmb_TipoDeDibujo.Items.Add("Doble");
 
             pnl_Dibujo.BackColor = Color.Aqua;
 
-            identificador = 3;
+            label24.Enabled = true;
         }
 
         private void pnl_CorteBarba_Click(object sender, EventArgs e)
         {
-            contador = -1;
-            ColoresParejos();
-            HabilitarCmb();
+            CodigoRepetidoServicios(4);
+
             cmb_TipoDeDibujo.Enabled = false;
-
-            cmb_SeCortaCon.Items.Clear();
-
-            CambiarTextoCMB();
 
             cmb_SeCortaCon.Items.Add("Maquina");
             cmb_SeCortaCon.Items.Add("Navaja");
 
             pnl_CorteBarba.BackColor = Color.Aqua;
 
-            identificador = 4;
+            label13.Enabled = true;
         }
 
         private void pnl_Lineas_Click(object sender, EventArgs e)
         {
             ColoresParejos();
-            
+
             pnl_Lineas.BackColor = Color.Aqua;
 
             CambiarTextoCMB();
 
             identificador = 5;
+            label15.Enabled = true;
+            cantidad = 1;
         }
 
         private void pnl_Cejas_Click(object sender, EventArgs e)
@@ -277,6 +209,8 @@ namespace ProyectoPeluquería
             CambiarTextoCMB();
 
             identificador = 6;
+            label16.Enabled = true;
+            cantidad = 1;
         }
 
         private void pnl_Frente_Click(object sender, EventArgs e)
@@ -288,6 +222,8 @@ namespace ProyectoPeluquería
             CambiarTextoCMB();
 
             identificador = 7;
+            label17.Enabled = true;
+            cantidad = 1;
         }
 
         private void pnl_Lavado_Click(object sender, EventArgs e)
@@ -299,85 +235,78 @@ namespace ProyectoPeluquería
             CambiarTextoCMB();
 
             identificador = 8;
+            label14.Enabled = true;
+            cantidad = 1;
         }
 
         private void pnl_EspumaFS_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(1);
             pnl_EspumaFS.BackColor = Color.Aqua;
-            contadorVentas = 1;
-            bddBajaPrecioProducto();
-
+            label6.Enabled = true;
         }
 
         private void pnl_EspumaFR_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(2);
             pnl_EspumaFR.BackColor = Color.Aqua;
-            contadorVentas = 2;
-            bddBajaPrecioProducto();
-
+            label7.Enabled = true;
         }
 
         private void pnl_ShampooAP_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(3);
             pnl_ShampooAP.BackColor = Color.Aqua;
-            contadorVentas = 3;
-            bddBajaPrecioProducto();
-
+            label8.Enabled = true;
         }
 
         private void pnl_ShampooEK_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(4);
             pnl_ShampooEK.BackColor = Color.Aqua;
-            contadorVentas = 4;
-            bddBajaPrecioProducto();
-
+            label21.Enabled = true;
         }
 
         private void pnl_AcondicionadorHH_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(5);
             pnl_AcondicionadorHH.BackColor = Color.Aqua;
-            contadorVentas = 5;
-            bddBajaPrecioProducto();
+            label26.Enabled = true;
         }
 
         private void pnl_AcondicionadorTE_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(6);
             pnl_AcondicionadorTE.BackColor = Color.Aqua;
-            contadorVentas = 6;
+            label28.Enabled = true;
         }
 
         private void pnl_GelFF_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(7);
             pnl_GelFF.BackColor = Color.Aqua;
-            contadorVentas = 7;
+            label30.Enabled = true;
         }
 
         private void pnl_GelEH_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(8);
             pnl_GelEH.BackColor = Color.Aqua;
-            contadorVentas = 8;
+            label32.Enabled = true;
         }
 
         private void pnl_CeraHH_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(9);
             pnl_CeraHH.BackColor = Color.Aqua;
-            contadorVentas = 9;
+            label34.Enabled = true;
         }
 
         private void pnl_CeraHC_Click(object sender, EventArgs e)
         {
-            ColoresParejosVentas();
+            CodigoRepetidoVentas(10);
             pnl_CeraHC.BackColor = Color.Aqua;
-            contadorVentas = 10;
+            label23.Enabled = true;
         }
 
         public void HabilitarCmb() //todos los cmb estan 
@@ -419,17 +348,11 @@ namespace ProyectoPeluquería
         {
             if (valorCMBSeCortaCon == 0)
             {
-                contador = a;
-                BddBajaPrecio();
-                LlenarSOV(valor1, valorbdd);
-                precio = precio + (int)valorbdd;
+                CodigoRepetidoCaseServicios(a, valor1);
             }
             else if (valorCMBSeCortaCon == 1)
             {
-                contador = b;
-                BddBajaPrecio();
-                LlenarSOV(valor2, valorbdd);
-                precio = precio + (int)valorbdd;
+                CodigoRepetidoCaseServicios(b, valor2);
             }
         }
 
@@ -447,41 +370,19 @@ namespace ProyectoPeluquería
 
         private void cmb_TipoDeDibujo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            valorCMBTipoDeDibujo = cmb_TipoDeDibujo.SelectedIndex;            
+            valorCMBTipoDeDibujo = cmb_TipoDeDibujo.SelectedIndex;
         }
 
-        public void LlenarSOV(string valor, float ValorVentaServicio)
+        public void LlenarSOV(string valor, float valorVentaServicio, float calculoMultiplicado)
         {
-            if (lblSOV1.Text.Equals("."))
-            {
-                lblSOV1.Text = valor;
-                lblPrecio1.Text = ValorVentaServicio.ToString();
-            }
-            else if (!lblSOV1.Text.Equals(".") && lblSOV2.Text.Equals("."))
-            {
-                lblSOV2.Text = valor;
-                lblPrecio2.Text = ValorVentaServicio.ToString();
-            }
-            else if (!lblSOV2.Text.Equals(".") && lblSOV3.Text.Equals("."))
-            {
-                lblSOV3.Text = valor;
-                lblPrecio3.Text = ValorVentaServicio.ToString();
-            }
-            else if (!lblSOV3.Text.Equals(".") && lblSOV4.Text.Equals("."))
-            {
-                lblSOV4.Text = valor;
-                lblPrecio4.Text = ValorVentaServicio.ToString();
-            }
-            else if (!lblSOV4.Text.Equals(".") && lblSOV5.Text.Equals("."))
-            {
-                lblSOV5.Text = valor;
-                lblPrecio5.Text = ValorVentaServicio.ToString();
-            }
-            else if (!lblSOV5.Text.Equals(".") && lblSOV6.Text.Equals("."))
-            {
-                lblSOV6.Text = valor;
-                lblPrecio6.Text = ValorVentaServicio.ToString();
-            }
+            int rowEscribir = dgv_VentasServicios.Rows.Count - 1;
+
+            dgv_VentasServicios.Rows.Add(1);
+
+            dgv_VentasServicios.Rows[rowEscribir].Cells[0].Value = valor;
+            dgv_VentasServicios.Rows[rowEscribir].Cells[1].Value = cantidad;
+            dgv_VentasServicios.Rows[rowEscribir].Cells[2].Value = valorVentaServicio;
+            dgv_VentasServicios.Rows[rowEscribir].Cells[3].Value = calculoMultiplicado;
         }
 
         public void BddBajaPrecio()
@@ -494,7 +395,7 @@ namespace ProyectoPeluquería
             {
                 while (lector.Read())
                 {
-                    valorbdd = float.Parse(lector.GetString(0));                   
+                    valorbdd = float.Parse(lector.GetString(0));
                 }
             }
             conexion.Close();
@@ -516,8 +417,107 @@ namespace ProyectoPeluquería
             conexion.Close();
         }
 
-        
+        public void CodigoRepetidoServicios(int valorId)
+        {
+            InhabilitarNombres();
+            contador = -1;
+            ColoresParejos();
+            HabilitarCmb();
+            CambiarTextoCMB();
+            identificador = valorId;
+            cantidad = 1;
+            cmb_TipoDeDibujo.Items.Clear();
+            cmb_SeCortaCon.Items.Clear();
+        }
 
-        
+        public void CodigoRepetidoVentas(int contadorventas)
+        {
+            InhabilitarNombres();
+            ColoresParejosVentas();
+            contadorVentas = contadorventas;
+            bddBajaPrecioProducto();
+            cantidad = 1;
+            lblCantidad.Text = "1";
+        }
+
+        public void CodigoRepetidoCaseServicios(int contadorId, string nombre)
+        {
+            contador = contadorId;
+            BddBajaPrecio();
+            LlenarSOV(nombre, valorbdd, valorbdd);
+            precio = precio + (int)valorbdd;
+        }
+
+        public void CodigoRepetidoCaseVentas(string nombre)
+        {
+            int calculoMultiplicado = Convert.ToInt32(valorbddVentas) * cantidad;
+            LlenarSOV(nombre, valorbddVentas, (float)calculoMultiplicado);
+            precio = precio + calculoMultiplicado;
+            cantidad = 0;
+
+        }
+
+        public void InhabilitarNombres()
+        {
+            label9.Enabled = false;
+            label10.Enabled = false;
+            label11.Enabled = false;
+            label24.Enabled = false;
+            label13.Enabled = false;
+            label15.Enabled = false;
+            label16.Enabled = false;
+            label17.Enabled = false;
+            label14.Enabled = false;
+            label6.Enabled = false;
+            label7.Enabled = false;
+            label8.Enabled = false;
+            label21.Enabled = false;
+            label26.Enabled = false;
+            label28.Enabled = false;
+            label30.Enabled = false;
+            label32.Enabled = false;
+            label34.Enabled = false;
+            label23.Enabled = false;
+        }
+
+        private void btn_AceptarCantidad_Click(object sender, EventArgs e)
+        {
+            cantidad = Convert.ToInt32(txt_Cantidad.Text);
+            lblCantidad.Text = cantidad.ToString();
+            txt_Cantidad.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cantidad = cantidad + 1;
+            lblCantidad.Text = cantidad.ToString();
+        }
+
+        private void btn_RestarCantidad_Click(object sender, EventArgs e)
+        {
+            cantidad = cantidad - 1;
+            lblCantidad.Text = cantidad.ToString();
+        }
+
+        private void btn_EliminarTablaVentas_Click(object sender, EventArgs e)
+        {
+            dgv_VentasServicios.Rows.RemoveAt(indiceCeldasDGV);
+        }
+
+        private void dgv_VentasServicios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indiceCeldasDGV = dgv_VentasServicios.CurrentRow.Index;
+        }
+
+        private void btn_EliminarTablaServicios_Click(object sender, EventArgs e)
+        {
+            dgv_VentasServicios.Rows.RemoveAt(indiceCeldasDGV);
+        }
+
+        private void btn_Aceptar_Click(object sender, EventArgs e)
+        {
+            FormaDePago fdp = new FormaDePago();
+            fdp.Show();
+        }
     }
 }

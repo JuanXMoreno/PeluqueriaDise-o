@@ -64,11 +64,11 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mas.cs">
+    <Compile Include="FormaDePago.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mas.Designer.cs">
-      <DependentUpon>Mas.cs</DependentUpon>
+    <Compile Include="FormaDePago.Designer.cs">
+      <DependentUpon>FormaDePago.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,8 +93,8 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mas.resx">
-      <DependentUpon>Mas.cs</DependentUpon>
+    <EmbeddedResource Include="FormaDePago.resx">
+      <DependentUpon>FormaDePago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
