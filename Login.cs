@@ -30,6 +30,7 @@ namespace ProyectoPeluquería
             if (lector.HasRows == true) //verifico que el codigo se leyó para poder abrir el form
             {
                 FormAdmin f3 = new FormAdmin();
+                this.AddOwnedForm(f3);
                 f3.Show();
                 this.Hide();
             }
@@ -38,6 +39,7 @@ namespace ProyectoPeluquería
                 MessageBox.Show("Por favor, ingrese un usuario y/o contraseña válidos.");
             }
             conexion.Close();
+            BorrarUser();
         } //Boton para login
 
         private void PanelSup_MouseMove(object sender, MouseEventArgs e)
@@ -86,6 +88,12 @@ namespace ProyectoPeluquería
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        public void BorrarUser()
+        {
+            txtNombreUsuario.Clear();
+            txtContraseña.Clear();
         }
     }
 }

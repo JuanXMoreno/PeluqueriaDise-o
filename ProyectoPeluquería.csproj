@@ -185,6 +185,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Datos\Script.txt" />
+    <None Include="Resources\usd-circulo.png" />
+    <None Include="Resources\agregar-tiempo.png" />
     <None Include="Resources\banco.png" />
     <None Include="Resources\tarjeta-de-credito.png" />
     <None Include="Resources\monedas.png" />

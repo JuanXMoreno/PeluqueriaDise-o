@@ -33,6 +33,13 @@ namespace ProyectoPeluquería
             }
         }
 
+        private void Cerrar_Click(object sender, EventArgs e)
+        {
+            FormAdmin Admin = Owner as FormAdmin;
+            Admin.Visible = true;
+            this.Close();
+        }
+
         private void MoverXPanel(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)
