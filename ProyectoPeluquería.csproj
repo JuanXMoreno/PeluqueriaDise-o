@@ -167,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Datos\Script.txt" />
+    <None Include="Resources\caja %281%29.png" />
+    <None Include="Resources\caja.png" />
+    <None Include="Resources\carrito-de-compra-anadir.png" />
     <None Include="Resources\configuraciones.png" />
     <None Include="Resources\ojo.png" />
     <None Include="Resources\modo-retrato.png" />
