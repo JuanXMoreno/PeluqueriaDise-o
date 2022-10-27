@@ -343,6 +343,7 @@
             this.Controls.Add(this.PanelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Config";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Config";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

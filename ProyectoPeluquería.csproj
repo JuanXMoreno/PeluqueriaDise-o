@@ -67,10 +67,10 @@
     <Compile Include="Form de StockAdmin\AddStock.Designer.cs">
       <DependentUpon>AddStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminStock.cs">
+    <Compile Include="Form de StockAdmin\AdminStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminStock.Designer.cs">
+    <Compile Include="Form de StockAdmin\AdminStock.Designer.cs">
       <DependentUpon>AdminStock.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
@@ -133,7 +133,7 @@
     <EmbeddedResource Include="Form de StockAdmin\AddStock.resx">
       <DependentUpon>AddStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminStock.resx">
+    <EmbeddedResource Include="Form de StockAdmin\AdminStock.resx">
       <DependentUpon>AdminStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form de StockAdmin\DeleteStock.resx">
