@@ -19,7 +19,7 @@ namespace ProyectoPeluquería.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,9 +63,9 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cejas {
+        internal static System.Drawing.Bitmap add {
             get {
-                object obj = ResourceManager.GetObject("cejas", resourceCulture);
+                object obj = ResourceManager.GetObject("add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap corte_americano_baixo_low_disfarcado {
+        internal static System.Drawing.Bitmap agregar__2_ {
             get {
-                object obj = ResourceManager.GetObject("corte-americano-baixo-low-disfarcado", resourceCulture);
+                object obj = ResourceManager.GetObject("agregar (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap corte_clasico_tijera {
+        internal static System.Drawing.Bitmap basura__2_ {
             get {
-                object obj = ResourceManager.GetObject("corte-clasico-tijera", resourceCulture);
+                object obj = ResourceManager.GetObject("basura (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cortes_de_pelo_con_lineas_y_cejas_simple_500x621 {
+        internal static System.Drawing.Bitmap busqueda {
             get {
-                object obj = ResourceManager.GetObject("cortes-de-pelo-con-lineas-y-cejas-simple-500x621", resourceCulture);
+                object obj = ResourceManager.GetObject("busqueda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cortes_de_pelo_corto_para_hombres_056 {
+        internal static System.Drawing.Bitmap editar__2_ {
             get {
-                object obj = ResourceManager.GetObject("cortes-de-pelo-corto-para-hombres_056", resourceCulture);
+                object obj = ResourceManager.GetObject("editar (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cruz {
+        internal static System.Drawing.Bitmap fuego__8_ {
             get {
-                object obj = ResourceManager.GetObject("cruz", resourceCulture);
+                object obj = ResourceManager.GetObject("fuego (8)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dibujos {
+        internal static System.Drawing.Bitmap gira_a_la_derecha_f5_negro {
             get {
-                object obj = ResourceManager.GetObject("dibujos", resourceCulture);
+                object obj = ResourceManager.GetObject("gira-a-la-derecha f5 negro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap frente {
+        internal static System.Drawing.Bitmap ojos_cruzados__1_ {
             get {
-                object obj = ResourceManager.GetObject("frente", resourceCulture);
+                object obj = ResourceManager.GetObject("ojos-cruzados (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hqdefault {
+        internal static System.Drawing.Bitmap seleccione {
             get {
-                object obj = ResourceManager.GetObject("hqdefault", resourceCulture);
+                object obj = ResourceManager.GetObject("seleccione", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lavado {
+        internal static System.Drawing.Bitmap tiempo_pasado {
             get {
-                object obj = ResourceManager.GetObject("lavado", resourceCulture);
+                object obj = ResourceManager.GetObject("tiempo-pasado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,10 +163,9 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap peinado_degradado_hombre_corte_de_pelo_castaño_ligeramente_rizado_partes_laterales_rapadas_sin_barba {
+        internal static System.Drawing.Bitmap x {
             get {
-                object obj = ResourceManager.GetObject("peinado-degradado-hombre-corte-de-pelo-castaño-ligeramente-rizado-partes-laterale" +
-                        "s-rapadas-sin-barba", resourceCulture);
+                object obj = ResourceManager.GetObject("x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -174,10 +173,9 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap png_transparent_plus_and_minus_signs_symbol_computer_icons_symbol_miscellaneous_logo_cross {
+        internal static System.Drawing.Bitmap x_b {
             get {
-                object obj = ResourceManager.GetObject("png-transparent-plus-and-minus-signs-symbol-computer-icons-symbol-miscellaneous-l" +
-                        "ogo-cross", resourceCulture);
+                object obj = ResourceManager.GetObject("x b", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

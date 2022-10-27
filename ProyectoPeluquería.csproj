@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,11 +48,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empleados.cs">
+    <Compile Include="AddStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empleados.Designer.cs">
-      <DependentUpon>Empleados.cs</DependentUpon>
+    <Compile Include="AddStock.Designer.cs">
+      <DependentUpon>AddStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminStock.Designer.cs">
+      <DependentUpon>AdminStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase.cs" />
+    <Compile Include="DeleteStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteStock.Designer.cs">
+      <DependentUpon>DeleteStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -64,11 +79,17 @@
     <Compile Include="FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormaDePago.cs">
+    <Compile Include="ModStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormaDePago.Designer.cs">
-      <DependentUpon>FormaDePago.cs</DependentUpon>
+    <Compile Include="ModStock.Designer.cs">
+      <DependentUpon>ModStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoOFF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductoOFF.Designer.cs">
+      <DependentUpon>ProductoOFF.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,8 +105,14 @@
     <Compile Include="Ventas y Servicios.Designer.cs">
       <DependentUpon>Ventas y Servicios.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Empleados.resx">
-      <DependentUpon>Empleados.cs</DependentUpon>
+    <EmbeddedResource Include="AddStock.resx">
+      <DependentUpon>AddStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminStock.resx">
+      <DependentUpon>AdminStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteStock.resx">
+      <DependentUpon>DeleteStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -93,8 +120,11 @@
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormaDePago.resx">
-      <DependentUpon>FormaDePago.cs</DependentUpon>
+    <EmbeddedResource Include="ModStock.resx">
+      <DependentUpon>ModStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductoOFF.resx">
+      <DependentUpon>ProductoOFF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -126,40 +156,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\corte-clasico-tijera.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cortes-de-pelo-corto-para-hombres_056.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\corte-americano-baixo-low-disfarcado.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\peinado-degradado-hombre-corte-de-pelo-castaño-ligeramente-rizado-partes-laterales-rapadas-sin-barba.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dibujos.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hqdefault.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cejas.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cortes-de-pelo-con-lineas-y-cejas-simple-500x621.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\frente.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lavado.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\png-transparent-plus-and-minus-signs-symbol-computer-icons-symbol-miscellaneous-logo-cross.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cruz.png" />
+    <Content Include="Datos\Script.txt" />
+    <None Include="Resources\tiempo-pasado.png" />
+    <None Include="Resources\agregar %282%29.png" />
+    <None Include="Resources\basura %282%29.png" />
+    <None Include="Resources\seleccione.png" />
+    <None Include="Resources\x b.png" />
+    <None Include="Resources\busqueda.png" />
+    <None Include="Resources\x.png" />
+    <None Include="Resources\ojos-cruzados %281%29.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\editar %282%29.png" />
+    <None Include="Resources\fuego %288%29.png" />
+    <None Include="Resources\gira-a-la-derecha f5 negro.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

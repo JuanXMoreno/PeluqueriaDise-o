@@ -5,9 +5,12 @@ namespace ProyectoPeluquería
 {
     public partial class FormAdmin : Form
     {
+        AdminStock AS = new AdminStock();
+
         public FormAdmin()
         {
             InitializeComponent();
+            this.AddOwnedForm(AS);
         }
 
         private void btnAdminServicios_Click(object sender, EventArgs e)
@@ -19,33 +22,21 @@ namespace ProyectoPeluquería
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
             Login f3 = new Login();
-            f3.Show();
+            f3.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnAdminStock_Click(object sender, EventArgs e)
         {
-            Login f2 = new Login();
-            f2.Show();
-            this.Close();
-        }
-
-        private void btnAdminEmpleados_Click(object sender, EventArgs e)
-        {
-            Empleados form4 = new Empleados();
-            form4.Show();
-        }
-
-        private void btnAdminTurnos_Click(object sender, EventArgs e)
-        {
-            Turnos turn = new Turnos();
-            turn.Show();
-            //this.Hide();
-        }
-
-        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Login frm = new Login();
-            frm.Show();
+            if (AS.Visible == false)
+            {
+                AS.Visible = true;
+                this.Visible = false;
+            }
+            else
+            {
+                this.Visible = true;
+                AS.Visible = false;
+            }
         }
     }
 }
