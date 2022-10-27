@@ -1,7 +1,7 @@
 ﻿
 namespace ProyectoPeluquería
 {
-    partial class Form3
+    partial class FormAdmin
     {
         /// <summary>
         /// Required designer variable.

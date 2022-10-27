@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace ProyectoPeluquería
 {
-    public partial class Form3 : Form
+    public partial class FormAdmin : Form
     {
-        public Form3()
+        public FormAdmin()
         {
             InitializeComponent();
         }
@@ -18,13 +18,13 @@ namespace ProyectoPeluquería
 
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Form2 f3 = new Form2();
+            Login f3 = new Login();
             f3.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
+            Login f2 = new Login();
             f2.Show();
             this.Close();
         }
@@ -44,7 +44,7 @@ namespace ProyectoPeluquería
 
         private void Form3_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Form2 frm = new Form2();
+            Login frm = new Login();
             frm.Show();
         }
     }
