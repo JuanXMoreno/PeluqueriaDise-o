@@ -554,6 +554,7 @@ namespace ProyectoPeluquería
             this.Close();
         }
 
+
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
             FormaDePago fdp = new FormaDePago();
