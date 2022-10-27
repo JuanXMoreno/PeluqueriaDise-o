@@ -418,5 +418,57 @@ namespace ProyectoPeluquería
             }
             return Ganancia;
         }
+
+        public DataTable ActualizarListaTurnos()
+        {
+            DataTable tabla = new DataTable();
+            tabla.Clear();
+            try
+            {
+                Conectar();
+                String sql = "select " + "Id_Turnos,Dia,Hora,Turnos.Id_Cliente,Id_Empleado,Telefono, Clientes.Nombre AS Cliente from Turnos INNER JOIN Clientes ON Turnos.Id_Cliente = Clientes.Id_Cliente";
+                SqlDataAdapter adaptador = new SqlDataAdapter(sql, Conectar());
+                adaptador.Fill(tabla);
+            }
+            catch(SqlException er)
+            { 
+                MessageBox.Show("Error:\n"+er);
+            }
+            finally
+            {
+                Desconectar();
+            }
+            return tabla;
+        }
+
+        public BindingSource ExtraerEmpleados()
+        {
+            BindingSource source = new BindingSource();
+            source.Clear();
+            try
+            {
+                Conectar();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "Select Id_Empleado,Nombre,Apellido From Empleados";
+                cmd.Connection = Conectar();
+                SqlDataReader Lector = cmd.ExecuteReader();
+                while (Lector.Read())
+                {
+                    
+                    source.Add( Lector.GetString(1));
+                }
+            }
+            catch(SqlException er)
+            {
+                MessageBox.Show("Error:\n"+er);
+            }
+            finally
+            {
+                Desconectar();
+            }
+            return source;
+        }
+
     }
 }
