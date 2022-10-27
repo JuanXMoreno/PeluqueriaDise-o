@@ -185,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Datos\Script.txt" />
+    <None Include="Resources\corte clasico.jpeg" />
     <None Include="Resources\quitar-usuario.png" />
     <None Include="Resources\agregar-usuario.png" />
     <None Include="Resources\caja %281%29.png" />

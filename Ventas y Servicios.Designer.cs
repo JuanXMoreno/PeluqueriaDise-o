@@ -258,10 +258,10 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(0, 10);
+            this.label12.Font = new System.Drawing.Font("Kelly Slab", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(10, 10);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(84, 24);
+            this.label12.Size = new System.Drawing.Size(81, 23);
             this.label12.TabIndex = 23;
             this.label12.Text = "Cantidad";
             // 
@@ -274,7 +274,7 @@
             // 
             // pnl_ShampooEK
             // 
-            this.pnl_ShampooEK.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_ShampooEK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_ShampooEK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_ShampooEK.Controls.Add(this.pictureBox17);
             this.pnl_ShampooEK.Controls.Add(this.label21);
@@ -299,7 +299,7 @@
             // 
             // pnl_CeraHH
             // 
-            this.pnl_CeraHH.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_CeraHH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_CeraHH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_CeraHH.Controls.Add(this.label34);
             this.pnl_CeraHH.Controls.Add(this.pictureBox29);
@@ -311,18 +311,19 @@
             // 
             // label34
             // 
-            this.label34.AutoSize = true;
+            this.label34.Dock = System.Windows.Forms.DockStyle.Right;
             this.label34.Enabled = false;
-            this.label34.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(98, 3);
+            this.label34.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.label34.Location = new System.Drawing.Point(107, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(251, 50);
+            this.label34.Size = new System.Drawing.Size(305, 66);
             this.label34.TabIndex = 5;
             this.label34.Text = "Iyosei Cera Capilar Hydro \r\nH2O Hard X 50g";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl_GelEH
             // 
-            this.pnl_GelEH.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_GelEH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_GelEH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_GelEH.Controls.Add(this.label32);
             this.pnl_GelEH.Controls.Add(this.pictureBox27);
@@ -334,18 +335,19 @@
             // 
             // label32
             // 
-            this.label32.AutoSize = true;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Right;
             this.label32.Enabled = false;
-            this.label32.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(98, 3);
+            this.label32.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.label32.Location = new System.Drawing.Point(107, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(214, 50);
+            this.label32.Size = new System.Drawing.Size(305, 66);
             this.label32.TabIndex = 5;
             this.label32.Text = "Gel Capilar Efecto\r\nHúmedo 350g Algabo";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl_GelFF
             // 
-            this.pnl_GelFF.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_GelFF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_GelFF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_GelFF.Controls.Add(this.label30);
             this.pnl_GelFF.Controls.Add(this.pictureBox25);
@@ -357,18 +359,19 @@
             // 
             // label30
             // 
-            this.label30.AutoSize = true;
+            this.label30.Dock = System.Windows.Forms.DockStyle.Right;
             this.label30.Enabled = false;
-            this.label30.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(98, 3);
+            this.label30.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.label30.Location = new System.Drawing.Point(111, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(192, 50);
+            this.label30.Size = new System.Drawing.Size(301, 66);
             this.label30.TabIndex = 5;
             this.label30.Text = "Gel Capilar Fijación\r\nFuerte 350g Algabo";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl_AcondicionadorTE
             // 
-            this.pnl_AcondicionadorTE.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_AcondicionadorTE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_AcondicionadorTE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_AcondicionadorTE.Controls.Add(this.label28);
             this.pnl_AcondicionadorTE.Controls.Add(this.pictureBox23);
@@ -380,18 +383,19 @@
             // 
             // label28
             // 
-            this.label28.AutoSize = true;
+            this.label28.Dock = System.Windows.Forms.DockStyle.Right;
             this.label28.Enabled = false;
-            this.label28.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(98, 3);
+            this.label28.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.label28.Location = new System.Drawing.Point(107, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(309, 50);
+            this.label28.Size = new System.Drawing.Size(305, 66);
             this.label28.TabIndex = 5;
             this.label28.Text = "Acondicionador Elvive Loreal\r\nReparación Total Extreme 400ml";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl_AcondicionadorHH
             // 
-            this.pnl_AcondicionadorHH.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_AcondicionadorHH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_AcondicionadorHH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_AcondicionadorHH.Controls.Add(this.label26);
             this.pnl_AcondicionadorHH.Controls.Add(this.pictureBox21);
@@ -415,7 +419,7 @@
             // 
             // pnl_CeraHC
             // 
-            this.pnl_CeraHC.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_CeraHC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_CeraHC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_CeraHC.Controls.Add(this.label23);
             this.pnl_CeraHC.Controls.Add(this.pictureBox19);
@@ -427,18 +431,19 @@
             // 
             // label23
             // 
-            this.label23.AutoSize = true;
+            this.label23.Dock = System.Windows.Forms.DockStyle.Right;
             this.label23.Enabled = false;
-            this.label23.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(98, 3);
+            this.label23.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.label23.Location = new System.Drawing.Point(107, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(251, 50);
+            this.label23.Size = new System.Drawing.Size(305, 66);
             this.label23.TabIndex = 5;
             this.label23.Text = "Iyosei Cera Capilar Hydro \r\nClásica X50g";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl_ShampooAP
             // 
-            this.pnl_ShampooAP.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_ShampooAP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_ShampooAP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_ShampooAP.Controls.Add(this.label8);
             this.pnl_ShampooAP.Controls.Add(this.pictureBox16);
@@ -462,7 +467,7 @@
             // 
             // pnl_EspumaFR
             // 
-            this.pnl_EspumaFR.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_EspumaFR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_EspumaFR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_EspumaFR.Controls.Add(this.label7);
             this.pnl_EspumaFR.Controls.Add(this.pictureBox15);
@@ -486,7 +491,7 @@
             // 
             // pnl_EspumaFS
             // 
-            this.pnl_EspumaFS.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_EspumaFS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_EspumaFS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_EspumaFS.Controls.Add(this.label6);
             this.pnl_EspumaFS.Controls.Add(this.pictureBox14);
@@ -531,7 +536,7 @@
             // 
             // pnl_Dibujo
             // 
-            this.pnl_Dibujo.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_Dibujo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_Dibujo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Dibujo.Controls.Add(this.label24);
             this.pnl_Dibujo.Controls.Add(this.pictureBox7);
@@ -555,7 +560,7 @@
             // 
             // pnl_Lavado
             // 
-            this.pnl_Lavado.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_Lavado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_Lavado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Lavado.Controls.Add(this.label14);
             this.pnl_Lavado.Controls.Add(this.pictureBox10);
@@ -567,18 +572,19 @@
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Right;
             this.label14.Enabled = false;
-            this.label14.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(98, 3);
+            this.label14.Font = new System.Drawing.Font("Kelly Slab", 14F);
+            this.label14.Location = new System.Drawing.Point(98, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(84, 28);
+            this.label14.Size = new System.Drawing.Size(278, 66);
             this.label14.TabIndex = 13;
             this.label14.Text = "Lavado";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl_CorteBarba
             // 
-            this.pnl_CorteBarba.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_CorteBarba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_CorteBarba.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_CorteBarba.Controls.Add(this.label13);
             this.pnl_CorteBarba.Controls.Add(this.pictureBox9);
@@ -593,16 +599,16 @@
             this.label13.Dock = System.Windows.Forms.DockStyle.Right;
             this.label13.Enabled = false;
             this.label13.Font = new System.Drawing.Font("Kelly Slab", 14F);
-            this.label13.Location = new System.Drawing.Point(103, 0);
+            this.label13.Location = new System.Drawing.Point(102, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(273, 66);
+            this.label13.Size = new System.Drawing.Size(274, 66);
             this.label13.TabIndex = 13;
             this.label13.Text = "Corte Barba";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl_Frente
             // 
-            this.pnl_Frente.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_Frente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_Frente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Frente.Controls.Add(this.label17);
             this.pnl_Frente.Controls.Add(this.pictureBox6);
@@ -614,18 +620,19 @@
             // 
             // label17
             // 
-            this.label17.AutoSize = true;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Right;
             this.label17.Enabled = false;
-            this.label17.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(98, 3);
+            this.label17.Font = new System.Drawing.Font("Kelly Slab", 14F);
+            this.label17.Location = new System.Drawing.Point(102, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(76, 28);
+            this.label17.Size = new System.Drawing.Size(274, 66);
             this.label17.TabIndex = 17;
             this.label17.Text = "Frente";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl_Cejas
             // 
-            this.pnl_Cejas.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_Cejas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_Cejas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Cejas.Controls.Add(this.label16);
             this.pnl_Cejas.Controls.Add(this.pictureBox5);
@@ -637,18 +644,19 @@
             // 
             // label16
             // 
-            this.label16.AutoSize = true;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Right;
             this.label16.Enabled = false;
-            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(98, 3);
+            this.label16.Font = new System.Drawing.Font("Kelly Slab", 14F);
+            this.label16.Location = new System.Drawing.Point(102, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 28);
+            this.label16.Size = new System.Drawing.Size(274, 66);
             this.label16.TabIndex = 16;
             this.label16.Text = "Cejas";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl_Lineas
             // 
-            this.pnl_Lineas.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_Lineas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_Lineas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Lineas.Controls.Add(this.label15);
             this.pnl_Lineas.Controls.Add(this.pictureBox4);
@@ -660,14 +668,15 @@
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
+            this.label15.Dock = System.Windows.Forms.DockStyle.Right;
             this.label15.Enabled = false;
-            this.label15.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(98, 3);
+            this.label15.Font = new System.Drawing.Font("Kelly Slab", 14F);
+            this.label15.Location = new System.Drawing.Point(102, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(76, 28);
+            this.label15.Size = new System.Drawing.Size(274, 66);
             this.label15.TabIndex = 15;
             this.label15.Text = "Lineas";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel5
             // 
@@ -761,7 +770,7 @@
             // 
             // pnl_Degrade
             // 
-            this.pnl_Degrade.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_Degrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_Degrade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Degrade.Controls.Add(this.label11);
             this.pnl_Degrade.Controls.Add(this.pictureBox3);
@@ -785,7 +794,7 @@
             // 
             // pnl_CorteAmericano
             // 
-            this.pnl_CorteAmericano.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_CorteAmericano.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_CorteAmericano.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_CorteAmericano.Controls.Add(this.label10);
             this.pnl_CorteAmericano.Controls.Add(this.pictureBox2);
@@ -809,7 +818,7 @@
             // 
             // pnl_CorteClasico
             // 
-            this.pnl_CorteClasico.BackColor = System.Drawing.Color.DarkGray;
+            this.pnl_CorteClasico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.pnl_CorteClasico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_CorteClasico.Controls.Add(this.label9);
             this.pnl_CorteClasico.Controls.Add(this.pictureBox1);
@@ -1150,7 +1159,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::ProyectoPeluquería.Properties.Resources.cortes_de_pelo_con_lineas_y_cejas_simple_500x621;
+            this.pictureBox1.Image = global::ProyectoPeluquería.Properties.Resources.corte_clasico;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(89, 62);
@@ -1181,30 +1190,21 @@
             this.panel8.PerformLayout();
             this.pnl_ShampooEK.ResumeLayout(false);
             this.pnl_CeraHH.ResumeLayout(false);
-            this.pnl_CeraHH.PerformLayout();
             this.pnl_GelEH.ResumeLayout(false);
-            this.pnl_GelEH.PerformLayout();
             this.pnl_GelFF.ResumeLayout(false);
-            this.pnl_GelFF.PerformLayout();
             this.pnl_AcondicionadorTE.ResumeLayout(false);
-            this.pnl_AcondicionadorTE.PerformLayout();
             this.pnl_AcondicionadorHH.ResumeLayout(false);
             this.pnl_CeraHC.ResumeLayout(false);
-            this.pnl_CeraHC.PerformLayout();
             this.pnl_ShampooAP.ResumeLayout(false);
             this.pnl_EspumaFR.ResumeLayout(false);
             this.pnl_EspumaFS.ResumeLayout(false);
             this.tbp_Servicios.ResumeLayout(false);
             this.pnl_Dibujo.ResumeLayout(false);
             this.pnl_Lavado.ResumeLayout(false);
-            this.pnl_Lavado.PerformLayout();
             this.pnl_CorteBarba.ResumeLayout(false);
             this.pnl_Frente.ResumeLayout(false);
-            this.pnl_Frente.PerformLayout();
             this.pnl_Cejas.ResumeLayout(false);
-            this.pnl_Cejas.PerformLayout();
             this.pnl_Lineas.ResumeLayout(false);
-            this.pnl_Lineas.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.pnl_Degrade.ResumeLayout(false);
