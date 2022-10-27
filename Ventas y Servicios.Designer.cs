@@ -287,6 +287,7 @@
             this.txt_Cantidad.Name = "txt_Cantidad";
             this.txt_Cantidad.Size = new System.Drawing.Size(90, 21);
             this.txt_Cantidad.TabIndex = 10;
+            this.txt_Cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FiltrarNumeros);
             // 
             // btn_AgregarVentas
             // 

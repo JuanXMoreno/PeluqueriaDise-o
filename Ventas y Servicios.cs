@@ -324,29 +324,29 @@ namespace ProyectoPeluquería
 
         public void ColoresParejos() //para volver a poner el panel a su color una vez se seleccione otro
         {
-            pnl_CorteClasico.BackColor = Color.DarkGray;
-            pnl_CorteAmericano.BackColor = Color.DarkGray;
-            pnl_Degrade.BackColor = Color.DarkGray;
-            pnl_Lineas.BackColor = Color.DarkGray;
-            pnl_Cejas.BackColor = Color.DarkGray;
-            pnl_Frente.BackColor = Color.DarkGray;
-            pnl_Dibujo.BackColor = Color.DarkGray;
-            pnl_CorteBarba.BackColor = Color.DarkGray;
-            pnl_Lavado.BackColor = Color.DarkGray;
+            pnl_CorteClasico.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_CorteAmericano.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_Degrade.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_Lineas.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_Cejas.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_Frente.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_Dibujo.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_CorteBarba.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_Lavado.BackColor = Color.FromArgb(149, 150, 167);
         }
 
         public void ColoresParejosVentas()
         {
-            pnl_ShampooAP.BackColor = Color.DarkGray;
-            pnl_ShampooEK.BackColor = Color.DarkGray;
-            pnl_AcondicionadorHH.BackColor = Color.DarkGray;
-            pnl_AcondicionadorTE.BackColor = Color.DarkGray;
-            pnl_EspumaFR.BackColor = Color.DarkGray;
-            pnl_EspumaFS.BackColor = Color.DarkGray;
-            pnl_GelEH.BackColor = Color.DarkGray;
-            pnl_GelFF.BackColor = Color.DarkGray;
-            pnl_CeraHC.BackColor = Color.DarkGray;
-            pnl_CeraHH.BackColor = Color.DarkGray;
+            pnl_ShampooAP.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_ShampooEK.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_AcondicionadorHH.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_AcondicionadorTE.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_EspumaFR.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_EspumaFS.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_GelEH.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_GelFF.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_CeraHC.BackColor = Color.FromArgb(149, 150, 167);
+            pnl_CeraHH.BackColor = Color.FromArgb(149, 150, 167);
         }
 
         public void Sentencia(int a, int b, string valor1, string valor2) //interactua con el contador y el label cuando el dan esos valores
@@ -416,7 +416,7 @@ namespace ProyectoPeluquería
             {
                 while (lector.Read())
                 {
-                    valorbddVentas = float.Parse(lector.GetString(0));
+                    valorbddVentas = (float)lector.GetDecimal(0);
                 }
             }
             conexion.Close();
@@ -554,6 +554,17 @@ namespace ProyectoPeluquería
             this.Close();
         }
 
+        private void FiltrarNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
