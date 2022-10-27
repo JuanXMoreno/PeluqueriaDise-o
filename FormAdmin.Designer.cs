@@ -29,12 +29,12 @@ namespace ProyectoPeluquería
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnAdminTurnos = new System.Windows.Forms.Button();
             this.btnAdminEmpleados = new System.Windows.Forms.Button();
             this.btnAdminServicios = new System.Windows.Forms.Button();
@@ -54,25 +54,25 @@ namespace ProyectoPeluquería
             this.button1 = new System.Windows.Forms.Button();
             this.PanelSup = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panelinf = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.PanelSup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panelinf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdminTurnos
@@ -80,11 +80,13 @@ namespace ProyectoPeluquería
             this.btnAdminTurnos.BackColor = System.Drawing.Color.White;
             this.btnAdminTurnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminTurnos.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.btnAdminTurnos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdminTurnos.Location = new System.Drawing.Point(12, 31);
             this.btnAdminTurnos.Name = "btnAdminTurnos";
             this.btnAdminTurnos.Size = new System.Drawing.Size(161, 87);
             this.btnAdminTurnos.TabIndex = 0;
             this.btnAdminTurnos.Text = "Administrar\r\nturnos";
+            this.btnAdminTurnos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminTurnos.UseVisualStyleBackColor = false;
             this.btnAdminTurnos.Click += new System.EventHandler(this.btnAdminTurnos_Click);
             // 
@@ -93,23 +95,28 @@ namespace ProyectoPeluquería
             this.btnAdminEmpleados.BackColor = System.Drawing.Color.White;
             this.btnAdminEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminEmpleados.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.btnAdminEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdminEmpleados.Location = new System.Drawing.Point(12, 124);
             this.btnAdminEmpleados.Name = "btnAdminEmpleados";
             this.btnAdminEmpleados.Size = new System.Drawing.Size(161, 87);
             this.btnAdminEmpleados.TabIndex = 1;
             this.btnAdminEmpleados.Text = "Administrar\r\nempleados";
+            this.btnAdminEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminEmpleados.UseVisualStyleBackColor = false;
+            this.btnAdminEmpleados.Click += new System.EventHandler(this.btnAdminEmpleados_Click);
             // 
             // btnAdminServicios
             // 
             this.btnAdminServicios.BackColor = System.Drawing.Color.White;
             this.btnAdminServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminServicios.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.btnAdminServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdminServicios.Location = new System.Drawing.Point(12, 310);
             this.btnAdminServicios.Name = "btnAdminServicios";
             this.btnAdminServicios.Size = new System.Drawing.Size(161, 87);
             this.btnAdminServicios.TabIndex = 2;
             this.btnAdminServicios.Text = "Administrar\r\nservicios";
+            this.btnAdminServicios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminServicios.UseVisualStyleBackColor = false;
             this.btnAdminServicios.Click += new System.EventHandler(this.btnAdminServicios_Click);
             // 
@@ -118,11 +125,13 @@ namespace ProyectoPeluquería
             this.btnAdminStock.BackColor = System.Drawing.Color.White;
             this.btnAdminStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminStock.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.btnAdminStock.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdminStock.Location = new System.Drawing.Point(12, 217);
             this.btnAdminStock.Name = "btnAdminStock";
             this.btnAdminStock.Size = new System.Drawing.Size(161, 87);
             this.btnAdminStock.TabIndex = 3;
             this.btnAdminStock.Text = "Administrar\r\nstock";
+            this.btnAdminStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminStock.UseVisualStyleBackColor = false;
             this.btnAdminStock.Click += new System.EventHandler(this.btnAdminStock_Click);
             // 
@@ -258,11 +267,13 @@ namespace ProyectoPeluquería
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.Location = new System.Drawing.Point(12, 403);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 87);
             this.button1.TabIndex = 6;
             this.button1.Text = "Estadísticas";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
             // 
             // PanelSup
@@ -289,19 +300,6 @@ namespace ProyectoPeluquería
             this.label7.Text = "Formulario Administrador";
             this.label7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverXTitu);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::ProyectoPeluquería.Properties.Resources.x;
-            this.pictureBox1.Location = new System.Drawing.Point(902, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // Panelinf
             // 
             this.Panelinf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
@@ -325,18 +323,7 @@ namespace ProyectoPeluquería
             this.label8.TabIndex = 3;
             this.label8.Text = "Configuracion";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox2.Image = global::ProyectoPeluquería.Properties.Resources.configuraciones;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label10
             // 
@@ -349,6 +336,7 @@ namespace ProyectoPeluquería
             this.label10.TabIndex = 1;
             this.label10.Text = "Cerrar sesion";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // panel3
             // 
@@ -364,33 +352,33 @@ namespace ProyectoPeluquería
             // 
             // chart2
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
+            chartArea7.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chart2.Legends.Add(legend7);
             this.chart2.Location = new System.Drawing.Point(384, 30);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart2.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chart2.Series.Add(series7);
             this.chart2.Size = new System.Drawing.Size(163, 149);
             this.chart2.TabIndex = 2;
             this.chart2.Text = "chart2";
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea8.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chart1.Legends.Add(legend8);
             this.chart1.Location = new System.Drawing.Point(25, 30);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(353, 149);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
@@ -414,6 +402,32 @@ namespace ProyectoPeluquería
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(164, 134);
             this.panel4.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::ProyectoPeluquería.Properties.Resources.x;
+            this.pictureBox1.Location = new System.Drawing.Point(902, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Image = global::ProyectoPeluquería.Properties.Resources.configuraciones;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // FormAdmin
             // 
@@ -442,12 +456,12 @@ namespace ProyectoPeluquería
             this.panel2.ResumeLayout(false);
             this.PanelSup.ResumeLayout(false);
             this.PanelSup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Panelinf.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

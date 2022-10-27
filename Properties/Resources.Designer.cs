@@ -83,6 +83,16 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agregar_tiempo {
+            get {
+                object obj = ResourceManager.GetObject("agregar-tiempo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agregar_usuario {
             get {
                 object obj = ResourceManager.GetObject("agregar-usuario", resourceCulture);
@@ -367,6 +377,16 @@ namespace ProyectoPeluquería.Properties {
         internal static System.Drawing.Bitmap tiempo_pasado {
             get {
                 object obj = ResourceManager.GetObject("tiempo-pasado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usd_circulo {
+            get {
+                object obj = ResourceManager.GetObject("usd-circulo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

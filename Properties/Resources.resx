@@ -133,6 +133,9 @@
   <data name="agregar-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agregar-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="agregar-tiempo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\agregar-tiempo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="quitar-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quitar-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,6 +157,9 @@
   <data name="fuego (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fuego (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="carrito-de-compra-anadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carrito-de-compra-anadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="busqueda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\busqueda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,8 +175,8 @@
   <data name="editar (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editar (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="caja (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\caja (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="seleccione" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seleccione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="corte_americano_baixo_low_disfarcado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\corte_americano_baixo_low_disfarcado.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,11 +187,8 @@
   <data name="gira-a-la-derecha f5 negro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gira-a-la-derecha f5 negro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="carrito-de-compra-anadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\carrito-de-compra-anadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="seleccione" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\seleccione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="banco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\banco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="basura (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\basura (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,8 +205,8 @@
   <data name="agregar (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agregar (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="quitar-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\quitar-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="caja (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caja (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="frente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frente.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,7 +217,7 @@
   <data name="dibujo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dibujo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="corte clasico" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\corte clasico.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usd-circulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usd-circulo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

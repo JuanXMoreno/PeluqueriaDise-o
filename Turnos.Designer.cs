@@ -238,7 +238,7 @@
             this.btnInsertar.Enabled = false;
             this.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsertar.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.btnInsertar.Image = global::ProyectoPeluquería.Properties.Resources.agregar_usuario;
+            this.btnInsertar.Image = global::ProyectoPeluquería.Properties.Resources.agregar_tiempo;
             this.btnInsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInsertar.Location = new System.Drawing.Point(14, 220);
             this.btnInsertar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -255,7 +255,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.btnEliminar.Image = global::ProyectoPeluquería.Properties.Resources.quitar_usuario;
+            this.btnEliminar.Image = global::ProyectoPeluquería.Properties.Resources.basura__2_;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.Location = new System.Drawing.Point(272, 221);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);

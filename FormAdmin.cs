@@ -100,5 +100,60 @@ namespace ProyectoPeluquería
                 Tur.Visible = false;
             }
         }
+
+        private void btnAdminEmpleados_Click(object sender, EventArgs e)
+        {
+            Empleados emp= new Empleados();
+            this.AddOwnedForm(emp);
+            if (emp.Visible == false)
+            {
+                emp.Visible = true;
+                this.Visible = false;
+            }
+            else
+            {
+                this.Visible = true;
+                emp.Visible = false;
+            }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            Login login = Owner as Login;
+            login.Visible = true;
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Config config = new Config();
+            this.AddOwnedForm(config);
+            if (config.Visible == false)
+            {
+                config.Visible = true;
+                this.Visible = false;
+            }
+            else
+            {
+                this.Visible = true;
+                config.Visible = false;
+            }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            Config config = new Config();
+            this.AddOwnedForm(config);
+            if (config.Visible == false)
+            {
+                config.Visible = true;
+                this.Visible = false;
+            }
+            else
+            {
+                this.Visible = true;
+                config.Visible = false;
+            }
+        }
     }
 }

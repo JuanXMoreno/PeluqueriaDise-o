@@ -37,13 +37,13 @@ namespace ProyectoPeluquería
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panelinf = new System.Windows.Forms.Panel();
+            this.infobase = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.borron = new System.Windows.Forms.Panel();
-            this.infobase = new System.Windows.Forms.Label();
             this.PanelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panelinf.SuspendLayout();
@@ -130,6 +130,18 @@ namespace ProyectoPeluquería
             this.Panelinf.Size = new System.Drawing.Size(411, 21);
             this.Panelinf.TabIndex = 32;
             // 
+            // infobase
+            // 
+            this.infobase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.infobase.Font = new System.Drawing.Font("Kelly Slab", 8F);
+            this.infobase.ForeColor = System.Drawing.Color.White;
+            this.infobase.Location = new System.Drawing.Point(0, 0);
+            this.infobase.Name = "infobase";
+            this.infobase.Size = new System.Drawing.Size(411, 21);
+            this.infobase.TabIndex = 38;
+            this.infobase.Text = "Estado";
+            this.infobase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -193,18 +205,6 @@ namespace ProyectoPeluquería
             this.borron.Name = "borron";
             this.borron.Size = new System.Drawing.Size(2, 29);
             this.borron.TabIndex = 39;
-            // 
-            // infobase
-            // 
-            this.infobase.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.infobase.Font = new System.Drawing.Font("Kelly Slab", 8F);
-            this.infobase.ForeColor = System.Drawing.Color.White;
-            this.infobase.Location = new System.Drawing.Point(0, 0);
-            this.infobase.Name = "infobase";
-            this.infobase.Size = new System.Drawing.Size(411, 21);
-            this.infobase.TabIndex = 38;
-            this.infobase.Text = "Estado";
-            this.infobase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Login
             // 

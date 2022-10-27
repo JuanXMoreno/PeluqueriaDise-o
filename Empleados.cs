@@ -149,5 +149,11 @@ namespace ProyectoPeluquería
 
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            FormAdmin F1 = Owner as FormAdmin;
+            F1.Visible = true;
+            this.Close();
+        }
     }
 }

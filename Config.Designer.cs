@@ -43,6 +43,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,19 +53,18 @@
             this.Cerrar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PanelTop = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.PanelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(205, 366);
+            this.button2.Location = new System.Drawing.Point(14, 366);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(153, 36);
             this.button2.TabIndex = 18;
@@ -212,6 +212,15 @@
             this.panel2.Size = new System.Drawing.Size(556, 30);
             this.panel2.TabIndex = 15;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(519, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -291,6 +300,7 @@
             this.Cerrar.Size = new System.Drawing.Size(21, 17);
             this.Cerrar.TabIndex = 1;
             this.Cerrar.Text = "X";
+            this.Cerrar.Click += new System.EventHandler(this.Cerrar_Click);
             // 
             // label1
             // 
@@ -318,15 +328,6 @@
             this.PanelTop.TabIndex = 12;
             this.PanelTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverXPanel);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(519, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
             // Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,11 +348,11 @@
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.PanelTop.ResumeLayout(false);
             this.PanelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
