@@ -74,6 +74,12 @@
     <Compile Include="Form de StockAdmin\DeleteStock.Designer.cs">
       <DependentUpon>DeleteStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormaDePago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaDePago.Designer.cs">
+      <DependentUpon>FormaDePago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form de StockAdmin\DeleteStock.resx">
       <DependentUpon>DeleteStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaDePago.resx">
+      <DependentUpon>FormaDePago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
