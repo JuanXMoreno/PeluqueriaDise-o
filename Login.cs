@@ -14,7 +14,7 @@ namespace ProyectoPeluquería
             txtContraseña.PasswordChar = '*';
         }
 
-        SqlConnection conexion = new SqlConnection("server=DESKTOP-COF6H2T;database=Peluqueria; integrated security=true");
+        SqlConnection conexion = new SqlConnection(@"server=DESKTOP-GGALNHK\SQLEXPRESS01;database=Peluqueria; integrated security=true");
 
         //boton para ingresar al administrador con el usuario y contraseña guardadas en la base de datos
         private void button1_Click(object sender, EventArgs e)
