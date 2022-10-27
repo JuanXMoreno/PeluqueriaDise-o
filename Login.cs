@@ -12,6 +12,7 @@ namespace ProyectoPeluquería
             DataB.Verificacion();
             InitializeComponent();
             txtContraseña.PasswordChar = '*';
+            Console.WriteLine("Se inicio todo");
         }
 
         SqlConnection conexion = new SqlConnection(@"server=DESKTOP-GGALNHK\SQLEXPRESS01;database=Peluqueria; integrated security=true");
