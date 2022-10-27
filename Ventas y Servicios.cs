@@ -556,8 +556,18 @@ namespace ProyectoPeluquería
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
-            //FormaDePago fdp = new FormaDePago();
-            //fdp.Show();
+            FormaDePago fdp = new FormaDePago();
+            this.AddOwnedForm(fdp);
+            if (fdp.Visible == false)
+            {
+                fdp.Show();
+                this.Visible = false;
+            }
+            else
+            {
+                this.Visible = true;
+                fdp.Close();
+            }
         }
     }
 }

@@ -17,6 +17,8 @@ namespace ProyectoPeluquería
             InitializeComponent();
         }
 
+        int PosX = 0, PosY = 0;
+
         public void consulta()
         {
             //conexion.Open();
@@ -94,7 +96,37 @@ namespace ProyectoPeluquería
 
         private void Cerrarpic_Click(object sender, EventArgs e)
         {
+            FormAdmin F1 = Owner as FormAdmin;
+            F1.Visible = true;
             this.Close();
+        }
+
+        private void label6_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        }
+
+        private void MoverXPanel(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
         }
     }
 }
