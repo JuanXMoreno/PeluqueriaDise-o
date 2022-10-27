@@ -19,7 +19,7 @@ namespace ProyectoPeluquería.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,6 +63,116 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap actualizar__2_ {
+            get {
+                object obj = ResourceManager.GetObject("actualizar (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap actualizar_flecha {
+            get {
+                object obj = ResourceManager.GetObject("actualizar-flecha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add {
+            get {
+                object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap agregar__2_ {
+            get {
+                object obj = ResourceManager.GetObject("agregar (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap agregar_tiempo {
+            get {
+                object obj = ResourceManager.GetObject("agregar-tiempo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap agregar_usuario {
+            get {
+                object obj = ResourceManager.GetObject("agregar-usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap banco {
+            get {
+                object obj = ResourceManager.GetObject("banco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap basura__2_ {
+            get {
+                object obj = ResourceManager.GetObject("basura (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap busqueda {
+            get {
+                object obj = ResourceManager.GetObject("busqueda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap caja__1_ {
+            get {
+                object obj = ResourceManager.GetObject("caja (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carrito_de_compra_anadir {
+            get {
+                object obj = ResourceManager.GetObject("carrito-de-compra-anadir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cejas {
             get {
                 object obj = ResourceManager.GetObject("cejas", resourceCulture);
@@ -73,9 +183,9 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap corte_americano_baixo_low_disfarcado {
+        internal static System.Drawing.Bitmap configuraciones {
             get {
-                object obj = ResourceManager.GetObject("corte-americano-baixo-low-disfarcado", resourceCulture);
+                object obj = ResourceManager.GetObject("configuraciones", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +193,19 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap corte_clasico_tijera {
+        internal static System.Drawing.Bitmap corte_americano_baixo_low_disfarcado {
             get {
-                object obj = ResourceManager.GetObject("corte-clasico-tijera", resourceCulture);
+                object obj = ResourceManager.GetObject("corte_americano_baixo_low_disfarcado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap corte_clasico {
+            get {
+                object obj = ResourceManager.GetObject("corte clasico", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,17 +215,7 @@ namespace ProyectoPeluquería.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap cortes_de_pelo_con_lineas_y_cejas_simple_500x621 {
             get {
-                object obj = ResourceManager.GetObject("cortes-de-pelo-con-lineas-y-cejas-simple-500x621", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cortes_de_pelo_corto_para_hombres_056 {
-            get {
-                object obj = ResourceManager.GetObject("cortes-de-pelo-corto-para-hombres_056", resourceCulture);
+                object obj = ResourceManager.GetObject("cortes_de_pelo_con_lineas_y_cejas_simple_500x621", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +233,29 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dibujos {
+        internal static System.Drawing.Bitmap degrade {
             get {
-                object obj = ResourceManager.GetObject("dibujos", resourceCulture);
+                object obj = ResourceManager.GetObject("degrade", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dibujo {
+            get {
+                object obj = ResourceManager.GetObject("dibujo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editar__2_ {
+            get {
+                object obj = ResourceManager.GetObject("editar (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +266,26 @@ namespace ProyectoPeluquería.Properties {
         internal static System.Drawing.Bitmap frente {
             get {
                 object obj = ResourceManager.GetObject("frente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fuego__8_ {
+            get {
+                object obj = ResourceManager.GetObject("fuego (8)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gira_a_la_derecha_f5_negro {
+            get {
+                object obj = ResourceManager.GetObject("gira-a-la-derecha f5 negro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,10 +313,39 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap peinado_degradado_hombre_corte_de_pelo_castaño_ligeramente_rizado_partes_laterales_rapadas_sin_barba {
+        internal static System.Drawing.Bitmap modo_retrato {
             get {
-                object obj = ResourceManager.GetObject("peinado-degradado-hombre-corte-de-pelo-castaño-ligeramente-rizado-partes-laterale" +
-                        "s-rapadas-sin-barba", resourceCulture);
+                object obj = ResourceManager.GetObject("modo-retrato", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap monedas {
+            get {
+                object obj = ResourceManager.GetObject("monedas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ojo {
+            get {
+                object obj = ResourceManager.GetObject("ojo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ojos_cruzados__1_ {
+            get {
+                object obj = ResourceManager.GetObject("ojos-cruzados (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,8 +355,78 @@ namespace ProyectoPeluquería.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap png_transparent_plus_and_minus_signs_symbol_computer_icons_symbol_miscellaneous_logo_cross {
             get {
-                object obj = ResourceManager.GetObject("png-transparent-plus-and-minus-signs-symbol-computer-icons-symbol-miscellaneous-l" +
-                        "ogo-cross", resourceCulture);
+                object obj = ResourceManager.GetObject("png_transparent_plus_and_minus_signs_symbol_computer_icons_symbol_miscellaneous_l" +
+                        "ogo_cross", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap quitar_usuario {
+            get {
+                object obj = ResourceManager.GetObject("quitar-usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seleccione {
+            get {
+                object obj = ResourceManager.GetObject("seleccione", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tarjeta_de_credito {
+            get {
+                object obj = ResourceManager.GetObject("tarjeta-de-credito", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tiempo_pasado {
+            get {
+                object obj = ResourceManager.GetObject("tiempo-pasado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usd_circulo {
+            get {
+                object obj = ResourceManager.GetObject("usd-circulo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap x {
+            get {
+                object obj = ResourceManager.GetObject("x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap x_b {
+            get {
+                object obj = ResourceManager.GetObject("x b", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

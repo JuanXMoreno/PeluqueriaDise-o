@@ -22,12 +22,17 @@ namespace ProyectoPeluquería
         float valorbddVentas;
         int precio;
 
+        //CLASE DATA BASE
+        //DataBase DataB = new DataBase();
         public Ventas_y_Servicios()
         {
             InitializeComponent();
         }
 
-        SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
+
+        int PosX = 0, PosY = 0;
+
+        SqlConnection conexion = new SqlConnection(DataBase.link);
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
@@ -37,7 +42,7 @@ namespace ProyectoPeluquería
                     Sentencia(1, 2, "Corte Clasico Maquina", "Corte Clasico Tijera");
                     break;
                 case 1:
-                    CodigoRepetidoCaseServicios(3,"Corte Americano");
+                    CodigoRepetidoCaseServicios(3, "Corte Americano");
                     break;
                 case 2:
                     Sentencia(4, 5, "Degrade Maquina", "Degrade Navaja");
@@ -74,12 +79,12 @@ namespace ProyectoPeluquería
                 MessageBox.Show("por favor, seleccione una opción");
             }
 
-            lblTotal.Text ="Precio Total: " + precio.ToString();
+            lblTotal.Text = "Precio Total: " + precio.ToString();
         }
 
         private void btn_AgregarVentas_Click(object sender, EventArgs e)
         {
-            
+
 
             switch (contadorVentas)
             {
@@ -119,7 +124,7 @@ namespace ProyectoPeluquería
 
         private void btn_Volver_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
         private void pnl_CorteClasico_Click(object sender, EventArgs e)
@@ -451,7 +456,7 @@ namespace ProyectoPeluquería
         public void CodigoRepetidoCaseVentas(string nombre)
         {
             int calculoMultiplicado = Convert.ToInt32(valorbddVentas) * cantidad;
-            LlenarSOV(nombre, valorbddVentas, (float)calculoMultiplicado);
+            LlenarSOV(nombre, valorbddVentas, calculoMultiplicado);
             precio = precio + calculoMultiplicado;
             cantidad = 0;
 
@@ -514,10 +519,56 @@ namespace ProyectoPeluquería
             dgv_VentasServicios.Rows.RemoveAt(indiceCeldasDGV);
         }
 
+        private void MoverxPanel(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        }
+
+        private void MoverXTitu(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        }
+
+        private void Cerrar(object sender, EventArgs e)
+        {
+            FormAdmin F1 = Owner as FormAdmin;
+            F1.Visible = true;
+            this.Close();
+        }
+
+
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
             FormaDePago fdp = new FormaDePago();
-            fdp.Show();
+            this.AddOwnedForm(fdp);
+            if (fdp.Visible == false)
+            {
+                fdp.Show();
+                this.Visible = false;
+            }
+            else
+            {
+                this.Visible = true;
+                fdp.Close();
+            }
         }
     }
 }

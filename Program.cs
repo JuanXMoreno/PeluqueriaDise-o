@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ProyectoPeluquería
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
@@ -13,7 +13,7 @@ namespace ProyectoPeluquería
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Turnos());
+            Application.Run(new FormWeb());
         }
     }
 }

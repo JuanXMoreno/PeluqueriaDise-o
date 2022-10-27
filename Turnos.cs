@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -10,30 +9,28 @@ namespace ProyectoPeluquería
     {
         private int n = 0;
 
-        SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
+        SqlConnection conexion = new SqlConnection(@"server=DESKTOP-GGALNHK\SQLEXPRESS01;database=Peluqueria; integrated security=true");
 
         public Turnos()
         {
             InitializeComponent();
         }
 
+        int PosX = 0, PosY = 0;
+
         public void consulta()
         {
-
-            String sql = "select " +  "Id_Turnos,Dia,Hora,Turnos.Id_Cliente,Id_Empleado,Telefono, Clientes.Nombre AS Cliente from Turnos INNER JOIN Clientes ON Turnos.Id_Cliente = Clientes.Id_Cliente";
-            conexion.Open(); 
-           
-
-            SqlDataAdapter adaptador=new SqlDataAdapter(sql,conexion);
-            DataTable tabla =new DataTable();
-            adaptador.Fill(tabla);
-            dgvDatos.DataSource = tabla;
-            dgvDatos.Columns[0].Visible = false;
-            dgvDatos.Columns[3].Visible = false;
-            dgvDatos.Columns[4].Visible = false;
-            //dgvDatos.Columns[3].Visible= false;
-
-            conexion.Close();
+            //conexion.Open();
+            //String sql = "select " +  "Id_Turnos,Dia,Hora,Turnos.Id_Cliente,Id_Empleado, Clientes.Nombre AS Cliente from Turnos INNER JOIN Clientes ON Turnos.Id_Cliente = Clientes.Id_Cliente";
+            //SqlDataAdapter adaptador=new SqlDataAdapter(sql,conexion);
+            //DataTable tabla =new DataTable();
+            //adaptador.Fill(tabla);
+            //dgvDatos.DataSource = tabla;
+            //dgvDatos.Columns[0].Visible = false;
+            //dgvDatos.Columns[3].Visible = false;
+            //dgvDatos.Columns[4].Visible = false;
+            ////dgvDatos.Columns[3].Visible= false;
+            //conexion.Close();
         }
 
         private void Turnos_Load(object sender, EventArgs e)
@@ -55,7 +52,6 @@ namespace ProyectoPeluquería
             conexion.Close();
         }
 
-        
         private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             n = e.RowIndex;
@@ -93,14 +89,49 @@ namespace ProyectoPeluquería
             HabilitarBoton();
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Cerrarpic_Click(object sender, EventArgs e)
+        {
+            FormAdmin F1 = Owner as FormAdmin;
+            F1.Visible = true;
+            this.Close();
+        }
+
+        private void label6_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        }
+
+        private void pbF5_Click(object sender, EventArgs e)
+        {
+            consulta();
+        }
+
+        private void MoverXPanel(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
         }
     }
         
