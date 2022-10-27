@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -51,7 +50,7 @@ namespace ProyectoPeluquería
                 string sql = "insert into Turnos(Dia,Hora,Id_Cliente,Id_Empleado) values ('" + txtDia.Text + "','" + txtHora.Value + "')";
             }
         }
-        
+
         private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             n = e.RowIndex;

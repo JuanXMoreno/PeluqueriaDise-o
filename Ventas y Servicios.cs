@@ -42,7 +42,7 @@ namespace ProyectoPeluquería
                     Sentencia(1, 2, "Corte Clasico Maquina", "Corte Clasico Tijera");
                     break;
                 case 1:
-                    CodigoRepetidoCaseServicios(3,"Corte Americano");
+                    CodigoRepetidoCaseServicios(3, "Corte Americano");
                     break;
                 case 2:
                     Sentencia(4, 5, "Degrade Maquina", "Degrade Navaja");
@@ -79,12 +79,12 @@ namespace ProyectoPeluquería
                 MessageBox.Show("por favor, seleccione una opción");
             }
 
-            lblTotal.Text ="Precio Total: " + precio.ToString();
+            lblTotal.Text = "Precio Total: " + precio.ToString();
         }
 
         private void btn_AgregarVentas_Click(object sender, EventArgs e)
         {
-            
+
 
             switch (contadorVentas)
             {
@@ -456,7 +456,7 @@ namespace ProyectoPeluquería
         public void CodigoRepetidoCaseVentas(string nombre)
         {
             int calculoMultiplicado = Convert.ToInt32(valorbddVentas) * cantidad;
-            LlenarSOV(nombre, valorbddVentas, (float)calculoMultiplicado);
+            LlenarSOV(nombre, valorbddVentas, calculoMultiplicado);
             precio = precio + calculoMultiplicado;
             cantidad = 0;
 

@@ -103,7 +103,7 @@ namespace ProyectoPeluquería
 
         private void btnAdminEmpleados_Click(object sender, EventArgs e)
         {
-            Empleados emp= new Empleados();
+            Empleados emp = new Empleados();
             this.AddOwnedForm(emp);
             if (emp.Visible == false)
             {

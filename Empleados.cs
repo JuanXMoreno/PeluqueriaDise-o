@@ -64,7 +64,7 @@ namespace ProyectoPeluquería
                 consulta();
                 limpiar_celdas();
 
-                
+
             }
             conexion.Close();
         }
@@ -105,13 +105,6 @@ namespace ProyectoPeluquería
                 conexion.Close();
             }
         }
-
-
-
-
-
-
-
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
