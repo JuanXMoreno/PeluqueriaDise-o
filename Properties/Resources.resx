@@ -124,8 +124,8 @@
   <data name="hqdefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hqdefault.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tarjeta-de-credito" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tarjeta-de-credito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="banco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\banco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cruz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cruz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,14 +151,8 @@
   <data name="degrade" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\degrade.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="png_transparent_plus_and_minus_signs_symbol_computer_icons_symbol_miscellaneous_logo_cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\png-transparent-plus-and-minus-signs-symbol-computer-icons-symbol-miscellaneous-logo-cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="fuego (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fuego (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="carrito-de-compra-anadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\carrito-de-compra-anadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="busqueda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\busqueda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,8 +181,14 @@
   <data name="gira-a-la-derecha f5 negro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gira-a-la-derecha f5 negro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="banco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\banco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usd-circulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usd-circulo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carrito-de-compra-anadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carrito-de-compra-anadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frente.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="basura (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\basura (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,8 +208,8 @@
   <data name="caja (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\caja (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="frente" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\frente.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="png_transparent_plus_and_minus_signs_symbol_computer_icons_symbol_miscellaneous_logo_cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-transparent-plus-and-minus-signs-symbol-computer-icons-symbol-miscellaneous-logo-cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,7 +217,10 @@
   <data name="dibujo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dibujo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="usd-circulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\usd-circulo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tarjeta-de-credito" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tarjeta-de-credito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="corte clasico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\corte clasico1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

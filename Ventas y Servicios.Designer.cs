@@ -32,44 +32,62 @@
             this.tbp_Ventas = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btn_RestarCantidad = new System.Windows.Forms.Button();
+            this.btn_EliminarTablaVentas = new System.Windows.Forms.Button();
             this.btn_SumarCantidad = new System.Windows.Forms.Button();
             this.btn_AceptarCantidad = new System.Windows.Forms.Button();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_Cantidad = new System.Windows.Forms.TextBox();
+            this.btn_AgregarVentas = new System.Windows.Forms.Button();
             this.pnl_ShampooEK = new System.Windows.Forms.Panel();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
             this.pnl_CeraHH = new System.Windows.Forms.Panel();
             this.label34 = new System.Windows.Forms.Label();
+            this.pictureBox29 = new System.Windows.Forms.PictureBox();
             this.pnl_GelEH = new System.Windows.Forms.Panel();
             this.label32 = new System.Windows.Forms.Label();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.pnl_GelFF = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.pnl_AcondicionadorTE = new System.Windows.Forms.Panel();
             this.label28 = new System.Windows.Forms.Label();
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pnl_AcondicionadorHH = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pnl_CeraHC = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pnl_ShampooAP = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pnl_EspumaFR = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pnl_EspumaFS = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.tbp_Servicios = new System.Windows.Forms.TabPage();
             this.pnl_Dibujo = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pnl_Lavado = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pnl_CorteBarba = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pnl_Frente = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pnl_Cejas = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pnl_Lineas = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_EliminarTablaServicios = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -79,10 +97,13 @@
             this.cmb_SeCortaCon = new System.Windows.Forms.ComboBox();
             this.pnl_Degrade = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pnl_CorteAmericano = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnl_CorteClasico = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.dgv_VentasServicios = new System.Windows.Forms.DataGridView();
             this.cmna_VentasServicios = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,72 +115,51 @@
             this.Cerrarlabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
-            this.btn_EliminarTablaVentas = new System.Windows.Forms.Button();
-            this.btn_AgregarVentas = new System.Windows.Forms.Button();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox29 = new System.Windows.Forms.PictureBox();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
-            this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbc_Ventas_Servicios.SuspendLayout();
             this.tbp_Ventas.SuspendLayout();
             this.panel8.SuspendLayout();
             this.pnl_ShampooEK.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.pnl_CeraHH.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
             this.pnl_GelEH.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.pnl_GelFF.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             this.pnl_AcondicionadorTE.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             this.pnl_AcondicionadorHH.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             this.pnl_CeraHC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             this.pnl_ShampooAP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.pnl_EspumaFR.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.pnl_EspumaFS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.tbp_Servicios.SuspendLayout();
             this.pnl_Dibujo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.pnl_Lavado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.pnl_CorteBarba.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.pnl_Frente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.pnl_Cejas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.pnl_Lineas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel5.SuspendLayout();
             this.pnl_Degrade.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.pnl_CorteAmericano.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnl_CorteClasico.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VentasServicios)).BeginInit();
             this.PanelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbc_Ventas_Servicios
@@ -222,6 +222,22 @@
             this.btn_RestarCantidad.UseVisualStyleBackColor = true;
             this.btn_RestarCantidad.Click += new System.EventHandler(this.btn_RestarCantidad_Click);
             // 
+            // btn_EliminarTablaVentas
+            // 
+            this.btn_EliminarTablaVentas.BackColor = System.Drawing.Color.Transparent;
+            this.btn_EliminarTablaVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_EliminarTablaVentas.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.btn_EliminarTablaVentas.Image = global::ProyectoPeluquería.Properties.Resources.basura__2_;
+            this.btn_EliminarTablaVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_EliminarTablaVentas.Location = new System.Drawing.Point(14, 220);
+            this.btn_EliminarTablaVentas.Name = "btn_EliminarTablaVentas";
+            this.btn_EliminarTablaVentas.Size = new System.Drawing.Size(152, 37);
+            this.btn_EliminarTablaVentas.TabIndex = 15;
+            this.btn_EliminarTablaVentas.Text = "Eliminar";
+            this.btn_EliminarTablaVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_EliminarTablaVentas.UseVisualStyleBackColor = false;
+            this.btn_EliminarTablaVentas.Click += new System.EventHandler(this.btn_EliminarTablaVentas_Click);
+            // 
             // btn_SumarCantidad
             // 
             this.btn_SumarCantidad.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -272,6 +288,22 @@
             this.txt_Cantidad.Size = new System.Drawing.Size(90, 21);
             this.txt_Cantidad.TabIndex = 10;
             // 
+            // btn_AgregarVentas
+            // 
+            this.btn_AgregarVentas.BackColor = System.Drawing.Color.Transparent;
+            this.btn_AgregarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AgregarVentas.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.btn_AgregarVentas.Image = global::ProyectoPeluquería.Properties.Resources.carrito_de_compra_anadir;
+            this.btn_AgregarVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_AgregarVentas.Location = new System.Drawing.Point(14, 168);
+            this.btn_AgregarVentas.Name = "btn_AgregarVentas";
+            this.btn_AgregarVentas.Size = new System.Drawing.Size(152, 37);
+            this.btn_AgregarVentas.TabIndex = 14;
+            this.btn_AgregarVentas.Text = "Agregar";
+            this.btn_AgregarVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_AgregarVentas.UseVisualStyleBackColor = false;
+            this.btn_AgregarVentas.Click += new System.EventHandler(this.btn_AgregarVentas_Click);
+            // 
             // pnl_ShampooEK
             // 
             this.pnl_ShampooEK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
@@ -283,6 +315,15 @@
             this.pnl_ShampooEK.Size = new System.Drawing.Size(414, 68);
             this.pnl_ShampooEK.TabIndex = 3;
             this.pnl_ShampooEK.Click += new System.EventHandler(this.pnl_ShampooEK_Click);
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox17.TabIndex = 4;
+            this.pictureBox17.TabStop = false;
             // 
             // label21
             // 
@@ -321,6 +362,15 @@
             this.label34.Text = "Iyosei Cera Capilar Hydro \r\nH2O Hard X 50g";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox29
+            // 
+            this.pictureBox29.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox29.Name = "pictureBox29";
+            this.pictureBox29.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox29.TabIndex = 4;
+            this.pictureBox29.TabStop = false;
+            // 
             // pnl_GelEH
             // 
             this.pnl_GelEH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
@@ -344,6 +394,15 @@
             this.label32.TabIndex = 5;
             this.label32.Text = "Gel Capilar Efecto\r\nHúmedo 350g Algabo";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox27
+            // 
+            this.pictureBox27.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox27.TabIndex = 4;
+            this.pictureBox27.TabStop = false;
             // 
             // pnl_GelFF
             // 
@@ -369,6 +428,15 @@
             this.label30.Text = "Gel Capilar Fijación\r\nFuerte 350g Algabo";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox25
+            // 
+            this.pictureBox25.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox25.TabIndex = 4;
+            this.pictureBox25.TabStop = false;
+            // 
             // pnl_AcondicionadorTE
             // 
             this.pnl_AcondicionadorTE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
@@ -392,6 +460,15 @@
             this.label28.TabIndex = 5;
             this.label28.Text = "Acondicionador Elvive Loreal\r\nReparación Total Extreme 400ml";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox23
+            // 
+            this.pictureBox23.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox23.TabIndex = 4;
+            this.pictureBox23.TabStop = false;
             // 
             // pnl_AcondicionadorHH
             // 
@@ -417,6 +494,15 @@
             this.label26.Text = "Acondicionador Elvive Loreal\r\nHidratación Hialurónico 400ml";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox21.TabIndex = 4;
+            this.pictureBox21.TabStop = false;
+            // 
             // pnl_CeraHC
             // 
             this.pnl_CeraHC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
@@ -440,6 +526,15 @@
             this.label23.TabIndex = 5;
             this.label23.Text = "Iyosei Cera Capilar Hydro \r\nClásica X50g";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox19.TabIndex = 4;
+            this.pictureBox19.TabStop = false;
             // 
             // pnl_ShampooAP
             // 
@@ -465,6 +560,15 @@
             this.label8.Text = "Shampoo Elvive Loreal Paris \r\nArcilla Purificante 400 Ml";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox16.TabIndex = 4;
+            this.pictureBox16.TabStop = false;
+            // 
             // pnl_EspumaFR
             // 
             this.pnl_EspumaFR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
@@ -489,6 +593,15 @@
             this.label7.Text = "Gillette Espuma De Afeitar \r\nFoamy Regular 312gr";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox15.TabIndex = 4;
+            this.pictureBox15.TabStop = false;
+            // 
             // pnl_EspumaFS
             // 
             this.pnl_EspumaFS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
@@ -512,6 +625,15 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "Gillette Espuma De Afeitar \r\nFoamy Sensitive 312gr";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox14.TabIndex = 2;
+            this.pictureBox14.TabStop = false;
             // 
             // tbp_Servicios
             // 
@@ -558,6 +680,16 @@
             this.label24.Text = "Dibujo";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::ProyectoPeluquería.Properties.Resources.dibujo;
+            this.pictureBox7.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 13;
+            this.pictureBox7.TabStop = false;
+            // 
             // pnl_Lavado
             // 
             this.pnl_Lavado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
@@ -581,6 +713,16 @@
             this.label14.TabIndex = 13;
             this.label14.Text = "Lavado";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::ProyectoPeluquería.Properties.Resources.lavado;
+            this.pictureBox10.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 13;
+            this.pictureBox10.TabStop = false;
             // 
             // pnl_CorteBarba
             // 
@@ -606,6 +748,16 @@
             this.label13.Text = "Corte Barba";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::ProyectoPeluquería.Properties.Resources.hqdefault;
+            this.pictureBox9.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 13;
+            this.pictureBox9.TabStop = false;
+            // 
             // pnl_Frente
             // 
             this.pnl_Frente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
@@ -629,6 +781,16 @@
             this.label17.TabIndex = 17;
             this.label17.Text = "Frente";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::ProyectoPeluquería.Properties.Resources.frente;
+            this.pictureBox6.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 16;
+            this.pictureBox6.TabStop = false;
             // 
             // pnl_Cejas
             // 
@@ -654,6 +816,16 @@
             this.label16.Text = "Cejas";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::ProyectoPeluquería.Properties.Resources.cejas;
+            this.pictureBox5.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 15;
+            this.pictureBox5.TabStop = false;
+            // 
             // pnl_Lineas
             // 
             this.pnl_Lineas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
@@ -677,6 +849,16 @@
             this.label15.TabIndex = 15;
             this.label15.Text = "Lineas";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::ProyectoPeluquería.Properties.Resources.cortes_de_pelo_con_lineas_y_cejas_simple_500x621;
+            this.pictureBox4.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 14;
+            this.pictureBox4.TabStop = false;
             // 
             // panel5
             // 
@@ -792,6 +974,16 @@
             this.label11.Text = "Corte Degrade";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::ProyectoPeluquería.Properties.Resources.degrade;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
             // pnl_CorteAmericano
             // 
             this.pnl_CorteAmericano.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
@@ -816,6 +1008,16 @@
             this.label10.Text = "Corte Americano";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ProyectoPeluquería.Properties.Resources.corte_americano_baixo_low_disfarcado;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
             // pnl_CorteClasico
             // 
             this.pnl_CorteClasico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
@@ -839,6 +1041,16 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "Corte Clásico";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProyectoPeluquería.Properties.Resources.corte_clasico;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(89, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // lblTotal
             // 
@@ -955,218 +1167,6 @@
             this.btn_Aceptar.UseVisualStyleBackColor = false;
             this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
-            // btn_EliminarTablaVentas
-            // 
-            this.btn_EliminarTablaVentas.BackColor = System.Drawing.Color.Transparent;
-            this.btn_EliminarTablaVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EliminarTablaVentas.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.btn_EliminarTablaVentas.Image = global::ProyectoPeluquería.Properties.Resources.basura__2_;
-            this.btn_EliminarTablaVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_EliminarTablaVentas.Location = new System.Drawing.Point(14, 220);
-            this.btn_EliminarTablaVentas.Name = "btn_EliminarTablaVentas";
-            this.btn_EliminarTablaVentas.Size = new System.Drawing.Size(152, 37);
-            this.btn_EliminarTablaVentas.TabIndex = 15;
-            this.btn_EliminarTablaVentas.Text = "Eliminar";
-            this.btn_EliminarTablaVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_EliminarTablaVentas.UseVisualStyleBackColor = false;
-            this.btn_EliminarTablaVentas.Click += new System.EventHandler(this.btn_EliminarTablaVentas_Click);
-            // 
-            // btn_AgregarVentas
-            // 
-            this.btn_AgregarVentas.BackColor = System.Drawing.Color.Transparent;
-            this.btn_AgregarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_AgregarVentas.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.btn_AgregarVentas.Image = global::ProyectoPeluquería.Properties.Resources.carrito_de_compra_anadir;
-            this.btn_AgregarVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_AgregarVentas.Location = new System.Drawing.Point(14, 168);
-            this.btn_AgregarVentas.Name = "btn_AgregarVentas";
-            this.btn_AgregarVentas.Size = new System.Drawing.Size(152, 37);
-            this.btn_AgregarVentas.TabIndex = 14;
-            this.btn_AgregarVentas.Text = "Agregar";
-            this.btn_AgregarVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_AgregarVentas.UseVisualStyleBackColor = false;
-            this.btn_AgregarVentas.Click += new System.EventHandler(this.btn_AgregarVentas_Click);
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox17.TabIndex = 4;
-            this.pictureBox17.TabStop = false;
-            // 
-            // pictureBox29
-            // 
-            this.pictureBox29.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox29.Name = "pictureBox29";
-            this.pictureBox29.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox29.TabIndex = 4;
-            this.pictureBox29.TabStop = false;
-            // 
-            // pictureBox27
-            // 
-            this.pictureBox27.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox27.TabIndex = 4;
-            this.pictureBox27.TabStop = false;
-            // 
-            // pictureBox25
-            // 
-            this.pictureBox25.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox25.TabIndex = 4;
-            this.pictureBox25.TabStop = false;
-            // 
-            // pictureBox23
-            // 
-            this.pictureBox23.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox23.TabIndex = 4;
-            this.pictureBox23.TabStop = false;
-            // 
-            // pictureBox21
-            // 
-            this.pictureBox21.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox21.TabIndex = 4;
-            this.pictureBox21.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox19.TabIndex = 4;
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox16.TabIndex = 4;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox15.TabIndex = 4;
-            this.pictureBox15.TabStop = false;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 2;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::ProyectoPeluquería.Properties.Resources.dibujo;
-            this.pictureBox7.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 13;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::ProyectoPeluquería.Properties.Resources.lavado;
-            this.pictureBox10.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 13;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::ProyectoPeluquería.Properties.Resources.hqdefault;
-            this.pictureBox9.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 13;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::ProyectoPeluquería.Properties.Resources.frente;
-            this.pictureBox6.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 16;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::ProyectoPeluquería.Properties.Resources.cejas;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 15;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::ProyectoPeluquería.Properties.Resources.cortes_de_pelo_con_lineas_y_cejas_simple_500x621;
-            this.pictureBox4.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 14;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::ProyectoPeluquería.Properties.Resources.degrade;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ProyectoPeluquería.Properties.Resources.corte_americano_baixo_low_disfarcado;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ProyectoPeluquería.Properties.Resources.corte_clasico;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // Ventas_y_Servicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1189,49 +1189,49 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.pnl_ShampooEK.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.pnl_CeraHH.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
             this.pnl_GelEH.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.pnl_GelFF.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
             this.pnl_AcondicionadorTE.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             this.pnl_AcondicionadorHH.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             this.pnl_CeraHC.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.pnl_ShampooAP.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.pnl_EspumaFR.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.pnl_EspumaFS.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.tbp_Servicios.ResumeLayout(false);
             this.pnl_Dibujo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.pnl_Lavado.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.pnl_CorteBarba.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.pnl_Frente.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.pnl_Cejas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.pnl_Lineas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.pnl_Degrade.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.pnl_CorteAmericano.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnl_CorteClasico.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VentasServicios)).EndInit();
             this.PanelTop.ResumeLayout(false);
             this.PanelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
