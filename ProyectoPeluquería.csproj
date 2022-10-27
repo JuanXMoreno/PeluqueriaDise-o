@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empleados.cs">
+    <Compile Include="Config.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empleados.Designer.cs">
-      <DependentUpon>Empleados.cs</DependentUpon>
+    <Compile Include="Config.Designer.cs">
+      <DependentUpon>Config.cs</DependentUpon>
     </Compile>
     <Compile Include="Form de StockAdmin\AddStock.cs">
       <SubType>Form</SubType>
@@ -118,8 +118,8 @@
     <Compile Include="Ventas y Servicios.Designer.cs">
       <DependentUpon>Ventas y Servicios.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Empleados.resx">
-      <DependentUpon>Empleados.cs</DependentUpon>
+    <EmbeddedResource Include="Config.resx">
+      <DependentUpon>Config.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form de StockAdmin\AddStock.resx">
       <DependentUpon>AddStock.cs</DependentUpon>
@@ -176,6 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Datos\Script.txt" />
+    <None Include="Resources\caja %281%29.png" />
+    <None Include="Resources\caja.png" />
+    <None Include="Resources\carrito-de-compra-anadir.png" />
     <None Include="Resources\configuraciones.png" />
     <None Include="Resources\ojo.png" />
     <None Include="Resources\modo-retrato.png" />

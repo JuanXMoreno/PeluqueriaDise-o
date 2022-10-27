@@ -133,6 +133,9 @@
   <data name="busqueda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\busqueda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fuego (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fuego (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="x b" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,17 +172,20 @@
   <data name="png_transparent_plus_and_minus_signs_symbol_computer_icons_symbol_miscellaneous_logo_cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\png-transparent-plus-and-minus-signs-symbol-computer-icons-symbol-miscellaneous-logo-cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="configuraciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\configuraciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dibujo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dibujo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="carrito-de-compra-anadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carrito-de-compra-anadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="degrade" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\degrade.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fuego (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fuego (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="corte_americano_baixo_low_disfarcado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\corte_americano_baixo_low_disfarcado.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,7 +196,7 @@
   <data name="cortes_de_pelo_con_lineas_y_cejas_simple_500x621" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cortes-de-pelo-con-lineas-y-cejas-simple-500x621.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="configuraciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\configuraciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="caja (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caja (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
