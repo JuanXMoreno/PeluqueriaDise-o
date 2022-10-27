@@ -7,7 +7,7 @@ namespace ProyectoPeluquería
 {
     class DataBase
     {
-        private static string link = @"SERVER=DESKTOP-GGALNHK\SQLEXPRESS01;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
+        public static string link = @"SERVER=DESKTOP-GGALNHK\SQLEXPRESS01;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
         SqlConnection Conectarse = null;
         SqlCommand cmd = null;
         SqlTransaction Tran = null;

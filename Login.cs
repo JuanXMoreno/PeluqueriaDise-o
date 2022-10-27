@@ -11,9 +11,10 @@ namespace ProyectoPeluquería
         {
             DataB.Verificacion();
             InitializeComponent();
-            txtContraseña.PasswordChar = '*';
-            Console.WriteLine("Se inicio todo");
         }
+
+        int PosY = 0;
+        int PosX = 0;
 
         SqlConnection conexion = new SqlConnection(@"server=DESKTOP-GGALNHK\SQLEXPRESS01;database=Peluqueria; integrated security=true");
 
@@ -37,20 +38,54 @@ namespace ProyectoPeluquería
                 MessageBox.Show("Por favor, ingrese un usuario y/o contraseña válidos.");
             }
             conexion.Close();
-        }
+        } //Boton para login
 
-        private void btn_Mostrar_Click(object sender, EventArgs e)
+        private void PanelSup_MouseMove(object sender, MouseEventArgs e)
         {
-            btn_Ocultar.BringToFront();  //traemos el boton de ocultar al frente
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        } //Mover X Panel
 
+        private void pictureBox3_MouseEnter(object sender, EventArgs e)
+        {
             txtContraseña.PasswordChar = '\0';
+        } //Mostrar contraseña
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            txtContraseña.PasswordChar = '*';
+        } //Ocultar
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://web.whatsapp.com/send/?phone=543549633063&text=Hola+necesito+tu+ayuda%2C+me+olvide+mi+contrase%C3%B1a+de+ingreso.&type=phone_number&app_absent=0");
+        } //Mensaje de Ayuda (me manda a mi whatsapp)
+
+        private void MoverXTitu(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
         }
 
-        private void btn_Ocultar_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            btn_Mostrar.BringToFront();
-
-            txtContraseña.PasswordChar = '*';
+            Application.Exit();
         }
     }
 }

@@ -676,7 +676,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::ProyectoPeluquería.Properties.Resources.dibujos;
+            this.pictureBox7.Image = global::ProyectoPeluquería.Properties.Resources.dibujo;
             this.pictureBox7.Location = new System.Drawing.Point(3, 3);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(89, 62);
@@ -966,7 +966,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::ProyectoPeluquería.Properties.Resources.peinado_degradado_hombre_corte_de_pelo_castaño_ligeramente_rizado_partes_laterales_rapadas_sin_barba;
+            this.pictureBox3.Image = global::ProyectoPeluquería.Properties.Resources.degrade;
             this.pictureBox3.Location = new System.Drawing.Point(3, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(89, 62);
@@ -1032,7 +1032,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::ProyectoPeluquería.Properties.Resources.cortes_de_pelo_corto_para_hombres_056;
+            this.pictureBox1.Image = global::ProyectoPeluquería.Properties.Resources.cortes_de_pelo_con_lineas_y_cejas_simple_500x621;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(89, 62);

@@ -6,6 +6,8 @@ namespace ProyectoPeluquería
     public partial class FormAdmin : Form
     {
         AdminStock AS = new AdminStock();
+        Ventas_y_Servicios f1 = new Ventas_y_Servicios();
+        Login f3 = new Login();
 
         public FormAdmin()
         {
@@ -13,15 +15,16 @@ namespace ProyectoPeluquería
             this.AddOwnedForm(AS);
         }
 
+        int PosY = 0;
+        int PosX = 0;
+
         private void btnAdminServicios_Click(object sender, EventArgs e)
         {
-            Ventas_y_Servicios f1 = new Ventas_y_Servicios();
             f1.Show();
         }
 
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Login f3 = new Login();
             f3.Close();
         }
 
@@ -36,6 +39,39 @@ namespace ProyectoPeluquería
             {
                 this.Visible = true;
                 AS.Visible = false;
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void PanelSup_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        } //Mover X panel
+
+        private void MoverXTitu(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
             }
         }
     }

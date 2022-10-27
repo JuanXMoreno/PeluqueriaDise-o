@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -20,12 +22,14 @@ namespace ProyectoPeluquería
         float valorbddVentas;
         int precio;
 
+        //CLASE DATA BASE
+        DataBase DataB = new DataBase();
         public Ventas_y_Servicios()
         {
             InitializeComponent();
         }
 
-        SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
+        SqlConnection conexion = new SqlConnection(DataBase.link);
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
@@ -514,8 +518,8 @@ namespace ProyectoPeluquería
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
-            FormaDePago fdp = new FormaDePago();
-            fdp.Show();
+            //FormaDePago fdp = new FormaDePago();
+            //fdp.Show();
         }
     }
 }
