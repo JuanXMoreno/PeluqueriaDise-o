@@ -55,7 +55,7 @@ namespace ProyectoPeluquería
             // 
             this.txtContraseña.BackColor = System.Drawing.SystemColors.Window;
             this.txtContraseña.Font = new System.Drawing.Font("Kelly Slab", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(55, 325);
+            this.txtContraseña.Location = new System.Drawing.Point(39, 313);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
@@ -67,7 +67,7 @@ namespace ProyectoPeluquería
             this.btnAceptar.BackColor = System.Drawing.Color.Black;
             this.btnAceptar.Font = new System.Drawing.Font("Kelly Slab", 13F);
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(96, 371);
+            this.btnAceptar.Location = new System.Drawing.Point(69, 379);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(220, 38);
             this.btnAceptar.TabIndex = 3;
@@ -78,7 +78,7 @@ namespace ProyectoPeluquería
             // txtNombreUsuario
             // 
             this.txtNombreUsuario.Font = new System.Drawing.Font("Kelly Slab", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreUsuario.Location = new System.Drawing.Point(55, 257);
+            this.txtNombreUsuario.Location = new System.Drawing.Point(39, 245);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(285, 31);
             this.txtNombreUsuario.TabIndex = 1;
@@ -91,7 +91,7 @@ namespace ProyectoPeluquería
             this.PanelSup.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSup.Location = new System.Drawing.Point(0, 0);
             this.PanelSup.Name = "PanelSup";
-            this.PanelSup.Size = new System.Drawing.Size(411, 25);
+            this.PanelSup.Size = new System.Drawing.Size(362, 25);
             this.PanelSup.TabIndex = 33;
             this.PanelSup.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelSup_MouseMove);
             // 
@@ -112,7 +112,7 @@ namespace ProyectoPeluquería
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = global::ProyectoPeluquería.Properties.Resources.x;
-            this.pictureBox1.Location = new System.Drawing.Point(386, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(337, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -125,9 +125,9 @@ namespace ProyectoPeluquería
             this.Panelinf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.Panelinf.Controls.Add(this.infobase);
             this.Panelinf.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Panelinf.Location = new System.Drawing.Point(0, 469);
+            this.Panelinf.Location = new System.Drawing.Point(0, 488);
             this.Panelinf.Name = "Panelinf";
-            this.Panelinf.Size = new System.Drawing.Size(411, 21);
+            this.Panelinf.Size = new System.Drawing.Size(362, 21);
             this.Panelinf.TabIndex = 32;
             // 
             // infobase
@@ -137,7 +137,7 @@ namespace ProyectoPeluquería
             this.infobase.ForeColor = System.Drawing.Color.White;
             this.infobase.Location = new System.Drawing.Point(0, 0);
             this.infobase.Name = "infobase";
-            this.infobase.Size = new System.Drawing.Size(411, 21);
+            this.infobase.Size = new System.Drawing.Size(362, 21);
             this.infobase.TabIndex = 38;
             this.infobase.Text = "Estado";
             this.infobase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -146,7 +146,7 @@ namespace ProyectoPeluquería
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Kelly Slab", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 236);
+            this.label1.Location = new System.Drawing.Point(36, 224);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 18);
             this.label1.TabIndex = 35;
@@ -156,7 +156,7 @@ namespace ProyectoPeluquería
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Kelly Slab", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(52, 304);
+            this.label2.Location = new System.Drawing.Point(36, 292);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 18);
             this.label2.TabIndex = 36;
@@ -166,11 +166,12 @@ namespace ProyectoPeluquería
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Kelly Slab", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(113, 433);
+            this.label3.Location = new System.Drawing.Point(83, 458);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(197, 18);
             this.label3.TabIndex = 37;
             this.label3.Text = "Ayuda, olvide mi contraseña.";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox3
@@ -178,7 +179,7 @@ namespace ProyectoPeluquería
             this.pictureBox3.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Image = global::ProyectoPeluquería.Properties.Resources.ojo;
-            this.pictureBox3.Location = new System.Drawing.Point(315, 325);
+            this.pictureBox3.Location = new System.Drawing.Point(299, 313);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(25, 31);
@@ -191,9 +192,9 @@ namespace ProyectoPeluquería
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(116, 48);
+            this.pictureBox2.Location = new System.Drawing.Point(113, 48);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(178, 168);
+            this.pictureBox2.Size = new System.Drawing.Size(134, 135);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 34;
             this.pictureBox2.TabStop = false;
@@ -201,7 +202,7 @@ namespace ProyectoPeluquería
             // borron
             // 
             this.borron.BackColor = System.Drawing.SystemColors.Window;
-            this.borron.Location = new System.Drawing.Point(315, 326);
+            this.borron.Location = new System.Drawing.Point(299, 314);
             this.borron.Name = "borron";
             this.borron.Size = new System.Drawing.Size(2, 29);
             this.borron.TabIndex = 39;
@@ -211,7 +212,7 @@ namespace ProyectoPeluquería
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            this.ClientSize = new System.Drawing.Size(411, 490);
+            this.ClientSize = new System.Drawing.Size(362, 509);
             this.Controls.Add(this.borron);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label3);

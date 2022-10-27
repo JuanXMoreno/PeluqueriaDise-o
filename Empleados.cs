@@ -8,6 +8,12 @@ namespace ProyectoPeluquería
     public partial class Empleados : Form
     {
         int indice;
+
+        SqlConnection conexion = new SqlConnection(DataBase.link);
+
+        int PosY = 0;
+        int PosX = 0;
+
         public void consulta()
         {
             //Consulta a la base de datos, selecciono las columnas y las agrego al DataGridView
@@ -24,8 +30,6 @@ namespace ProyectoPeluquería
         {
             InitializeComponent();
         }
-
-        SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria;integrated security=true");
 
         public void limpiar_celdas()
         {
@@ -154,6 +158,34 @@ namespace ProyectoPeluquería
             FormAdmin F1 = Owner as FormAdmin;
             F1.Visible = true;
             this.Close();
+        }
+
+        private void MoverPanel(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        }
+
+        private void label1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
         }
     }
 }
