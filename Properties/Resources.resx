@@ -118,8 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="monedas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\monedas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="hqdefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hqdefault.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tarjeta-de-credito" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tarjeta-de-credito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cruz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cruz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,8 +133,8 @@
   <data name="agregar-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agregar-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editar (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editar (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="quitar-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quitar-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tiempo-pasado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tiempo-pasado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -159,6 +165,9 @@
   </data>
   <data name="x b" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editar (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editar (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="caja (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\caja (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

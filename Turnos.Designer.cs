@@ -42,9 +42,9 @@
             this.TxtBNum = new System.Windows.Forms.TextBox();
             this.PanelSup = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.Cerrarpic = new System.Windows.Forms.PictureBox();
             this.Panelinf = new System.Windows.Forms.Panel();
             this.btnInsertar = new System.Windows.Forms.Button();
-            this.Cerrarpic = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -196,6 +196,7 @@
             this.PanelSup.Name = "PanelSup";
             this.PanelSup.Size = new System.Drawing.Size(951, 25);
             this.PanelSup.TabIndex = 33;
+            this.PanelSup.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverXPanel);
             // 
             // label6
             // 
@@ -207,6 +208,20 @@
             this.label6.Size = new System.Drawing.Size(49, 16);
             this.label6.TabIndex = 32;
             this.label6.Text = "Turnos";
+            this.label6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label6_MouseMove);
+            // 
+            // Cerrarpic
+            // 
+            this.Cerrarpic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Cerrarpic.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Cerrarpic.Image = global::ProyectoPeluquería.Properties.Resources.x;
+            this.Cerrarpic.Location = new System.Drawing.Point(926, 0);
+            this.Cerrarpic.Name = "Cerrarpic";
+            this.Cerrarpic.Size = new System.Drawing.Size(25, 25);
+            this.Cerrarpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Cerrarpic.TabIndex = 0;
+            this.Cerrarpic.TabStop = false;
+            this.Cerrarpic.Click += new System.EventHandler(this.Cerrarpic_Click);
             // 
             // Panelinf
             // 
@@ -234,19 +249,6 @@
             this.btnInsertar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInsertar.UseVisualStyleBackColor = false;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
-            // 
-            // Cerrarpic
-            // 
-            this.Cerrarpic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Cerrarpic.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Cerrarpic.Image = global::ProyectoPeluquería.Properties.Resources.x;
-            this.Cerrarpic.Location = new System.Drawing.Point(926, 0);
-            this.Cerrarpic.Name = "Cerrarpic";
-            this.Cerrarpic.Size = new System.Drawing.Size(25, 25);
-            this.Cerrarpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.Cerrarpic.TabIndex = 0;
-            this.Cerrarpic.TabStop = false;
-            this.Cerrarpic.Click += new System.EventHandler(this.Cerrarpic_Click);
             // 
             // btnEliminar
             // 
