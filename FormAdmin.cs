@@ -7,6 +7,7 @@ namespace ProyectoPeluquería
     {
         AdminStock AS = new AdminStock();
         Login f3 = new Login();
+        Turnos Tur = new Turnos();
 
         public FormAdmin()
         {
@@ -82,6 +83,20 @@ namespace ProyectoPeluquería
             {
                 Left = Left + (e.X - PosX);
                 Top = Top + (e.Y - PosY);
+            }
+        }
+
+        private void btnAdminTurnos_Click(object sender, EventArgs e)
+        {
+            if (Tur.Visible == false)
+            {
+                Tur.Visible = true;
+                this.Visible = false;
+            }
+            else
+            {
+                this.Visible = true;
+                Tur.Visible = false;
             }
         }
     }
