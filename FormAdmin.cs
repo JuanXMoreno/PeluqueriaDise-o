@@ -6,7 +6,6 @@ namespace ProyectoPeluquería
     public partial class FormAdmin : Form
     {
         AdminStock AS = new AdminStock();
-        Ventas_y_Servicios f1 = new Ventas_y_Servicios();
         Login f3 = new Login();
 
         public FormAdmin()
@@ -20,7 +19,18 @@ namespace ProyectoPeluquería
 
         private void btnAdminServicios_Click(object sender, EventArgs e)
         {
-            f1.Show();
+            Ventas_y_Servicios f1 = new Ventas_y_Servicios();
+            this.AddOwnedForm(f1);
+            if (f1.Visible == false)
+            {
+                f1.Visible = true;
+                this.Visible = false;
+            }
+            else
+            {
+                this.Visible = true;
+                f1.Visible = false;
+            }
         }
 
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)

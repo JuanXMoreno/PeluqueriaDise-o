@@ -23,11 +23,14 @@ namespace ProyectoPeluquería
         int precio;
 
         //CLASE DATA BASE
-        DataBase DataB = new DataBase();
+        //DataBase DataB = new DataBase();
         public Ventas_y_Servicios()
         {
             InitializeComponent();
         }
+
+
+        int PosX = 0, PosY = 0;
 
         SqlConnection conexion = new SqlConnection(DataBase.link);
 
@@ -121,7 +124,7 @@ namespace ProyectoPeluquería
 
         private void btn_Volver_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
         private void pnl_CorteClasico_Click(object sender, EventArgs e)
@@ -514,6 +517,41 @@ namespace ProyectoPeluquería
         private void btn_EliminarTablaServicios_Click(object sender, EventArgs e)
         {
             dgv_VentasServicios.Rows.RemoveAt(indiceCeldasDGV);
+        }
+
+        private void MoverxPanel(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        }
+
+        private void MoverXTitu(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        }
+
+        private void Cerrar(object sender, EventArgs e)
+        {
+            FormAdmin F1 = Owner as FormAdmin;
+            F1.Visible = true;
+            this.Close();
         }
 
         private void btn_Aceptar_Click(object sender, EventArgs e)

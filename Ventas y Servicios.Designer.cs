@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.tbc_Ventas_Servicios = new System.Windows.Forms.TabControl();
             this.tbp_Ventas = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -107,12 +106,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
-            this.btn_Volver = new System.Windows.Forms.Button();
             this.dgv_VentasServicios = new System.Windows.Forms.DataGridView();
             this.cmna_VentasServicios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmna_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmna_CadaUno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmna_Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PanelInf = new System.Windows.Forms.Panel();
+            this.PanelTop = new System.Windows.Forms.Panel();
+            this.Cerrarlabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tbc_Ventas_Servicios.SuspendLayout();
             this.tbp_Ventas.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -157,26 +159,17 @@
             this.pnl_CorteClasico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VentasServicios)).BeginInit();
+            this.PanelTop.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ventas y Servicios";
             // 
             // tbc_Ventas_Servicios
             // 
             this.tbc_Ventas_Servicios.Controls.Add(this.tbp_Ventas);
             this.tbc_Ventas_Servicios.Controls.Add(this.tbp_Servicios);
-            this.tbc_Ventas_Servicios.Location = new System.Drawing.Point(19, 75);
+            this.tbc_Ventas_Servicios.Location = new System.Drawing.Point(19, 37);
             this.tbc_Ventas_Servicios.Name = "tbc_Ventas_Servicios";
             this.tbc_Ventas_Servicios.SelectedIndex = 0;
-            this.tbc_Ventas_Servicios.Size = new System.Drawing.Size(695, 470);
+            this.tbc_Ventas_Servicios.Size = new System.Drawing.Size(695, 514);
             this.tbc_Ventas_Servicios.TabIndex = 3;
             // 
             // tbp_Ventas
@@ -331,15 +324,16 @@
             // 
             // label21
             // 
-            this.label21.AutoSize = true;
+            this.label21.Dock = System.Windows.Forms.DockStyle.Right;
             this.label21.Enabled = false;
-            this.label21.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(98, 3);
+            this.label21.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.label21.Location = new System.Drawing.Point(107, 0);
             this.label21.Name = "label21";
             this.label21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label21.Size = new System.Drawing.Size(312, 50);
+            this.label21.Size = new System.Drawing.Size(305, 66);
             this.label21.TabIndex = 5;
             this.label21.Text = "Shampoo Elvive Reparación \r\nTotal Extreme Keratin Xs - 400ml";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl_CeraHH
             // 
@@ -483,14 +477,15 @@
             // 
             // label26
             // 
-            this.label26.AutoSize = true;
+            this.label26.Dock = System.Windows.Forms.DockStyle.Right;
             this.label26.Enabled = false;
-            this.label26.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(98, 3);
+            this.label26.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.label26.Location = new System.Drawing.Point(107, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(293, 50);
+            this.label26.Size = new System.Drawing.Size(305, 66);
             this.label26.TabIndex = 5;
             this.label26.Text = "Acondicionador Elvive Loreal\r\nHidratación Hialurónico 400ml";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox21
             // 
@@ -547,14 +542,15 @@
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Right;
             this.label8.Enabled = false;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(98, 3);
+            this.label8.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.label8.Location = new System.Drawing.Point(107, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(275, 50);
+            this.label8.Size = new System.Drawing.Size(305, 66);
             this.label8.TabIndex = 5;
             this.label8.Text = "Shampoo Elvive Loreal Paris \r\nArcilla Purificante 400 Ml";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox16
             // 
@@ -579,14 +575,15 @@
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Right;
             this.label7.Enabled = false;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(98, 3);
+            this.label7.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.label7.Location = new System.Drawing.Point(107, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(259, 50);
+            this.label7.Size = new System.Drawing.Size(305, 66);
             this.label7.TabIndex = 5;
             this.label7.Text = "Gillette Espuma De Afeitar \r\nFoamy Regular 312gr";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox15
             // 
@@ -611,14 +608,15 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Right;
             this.label6.Enabled = false;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(98, 3);
+            this.label6.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.label6.Location = new System.Drawing.Point(103, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(259, 50);
+            this.label6.Size = new System.Drawing.Size(309, 66);
             this.label6.TabIndex = 3;
             this.label6.Text = "Gillette Espuma De Afeitar \r\nFoamy Sensitive 312gr";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox14
             // 
@@ -646,7 +644,7 @@
             this.tbp_Servicios.Location = new System.Drawing.Point(4, 22);
             this.tbp_Servicios.Name = "tbp_Servicios";
             this.tbp_Servicios.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_Servicios.Size = new System.Drawing.Size(687, 444);
+            this.tbp_Servicios.Size = new System.Drawing.Size(687, 488);
             this.tbp_Servicios.TabIndex = 1;
             this.tbp_Servicios.Text = "Servicios";
             this.tbp_Servicios.UseVisualStyleBackColor = true;
@@ -665,14 +663,15 @@
             // 
             // label24
             // 
-            this.label24.AutoSize = true;
+            this.label24.Dock = System.Windows.Forms.DockStyle.Right;
             this.label24.Enabled = false;
-            this.label24.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(98, 3);
+            this.label24.Font = new System.Drawing.Font("Kelly Slab", 14F);
+            this.label24.Location = new System.Drawing.Point(103, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(79, 28);
+            this.label24.Size = new System.Drawing.Size(273, 66);
             this.label24.TabIndex = 13;
             this.label24.Text = "Dibujo";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox7
             // 
@@ -731,14 +730,15 @@
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Right;
             this.label13.Enabled = false;
-            this.label13.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(98, 3);
+            this.label13.Font = new System.Drawing.Font("Kelly Slab", 14F);
+            this.label13.Location = new System.Drawing.Point(103, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(131, 28);
+            this.label13.Size = new System.Drawing.Size(273, 66);
             this.label13.TabIndex = 13;
             this.label13.Text = "Corte Barba";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox9
             // 
@@ -866,9 +866,10 @@
             // 
             // btn_EliminarTablaServicios
             // 
-            this.btn_EliminarTablaServicios.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btn_EliminarTablaServicios.BackColor = System.Drawing.Color.Transparent;
             this.btn_EliminarTablaServicios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_EliminarTablaServicios.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EliminarTablaServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_EliminarTablaServicios.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.btn_EliminarTablaServicios.Location = new System.Drawing.Point(26, 225);
             this.btn_EliminarTablaServicios.Name = "btn_EliminarTablaServicios";
             this.btn_EliminarTablaServicios.Size = new System.Drawing.Size(161, 37);
@@ -913,9 +914,10 @@
             // 
             // btn_Agregar
             // 
-            this.btn_Agregar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btn_Agregar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Agregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Agregar.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.btn_Agregar.Location = new System.Drawing.Point(26, 158);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(161, 37);
@@ -955,14 +957,15 @@
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Right;
             this.label11.Enabled = false;
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(98, 3);
+            this.label11.Font = new System.Drawing.Font("Kelly Slab", 14F);
+            this.label11.Location = new System.Drawing.Point(103, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(159, 28);
+            this.label11.Size = new System.Drawing.Size(273, 66);
             this.label11.TabIndex = 13;
             this.label11.Text = "Corte Degrade";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox3
             // 
@@ -988,14 +991,15 @@
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Right;
             this.label10.Enabled = false;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(98, 0);
+            this.label10.Font = new System.Drawing.Font("Kelly Slab", 14F);
+            this.label10.Location = new System.Drawing.Point(103, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(183, 28);
+            this.label10.Size = new System.Drawing.Size(273, 66);
             this.label10.TabIndex = 2;
             this.label10.Text = "Corte Americano";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox2
             // 
@@ -1021,14 +1025,15 @@
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Right;
             this.label9.Enabled = false;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(98, 3);
+            this.label9.Font = new System.Drawing.Font("Kelly Slab", 14F);
+            this.label9.Location = new System.Drawing.Point(103, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(145, 28);
+            this.label9.Size = new System.Drawing.Size(273, 66);
             this.label9.TabIndex = 1;
             this.label9.Text = "Corte Clásico";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
@@ -1044,7 +1049,7 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(741, 408);
+            this.lblTotal.Location = new System.Drawing.Point(733, 354);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(115, 24);
             this.lblTotal.TabIndex = 8;
@@ -1052,10 +1057,11 @@
             // 
             // btn_Aceptar
             // 
-            this.btn_Aceptar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btn_Aceptar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Aceptar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Aceptar.Location = new System.Drawing.Point(745, 508);
+            this.btn_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Aceptar.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.btn_Aceptar.Location = new System.Drawing.Point(745, 510);
             this.btn_Aceptar.Name = "btn_Aceptar";
             this.btn_Aceptar.Size = new System.Drawing.Size(118, 37);
             this.btn_Aceptar.TabIndex = 16;
@@ -1063,28 +1069,16 @@
             this.btn_Aceptar.UseVisualStyleBackColor = false;
             this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
-            // button2
-            // 
-            this.btn_Volver.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btn_Volver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Volver.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Volver.Location = new System.Drawing.Point(1061, 504);
-            this.btn_Volver.Name = "btn_Volver";
-            this.btn_Volver.Size = new System.Drawing.Size(118, 37);
-            this.btn_Volver.TabIndex = 17;
-            this.btn_Volver.Text = "Volver";
-            this.btn_Volver.UseVisualStyleBackColor = false;
-            this.btn_Volver.Click += new System.EventHandler(this.btn_Volver_Click);
-            // 
             // dgv_VentasServicios
             // 
+            this.dgv_VentasServicios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.dgv_VentasServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_VentasServicios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cmna_VentasServicios,
             this.cmna_Cantidad,
             this.cmna_CadaUno,
             this.cmna_Precio});
-            this.dgv_VentasServicios.Location = new System.Drawing.Point(737, 97);
+            this.dgv_VentasServicios.Location = new System.Drawing.Point(737, 37);
             this.dgv_VentasServicios.Name = "dgv_VentasServicios";
             this.dgv_VentasServicios.Size = new System.Drawing.Size(442, 306);
             this.dgv_VentasServicios.TabIndex = 9;
@@ -1114,18 +1108,68 @@
             this.cmna_Precio.Name = "cmna_Precio";
             this.cmna_Precio.Width = 62;
             // 
+            // PanelInf
+            // 
+            this.PanelInf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.PanelInf.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelInf.Location = new System.Drawing.Point(0, 557);
+            this.PanelInf.Name = "PanelInf";
+            this.PanelInf.Size = new System.Drawing.Size(1191, 20);
+            this.PanelInf.TabIndex = 19;
+            // 
+            // PanelTop
+            // 
+            this.PanelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.PanelTop.Controls.Add(this.Cerrarlabel);
+            this.PanelTop.Controls.Add(this.label2);
+            this.PanelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTop.Location = new System.Drawing.Point(0, 0);
+            this.PanelTop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.PanelTop.Name = "PanelTop";
+            this.PanelTop.Size = new System.Drawing.Size(1191, 26);
+            this.PanelTop.TabIndex = 18;
+            this.PanelTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverxPanel);
+            // 
+            // Cerrarlabel
+            // 
+            this.Cerrarlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Cerrarlabel.AutoSize = true;
+            this.Cerrarlabel.Font = new System.Drawing.Font("Comic Panels", 12F);
+            this.Cerrarlabel.ForeColor = System.Drawing.Color.Crimson;
+            this.Cerrarlabel.Location = new System.Drawing.Point(1166, 4);
+            this.Cerrarlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Cerrarlabel.Name = "Cerrarlabel";
+            this.Cerrarlabel.Size = new System.Drawing.Size(21, 17);
+            this.Cerrarlabel.TabIndex = 1;
+            this.Cerrarlabel.Text = "X";
+            this.Cerrarlabel.Click += new System.EventHandler(this.Cerrar);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Kelly Slab", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(5, 5);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(128, 18);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Ventas y servicios";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverXTitu);
+            // 
             // Ventas_y_Servicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1191, 557);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.ClientSize = new System.Drawing.Size(1191, 577);
+            this.Controls.Add(this.PanelInf);
+            this.Controls.Add(this.PanelTop);
             this.Controls.Add(this.dgv_VentasServicios);
-            this.Controls.Add(this.btn_Volver);
             this.Controls.Add(this.btn_Aceptar);
             this.Controls.Add(this.tbc_Ventas_Servicios);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTotal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Ventas_y_Servicios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1135,7 +1179,6 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.pnl_ShampooEK.ResumeLayout(false);
-            this.pnl_ShampooEK.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.pnl_CeraHH.ResumeLayout(false);
             this.pnl_CeraHH.PerformLayout();
@@ -1150,29 +1193,23 @@
             this.pnl_AcondicionadorTE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             this.pnl_AcondicionadorHH.ResumeLayout(false);
-            this.pnl_AcondicionadorHH.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             this.pnl_CeraHC.ResumeLayout(false);
             this.pnl_CeraHC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.pnl_ShampooAP.ResumeLayout(false);
-            this.pnl_ShampooAP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.pnl_EspumaFR.ResumeLayout(false);
-            this.pnl_EspumaFR.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.pnl_EspumaFS.ResumeLayout(false);
-            this.pnl_EspumaFS.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.tbp_Servicios.ResumeLayout(false);
             this.pnl_Dibujo.ResumeLayout(false);
-            this.pnl_Dibujo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.pnl_Lavado.ResumeLayout(false);
             this.pnl_Lavado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.pnl_CorteBarba.ResumeLayout(false);
-            this.pnl_CorteBarba.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.pnl_Frente.ResumeLayout(false);
             this.pnl_Frente.PerformLayout();
@@ -1186,28 +1223,24 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.pnl_Degrade.ResumeLayout(false);
-            this.pnl_Degrade.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.pnl_CorteAmericano.ResumeLayout(false);
-            this.pnl_CorteAmericano.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnl_CorteClasico.ResumeLayout(false);
-            this.pnl_CorteClasico.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VentasServicios)).EndInit();
+            this.PanelTop.ResumeLayout(false);
+            this.PanelTop.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tbc_Ventas_Servicios;
         private System.Windows.Forms.TabPage tbp_Ventas;
         private System.Windows.Forms.TabPage tbp_Servicios;
         private System.Windows.Forms.Button btn_Aceptar;
-        private System.Windows.Forms.Button btn_Volver;
         private System.Windows.Forms.Panel pnl_ShampooAP;
         private System.Windows.Forms.Panel pnl_EspumaFR;
         private System.Windows.Forms.Panel pnl_EspumaFS;
@@ -1287,5 +1320,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cmna_Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn cmna_CadaUno;
         private System.Windows.Forms.DataGridViewTextBoxColumn cmna_Precio;
+        private System.Windows.Forms.Panel PanelInf;
+        private System.Windows.Forms.Panel PanelTop;
+        private System.Windows.Forms.Label Cerrarlabel;
+        private System.Windows.Forms.Label label2;
     }
 }
