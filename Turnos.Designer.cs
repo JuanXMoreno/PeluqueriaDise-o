@@ -42,14 +42,17 @@
             this.TxtBNum = new System.Windows.Forms.TextBox();
             this.PanelSup = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.Cerrarpic = new System.Windows.Forms.PictureBox();
             this.Panelinf = new System.Windows.Forms.Panel();
             this.btnInsertar = new System.Windows.Forms.Button();
+            this.pbF5 = new System.Windows.Forms.PictureBox();
+            this.Cerrarpic = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.PanelSup.SuspendLayout();
+            this.Panelinf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbF5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cerrarpic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -210,22 +213,10 @@
             this.label6.Text = "Turnos";
             this.label6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label6_MouseMove);
             // 
-            // Cerrarpic
-            // 
-            this.Cerrarpic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Cerrarpic.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Cerrarpic.Image = global::ProyectoPeluquería.Properties.Resources.x;
-            this.Cerrarpic.Location = new System.Drawing.Point(926, 0);
-            this.Cerrarpic.Name = "Cerrarpic";
-            this.Cerrarpic.Size = new System.Drawing.Size(25, 25);
-            this.Cerrarpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.Cerrarpic.TabIndex = 0;
-            this.Cerrarpic.TabStop = false;
-            this.Cerrarpic.Click += new System.EventHandler(this.Cerrarpic_Click);
-            // 
             // Panelinf
             // 
             this.Panelinf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.Panelinf.Controls.Add(this.pbF5);
             this.Panelinf.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Panelinf.Location = new System.Drawing.Point(0, 282);
             this.Panelinf.Name = "Panelinf";
@@ -243,12 +234,38 @@
             this.btnInsertar.Location = new System.Drawing.Point(14, 220);
             this.btnInsertar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(131, 56);
+            this.btnInsertar.Size = new System.Drawing.Size(183, 56);
             this.btnInsertar.TabIndex = 5;
             this.btnInsertar.Text = "Agregar";
             this.btnInsertar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInsertar.UseVisualStyleBackColor = false;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
+            // 
+            // pbF5
+            // 
+            this.pbF5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbF5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pbF5.Image = global::ProyectoPeluquería.Properties.Resources.actualizar_flecha;
+            this.pbF5.Location = new System.Drawing.Point(926, 0);
+            this.pbF5.Name = "pbF5";
+            this.pbF5.Size = new System.Drawing.Size(25, 20);
+            this.pbF5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbF5.TabIndex = 1;
+            this.pbF5.TabStop = false;
+            this.pbF5.Click += new System.EventHandler(this.pbF5_Click);
+            // 
+            // Cerrarpic
+            // 
+            this.Cerrarpic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Cerrarpic.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Cerrarpic.Image = global::ProyectoPeluquería.Properties.Resources.x;
+            this.Cerrarpic.Location = new System.Drawing.Point(926, 0);
+            this.Cerrarpic.Name = "Cerrarpic";
+            this.Cerrarpic.Size = new System.Drawing.Size(25, 25);
+            this.Cerrarpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Cerrarpic.TabIndex = 0;
+            this.Cerrarpic.TabStop = false;
+            this.Cerrarpic.Click += new System.EventHandler(this.Cerrarpic_Click);
             // 
             // btnEliminar
             // 
@@ -257,14 +274,15 @@
             this.btnEliminar.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.btnEliminar.Image = global::ProyectoPeluquería.Properties.Resources.basura__2_;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.Location = new System.Drawing.Point(272, 221);
+            this.btnEliminar.Location = new System.Drawing.Point(942, 31);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(111, 55);
+            this.btnEliminar.Size = new System.Drawing.Size(35, 35);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
@@ -274,10 +292,10 @@
             this.btnModificar.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.btnModificar.Image = global::ProyectoPeluquería.Properties.Resources.seleccione;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModificar.Location = new System.Drawing.Point(153, 221);
+            this.btnModificar.Location = new System.Drawing.Point(205, 220);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(111, 55);
+            this.btnModificar.Size = new System.Drawing.Size(178, 55);
             this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -311,6 +329,8 @@
             this.groupBox1.PerformLayout();
             this.PanelSup.ResumeLayout(false);
             this.PanelSup.PerformLayout();
+            this.Panelinf.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbF5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cerrarpic)).EndInit();
             this.ResumeLayout(false);
 
@@ -337,5 +357,6 @@
         private System.Windows.Forms.Panel Panelinf;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TxtBNum;
+        private System.Windows.Forms.PictureBox pbF5;
     }
 }

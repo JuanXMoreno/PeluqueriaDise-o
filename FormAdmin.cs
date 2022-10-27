@@ -155,5 +155,12 @@ namespace ProyectoPeluquería
                 config.Visible = false;
             }
         }
+
+        private void Hoy_Tick(object sender, EventArgs e)
+        {
+            Hoy.Interval = 300;
+
+
+        }
     }
 }

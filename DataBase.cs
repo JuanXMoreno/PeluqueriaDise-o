@@ -11,6 +11,8 @@ namespace ProyectoPeluquería
         SqlConnection Conectarse = null;
         SqlCommand cmd = null;
         SqlTransaction Tran = null;
+        SqlDataReader Lector = null;
+        String Aviso = "";
 
         public SqlConnection Conectar() //metodo para conectar la base de datos al c#
         {
@@ -35,10 +37,12 @@ namespace ProyectoPeluquería
 
                 esVerdadero = true;
                 Console.WriteLine("Se conecto la base de datos");
+                Aviso = "Se conecto la base de datos.";
             }
             catch (SqlException sqlEx)
             {
                 MessageBox.Show("Error:" + sqlEx, "Error DataBase");
+                Aviso = "Error al conectar la base de datos.";
                 esVerdadero = false;
                 Environment.Exit(-1);
             }
@@ -358,6 +362,61 @@ namespace ProyectoPeluquería
                 }
             }
             return Tran;
+        }
+
+        public String Hoy(String Cancel,String Realizadas,String Servicios,String Stock)
+        { //IMPORTANTE ####### LE PUSE S a las ventadetalle
+            bool Exito = false;
+            String Actuales="", Ganancia="", Cancelados = "";
+            try
+            {
+                Conectar();
+
+                cmd = new SqlCommand("Select COUNT(*) From VentasDetalles WHERE  (DATEPART(yy, FechaBaja) = " + DateTime.Now.Year + " and DATEPART(mm, FechaBaja) = " + DateTime.Now.Month + " AND DATEPART(dd, FechaBaja) = " + DateTime.Now.Day + ")", Conectar());
+                Lector = cmd.ExecuteReader();
+                while (Lector.Read())
+                {
+                    Actuales = "Trabajos actuales\n" + Lector.GetInt32(0);
+                }
+
+                cmd.Cancel();
+                Lector.Close();
+
+                cmd = new SqlCommand("Select SUM(Precio) From VentasDetalles WHERE (DATEPART(yy, FechaBaja) = " + DateTime.Now.Year + " and DATEPART(mm, FechaBaja) = " + DateTime.Now.Month + " AND DATEPART(dd, FechaBaja) = " + DateTime.Now.Day + ")", Conectar());
+                Lector = cmd.ExecuteReader();
+                while (Lector.Read())
+                {
+                    if (!Lector.IsDBNull(0))
+                    {
+                       Ganancia = "Ganancia Aproximada: " + Lector.GetDecimal(0).ToString();
+                    }
+                    else
+                    {
+                        Ganancia = "Ganancia Aproximada: 0";
+                    }
+                }
+
+                cmd.Cancel();
+                Lector.Close();
+                // no arreglado aun
+                // tengo que poner los turnos mas cercanos a mi horario
+                cmd = new SqlCommand("Select * from TurnosActuales WHERE (DATEPART(yy, FechaBaja) = " + DateTime.Now.Year + " and DATEPART(mm, FechaBaja) = " + DateTime.Now.Month + " AND DATEPART(dd, FechaBaja) = " + DateTime.Now.Day + ")", Conectar());
+                Lector = cmd.ExecuteReader();
+                while (Lector.Read())
+                {
+                    //LabelTurno1.Text = "" + Lector.GetDateTime(3).ToShortTimeString() + "\n" + Lector.GetString(0) + " " + Lector.GetString(1) + "\n" + Lector.GetString(2);
+                }
+            }
+            catch (SqlException Error)
+            {
+                MessageBox.Show("Error al Actualizar las listas. Se reintentara en 2 minutos.");
+                Console.WriteLine("Error: \n" + Error);
+            }
+            finally
+            {
+                Desconectar();
+            }
+            return Ganancia;
         }
     }
 }

@@ -114,6 +114,11 @@ namespace ProyectoPeluquería
             }
         }
 
+        private void pbF5_Click(object sender, EventArgs e)
+        {
+            consulta();
+        }
+
         private void MoverXPanel(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)

@@ -37,7 +37,6 @@ namespace ProyectoPeluquería
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panelinf = new System.Windows.Forms.Panel();
-            this.infobase = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@ namespace ProyectoPeluquería
             this.borron = new System.Windows.Forms.Panel();
             this.PanelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.Panelinf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -123,24 +121,11 @@ namespace ProyectoPeluquería
             // Panelinf
             // 
             this.Panelinf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.Panelinf.Controls.Add(this.infobase);
             this.Panelinf.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Panelinf.Location = new System.Drawing.Point(0, 488);
             this.Panelinf.Name = "Panelinf";
             this.Panelinf.Size = new System.Drawing.Size(362, 21);
             this.Panelinf.TabIndex = 32;
-            // 
-            // infobase
-            // 
-            this.infobase.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.infobase.Font = new System.Drawing.Font("Kelly Slab", 8F);
-            this.infobase.ForeColor = System.Drawing.Color.White;
-            this.infobase.Location = new System.Drawing.Point(0, 0);
-            this.infobase.Name = "infobase";
-            this.infobase.Size = new System.Drawing.Size(362, 21);
-            this.infobase.TabIndex = 38;
-            this.infobase.Text = "Estado";
-            this.infobase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -232,7 +217,6 @@ namespace ProyectoPeluquería
             this.PanelSup.ResumeLayout(false);
             this.PanelSup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.Panelinf.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -254,6 +238,5 @@ namespace ProyectoPeluquería
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel borron;
-        private System.Windows.Forms.Label infobase;
     }
 }
