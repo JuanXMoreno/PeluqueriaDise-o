@@ -91,5 +91,10 @@ namespace ProyectoPeluquería
         {
 
         }
+
+        private void Cerrarpic_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

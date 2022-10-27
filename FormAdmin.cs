@@ -7,7 +7,6 @@ namespace ProyectoPeluquería
     {
         AdminStock AS = new AdminStock();
         Login f3 = new Login();
-        Turnos Tur = new Turnos();
 
         public FormAdmin()
         {
@@ -88,6 +87,8 @@ namespace ProyectoPeluquería
 
         private void btnAdminTurnos_Click(object sender, EventArgs e)
         {
+            Turnos Tur = new Turnos();
+            this.AddOwnedForm(Tur);
             if (Tur.Visible == false)
             {
                 Tur.Visible = true;
