@@ -20,8 +20,10 @@ namespace ProyectoPeluquería
         public void consulta()
         {
 
-            String sql = "select " +  "Id_Turnos,Dia,Hora,Turnos.Id_Cliente,Id_Empleado, Clientes.Nombre AS Cliente from Turnos INNER JOIN Clientes ON Turnos.Id_Cliente = Clientes.Id_Cliente";
-            conexion.Open();
+            String sql = "select " +  "Id_Turnos,Dia,Hora,Turnos.Id_Cliente,Id_Empleado,Telefono, Clientes.Nombre AS Cliente from Turnos INNER JOIN Clientes ON Turnos.Id_Cliente = Clientes.Id_Cliente";
+            conexion.Open(); 
+           
+
             SqlDataAdapter adaptador=new SqlDataAdapter(sql,conexion);
             DataTable tabla =new DataTable();
             adaptador.Fill(tabla);
@@ -30,6 +32,7 @@ namespace ProyectoPeluquería
             dgvDatos.Columns[3].Visible = false;
             dgvDatos.Columns[4].Visible = false;
             //dgvDatos.Columns[3].Visible= false;
+
             conexion.Close();
         }
 
@@ -49,7 +52,9 @@ namespace ProyectoPeluquería
             {
                 string sql = "insert into Turnos(Dia,Hora,Id_Cliente,Id_Empleado) values ('" + txtDia.Text + "','" + txtHora.Value + "')";
             }
+            conexion.Close();
         }
+
         
         private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -98,4 +103,5 @@ namespace ProyectoPeluquería
 
         }
     }
+        
 }

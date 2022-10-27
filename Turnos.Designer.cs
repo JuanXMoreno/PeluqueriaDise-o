@@ -46,6 +46,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panelinf = new System.Windows.Forms.Panel();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.PanelSup.SuspendLayout();
@@ -118,7 +120,7 @@
             this.btnInsertar.Enabled = false;
             this.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInsertar.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertar.Location = new System.Drawing.Point(35, 228);
+            this.btnInsertar.Location = new System.Drawing.Point(35, 242);
             this.btnInsertar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(111, 47);
@@ -132,7 +134,7 @@
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(154, 228);
+            this.btnModificar.Location = new System.Drawing.Point(154, 242);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(111, 46);
@@ -146,7 +148,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(272, 228);
+            this.btnEliminar.Location = new System.Drawing.Point(272, 242);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(111, 46);
@@ -206,6 +208,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.txtDia);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtHora);
@@ -218,7 +222,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(364, 165);
+            this.groupBox1.Size = new System.Drawing.Size(364, 180);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Turnos";
@@ -263,6 +267,22 @@
             this.Panelinf.Name = "Panelinf";
             this.Panelinf.Size = new System.Drawing.Size(951, 20);
             this.Panelinf.TabIndex = 34;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(97, 147);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(243, 23);
+            this.txtTelefono.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 150);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 15);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Telefono:";
             // 
             // Turnos
             // 
@@ -318,5 +338,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel Panelinf;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtTelefono;
     }
 }
