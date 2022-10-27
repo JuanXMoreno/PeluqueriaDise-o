@@ -14,6 +14,10 @@ namespace ProyectoPeluquería
 
         int cantidad;
 
+        int[] ventaParaSubir = new int[20];
+        int[] servicioParaSubir = new int[20];
+        int[] cantidadParaSubir = new int[20];
+
         int identificador;
         int valorCMBSeCortaCon;
         int valorCMBTipoDeDibujo = -1;
@@ -27,7 +31,7 @@ namespace ProyectoPeluquería
             InitializeComponent();
         }
 
-        SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
+        SqlConnection conexion = new SqlConnection("server=DESKTOP-COF6H2T;database=Peluqueria; integrated security=true");
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
@@ -79,8 +83,6 @@ namespace ProyectoPeluquería
 
         private void btn_AgregarVentas_Click(object sender, EventArgs e)
         {
-            
-
             switch (contadorVentas)
             {
                 case 1:
@@ -330,7 +332,7 @@ namespace ProyectoPeluquería
             pnl_Lavado.BackColor = Color.DarkGray;
         }
 
-        public void ColoresParejosVentas()
+        public void ColoresParejosVentas() //para volver a poner el panel a su color una vez se seleccione otro
         {
             pnl_ShampooAP.BackColor = Color.DarkGray;
             pnl_ShampooEK.BackColor = Color.DarkGray;
@@ -373,7 +375,7 @@ namespace ProyectoPeluquería
             valorCMBTipoDeDibujo = cmb_TipoDeDibujo.SelectedIndex;
         }
 
-        public void LlenarSOV(string valor, float valorVentaServicio, float calculoMultiplicado)
+        public void LlenarSOV(string valor, float valorVentaServicio, float calculoMultiplicado) //se encarga de poner toda la informacion a la vista por la table
         {
             int rowEscribir = dgv_VentasServicios.Rows.Count - 1;
 
@@ -385,7 +387,7 @@ namespace ProyectoPeluquería
             dgv_VentasServicios.Rows[rowEscribir].Cells[3].Value = calculoMultiplicado;
         }
 
-        public void BddBajaPrecio()
+        public void BddBajaPrecio() //trae el precio de la base de datos de servicios
         {
             conexion.Open();
             SqlCommand comando = new SqlCommand("select Precio From Servicios where Id_Servicio ='" + contador + "'", conexion);
@@ -401,7 +403,7 @@ namespace ProyectoPeluquería
             conexion.Close();
         }
 
-        public void bddBajaPrecioProducto()
+        public void bddBajaPrecioProducto() //trae el precio de la base de datos de ventas
         {
             conexion.Open();
             SqlCommand comandoProd = new SqlCommand("select Precio From Productos where Id_Producto ='" + contadorVentas + "'", conexion);
@@ -417,7 +419,7 @@ namespace ProyectoPeluquería
             conexion.Close();
         }
 
-        public void CodigoRepetidoServicios(int valorId)
+        public void CodigoRepetidoServicios(int valorId) //uso este metodo para ahorrar lineas de codigo en servicios
         {
             InhabilitarNombres();
             contador = -1;
@@ -430,7 +432,7 @@ namespace ProyectoPeluquería
             cmb_SeCortaCon.Items.Clear();
         }
 
-        public void CodigoRepetidoVentas(int contadorventas)
+        public void CodigoRepetidoVentas(int contadorventas) //uso este metodo para ahorrar lineas de codigo en ventas
         {
             InhabilitarNombres();
             ColoresParejosVentas();
@@ -440,24 +442,24 @@ namespace ProyectoPeluquería
             lblCantidad.Text = "1";
         }
 
-        public void CodigoRepetidoCaseServicios(int contadorId, string nombre)
+        public void CodigoRepetidoCaseServicios(int contadorId, string nombre) //uso este metodo para ahorrar lineas de codigo en servicios
         {
             contador = contadorId;
             BddBajaPrecio();
-            LlenarSOV(nombre, valorbdd, valorbdd);
+            LlenarSOV(nombre, valorbdd, valorbdd); //ya que el valor va a ser el mismo no tengo xq ejecutar una multiplicacion
             precio = precio + (int)valorbdd;
         }
 
-        public void CodigoRepetidoCaseVentas(string nombre)
+        public void CodigoRepetidoCaseVentas(string nombre) //uso este metodo para ahorrar lineas de codigo en ventas
         {
-            int calculoMultiplicado = Convert.ToInt32(valorbddVentas) * cantidad;
+            int calculoMultiplicado = Convert.ToInt32(valorbddVentas) * cantidad; //se agrega la cantidad, asi que tengo que multiplicar el valor del producto por su cantidad
             LlenarSOV(nombre, valorbddVentas, (float)calculoMultiplicado);
             precio = precio + calculoMultiplicado;
             cantidad = 0;
 
         }
 
-        public void InhabilitarNombres()
+        public void InhabilitarNombres() //inhabilito todos los nombres ya que no se como inhabilitar el que ya use y no necesito
         {
             label9.Enabled = false;
             label10.Enabled = false;
@@ -480,26 +482,26 @@ namespace ProyectoPeluquería
             label23.Enabled = false;
         }
 
-        private void btn_AceptarCantidad_Click(object sender, EventArgs e)
+        private void btn_AceptarCantidad_Click(object sender, EventArgs e) //la cantidad adopta el valor escrito en el textbox
         {
             cantidad = Convert.ToInt32(txt_Cantidad.Text);
             lblCantidad.Text = cantidad.ToString();
             txt_Cantidad.Clear();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //se le aumenta 1 a la cantidad
         {
             cantidad = cantidad + 1;
             lblCantidad.Text = cantidad.ToString();
         }
 
-        private void btn_RestarCantidad_Click(object sender, EventArgs e)
+        private void btn_RestarCantidad_Click(object sender, EventArgs e) //se le resta 1 a la cantidad
         {
             cantidad = cantidad - 1;
             lblCantidad.Text = cantidad.ToString();
         }
 
-        private void btn_EliminarTablaVentas_Click(object sender, EventArgs e)
+        private void btn_EliminarTablaVentas_Click(object sender, EventArgs e) //elimina la fila seleccionada desde la pantalla ventas
         {
             dgv_VentasServicios.Rows.RemoveAt(indiceCeldasDGV);
         }
@@ -509,7 +511,7 @@ namespace ProyectoPeluquería
             indiceCeldasDGV = dgv_VentasServicios.CurrentRow.Index;
         }
 
-        private void btn_EliminarTablaServicios_Click(object sender, EventArgs e)
+        private void btn_EliminarTablaServicios_Click(object sender, EventArgs e) //elimina la fila seleccionada desde la pantalla servicios
         {
             dgv_VentasServicios.Rows.RemoveAt(indiceCeldasDGV);
         }

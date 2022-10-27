@@ -182,6 +182,7 @@
             // tbp_Ventas
             // 
             this.tbp_Ventas.AutoScroll = true;
+            this.tbp_Ventas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(224)))), ((int)(((byte)(231)))));
             this.tbp_Ventas.Controls.Add(this.panel8);
             this.tbp_Ventas.Controls.Add(this.pnl_ShampooEK);
             this.tbp_Ventas.Controls.Add(this.pnl_CeraHH);
@@ -201,7 +202,6 @@
             this.tbp_Ventas.Size = new System.Drawing.Size(687, 444);
             this.tbp_Ventas.TabIndex = 0;
             this.tbp_Ventas.Text = "Ventas";
-            this.tbp_Ventas.UseVisualStyleBackColor = true;
             // 
             // panel8
             // 
@@ -304,7 +304,7 @@
             this.btn_AgregarVentas.Name = "btn_AgregarVentas";
             this.btn_AgregarVentas.Size = new System.Drawing.Size(152, 37);
             this.btn_AgregarVentas.TabIndex = 14;
-            this.btn_AgregarVentas.Text = "Agregar";
+            this.btn_AgregarVentas.Text = "Insertar";
             this.btn_AgregarVentas.UseVisualStyleBackColor = false;
             this.btn_AgregarVentas.Click += new System.EventHandler(this.btn_AgregarVentas_Click);
             // 
@@ -1063,7 +1063,7 @@
             this.btn_Aceptar.UseVisualStyleBackColor = false;
             this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
-            // button2
+            // btn_Volver
             // 
             this.btn_Volver.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btn_Volver.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1078,6 +1078,7 @@
             // 
             // dgv_VentasServicios
             // 
+            this.dgv_VentasServicios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(149)))), ((int)(((byte)(167)))));
             this.dgv_VentasServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_VentasServicios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cmna_VentasServicios,
@@ -1118,7 +1119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(224)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(1191, 557);
             this.Controls.Add(this.dgv_VentasServicios);
             this.Controls.Add(this.btn_Volver);
