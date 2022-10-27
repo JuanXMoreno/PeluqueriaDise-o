@@ -7,7 +7,7 @@ namespace ProyectoPeluquería
 {
     class DataBase
     {
-        public static string link = @"SERVER=DESKTOP-GGALNHK\SQLEXPRESS01;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
+        public static string link = @"SERVER=DESKTOP-SK840FQ;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
         SqlConnection Conectarse = null;
         SqlCommand cmd = null;
         SqlTransaction Tran = null;
@@ -418,5 +418,57 @@ namespace ProyectoPeluquería
             }
             return Ganancia;
         }
+
+        public DataTable ActualizarListaTurnos()
+        {
+            DataTable tabla = new DataTable();
+            tabla.Clear();
+            try
+            {
+                Conectar();
+                String sql = "select " + "Id_Turnos,Dia,Hora,Turnos.Id_Cliente,Id_Empleado,Telefono, Clientes.Nombre AS Cliente from Turnos INNER JOIN Clientes ON Turnos.Id_Cliente = Clientes.Id_Cliente";
+                SqlDataAdapter adaptador = new SqlDataAdapter(sql, Conectar());
+                adaptador.Fill(tabla);
+            }
+            catch(SqlException er)
+            { 
+                MessageBox.Show("Error:\n"+er);
+            }
+            finally
+            {
+                Desconectar();
+            }
+            return tabla;
+        }
+
+        public BindingSource ExtraerEmpleados()
+        {
+            BindingSource source = new BindingSource();
+            source.Clear();
+            try
+            {
+                Conectar();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "Select Id_Empleado,Nombre,Apellido From Empleados";
+                cmd.Connection = Conectar();
+                SqlDataReader Lector = cmd.ExecuteReader();
+                while (Lector.Read())
+                {
+                    
+                    source.Add( Lector.GetString(1));
+                }
+            }
+            catch(SqlException er)
+            {
+                MessageBox.Show("Error:\n"+er);
+            }
+            finally
+            {
+                Desconectar();
+            }
+            return source;
+        }
+
     }
 }
