@@ -10,6 +10,7 @@ namespace ProyectoPeluquería
         {
             InitializeComponent();
             txtContraseña.PasswordChar = '*';
+            Console.Write("Se inicio el Login");
         }
 
         SqlConnection conexion = new SqlConnection("server=DESKTOP-COF6H2T;database=Peluqueria; integrated security=true");

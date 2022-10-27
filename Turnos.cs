@@ -10,7 +10,7 @@ namespace ProyectoPeluquería
     {
         private int n = 0;
 
-        SqlConnection conexion = new SqlConnection("server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
+        SqlConnection conexion = new SqlConnection(@"server=DESKTOP-GGALNHK\SQLEXPRESS01;database=Peluqueria; integrated security=true");
 
         public Turnos()
         {
@@ -19,18 +19,17 @@ namespace ProyectoPeluquería
 
         public void consulta()
         {
-
-            String sql = "select " +  "Id_Turnos,Dia,Hora,Turnos.Id_Cliente,Id_Empleado, Clientes.Nombre AS Cliente from Turnos INNER JOIN Clientes ON Turnos.Id_Cliente = Clientes.Id_Cliente";
-            conexion.Open();
-            SqlDataAdapter adaptador=new SqlDataAdapter(sql,conexion);
-            DataTable tabla =new DataTable();
-            adaptador.Fill(tabla);
-            dgvDatos.DataSource = tabla;
-            dgvDatos.Columns[0].Visible = false;
-            dgvDatos.Columns[3].Visible = false;
-            dgvDatos.Columns[4].Visible = false;
-            //dgvDatos.Columns[3].Visible= false;
-            conexion.Close();
+            //conexion.Open();
+            //String sql = "select " +  "Id_Turnos,Dia,Hora,Turnos.Id_Cliente,Id_Empleado, Clientes.Nombre AS Cliente from Turnos INNER JOIN Clientes ON Turnos.Id_Cliente = Clientes.Id_Cliente";
+            //SqlDataAdapter adaptador=new SqlDataAdapter(sql,conexion);
+            //DataTable tabla =new DataTable();
+            //adaptador.Fill(tabla);
+            //dgvDatos.DataSource = tabla;
+            //dgvDatos.Columns[0].Visible = false;
+            //dgvDatos.Columns[3].Visible = false;
+            //dgvDatos.Columns[4].Visible = false;
+            ////dgvDatos.Columns[3].Visible= false;
+            //conexion.Close();
         }
 
         private void Turnos_Load(object sender, EventArgs e)
