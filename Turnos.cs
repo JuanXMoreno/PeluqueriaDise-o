@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -29,7 +28,7 @@ namespace ProyectoPeluquería
 
         public void consulta()
         {
-            
+
         }
 
         private void Turnos_Load(object sender, EventArgs e)
@@ -133,5 +132,5 @@ namespace ProyectoPeluquería
             }
         }
     }
-        
+
 }

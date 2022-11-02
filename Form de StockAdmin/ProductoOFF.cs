@@ -40,9 +40,9 @@ namespace ProyectoPeluquería
 
         private void Cerrar(object sender, EventArgs e)
         {
-            this.Visible = false;
             AdminStock AS = Owner as AdminStock;
             AS.Visible = true;
+            this.Close();
         }
 
         private void MoverXPanel(object sender, MouseEventArgs e)

@@ -11,6 +11,7 @@ namespace ProyectoPeluquería
         {
             InitializeComponent();
             Vistas.DataSource = dt.ActualizarLista(null);
+            Vistas.Columns[0].Visible = false;
         }
 
         int PosY = 0;
@@ -32,6 +33,7 @@ namespace ProyectoPeluquería
         private void btnMod_Click(object sender, EventArgs e)
         {
             dt.ModificarProducto(Idtex.Text, Nombre.Text, Stock.Text, precio.Text);
+            Vistas.DataSource = dt.ActualizarLista(null);
         }
 
         private void btnF5_Click(object sender, EventArgs e)
@@ -69,9 +71,9 @@ namespace ProyectoPeluquería
 
         private void Cerrar(object sender, EventArgs e)
         {
-            this.Visible = false;
             AdminStock AS = Owner as AdminStock;
             AS.Visible = true;
+            this.Close();
         }
     }
 }

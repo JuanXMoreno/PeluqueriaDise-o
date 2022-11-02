@@ -39,7 +39,20 @@ namespace ProyectoPeluquería
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DeleteID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            try
+            {
+                if (e.RowIndex <= dataGridView1.RowCount)
+                {
+                    Console.Write("Se selecciono un dato");
+                    DeleteID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    Seleccion.Text = "Se selecciono: " + DeleteID;
+                }
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine("Error: " + er);
+                return;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,9 +90,9 @@ namespace ProyectoPeluquería
 
         private void cerrar(object sender, EventArgs e)
         {
-            this.Visible = false;
             AdminStock AS = Owner as AdminStock;
             AS.Visible = true;
+            this.Close();
         }
     }
 }

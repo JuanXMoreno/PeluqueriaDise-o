@@ -5,13 +5,11 @@ namespace ProyectoPeluquería
 {
     public partial class FormAdmin : Form
     {
-        AdminStock AS = new AdminStock();
         Login f3 = new Login();
 
         public FormAdmin()
         {
             InitializeComponent();
-            this.AddOwnedForm(AS);
         }
 
         int PosY = 0;
@@ -40,6 +38,8 @@ namespace ProyectoPeluquería
 
         private void btnAdminStock_Click(object sender, EventArgs e)
         {
+            AdminStock AS = new AdminStock();
+            this.AddOwnedForm(AS);
             if (AS.Visible == false)
             {
                 AS.Visible = true;
