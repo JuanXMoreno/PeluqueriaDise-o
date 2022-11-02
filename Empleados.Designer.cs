@@ -64,7 +64,7 @@ namespace ProyectoPeluquería
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label2.Location = new System.Drawing.Point(10, 31);
+            this.label2.Location = new System.Drawing.Point(49, 36);
             this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 19);
@@ -75,7 +75,7 @@ namespace ProyectoPeluquería
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label3.Location = new System.Drawing.Point(10, 62);
+            this.label3.Location = new System.Drawing.Point(48, 67);
             this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 19);
@@ -85,19 +85,20 @@ namespace ProyectoPeluquería
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label4.Location = new System.Drawing.Point(10, 93);
+            this.label4.Location = new System.Drawing.Point(61, 96);
             this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 24);
             this.label4.TabIndex = 26;
             this.label4.Text = "DNI:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label5.Location = new System.Drawing.Point(11, 155);
+            this.label5.Location = new System.Drawing.Point(48, 160);
             this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 19);
@@ -108,7 +109,7 @@ namespace ProyectoPeluquería
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label6.Location = new System.Drawing.Point(11, 187);
+            this.label6.Location = new System.Drawing.Point(25, 191);
             this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 19);
@@ -119,7 +120,7 @@ namespace ProyectoPeluquería
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label7.Location = new System.Drawing.Point(11, 124);
+            this.label7.Location = new System.Drawing.Point(39, 129);
             this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 19);
@@ -130,7 +131,7 @@ namespace ProyectoPeluquería
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label8.Location = new System.Drawing.Point(11, 218);
+            this.label8.Location = new System.Drawing.Point(11, 223);
             this.label8.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 19);
@@ -140,46 +141,46 @@ namespace ProyectoPeluquería
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.txtNombre.Location = new System.Drawing.Point(80, 28);
+            this.txtNombre.Location = new System.Drawing.Point(118, 28);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(1);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(207, 27);
+            this.txtNombre.Size = new System.Drawing.Size(169, 27);
             this.txtNombre.TabIndex = 31;
             // 
             // txtApellido
             // 
             this.txtApellido.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.txtApellido.Location = new System.Drawing.Point(80, 59);
+            this.txtApellido.Location = new System.Drawing.Point(118, 59);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(1);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(207, 27);
+            this.txtApellido.Size = new System.Drawing.Size(169, 27);
             this.txtApellido.TabIndex = 32;
             // 
             // txtDni
             // 
             this.txtDni.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.txtDni.Location = new System.Drawing.Point(80, 90);
+            this.txtDni.Location = new System.Drawing.Point(118, 90);
             this.txtDni.Margin = new System.Windows.Forms.Padding(1);
             this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(207, 27);
+            this.txtDni.Size = new System.Drawing.Size(169, 27);
             this.txtDni.TabIndex = 33;
             // 
             // txtNumeroDeTelefono
             // 
             this.txtNumeroDeTelefono.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.txtNumeroDeTelefono.Location = new System.Drawing.Point(81, 152);
+            this.txtNumeroDeTelefono.Location = new System.Drawing.Point(118, 152);
             this.txtNumeroDeTelefono.Margin = new System.Windows.Forms.Padding(1);
             this.txtNumeroDeTelefono.Name = "txtNumeroDeTelefono";
-            this.txtNumeroDeTelefono.Size = new System.Drawing.Size(206, 27);
+            this.txtNumeroDeTelefono.Size = new System.Drawing.Size(169, 27);
             this.txtNumeroDeTelefono.TabIndex = 34;
             // 
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.txtDireccion.Location = new System.Drawing.Point(90, 121);
+            this.txtDireccion.Location = new System.Drawing.Point(118, 121);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(1);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(197, 27);
+            this.txtDireccion.Size = new System.Drawing.Size(169, 27);
             this.txtDireccion.TabIndex = 36;
             // 
             // txtHsAsignadas
@@ -195,10 +196,10 @@ namespace ProyectoPeluquería
             // 
             this.txtFechaDeNacimiento.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.txtFechaDeNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtFechaDeNacimiento.Location = new System.Drawing.Point(104, 183);
+            this.txtFechaDeNacimiento.Location = new System.Drawing.Point(118, 183);
             this.txtFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(1);
             this.txtFechaDeNacimiento.Name = "txtFechaDeNacimiento";
-            this.txtFechaDeNacimiento.Size = new System.Drawing.Size(183, 27);
+            this.txtFechaDeNacimiento.Size = new System.Drawing.Size(169, 27);
             this.txtFechaDeNacimiento.TabIndex = 41;
             // 
             // PanelSup
@@ -263,7 +264,7 @@ namespace ProyectoPeluquería
             this.tablaBD.RowHeadersVisible = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Kelly Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
@@ -310,6 +311,7 @@ namespace ProyectoPeluquería
             this.btnSueldos.Text = "Sueldos";
             this.btnSueldos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSueldos.UseVisualStyleBackColor = false;
+            this.btnSueldos.Click += new System.EventHandler(this.btnSueldos_Click);
             // 
             // btnEliminar
             // 
