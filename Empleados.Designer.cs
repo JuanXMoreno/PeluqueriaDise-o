@@ -333,7 +333,7 @@ namespace ProyectoPeluquería
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaBD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.tablaBD.ColumnHeadersHeight = 40;
+            this.tablaBD.ColumnHeadersHeight = 35;
             this.tablaBD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.tablaBD.EnableHeadersVisualStyles = false;
             this.tablaBD.Location = new System.Drawing.Point(289, 28);
