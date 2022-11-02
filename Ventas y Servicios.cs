@@ -411,7 +411,7 @@ namespace ProyectoPeluquería
             {
                 while (lector.Read())
                 {
-                    valorbddVentas = float.Parse(lector.GetString(0));
+                    valorbddVentas = (float)lector.GetDecimal(0);
                 }
             }
             conexion.Close();
