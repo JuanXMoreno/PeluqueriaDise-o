@@ -9,28 +9,26 @@ namespace ProyectoPeluquería
     {
         private int n = 0;
 
-        SqlConnection conexion = new SqlConnection(@"server=DESKTOP-GGALNHK\SQLEXPRESS01;database=Peluqueria; integrated security=true");
-
+        SqlConnection conexion = new SqlConnection(@"server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
+        //DataBase
+        DataBase DataB = new DataBase();
         public Turnos()
         {
             InitializeComponent();
+            dgvDatos.DataSource = DataB.ActualizarListaTurnos();
+            cmbPeluquero.DataSource = DataB.ExtraerEmpleados();
+            //cmbPeluquero.ValueMember = "Id_empleado";
+            //cmbPeluquero.DisplayMember = "Nombre";
+            dgvDatos.Columns[0].Visible = false;
+            dgvDatos.Columns[3].Visible = false;
+            dgvDatos.Columns[4].Visible = false;
         }
 
         int PosX = 0, PosY = 0;
 
         public void consulta()
         {
-            //conexion.Open();
-            //String sql = "select " +  "Id_Turnos,Dia,Hora,Turnos.Id_Cliente,Id_Empleado, Clientes.Nombre AS Cliente from Turnos INNER JOIN Clientes ON Turnos.Id_Cliente = Clientes.Id_Cliente";
-            //SqlDataAdapter adaptador=new SqlDataAdapter(sql,conexion);
-            //DataTable tabla =new DataTable();
-            //adaptador.Fill(tabla);
-            //dgvDatos.DataSource = tabla;
-            //dgvDatos.Columns[0].Visible = false;
-            //dgvDatos.Columns[3].Visible = false;
-            //dgvDatos.Columns[4].Visible = false;
-            ////dgvDatos.Columns[3].Visible= false;
-            //conexion.Close();
+
         }
 
         private void Turnos_Load(object sender, EventArgs e)
@@ -49,6 +47,7 @@ namespace ProyectoPeluquería
             {
                 string sql = "insert into Turnos(Dia,Hora,Id_Cliente,Id_Empleado) values ('" + txtDia.Text + "','" + txtHora.Value + "')";
             }
+            conexion.Close();
         }
 
         private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -116,7 +115,7 @@ namespace ProyectoPeluquería
 
         private void pbF5_Click(object sender, EventArgs e)
         {
-            consulta();
+            dgvDatos.DataSource = DataB.ActualizarListaTurnos();
         }
 
         private void MoverXPanel(object sender, MouseEventArgs e)
@@ -133,4 +132,5 @@ namespace ProyectoPeluquería
             }
         }
     }
+
 }

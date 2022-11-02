@@ -40,6 +40,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.BtnBusqueda = new System.Windows.Forms.Button();
             this.btnF5 = new System.Windows.Forms.PictureBox();
+            this.Seleccion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PanelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,10 +49,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 97);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(696, 230);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -183,12 +187,23 @@
             this.btnF5.TabStop = false;
             this.btnF5.Click += new System.EventHandler(this.btnF5_Click);
             // 
+            // Seleccion
+            // 
+            this.Seleccion.AutoSize = true;
+            this.Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Seleccion.Location = new System.Drawing.Point(12, 352);
+            this.Seleccion.Name = "Seleccion";
+            this.Seleccion.Size = new System.Drawing.Size(100, 17);
+            this.Seleccion.TabIndex = 38;
+            this.Seleccion.Text = "Se selecciono:";
+            // 
             // DeleteStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.ClientSize = new System.Drawing.Size(720, 397);
+            this.Controls.Add(this.Seleccion);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.PanelSup);
             this.Controls.Add(this.btnEliminar);
@@ -227,5 +242,6 @@
         private System.Windows.Forms.Panel PanelSup;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label Seleccion;
     }
 }

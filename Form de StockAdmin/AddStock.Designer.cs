@@ -36,8 +36,8 @@
             this.precio = new System.Windows.Forms.TextBox();
             this.PanelSup = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.PanelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,6 +76,7 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(293, 20);
             this.Nombre.TabIndex = 3;
+            this.Nombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Nombre_KeyUp);
             // 
             // Stock
             // 
@@ -83,6 +84,7 @@
             this.Stock.Name = "Stock";
             this.Stock.Size = new System.Drawing.Size(293, 20);
             this.Stock.TabIndex = 4;
+            this.Stock.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Stock_KeyUp);
             // 
             // precio
             // 
@@ -90,6 +92,7 @@
             this.precio.Name = "precio";
             this.precio.Size = new System.Drawing.Size(293, 20);
             this.precio.TabIndex = 5;
+            this.precio.KeyUp += new System.Windows.Forms.KeyEventHandler(this.precio_KeyUp);
             // 
             // PanelSup
             // 
@@ -117,15 +120,6 @@
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverPanel);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 197);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(317, 13);
-            this.panel1.TabIndex = 33;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -138,6 +132,15 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.Cerrar);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 197);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(317, 13);
+            this.panel1.TabIndex = 33;
             // 
             // button1
             // 

@@ -175,7 +175,7 @@
             // btnBajaProduct
             // 
             this.btnBajaProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBajaProduct.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.btnBajaProduct.Font = new System.Drawing.Font("Kelly Slab", 13F);
             this.btnBajaProduct.ForeColor = System.Drawing.Color.Black;
             this.btnBajaProduct.Image = global::ProyectoPeluquería.Properties.Resources.ojos_cruzados__1_;
             this.btnBajaProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -205,7 +205,7 @@
             // 
             this.Btdel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Btdel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btdel.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.Btdel.Font = new System.Drawing.Font("Kelly Slab", 13F);
             this.Btdel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(23)))), ((int)(((byte)(75)))));
             this.Btdel.Image = global::ProyectoPeluquería.Properties.Resources.fuego__8_;
             this.Btdel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -221,7 +221,7 @@
             // ModStock
             // 
             this.ModStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ModStock.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.ModStock.Font = new System.Drawing.Font("Kelly Slab", 13F);
             this.ModStock.ForeColor = System.Drawing.Color.Orange;
             this.ModStock.Image = global::ProyectoPeluquería.Properties.Resources.editar__2_;
             this.ModStock.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -237,7 +237,7 @@
             // AddPro
             // 
             this.AddPro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddPro.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.AddPro.Font = new System.Drawing.Font("Kelly Slab", 13F);
             this.AddPro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(47)))));
             this.AddPro.Image = global::ProyectoPeluquería.Properties.Resources.add;
             this.AddPro.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -288,6 +288,7 @@
             this.Name = "AdminStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminStock";
+            this.Activated += new System.EventHandler(this.AdminStock_Activated);
             this.Panelinf.ResumeLayout(false);
             this.Informacion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Vista)).EndInit();

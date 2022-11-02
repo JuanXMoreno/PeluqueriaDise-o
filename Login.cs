@@ -21,25 +21,9 @@ namespace ProyectoPeluquería
         //boton para ingresar al administrador con el usuario y contraseña guardadas en la base de datos
         private void button1_Click(object sender, EventArgs e)
         {
-            conexion.Open();
-            string consulta = "select * From Empleados where Usuario ='" + txtNombreUsuario.Text + "' and Contraseña='" + txtContraseña.Text + "' and EsAdmin = 'True'"; //verifico que el usuario y contraseña estan registrados en la base de datos
-            SqlCommand comando = new SqlCommand(consulta, conexion);
-            SqlDataReader lector;
-            lector = comando.ExecuteReader();
-
-            if (lector.HasRows == true) //verifico que el codigo se leyó para poder abrir el form
-            {
-                FormAdmin f3 = new FormAdmin();
-                this.AddOwnedForm(f3);
-                f3.Show();
-                this.Hide();
-            }
-            else //mensaje de aviso en caso de errarle
-            {
-                MessageBox.Show("Por favor, ingrese un usuario y/o contraseña válidos.");
-            }
-            conexion.Close();
+            DataB.Auth(txtNombreUsuario.Text, txtContraseña.Text);
             BorrarUser();
+            this.Hide();
         } //Boton para login
 
         private void PanelSup_MouseMove(object sender, MouseEventArgs e)
@@ -94,6 +78,23 @@ namespace ProyectoPeluquería
         {
             txtNombreUsuario.Clear();
             txtContraseña.Clear();
+        }
+
+        private void txtNombreUsuario_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                txtContraseña.Focus();
+            }
+        }
+
+        private void txtContraseña_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                DataB.Auth(txtNombreUsuario.Text, txtContraseña.Text);
+                this.Hide();
+            }
         }
     }
 }
