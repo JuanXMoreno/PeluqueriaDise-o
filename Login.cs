@@ -16,7 +16,7 @@ namespace ProyectoPeluquería
         int PosY = 0;
         int PosX = 0;
 
-        SqlConnection conexion = new SqlConnection(@"server=DESKTOP-GGALNHK\SQLEXPRESS01;database=Peluqueria; integrated security=true");
+        SqlConnection conexion = new SqlConnection(@"server=CELE-PC;database=Peluqueria; integrated security=true");
 
         //boton para ingresar al administrador con el usuario y contraseña guardadas en la base de datos
         private void button1_Click(object sender, EventArgs e)
