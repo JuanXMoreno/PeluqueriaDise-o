@@ -156,9 +156,6 @@
     <None Include="Resources\lavado.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\png-transparent-plus-and-minus-signs-symbol-computer-icons-symbol-miscellaneous-logo-cross.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\cruz.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
