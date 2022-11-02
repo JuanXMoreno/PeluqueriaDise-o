@@ -64,7 +64,7 @@ namespace ProyectoPeluquería
 
         private void Nombre_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 Stock.Focus();
             }

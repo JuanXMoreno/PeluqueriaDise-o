@@ -125,9 +125,14 @@ namespace ProyectoPeluquería
 
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@nombre", Nombre);
-                    cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(Stock));
-                    cmd.Parameters.AddWithValue("@precio", Convert.ToDecimal(precio));
-
+                    if (EsNumero(Stock) == true)
+                    {
+                        cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(Stock));
+                    }
+                    if (EsDecimal(precio) == true)
+                    {
+                        cmd.Parameters.AddWithValue("@precio", Convert.ToDecimal(precio));
+                    }
                     SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
                     Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
                     cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
@@ -172,10 +177,40 @@ namespace ProyectoPeluquería
             return Tran;
         }
 
+        public bool EsNumero(String Dato) //Verificar Si es un numero
+        {
+            int Verificarint;
+            bool EsNumb = int.TryParse(Dato, out Verificarint);
+            if (EsNumb)
+            {
+                Console.WriteLine("Es un numero: " + Verificarint);
+            }
+            else
+            {
+                Console.WriteLine("No es numero: " + Verificarint);
+            }
+            return EsNumb;
+        }
+
+        public bool EsDecimal(String Dato)
+        {
+            Decimal EsVerificar;
+            bool EsDeci = decimal.TryParse(Dato, out EsVerificar);
+            if (EsDeci)
+            {
+                Console.Write("Es un decimal: " + EsVerificar);
+            }
+            else
+            {
+                Console.Write("No es un decimal: " + EsVerificar);
+            }
+            return EsDeci;
+        }
+
         public SqlTransaction ModificarProducto(String ID, String Nombre, String Stock, String precio)
         {
             bool Exito = false;
-            if (ID != null && Nombre != null && precio != null)
+            if (ID != string.Empty && Nombre != string.Empty && precio != string.Empty)
             {
                 try
                 {
@@ -238,55 +273,58 @@ namespace ProyectoPeluquería
         public SqlTransaction EliminarProducto(String Text)
         {
             bool Exito = false;
-            try
+            if (Text != string.Empty)
             {
-                Conectarse = new SqlConnection();
-                Conectarse.ConnectionString = link;
-                Conectarse.Open();
-
-                //se inicia la transacción
-                Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
-
-                cmd = new SqlCommand("EliminarProducto", Conectarse, Tran);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(Text));
-
-                SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
-                Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
-                cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
-
-                cmd.ExecuteNonQuery(); //Ejecutamos el comando
-
-                int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
-
-                ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
-                if (ParametroDeEntrada == 1)
+                try
                 {
-                    Exito = true;
+                    Conectarse = new SqlConnection();
+                    Conectarse.ConnectionString = link;
+                    Conectarse.Open();
+
+                    //se inicia la transacción
+                    Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
+
+                    cmd = new SqlCommand("EliminarProducto", Conectarse, Tran);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(Text));
+
+                    SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
+                    Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
+                    cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
+
+                    cmd.ExecuteNonQuery(); //Ejecutamos el comando
+
+                    int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
+
+                    ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
+                    if (ParametroDeEntrada == 1)
+                    {
+                        Exito = true;
+                    }
                 }
-            }
-            catch (SqlException Errores)
-            {
-                MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
-                Console.WriteLine("Se encontraron errores: " + Errores);
-            }
-            finally
-            {
-                if (Exito)
+                catch (SqlException Errores)
                 {
-                    Console.WriteLine("Salio bien.");
-                    Tran.Commit(); //Confirmacion de base de datos
-                    Conectarse.Close(); // Cierro la base de datos feliz de la vida :)
-                    MessageBox.Show("Se dio de baja con exito.");
+                    MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
+                    Console.WriteLine("Se encontraron errores: " + Errores);
                 }
-                else
+                finally
                 {
-                    Console.WriteLine("Algo salio mal.");
-                    Tran.Rollback(); //Se deshace la transacion
-                    Conectarse.Close(); // Cierro la base de datos feliz pero enojado :(
-                    MessageBox.Show("Algo no salio bien.", "Ok.");
+                    if (Exito)
+                    {
+                        Console.WriteLine("Salio bien.");
+                        Tran.Commit(); //Confirmacion de base de datos
+                        Conectarse.Close(); // Cierro la base de datos feliz de la vida :)
+                        MessageBox.Show("Se dio de baja con exito.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Algo salio mal.");
+                        Tran.Rollback(); //Se deshace la transacion
+                        Conectarse.Close(); // Cierro la base de datos feliz pero enojado :(
+                        MessageBox.Show("Algo no salio bien.", "Ok.");
+                    }
                 }
             }
             return Tran;
@@ -321,54 +359,57 @@ namespace ProyectoPeluquería
         public SqlTransaction LevantarProducto(String ID)
         {
             bool Exito = false;
-            try
+            if (ID != string.Empty)
             {
-                Conectarse = new SqlConnection();
-                Conectarse.ConnectionString = link;
-                Conectarse.Open();
-
-                Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
-
-                cmd = new SqlCommand("DarAltaProducto", Conectarse, Tran);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(ID));
-
-                SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
-                Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
-                cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
-
-                cmd.ExecuteNonQuery(); //Ejecutamos el comando
-
-                int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
-
-                ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
-                if (ParametroDeEntrada == 1)
+                try
                 {
-                    Exito = true;
+                    Conectarse = new SqlConnection();
+                    Conectarse.ConnectionString = link;
+                    Conectarse.Open();
+
+                    Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
+
+                    cmd = new SqlCommand("DarAltaProducto", Conectarse, Tran);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(ID));
+
+                    SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
+                    Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
+                    cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
+
+                    cmd.ExecuteNonQuery(); //Ejecutamos el comando
+
+                    int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
+
+                    ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
+                    if (ParametroDeEntrada == 1)
+                    {
+                        Exito = true;
+                    }
                 }
-            }
-            catch (SqlException Errores)
-            {
-                MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
-                Console.WriteLine("Se encontraron errores: " + Errores);
-            }
-            finally
-            {
-                if (Exito)
+                catch (SqlException Errores)
                 {
-                    Console.WriteLine("Salio bien.");
-                    Tran.Commit();
-                    Conectarse.Close();
-                    MessageBox.Show("Se modifico el producto con exito.");
+                    MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
+                    Console.WriteLine("Se encontraron errores: " + Errores);
                 }
-                else
+                finally
                 {
-                    Console.WriteLine("Algo salio mal.");
-                    Tran.Rollback();
-                    Conectarse.Close();
-                    MessageBox.Show("Algo no salio bien.", "Ok");
+                    if (Exito)
+                    {
+                        Console.WriteLine("Salio bien.");
+                        Tran.Commit();
+                        Conectarse.Close();
+                        MessageBox.Show("Se modifico el producto con exito.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Algo salio mal.");
+                        Tran.Rollback();
+                        Conectarse.Close();
+                        MessageBox.Show("Algo no salio bien.", "Ok");
+                    }
                 }
             }
             return Tran;
@@ -376,8 +417,7 @@ namespace ProyectoPeluquería
 
         public String Hoy(String Cancel, String Realizadas, String Servicios, String Stock)
         { //IMPORTANTE ####### LE PUSE S a las ventadetalle
-            bool Exito = false;
-            String Actuales = "", Ganancia = "", Cancelados = "";
+            String Actuales = "", Ganancia = "";
             try
             {
                 Conectar();
@@ -500,7 +540,7 @@ namespace ProyectoPeluquería
                     MessageBox.Show("Por favor, ingrese un usuario y/o contraseña válidos.");
                 }
             }
-            catch (SqlException error)
+            catch (SqlException)
             {
 
             }
