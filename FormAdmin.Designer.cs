@@ -175,8 +175,8 @@ namespace ProyectoPeluquería
             this.user3.Name = "user3";
             this.user3.Size = new System.Drawing.Size(167, 140);
             this.user3.TabIndex = 3;
-            this.user3.Text = "[Hora]\r\n[Nombre]\r\n[Tipo de corte]\r\n\r\n[Ver mas]\r\n";
-            this.user3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.user3.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.user3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
@@ -196,8 +196,8 @@ namespace ProyectoPeluquería
             this.user2.Name = "user2";
             this.user2.Size = new System.Drawing.Size(167, 140);
             this.user2.TabIndex = 3;
-            this.user2.Text = "[Hora]\r\n[Nombre]\r\n[Tipo de corte]\r\n\r\n[Ver mas]\r\n";
-            this.user2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.user2.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.user2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
@@ -217,8 +217,8 @@ namespace ProyectoPeluquería
             this.user1.Name = "user1";
             this.user1.Size = new System.Drawing.Size(167, 140);
             this.user1.TabIndex = 2;
-            this.user1.Text = "[Hora]\r\n[Nombre]\r\n[Tipo de corte]\r\n\r\n[Ver mas]\r\n";
-            this.user1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.user1.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.user1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
