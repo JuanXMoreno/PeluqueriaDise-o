@@ -47,7 +47,7 @@ namespace ProyectoPeluquería
             }
             else
             {
-                string sql = "insert into Turnos(Dia,Hora,Id_Cliente,Id_Empleado,Telefono) values ('" + txtDia.Text + "','" + txtHora.Value + "' '" + txtCliente.Text + "','" + txtTelefono.Text + "')";
+                string sql = "insert into Turnos(Dia,Hora,Id_Cliente,Id_Empleado,Telefono) values ('" + txtDia.Text + "','" + txtHora.Value + "' '" + txtCliente.Text + "')";
             }
         }
         
