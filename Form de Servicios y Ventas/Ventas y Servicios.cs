@@ -10,10 +10,13 @@ namespace ProyectoPeluquería
         int contador;
         int contadorVentas = -1;
 
-        int[] ventasRealizadas = new int[9];
-        int[] serviciosRealizados = new int[8];
+        string[] ventasRealizadas = new string[9];
+        string[] serviciosRealizados = new string[8];
 
-        int indiceCeldasDGV;
+        int posicionVR = 0;
+        int posicionSR = 0;
+
+        int indiceCeldasDGV = -1;
 
         int cantidad;
 
@@ -38,90 +41,95 @@ namespace ProyectoPeluquería
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            switch (identificador)
+            if (MessageBox.Show("Seguro que quieres agregar esto?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                case -1:
-                    MessageBox.Show("Por favor seleccione una opción de la izquierda");
-                    break;
-                case 0:
-                    Sentencia(1, 2, "Corte Clasico Maquina", "Corte Clasico Tijera");
-                    break;
-                case 1:
-                    CodigoRepetidoCaseServicios(3, "Corte Americano");
-                    break;
-                case 2:
-                    Sentencia(4, 5, "Degrade Maquina", "Degrade Navaja");
-                    break;
-                case 3:
-                    if (valorCMBTipoDeDibujo == 0)
-                    {
-                        CodigoRepetidoCaseServicios(9, "Dibujo Simple");
-                    }
-                    else if (valorCMBTipoDeDibujo == 1)
-                    {
-                        CodigoRepetidoCaseServicios(10, "Dibujo Doble");
-                    }
-                    valorCMBTipoDeDibujo = -1;
-                    break;
-                case 4:
-                    Sentencia(11, 12, "Corte Barba Maquina", "Corte Barba Navaja");
-                    break;
-                case 5:
-                    CodigoRepetidoCaseServicios(6, "Lineas");
-                    break;
-                case 6:
-                    CodigoRepetidoCaseServicios(7, "Cejas");
-                    break;
-                case 7:
-                    CodigoRepetidoCaseServicios(8, "Frente");
-                    break;
-                case 8:
-                    CodigoRepetidoCaseServicios(13, "Lavado");
-                    break;
+                switch (identificador)
+                {
+                    case -1:
+                        MessageBox.Show("Por favor seleccione una opción de la izquierda");
+                        break;
+                    case 0:
+                        Sentencia(1, 2, "Corte Clasico Maquina", "Corte Clasico Tijera");
+                        break;
+                    case 1:
+                        CodigoRepetidoCaseServicios(3, "Corte Americano");
+                        break;
+                    case 2:
+                        Sentencia(4, 5, "Degrade Maquina", "Degrade Navaja");
+                        break;
+                    case 3:
+                        if (valorCMBTipoDeDibujo == 0)
+                        {
+                            CodigoRepetidoCaseServicios(9, "Dibujo Simple");
+                        }
+                        else if (valorCMBTipoDeDibujo == 1)
+                        {
+                            CodigoRepetidoCaseServicios(10, "Dibujo Doble");
+                        }
+                        valorCMBTipoDeDibujo = -1;
+                        break;
+                    case 4:
+                        Sentencia(11, 12, "Corte Barba Maquina", "Corte Barba Navaja");
+                        break;
+                    case 5:
+                        CodigoRepetidoCaseServicios(6, "Lineas");
+                        break;
+                    case 6:
+                        CodigoRepetidoCaseServicios(7, "Cejas");
+                        break;
+                    case 7:
+                        CodigoRepetidoCaseServicios(8, "Frente");
+                        break;
+                    case 8:
+                        CodigoRepetidoCaseServicios(13, "Lavado");
+                        break;
+                }
+                lblTotal.Text = "Precio Total: " + precio.ToString();
             }
-
-            lblTotal.Text = "Precio Total: " + precio.ToString();
         }
 
         private void btn_AgregarVentas_Click(object sender, EventArgs e)
         {
-            switch (contadorVentas)
+            if (MessageBox.Show("Seguro que quieres agregar esto?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                case -1:
-                    MessageBox.Show("Por favor seleccione una opción de la izquierda");
-                    break;
-                case 1:
-                    CodigoRepetidoCaseVentas("Espuma/Afeitar Foamy Sensitive");
-                    break;
-                case 2:
-                    CodigoRepetidoCaseVentas("Espuma/Afeitar Foamy Regular");
-                    break;
-                case 3:
-                    CodigoRepetidoCaseVentas("Shampoo Elvive Loreal Paris Arcilla Purificante");
-                    break;
-                case 4:
-                    CodigoRepetidoCaseVentas("Shampoo Elvive Reparación Total Extreme Keratin Xs");
-                    break;
-                case 5:
-                    CodigoRepetidoCaseVentas("Acondicionador Elvive Loreal Hidratación Hialurónico");
-                    break;
-                case 6:
-                    CodigoRepetidoCaseVentas("Acondicionador Elvive Loreal Reparación Total Extreme");
-                    break;
-                case 7:
-                    CodigoRepetidoCaseVentas("Gel Capilar Fijación Fuerte Algabo");
-                    break;
-                case 8:
-                    CodigoRepetidoCaseVentas("Gel Capilar Efecto Húmedo Algabo");
-                    break;
-                case 9:
-                    CodigoRepetidoCaseVentas("Iyosei Cera Capilar Hydro H2O Hard");
-                    break;
-                case 10:
-                    CodigoRepetidoCaseVentas("Iyosei Cera Capilar Hydro Clásica");
-                    break;
+                switch (contadorVentas)
+                {
+                    case -1:
+                        MessageBox.Show("Por favor seleccione una opción de la izquierda");
+                        break;
+                    case 1:
+                        CodigoRepetidoCaseVentas("Espuma/Afeitar Foamy Sensitive");
+                        break;
+                    case 2:
+                        CodigoRepetidoCaseVentas("Espuma/Afeitar Foamy Regular");
+                        break;
+                    case 3:
+                        CodigoRepetidoCaseVentas("Shampoo Elvive Loreal Paris Arcilla Purificante");
+                        break;
+                    case 4:
+                        CodigoRepetidoCaseVentas("Shampoo Elvive Reparación Total Extreme Keratin Xs");
+                        break;
+                    case 5:
+                        CodigoRepetidoCaseVentas("Acondicionador Elvive Loreal Hidratación Hialurónico");
+                        break;
+                    case 6:
+                        CodigoRepetidoCaseVentas("Acondicionador Elvive Loreal Reparación Total Extreme");
+                        break;
+                    case 7:
+                        CodigoRepetidoCaseVentas("Gel Capilar Fijación Fuerte Algabo");
+                        break;
+                    case 8:
+                        CodigoRepetidoCaseVentas("Gel Capilar Efecto Húmedo Algabo");
+                        break;
+                    case 9:
+                        CodigoRepetidoCaseVentas("Iyosei Cera Capilar Hydro H2O Hard");
+                        break;
+                    case 10:
+                        CodigoRepetidoCaseVentas("Iyosei Cera Capilar Hydro Clásica");
+                        break;
+                }
+                lblTotal.Text = "Precio Total " + precio.ToString();
             }
-            lblTotal.Text = "Precio Total " + precio.ToString();
         }
 
         private void pnl_CorteClasico_Click(object sender, EventArgs e)
@@ -447,16 +455,19 @@ namespace ProyectoPeluquería
             contador = contadorId;
             BddBajaPrecio();
             LlenarSOV(nombre, valorbdd, valorbdd);
+            serviciosRealizados[posicionSR] = nombre;
             precio = precio + (int)valorbdd;
+            posicionSR = posicionSR + 1;
         }
 
         private void CodigoRepetidoCaseVentas(string nombre)
         {
             int calculoMultiplicado = Convert.ToInt32(valorbddVentas) * cantidad;
             LlenarSOV(nombre, valorbddVentas, calculoMultiplicado);
+            ventasRealizadas[posicionVR] = nombre;
             precio = precio + calculoMultiplicado;
             cantidad = 0;
-
+            posicionVR = posicionVR + 1;
         }
 
         private void InhabilitarNombres()
@@ -484,26 +495,33 @@ namespace ProyectoPeluquería
 
         private void EliminarTabla()
         {
-            if (indiceCeldasDGV != 0)
+            if (indiceCeldasDGV >= 0)
             {
-                if (MessageBox.Show("Seguro que quieres eliminar este producto?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Seguro que quieres eliminar esto?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+                    precio = precio - Convert.ToInt32(dgv_VentasServicios.Rows[indiceCeldasDGV].Cells[3].Value.ToString());
+                    lblTotal.Text = "Precio Total: " + precio.ToString();
                     dgv_VentasServicios.Rows.RemoveAt(indiceCeldasDGV);
                 }
-                lblTotal.Text = "Precio Total: " + precio.ToString();
             }
             else
             {
                 MessageBox.Show("Por favor seleccione una opcion de la tabla");
             }
-
         }
 
         private void btn_AceptarCantidad_Click(object sender, EventArgs e)
         {
-            cantidad = Convert.ToInt32(txt_Cantidad.Text);
-            lblCantidad.Text = cantidad.ToString();
-            txt_Cantidad.Clear();
+            if (txt_Cantidad.Text != "")
+            {
+                cantidad = Convert.ToInt32(txt_Cantidad.Text);
+                lblCantidad.Text = cantidad.ToString();
+                txt_Cantidad.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Por favor ingrese la cantidad");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -523,10 +541,9 @@ namespace ProyectoPeluquería
             EliminarTabla();
         }
 
-        private void dgv_VentasServicios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_VentasServicios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indiceCeldasDGV = dgv_VentasServicios.CurrentRow.Index;
-           
         }
 
         private void btn_EliminarTablaServicios_Click(object sender, EventArgs e)
@@ -580,6 +597,7 @@ namespace ProyectoPeluquería
                 e.Handled = true;
             }
         }
+
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {

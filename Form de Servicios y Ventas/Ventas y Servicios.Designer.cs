@@ -1079,7 +1079,7 @@
             this.dgv_VentasServicios.ReadOnly = true;
             this.dgv_VentasServicios.Size = new System.Drawing.Size(442, 395);
             this.dgv_VentasServicios.TabIndex = 9;
-            this.dgv_VentasServicios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_VentasServicios_CellContentClick);
+            this.dgv_VentasServicios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_VentasServicios_CellClick);
             // 
             // cmna_VentasServicios
             // 
