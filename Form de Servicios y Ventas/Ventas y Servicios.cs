@@ -8,13 +8,16 @@ namespace ProyectoPeluquería
     public partial class Ventas_y_Servicios : Form
     {
         int contador;
-        int contadorVentas;
+        int contadorVentas = -1;
+
+        int[] ventasRealizadas = new int[9];
+        int[] serviciosRealizados = new int[8];
 
         int indiceCeldasDGV;
 
         int cantidad;
 
-        int identificador;
+        int identificador = -1;
         int valorCMBSeCortaCon;
         int valorCMBTipoDeDibujo = -1;
 
@@ -29,7 +32,6 @@ namespace ProyectoPeluquería
             InitializeComponent();
         }
 
-
         int PosX = 0, PosY = 0;
 
         SqlConnection conexion = new SqlConnection(DataBase.link);
@@ -38,6 +40,9 @@ namespace ProyectoPeluquería
         {
             switch (identificador)
             {
+                case -1:
+                    MessageBox.Show("Por favor seleccione una opción de la izquierda");
+                    break;
                 case 0:
                     Sentencia(1, 2, "Corte Clasico Maquina", "Corte Clasico Tijera");
                     break;
@@ -74,20 +79,17 @@ namespace ProyectoPeluquería
                     CodigoRepetidoCaseServicios(13, "Lavado");
                     break;
             }
-            if (contador == -1)
-            {
-                MessageBox.Show("por favor, seleccione una opción");
-            }
 
             lblTotal.Text = "Precio Total: " + precio.ToString();
         }
 
         private void btn_AgregarVentas_Click(object sender, EventArgs e)
         {
-
-
             switch (contadorVentas)
             {
+                case -1:
+                    MessageBox.Show("Por favor seleccione una opción de la izquierda");
+                    break;
                 case 1:
                     CodigoRepetidoCaseVentas("Espuma/Afeitar Foamy Sensitive");
                     break;
@@ -120,11 +122,6 @@ namespace ProyectoPeluquería
                     break;
             }
             lblTotal.Text = "Precio Total " + precio.ToString();
-        }
-
-        private void btn_Volver_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pnl_CorteClasico_Click(object sender, EventArgs e)
@@ -314,7 +311,7 @@ namespace ProyectoPeluquería
             label23.Enabled = true;
         }
 
-        public void HabilitarCmb() //todos los cmb estan 
+        private void HabilitarCmb() //todos los cmb estan 
         {
             valorCMBSeCortaCon = -1;
 
@@ -322,7 +319,7 @@ namespace ProyectoPeluquería
             cmb_TipoDeDibujo.Enabled = true;
         }
 
-        public void ColoresParejos() //para volver a poner el panel a su color una vez se seleccione otro
+        private void ColoresParejos() //para volver a poner el panel a su color una vez se seleccione otro
         {
             pnl_CorteClasico.BackColor = Color.FromArgb(149, 150, 167);
             pnl_CorteAmericano.BackColor = Color.FromArgb(149, 150, 167);
@@ -335,7 +332,7 @@ namespace ProyectoPeluquería
             pnl_Lavado.BackColor = Color.FromArgb(149, 150, 167);
         }
 
-        public void ColoresParejosVentas()
+        private void ColoresParejosVentas()
         {
             pnl_ShampooAP.BackColor = Color.FromArgb(149, 150, 167);
             pnl_ShampooEK.BackColor = Color.FromArgb(149, 150, 167);
@@ -349,7 +346,7 @@ namespace ProyectoPeluquería
             pnl_CeraHH.BackColor = Color.FromArgb(149, 150, 167);
         }
 
-        public void Sentencia(int a, int b, string valor1, string valor2) //interactua con el contador y el label cuando el dan esos valores
+        private void Sentencia(int a, int b, string valor1, string valor2) //interactua con el contador y el label cuando el dan esos valores
         {
             if (valorCMBSeCortaCon == 0)
             {
@@ -362,7 +359,7 @@ namespace ProyectoPeluquería
         }
 
 
-        public void CambiarTextoCMB() //algo visual, solo hace que el texto de los cmb sea seleccionar cada vez que se seleccione un servicio
+        private void CambiarTextoCMB() //algo visual, solo hace que el texto de los cmb sea seleccionar cada vez que se seleccione un servicio
         {
             cmb_TipoDeDibujo.Text = "Seleccionar";
             cmb_SeCortaCon.Text = "Seleccionar";
@@ -378,9 +375,9 @@ namespace ProyectoPeluquería
             valorCMBTipoDeDibujo = cmb_TipoDeDibujo.SelectedIndex;
         }
 
-        public void LlenarSOV(string valor, float valorVentaServicio, float calculoMultiplicado)
+        private void LlenarSOV(string valor, float valorVentaServicio, float calculoMultiplicado)
         {
-            int rowEscribir = dgv_VentasServicios.Rows.Count - 1;
+            int rowEscribir = dgv_VentasServicios.Rows.Count;
 
             dgv_VentasServicios.Rows.Add(1);
 
@@ -390,7 +387,7 @@ namespace ProyectoPeluquería
             dgv_VentasServicios.Rows[rowEscribir].Cells[3].Value = calculoMultiplicado;
         }
 
-        public void BddBajaPrecio()
+        private void BddBajaPrecio()
         {
             conexion.Open();
             SqlCommand comando = new SqlCommand("select Precio From Servicios where Id_Servicio ='" + contador + "'", conexion);
@@ -406,7 +403,7 @@ namespace ProyectoPeluquería
             conexion.Close();
         }
 
-        public void bddBajaPrecioProducto()
+        private void bddBajaPrecioProducto()
         {
             conexion.Open();
             SqlCommand comandoProd = new SqlCommand("select Precio From Productos where Id_Producto ='" + contadorVentas + "'", conexion);
@@ -422,7 +419,7 @@ namespace ProyectoPeluquería
             conexion.Close();
         }
 
-        public void CodigoRepetidoServicios(int valorId)
+        private void CodigoRepetidoServicios(int valorId)
         {
             InhabilitarNombres();
             contador = -1;
@@ -435,7 +432,7 @@ namespace ProyectoPeluquería
             cmb_SeCortaCon.Items.Clear();
         }
 
-        public void CodigoRepetidoVentas(int contadorventas)
+        private void CodigoRepetidoVentas(int contadorventas)
         {
             InhabilitarNombres();
             ColoresParejosVentas();
@@ -445,7 +442,7 @@ namespace ProyectoPeluquería
             lblCantidad.Text = "1";
         }
 
-        public void CodigoRepetidoCaseServicios(int contadorId, string nombre)
+        private void CodigoRepetidoCaseServicios(int contadorId, string nombre)
         {
             contador = contadorId;
             BddBajaPrecio();
@@ -453,7 +450,7 @@ namespace ProyectoPeluquería
             precio = precio + (int)valorbdd;
         }
 
-        public void CodigoRepetidoCaseVentas(string nombre)
+        private void CodigoRepetidoCaseVentas(string nombre)
         {
             int calculoMultiplicado = Convert.ToInt32(valorbddVentas) * cantidad;
             LlenarSOV(nombre, valorbddVentas, calculoMultiplicado);
@@ -462,7 +459,7 @@ namespace ProyectoPeluquería
 
         }
 
-        public void InhabilitarNombres()
+        private void InhabilitarNombres()
         {
             label9.Enabled = false;
             label10.Enabled = false;
@@ -483,6 +480,23 @@ namespace ProyectoPeluquería
             label32.Enabled = false;
             label34.Enabled = false;
             label23.Enabled = false;
+        }
+
+        private void EliminarTabla()
+        {
+            if (indiceCeldasDGV != 0)
+            {
+                if (MessageBox.Show("Seguro que quieres eliminar este producto?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    dgv_VentasServicios.Rows.RemoveAt(indiceCeldasDGV);
+                }
+                lblTotal.Text = "Precio Total: " + precio.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccione una opcion de la tabla");
+            }
+
         }
 
         private void btn_AceptarCantidad_Click(object sender, EventArgs e)
@@ -506,17 +520,18 @@ namespace ProyectoPeluquería
 
         private void btn_EliminarTablaVentas_Click(object sender, EventArgs e)
         {
-            dgv_VentasServicios.Rows.RemoveAt(indiceCeldasDGV);
+            EliminarTabla();
         }
 
         private void dgv_VentasServicios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             indiceCeldasDGV = dgv_VentasServicios.CurrentRow.Index;
+           
         }
 
         private void btn_EliminarTablaServicios_Click(object sender, EventArgs e)
         {
-            dgv_VentasServicios.Rows.RemoveAt(indiceCeldasDGV);
+            EliminarTabla();
         }
 
         private void MoverxPanel(object sender, MouseEventArgs e)

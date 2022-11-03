@@ -1065,6 +1065,8 @@
             // 
             // dgv_VentasServicios
             // 
+            this.dgv_VentasServicios.AllowUserToAddRows = false;
+            this.dgv_VentasServicios.AllowUserToDeleteRows = false;
             this.dgv_VentasServicios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.dgv_VentasServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_VentasServicios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1074,6 +1076,7 @@
             this.cmna_Precio});
             this.dgv_VentasServicios.Location = new System.Drawing.Point(737, 37);
             this.dgv_VentasServicios.Name = "dgv_VentasServicios";
+            this.dgv_VentasServicios.ReadOnly = true;
             this.dgv_VentasServicios.Size = new System.Drawing.Size(442, 395);
             this.dgv_VentasServicios.TabIndex = 9;
             this.dgv_VentasServicios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_VentasServicios_CellContentClick);
@@ -1083,23 +1086,27 @@
             this.cmna_VentasServicios.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cmna_VentasServicios.HeaderText = "Ventas/Servicios";
             this.cmna_VentasServicios.Name = "cmna_VentasServicios";
+            this.cmna_VentasServicios.ReadOnly = true;
             this.cmna_VentasServicios.Width = 113;
             // 
             // cmna_Cantidad
             // 
             this.cmna_Cantidad.HeaderText = "Cantidad";
             this.cmna_Cantidad.Name = "cmna_Cantidad";
+            this.cmna_Cantidad.ReadOnly = true;
             // 
             // cmna_CadaUno
             // 
             this.cmna_CadaUno.HeaderText = "Precio p/u";
             this.cmna_CadaUno.Name = "cmna_CadaUno";
+            this.cmna_CadaUno.ReadOnly = true;
             // 
             // cmna_Precio
             // 
             this.cmna_Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cmna_Precio.HeaderText = "Precio";
             this.cmna_Precio.Name = "cmna_Precio";
+            this.cmna_Precio.ReadOnly = true;
             this.cmna_Precio.Width = 62;
             // 
             // PanelInf

@@ -29,8 +29,8 @@ namespace ProyectoPeluquería
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -50,8 +50,8 @@ namespace ProyectoPeluquería
             this.txtHsAsignadas = new System.Windows.Forms.TextBox();
             this.txtFechaDeNacimiento = new System.Windows.Forms.DateTimePicker();
             this.PanelSup = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panelinf = new System.Windows.Forms.Panel();
             this.tablaBD = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -68,7 +68,7 @@ namespace ProyectoPeluquería
             this.btnInsertar.Image = global::ProyectoPeluquería.Properties.Resources.agregar_usuario;
             this.btnInsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInsertar.Location = new System.Drawing.Point(14, 255);
-            this.btnInsertar.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnInsertar.Margin = new System.Windows.Forms.Padding(1);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(182, 42);
             this.btnInsertar.TabIndex = 1;
@@ -85,7 +85,7 @@ namespace ProyectoPeluquería
             this.btnModificar.Image = global::ProyectoPeluquería.Properties.Resources.seleccione;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModificar.Location = new System.Drawing.Point(198, 255);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(1);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(182, 42);
             this.btnModificar.TabIndex = 2;
@@ -102,7 +102,7 @@ namespace ProyectoPeluquería
             this.btnEliminar.Image = global::ProyectoPeluquería.Properties.Resources.basura__2_;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.Location = new System.Drawing.Point(382, 255);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(1);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(182, 42);
             this.btnEliminar.TabIndex = 3;
@@ -119,7 +119,7 @@ namespace ProyectoPeluquería
             this.btnSueldos.Image = global::ProyectoPeluquería.Properties.Resources.usd_circulo;
             this.btnSueldos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSueldos.Location = new System.Drawing.Point(566, 255);
-            this.btnSueldos.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnSueldos.Margin = new System.Windows.Forms.Padding(1);
             this.btnSueldos.Name = "btnSueldos";
             this.btnSueldos.Size = new System.Drawing.Size(184, 42);
             this.btnSueldos.TabIndex = 23;
@@ -208,7 +208,7 @@ namespace ProyectoPeluquería
             // 
             this.txtNombre.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.txtNombre.Location = new System.Drawing.Point(80, 28);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(1);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(207, 27);
             this.txtNombre.TabIndex = 31;
@@ -217,7 +217,7 @@ namespace ProyectoPeluquería
             // 
             this.txtApellido.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.txtApellido.Location = new System.Drawing.Point(80, 59);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(1);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(207, 27);
             this.txtApellido.TabIndex = 32;
@@ -226,7 +226,7 @@ namespace ProyectoPeluquería
             // 
             this.txtDni.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.txtDni.Location = new System.Drawing.Point(80, 90);
-            this.txtDni.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtDni.Margin = new System.Windows.Forms.Padding(1);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(207, 27);
             this.txtDni.TabIndex = 33;
@@ -235,7 +235,7 @@ namespace ProyectoPeluquería
             // 
             this.txtNumeroDeTelefono.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.txtNumeroDeTelefono.Location = new System.Drawing.Point(81, 152);
-            this.txtNumeroDeTelefono.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtNumeroDeTelefono.Margin = new System.Windows.Forms.Padding(1);
             this.txtNumeroDeTelefono.Name = "txtNumeroDeTelefono";
             this.txtNumeroDeTelefono.Size = new System.Drawing.Size(206, 27);
             this.txtNumeroDeTelefono.TabIndex = 34;
@@ -244,7 +244,7 @@ namespace ProyectoPeluquería
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.txtDireccion.Location = new System.Drawing.Point(90, 121);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(1);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(197, 27);
             this.txtDireccion.TabIndex = 36;
@@ -253,7 +253,7 @@ namespace ProyectoPeluquería
             // 
             this.txtHsAsignadas.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.txtHsAsignadas.Location = new System.Drawing.Point(118, 215);
-            this.txtHsAsignadas.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtHsAsignadas.Margin = new System.Windows.Forms.Padding(1);
             this.txtHsAsignadas.Name = "txtHsAsignadas";
             this.txtHsAsignadas.Size = new System.Drawing.Size(169, 27);
             this.txtHsAsignadas.TabIndex = 39;
@@ -263,7 +263,7 @@ namespace ProyectoPeluquería
             this.txtFechaDeNacimiento.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.txtFechaDeNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtFechaDeNacimiento.Location = new System.Drawing.Point(104, 183);
-            this.txtFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(1);
             this.txtFechaDeNacimiento.Name = "txtFechaDeNacimiento";
             this.txtFechaDeNacimiento.Size = new System.Drawing.Size(183, 27);
             this.txtFechaDeNacimiento.TabIndex = 41;
@@ -275,25 +275,11 @@ namespace ProyectoPeluquería
             this.PanelSup.Controls.Add(this.pictureBox1);
             this.PanelSup.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSup.Location = new System.Drawing.Point(0, 0);
-            this.PanelSup.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.PanelSup.Margin = new System.Windows.Forms.Padding(1);
             this.PanelSup.Name = "PanelSup";
             this.PanelSup.Size = new System.Drawing.Size(760, 21);
             this.PanelSup.TabIndex = 44;
             this.PanelSup.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverPanel);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::ProyectoPeluquería.Properties.Resources.x;
-            this.pictureBox1.Location = new System.Drawing.Point(737, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -307,12 +293,26 @@ namespace ProyectoPeluquería
             this.label1.Text = "Empleados";
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::ProyectoPeluquería.Properties.Resources.x;
+            this.pictureBox1.Location = new System.Drawing.Point(737, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(23, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Panelinf
             // 
             this.Panelinf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.Panelinf.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Panelinf.Location = new System.Drawing.Point(0, 306);
-            this.Panelinf.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Panelinf.Margin = new System.Windows.Forms.Padding(1);
             this.Panelinf.Name = "Panelinf";
             this.Panelinf.Size = new System.Drawing.Size(760, 13);
             this.Panelinf.TabIndex = 43;
@@ -325,30 +325,30 @@ namespace ProyectoPeluquería
             this.tablaBD.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.tablaBD.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.tablaBD.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaBD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaBD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.tablaBD.ColumnHeadersHeight = 40;
             this.tablaBD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.tablaBD.EnableHeadersVisualStyles = false;
             this.tablaBD.Location = new System.Drawing.Point(289, 28);
-            this.tablaBD.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tablaBD.Margin = new System.Windows.Forms.Padding(1);
             this.tablaBD.Name = "tablaBD";
             this.tablaBD.ReadOnly = true;
             this.tablaBD.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.tablaBD.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.tablaBD.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Kelly Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.tablaBD.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tablaBD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablaBD.Size = new System.Drawing.Size(461, 214);
             this.tablaBD.TabIndex = 42;
