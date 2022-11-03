@@ -30,6 +30,8 @@ namespace ProyectoPeluquería
         private void btnAlta_Click(object sender, EventArgs e)
         {
             DataB.LevantarProducto(ID.ToString());
+            dataGridView1.DataSource = DataB.ActualizarLista(null);
+            Seleccion.Text = "Se selecciono:";
         }
 
         private void SeleccionarCelda(object sender, DataGridViewCellEventArgs e)

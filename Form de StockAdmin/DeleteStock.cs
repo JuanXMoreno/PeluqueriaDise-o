@@ -58,6 +58,8 @@ namespace ProyectoPeluquería
         private void button1_Click(object sender, EventArgs e)
         {
             DataB.EliminarProducto(DeleteID.ToString());
+            dataGridView1.DataSource = DataB.ActualizarLista(null);
+            Seleccion.Text = "Se selecciono:";
         }
 
         private void MoverPanel(object sender, MouseEventArgs e)
