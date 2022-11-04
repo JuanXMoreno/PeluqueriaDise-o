@@ -71,9 +71,22 @@ namespace ProyectoPeluquería
             this.Visible = false;
         }
 
-        public void BuscarUser(String Numero)
+        public bool BuscarUser(String Numero)
         {
-            chromeBrowser.Load("https://web.whatsapp.com/send?phone=" + Numero);
+            bool Verificado = false;
+            try
+            {
+                chromeBrowser.Load("https://web.whatsapp.com/send?phone=" + Numero);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Se encontro un error:\n"+ex);
+            }
+            finally
+            {
+
+            }
+            return Verificado;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -88,7 +101,7 @@ namespace ProyectoPeluquería
 
         public void MandarMSJ(String msj)
         {
-            StreamReader sr = new StreamReader(@"C:\Users\lucia\Source\Repos\PeluqueriaDise-o\Datos\Script.txt", true);
+            StreamReader sr = new StreamReader(@"C:\Users\lucia\Source\Repos\PeluqueriaDise-o\Datos\Sendmsj.txt", true);
             var Script = sr.ReadToEnd();
             sr.Close();
             chromeBrowser.ExecuteScriptAsync(Script + "\nenviarScript('" + msj + "').then(e => console.log(`Código finalizado, ${e} Mensaje enviado.`)).catch(console.error)");
