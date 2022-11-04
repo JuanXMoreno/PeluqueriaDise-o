@@ -12,6 +12,7 @@ namespace ProyectoPeluquería
             InitializeComponent();
             Vistas.DataSource = dt.ActualizarLista(null);
             Vistas.Columns[0].Visible = false;
+            Vistas.Columns[5].Visible = false;
         }
 
         int PosY = 0;

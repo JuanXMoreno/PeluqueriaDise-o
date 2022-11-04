@@ -74,7 +74,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(720, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Informacion:  Productos Cargados : 100 ";
+            this.label2.Text = "Informacion:  Productos Cargados : ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Informacion

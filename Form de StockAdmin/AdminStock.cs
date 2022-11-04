@@ -13,6 +13,7 @@ namespace ProyectoPeluquería
             InitializeComponent();
             Vista.DataSource = DataB.ActualizarLista(null);
             Vista.Columns[0].Visible = false;
+            Vista.Columns[5].Visible = false;
         }
 
         int PosY = 0;
@@ -136,6 +137,7 @@ namespace ProyectoPeluquería
         private void AdminStock_Activated(object sender, EventArgs e)
         {
             Vista.DataSource = DataB.ActualizarLista(null);
+            label2.Text = DataB.InfoProductos();
             Console.WriteLine("Se actualizo la tabla del Form stock");
         }
     }

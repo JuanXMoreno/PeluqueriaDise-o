@@ -13,6 +13,8 @@ namespace ProyectoPeluquería
         {
             InitializeComponent();
             dataGridView1.DataSource = DataB.ActualizarLista(null);
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[0].Visible = false;
         }
 
         int PosY = 0;
