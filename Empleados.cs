@@ -180,5 +180,16 @@ namespace ProyectoPeluquería
                 Top = Top + (e.Y - PosY);
             }
         }
+
+        private void btnSueldos_Click(object sender, EventArgs e)
+        {
+            Sueldos s = new Sueldos();
+            s.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

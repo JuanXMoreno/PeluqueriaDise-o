@@ -42,8 +42,11 @@ namespace ProyectoPeluquería
             this.btnAdminStock = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.user3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.user2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.user1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -66,9 +69,6 @@ namespace ProyectoPeluquería
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Hoy = new System.Windows.Forms.Timer(this.components);
-            this.user1 = new System.Windows.Forms.Label();
-            this.user2 = new System.Windows.Forms.Label();
-            this.user3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -87,13 +87,13 @@ namespace ProyectoPeluquería
             // 
             this.btnAdminTurnos.BackColor = System.Drawing.Color.White;
             this.btnAdminTurnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminTurnos.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.btnAdminTurnos.Font = new System.Drawing.Font("Kelly Slab", 15F);
             this.btnAdminTurnos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdminTurnos.Location = new System.Drawing.Point(12, 31);
             this.btnAdminTurnos.Name = "btnAdminTurnos";
             this.btnAdminTurnos.Size = new System.Drawing.Size(161, 87);
             this.btnAdminTurnos.TabIndex = 0;
-            this.btnAdminTurnos.Text = "Administrar\r\nturnos";
+            this.btnAdminTurnos.Text = "Turnos";
             this.btnAdminTurnos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminTurnos.UseVisualStyleBackColor = false;
             this.btnAdminTurnos.Click += new System.EventHandler(this.btnAdminTurnos_Click);
@@ -102,13 +102,13 @@ namespace ProyectoPeluquería
             // 
             this.btnAdminEmpleados.BackColor = System.Drawing.Color.White;
             this.btnAdminEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminEmpleados.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.btnAdminEmpleados.Font = new System.Drawing.Font("Kelly Slab", 15F);
             this.btnAdminEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdminEmpleados.Location = new System.Drawing.Point(12, 124);
             this.btnAdminEmpleados.Name = "btnAdminEmpleados";
             this.btnAdminEmpleados.Size = new System.Drawing.Size(161, 87);
             this.btnAdminEmpleados.TabIndex = 1;
-            this.btnAdminEmpleados.Text = "Administrar\r\nempleados";
+            this.btnAdminEmpleados.Text = "Empleados";
             this.btnAdminEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminEmpleados.UseVisualStyleBackColor = false;
             this.btnAdminEmpleados.Click += new System.EventHandler(this.btnAdminEmpleados_Click);
@@ -117,13 +117,13 @@ namespace ProyectoPeluquería
             // 
             this.btnAdminServicios.BackColor = System.Drawing.Color.White;
             this.btnAdminServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminServicios.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.btnAdminServicios.Font = new System.Drawing.Font("Kelly Slab", 15F);
             this.btnAdminServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdminServicios.Location = new System.Drawing.Point(12, 310);
             this.btnAdminServicios.Name = "btnAdminServicios";
             this.btnAdminServicios.Size = new System.Drawing.Size(161, 87);
             this.btnAdminServicios.TabIndex = 2;
-            this.btnAdminServicios.Text = "Administrar\r\nservicios";
+            this.btnAdminServicios.Text = "Servicios y \r\nVentas";
             this.btnAdminServicios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminServicios.UseVisualStyleBackColor = false;
             this.btnAdminServicios.Click += new System.EventHandler(this.btnAdminServicios_Click);
@@ -132,13 +132,13 @@ namespace ProyectoPeluquería
             // 
             this.btnAdminStock.BackColor = System.Drawing.Color.White;
             this.btnAdminStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminStock.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.btnAdminStock.Font = new System.Drawing.Font("Kelly Slab", 15F);
             this.btnAdminStock.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdminStock.Location = new System.Drawing.Point(12, 217);
             this.btnAdminStock.Name = "btnAdminStock";
             this.btnAdminStock.Size = new System.Drawing.Size(161, 87);
             this.btnAdminStock.TabIndex = 3;
-            this.btnAdminStock.Text = "Administrar\r\nstock";
+            this.btnAdminStock.Text = "Stock";
             this.btnAdminStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminStock.UseVisualStyleBackColor = false;
             this.btnAdminStock.Click += new System.EventHandler(this.btnAdminStock_Click);
@@ -167,6 +167,17 @@ namespace ProyectoPeluquería
             this.panel7.Size = new System.Drawing.Size(167, 140);
             this.panel7.TabIndex = 7;
             // 
+            // user3
+            // 
+            this.user3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.user3.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.user3.Location = new System.Drawing.Point(0, 0);
+            this.user3.Name = "user3";
+            this.user3.Size = new System.Drawing.Size(167, 140);
+            this.user3.TabIndex = 3;
+            this.user3.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.user3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -177,6 +188,17 @@ namespace ProyectoPeluquería
             this.panel6.Size = new System.Drawing.Size(167, 140);
             this.panel6.TabIndex = 7;
             // 
+            // user2
+            // 
+            this.user2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.user2.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.user2.Location = new System.Drawing.Point(0, 0);
+            this.user2.Name = "user2";
+            this.user2.Size = new System.Drawing.Size(167, 140);
+            this.user2.TabIndex = 3;
+            this.user2.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.user2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -186,6 +208,17 @@ namespace ProyectoPeluquería
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 140);
             this.panel5.TabIndex = 6;
+            // 
+            // user1
+            // 
+            this.user1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.user1.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.user1.Location = new System.Drawing.Point(0, 0);
+            this.user1.Name = "user1";
+            this.user1.Size = new System.Drawing.Size(167, 140);
+            this.user1.TabIndex = 2;
+            this.user1.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.user1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -277,7 +310,7 @@ namespace ProyectoPeluquería
             // 
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.button1.Font = new System.Drawing.Font("Kelly Slab", 15F);
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.Location = new System.Drawing.Point(12, 403);
             this.button1.Name = "button1";
@@ -444,39 +477,6 @@ namespace ProyectoPeluquería
             // 
             this.Hoy.Interval = 1;
             this.Hoy.Tick += new System.EventHandler(this.Hoy_Tick);
-            // 
-            // user1
-            // 
-            this.user1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.user1.Font = new System.Drawing.Font("Kelly Slab", 13F);
-            this.user1.Location = new System.Drawing.Point(0, 0);
-            this.user1.Name = "user1";
-            this.user1.Size = new System.Drawing.Size(167, 140);
-            this.user1.TabIndex = 2;
-            this.user1.Text = "[Hora]\r\n[Nombre]\r\n[Tipo de corte]\r\n\r\n[Ver mas]\r\n";
-            this.user1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // user2
-            // 
-            this.user2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.user2.Font = new System.Drawing.Font("Kelly Slab", 13F);
-            this.user2.Location = new System.Drawing.Point(0, 0);
-            this.user2.Name = "user2";
-            this.user2.Size = new System.Drawing.Size(167, 140);
-            this.user2.TabIndex = 3;
-            this.user2.Text = "[Hora]\r\n[Nombre]\r\n[Tipo de corte]\r\n\r\n[Ver mas]\r\n";
-            this.user2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // user3
-            // 
-            this.user3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.user3.Font = new System.Drawing.Font("Kelly Slab", 13F);
-            this.user3.Location = new System.Drawing.Point(0, 0);
-            this.user3.Name = "user3";
-            this.user3.Size = new System.Drawing.Size(167, 140);
-            this.user3.TabIndex = 3;
-            this.user3.Text = "[Hora]\r\n[Nombre]\r\n[Tipo de corte]\r\n\r\n[Ver mas]\r\n";
-            this.user3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // FormAdmin
             // 

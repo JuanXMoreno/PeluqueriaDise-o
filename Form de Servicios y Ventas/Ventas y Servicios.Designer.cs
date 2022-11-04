@@ -88,7 +88,7 @@
             this.pnl_Lineas = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.PanelAdd = new System.Windows.Forms.Panel();
             this.btn_EliminarTablaServicios = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -151,7 +151,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.pnl_Lineas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.PanelAdd.SuspendLayout();
             this.pnl_Degrade.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.pnl_CorteAmericano.SuspendLayout();
@@ -645,7 +645,7 @@
             this.tbp_Servicios.Controls.Add(this.pnl_Frente);
             this.tbp_Servicios.Controls.Add(this.pnl_Cejas);
             this.tbp_Servicios.Controls.Add(this.pnl_Lineas);
-            this.tbp_Servicios.Controls.Add(this.panel5);
+            this.tbp_Servicios.Controls.Add(this.PanelAdd);
             this.tbp_Servicios.Controls.Add(this.pnl_Degrade);
             this.tbp_Servicios.Controls.Add(this.pnl_CorteAmericano);
             this.tbp_Servicios.Controls.Add(this.pnl_CorteClasico);
@@ -861,20 +861,20 @@
             this.pictureBox4.TabIndex = 14;
             this.pictureBox4.TabStop = false;
             // 
-            // panel5
+            // PanelAdd
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.Window;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.btn_EliminarTablaServicios);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.cmb_TipoDeDibujo);
-            this.panel5.Controls.Add(this.btn_Agregar);
-            this.panel5.Controls.Add(this.cmb_SeCortaCon);
-            this.panel5.Location = new System.Drawing.Point(435, 10);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(212, 293);
-            this.panel5.TabIndex = 5;
+            this.PanelAdd.BackColor = System.Drawing.SystemColors.Window;
+            this.PanelAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanelAdd.Controls.Add(this.btn_EliminarTablaServicios);
+            this.PanelAdd.Controls.Add(this.label5);
+            this.PanelAdd.Controls.Add(this.label4);
+            this.PanelAdd.Controls.Add(this.cmb_TipoDeDibujo);
+            this.PanelAdd.Controls.Add(this.btn_Agregar);
+            this.PanelAdd.Controls.Add(this.cmb_SeCortaCon);
+            this.PanelAdd.Location = new System.Drawing.Point(435, 10);
+            this.PanelAdd.Name = "PanelAdd";
+            this.PanelAdd.Size = new System.Drawing.Size(212, 293);
+            this.PanelAdd.TabIndex = 5;
             // 
             // btn_EliminarTablaServicios
             // 
@@ -1065,6 +1065,8 @@
             // 
             // dgv_VentasServicios
             // 
+            this.dgv_VentasServicios.AllowUserToAddRows = false;
+            this.dgv_VentasServicios.AllowUserToDeleteRows = false;
             this.dgv_VentasServicios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.dgv_VentasServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_VentasServicios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1074,32 +1076,37 @@
             this.cmna_Precio});
             this.dgv_VentasServicios.Location = new System.Drawing.Point(737, 37);
             this.dgv_VentasServicios.Name = "dgv_VentasServicios";
+            this.dgv_VentasServicios.ReadOnly = true;
             this.dgv_VentasServicios.Size = new System.Drawing.Size(442, 395);
             this.dgv_VentasServicios.TabIndex = 9;
-            this.dgv_VentasServicios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_VentasServicios_CellContentClick);
+            this.dgv_VentasServicios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_VentasServicios_CellClick);
             // 
             // cmna_VentasServicios
             // 
             this.cmna_VentasServicios.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cmna_VentasServicios.HeaderText = "Ventas/Servicios";
             this.cmna_VentasServicios.Name = "cmna_VentasServicios";
+            this.cmna_VentasServicios.ReadOnly = true;
             this.cmna_VentasServicios.Width = 113;
             // 
             // cmna_Cantidad
             // 
             this.cmna_Cantidad.HeaderText = "Cantidad";
             this.cmna_Cantidad.Name = "cmna_Cantidad";
+            this.cmna_Cantidad.ReadOnly = true;
             // 
             // cmna_CadaUno
             // 
             this.cmna_CadaUno.HeaderText = "Precio p/u";
             this.cmna_CadaUno.Name = "cmna_CadaUno";
+            this.cmna_CadaUno.ReadOnly = true;
             // 
             // cmna_Precio
             // 
             this.cmna_Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cmna_Precio.HeaderText = "Precio";
             this.cmna_Precio.Name = "cmna_Precio";
+            this.cmna_Precio.ReadOnly = true;
             this.cmna_Precio.Width = 62;
             // 
             // PanelInf
@@ -1128,12 +1135,12 @@
             // 
             this.Cerrarlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Cerrarlabel.AutoSize = true;
-            this.Cerrarlabel.Font = new System.Drawing.Font("Comic Panels", 12F);
+            this.Cerrarlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Cerrarlabel.ForeColor = System.Drawing.Color.Crimson;
             this.Cerrarlabel.Location = new System.Drawing.Point(1166, 4);
             this.Cerrarlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Cerrarlabel.Name = "Cerrarlabel";
-            this.Cerrarlabel.Size = new System.Drawing.Size(21, 17);
+            this.Cerrarlabel.Size = new System.Drawing.Size(20, 20);
             this.Cerrarlabel.TabIndex = 1;
             this.Cerrarlabel.Text = "X";
             this.Cerrarlabel.Click += new System.EventHandler(this.Cerrar);
@@ -1222,8 +1229,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.pnl_Lineas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.PanelAdd.ResumeLayout(false);
+            this.PanelAdd.PerformLayout();
             this.pnl_Degrade.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.pnl_CorteAmericano.ResumeLayout(false);
@@ -1246,7 +1253,7 @@
         private System.Windows.Forms.Panel pnl_ShampooAP;
         private System.Windows.Forms.Panel pnl_EspumaFR;
         private System.Windows.Forms.Panel pnl_EspumaFS;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel PanelAdd;
         private System.Windows.Forms.Panel pnl_Degrade;
         private System.Windows.Forms.Panel pnl_CorteAmericano;
         private System.Windows.Forms.Panel pnl_CorteClasico;

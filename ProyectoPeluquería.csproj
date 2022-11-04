@@ -92,10 +92,10 @@
     <Compile Include="Form de StockAdmin\DeleteStock.Designer.cs">
       <DependentUpon>DeleteStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormaDePago.cs">
+    <Compile Include="Form de Servicios y Ventas\FormaDePago.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormaDePago.Designer.cs">
+    <Compile Include="Form de Servicios y Ventas\FormaDePago.Designer.cs">
       <DependentUpon>FormaDePago.cs</DependentUpon>
     </Compile>
     <Compile Include="FormWeb.cs">
@@ -130,16 +130,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sueldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sueldos.Designer.cs">
+      <DependentUpon>Sueldos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Turnos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Turnos.Designer.cs">
       <DependentUpon>Turnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventas y Servicios.cs">
+    <Compile Include="Form de Servicios y Ventas\Ventas y Servicios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas y Servicios.Designer.cs">
+    <Compile Include="Form de Servicios y Ventas\Ventas y Servicios.Designer.cs">
       <DependentUpon>Ventas y Servicios.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Config.resx">
@@ -157,7 +163,7 @@
     <EmbeddedResource Include="Form de StockAdmin\DeleteStock.resx">
       <DependentUpon>DeleteStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormaDePago.resx">
+    <EmbeddedResource Include="Form de Servicios y Ventas\FormaDePago.resx">
       <DependentUpon>FormaDePago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWeb.resx">
@@ -177,18 +183,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Sueldos.resx">
+      <DependentUpon>Sueldos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Turnos.resx">
       <DependentUpon>Turnos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas y Servicios.resx">
+    <EmbeddedResource Include="Form de Servicios y Ventas\Ventas y Servicios.resx">
       <DependentUpon>Ventas y Servicios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

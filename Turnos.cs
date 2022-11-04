@@ -9,7 +9,7 @@ namespace ProyectoPeluquería
     {
         private int n = 0;
 
-        SqlConnection conexion = new SqlConnection(@"server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
+        SqlConnection conexion = new SqlConnection(@"server=DESKTOP-COF6H2T;database=Peluqueria; integrated security=true");
         //DataBase
         DataBase DataB = new DataBase();
         public Turnos()
