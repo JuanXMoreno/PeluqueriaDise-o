@@ -217,6 +217,8 @@
   <ItemGroup>
     <Content Include="Datos\MensajeDeError.js" />
     <Content Include="Datos\Sendmsj.txt" />
+    <None Include="Resources\espuma1.png" />
+    <None Include="Resources\espuma1.jpg" />
     <None Include="Resources\actualizar-flecha.png" />
     <None Include="Resources\actualizar %282%29.png" />
     <None Include="Resources\corte clasico1.jpeg" />
