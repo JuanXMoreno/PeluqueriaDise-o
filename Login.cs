@@ -22,7 +22,6 @@ namespace ProyectoPeluquería
         private void button1_Click(object sender, EventArgs e)
         {
             DataB.Auth(txtNombreUsuario.Text, txtContraseña.Text);
-            DataB.AuthEmpleado(txtNombreUsuario.Text, txtContraseña.Text);
             BorrarUser();
             this.Hide();
         } //Boton para login

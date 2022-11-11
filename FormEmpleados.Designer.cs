@@ -151,6 +151,7 @@
             this.label8.TabIndex = 3;
             this.label8.Text = "Configuracion";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // pictureBox2
             // 
@@ -163,6 +164,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label10
             // 
@@ -175,6 +177,7 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "Cerrar sesion";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // PanelSup
             // 
@@ -186,6 +189,8 @@
             this.PanelSup.Name = "PanelSup";
             this.PanelSup.Size = new System.Drawing.Size(927, 25);
             this.PanelSup.TabIndex = 36;
+            this.PanelSup.Click += new System.EventHandler(this.PanelSup_Click);
+            this.PanelSup.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PanelSup_MouseUp);
             // 
             // label7
             // 
@@ -197,6 +202,7 @@
             this.label7.Size = new System.Drawing.Size(152, 16);
             this.label7.TabIndex = 32;
             this.label7.Text = "Formulario Empleados";
+            this.label7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverXTitu);
             // 
             // pictureBox1
             // 
@@ -321,6 +327,7 @@
             this.btnAdminServicios.Text = "Servicios y \r\nVentas";
             this.btnAdminServicios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminServicios.UseVisualStyleBackColor = false;
+            this.btnAdminServicios.Click += new System.EventHandler(this.btnAdminServicios_Click);
             // 
             // btnAdminTurnos
             // 
@@ -335,6 +342,7 @@
             this.btnAdminTurnos.Text = "Turnos";
             this.btnAdminTurnos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminTurnos.UseVisualStyleBackColor = false;
+            this.btnAdminTurnos.Click += new System.EventHandler(this.btnAdminTurnos_Click);
             // 
             // FormEmpleados
             // 
@@ -351,6 +359,7 @@
             this.Name = "FormEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormEmpleados";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEmpleados_FormClosed);
             this.panel2.ResumeLayout(false);
             this.Panelinf.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
