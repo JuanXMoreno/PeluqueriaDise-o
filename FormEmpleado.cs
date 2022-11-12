@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoPeluquería.Form_de_Servicios_y_Ventas
+namespace ProyectoPeluquería
 {
-    public partial class FormEmpleados : Form
+    public partial class FormEmpleado : Form
     {
         Login f3 = new Login();
 
-        public FormEmpleados()
+        public FormEmpleado()
         {
             InitializeComponent();
         }
@@ -68,14 +68,35 @@ namespace ProyectoPeluquería.Form_de_Servicios_y_Ventas
             }
         }
 
-        private void PanelSup_Click(object sender, EventArgs e)
+        private void MoverXTitu(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void FormEmpleados_FormClosed(object sender, FormClosedEventArgs e)
+        private void FormEmpleado_FormClosed(object sender, FormClosedEventArgs e)
         {
             f3.Close();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            Login login = Owner as Login;
+            login.Visible = true;
+            this.Close();
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -110,25 +131,9 @@ namespace ProyectoPeluquería.Form_de_Servicios_y_Ventas
             }
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void Hoy_Tick(object sender, EventArgs e)
         {
-            Login login = Owner as Login;
-            login.Visible = true;
-            this.Close();
-        }
-
-        private void MoverXTitu(object sender, MouseEventArgs e)
-        {
-            if (e.Button != MouseButtons.Left)
-            {
-                PosX = e.X;
-                PosY = e.Y;
-            }
-            else
-            {
-                Left = Left + (e.X - PosX);
-                Top = Top + (e.Y - PosY);
-            }
+            Hoy.Interval = 300;
         }
     }
 }

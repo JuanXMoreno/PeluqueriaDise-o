@@ -14,6 +14,8 @@ namespace ProyectoPeluquería
         SqlDataReader Lector = null;
         String Aviso = "";
 
+        public Boolean SiHay = false;
+
         public SqlConnection Conectar() //metodo para conectar la base de datos al c#
         {
             SqlConnection cn = new SqlConnection(link);
@@ -534,10 +536,34 @@ namespace ProyectoPeluquería
                 {
                     FormAdmin f3 = new FormAdmin();
                     f3.Show();
+                    SiHay = true;
                 }
-                else //mensaje de aviso en caso de errarle
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+        public void AuthEmpleado(String user, String pass)
+        {
+            try
+            {
+                Conectar();
+                string consulta = "select * From Empleados where Usuario ='" + user + "' and Contraseña='" + pass + "' and EsAdmin = 'False'"; //verifico que el usuario y contraseña estan registrados en la base de datos
+                SqlCommand comando = new SqlCommand(consulta, Conectar());
+                SqlDataReader lector;
+                lector = comando.ExecuteReader();
+
+                if (lector.HasRows == true) //verifico que el codigo se leyó para poder abrir el form
                 {
-                    MessageBox.Show("Por favor, ingrese un usuario y/o contraseña válidos.");
+                    FormEmpleado f3 = new FormEmpleado();
+                    f3.Show();
+                    SiHay = true;
                 }
             }
             catch (SqlException)

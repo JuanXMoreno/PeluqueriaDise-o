@@ -641,12 +641,12 @@
             // tbp_Servicios
             // 
             this.tbp_Servicios.AutoScroll = true;
-            this.tbp_Servicios.Controls.Add(this.label1);
             this.tbp_Servicios.Controls.Add(this.pnl_Dibujo);
             this.tbp_Servicios.Controls.Add(this.pnl_Lavado);
             this.tbp_Servicios.Controls.Add(this.pnl_CorteBarba);
             this.tbp_Servicios.Controls.Add(this.pnl_Frente);
             this.tbp_Servicios.Controls.Add(this.pnl_Cejas);
+            this.tbp_Servicios.Controls.Add(this.label1);
             this.tbp_Servicios.Controls.Add(this.pnl_Lineas);
             this.tbp_Servicios.Controls.Add(this.PanelAdd);
             this.tbp_Servicios.Controls.Add(this.pnl_Degrade);
@@ -666,7 +666,7 @@
             this.pnl_Dibujo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Dibujo.Controls.Add(this.label24);
             this.pnl_Dibujo.Controls.Add(this.pictureBox7);
-            this.pnl_Dibujo.Location = new System.Drawing.Point(18, 273);
+            this.pnl_Dibujo.Location = new System.Drawing.Point(18, 274);
             this.pnl_Dibujo.Name = "pnl_Dibujo";
             this.pnl_Dibujo.Size = new System.Drawing.Size(378, 68);
             this.pnl_Dibujo.TabIndex = 4;
@@ -700,7 +700,7 @@
             this.pnl_Lavado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Lavado.Controls.Add(this.label14);
             this.pnl_Lavado.Controls.Add(this.pictureBox10);
-            this.pnl_Lavado.Location = new System.Drawing.Point(18, 713);
+            this.pnl_Lavado.Location = new System.Drawing.Point(18, 714);
             this.pnl_Lavado.Name = "pnl_Lavado";
             this.pnl_Lavado.Size = new System.Drawing.Size(378, 68);
             this.pnl_Lavado.TabIndex = 9;
@@ -734,7 +734,7 @@
             this.pnl_CorteBarba.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_CorteBarba.Controls.Add(this.label13);
             this.pnl_CorteBarba.Controls.Add(this.pictureBox9);
-            this.pnl_CorteBarba.Location = new System.Drawing.Point(18, 358);
+            this.pnl_CorteBarba.Location = new System.Drawing.Point(18, 362);
             this.pnl_CorteBarba.Name = "pnl_CorteBarba";
             this.pnl_CorteBarba.Size = new System.Drawing.Size(378, 68);
             this.pnl_CorteBarba.TabIndex = 5;
@@ -768,7 +768,7 @@
             this.pnl_Frente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Frente.Controls.Add(this.label17);
             this.pnl_Frente.Controls.Add(this.pictureBox6);
-            this.pnl_Frente.Location = new System.Drawing.Point(18, 622);
+            this.pnl_Frente.Location = new System.Drawing.Point(18, 626);
             this.pnl_Frente.Name = "pnl_Frente";
             this.pnl_Frente.Size = new System.Drawing.Size(378, 68);
             this.pnl_Frente.TabIndex = 8;
@@ -802,7 +802,7 @@
             this.pnl_Cejas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Cejas.Controls.Add(this.label16);
             this.pnl_Cejas.Controls.Add(this.pictureBox5);
-            this.pnl_Cejas.Location = new System.Drawing.Point(18, 534);
+            this.pnl_Cejas.Location = new System.Drawing.Point(18, 538);
             this.pnl_Cejas.Name = "pnl_Cejas";
             this.pnl_Cejas.Size = new System.Drawing.Size(378, 68);
             this.pnl_Cejas.TabIndex = 7;
@@ -836,7 +836,7 @@
             this.pnl_Lineas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Lineas.Controls.Add(this.label15);
             this.pnl_Lineas.Controls.Add(this.pictureBox4);
-            this.pnl_Lineas.Location = new System.Drawing.Point(18, 446);
+            this.pnl_Lineas.Location = new System.Drawing.Point(18, 450);
             this.pnl_Lineas.Name = "pnl_Lineas";
             this.pnl_Lineas.Size = new System.Drawing.Size(378, 68);
             this.pnl_Lineas.TabIndex = 6;
@@ -1187,12 +1187,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(444, 330);
+            this.label1.Font = new System.Drawing.Font("Kelly Slab", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(458, 340);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 24);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "0asdfa";
+            this.label1.Size = new System.Drawing.Size(113, 23);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Precio Total:";
             // 
             // Ventas_y_Servicios
             // 

@@ -21,9 +21,18 @@ namespace ProyectoPeluquería
         //boton para ingresar al administrador con el usuario y contraseña guardadas en la base de datos
         private void button1_Click(object sender, EventArgs e)
         {
+            DataB.AuthEmpleado(txtNombreUsuario.Text, txtContraseña.Text);
             DataB.Auth(txtNombreUsuario.Text, txtContraseña.Text);
-            BorrarUser();
-            this.Hide();
+            if (DataB.SiHay == false)
+            {
+                MessageBox.Show("Por favor, ingrese un usuario y/o contraseña correctos");
+            }
+            else
+            {
+                BorrarUser();
+                this.Hide();
+            }
+            
         } //Boton para login
 
         private void PanelSup_MouseMove(object sender, MouseEventArgs e)

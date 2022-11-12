@@ -73,11 +73,11 @@
     <Compile Include="Empleados.Designer.cs">
       <DependentUpon>Empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEmpleados.cs">
+    <Compile Include="FormEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEmpleados.Designer.cs">
-      <DependentUpon>FormEmpleados.cs</DependentUpon>
+    <Compile Include="FormEmpleado.Designer.cs">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Gabriel Farias %28Stock%29\Admin\AddStock.cs">
       <SubType>Form</SubType>
@@ -160,8 +160,8 @@
     <EmbeddedResource Include="Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEmpleados.resx">
-      <DependentUpon>FormEmpleados.cs</DependentUpon>
+    <EmbeddedResource Include="FormEmpleado.resx">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gabriel Farias %28Stock%29\Admin\AddStock.resx">
       <DependentUpon>AddStock.cs</DependentUpon>

@@ -35,6 +35,7 @@ namespace ProyectoPeluquería
         public Ventas_y_Servicios()
         {
             InitializeComponent();
+            //CrearPanel();
         }
 
         int PosX = 0, PosY = 0;
@@ -49,6 +50,9 @@ namespace ProyectoPeluquería
 
             switch (identificador)
             {
+                case -1:
+                    MessageBox.Show("Por favor seleccione una opción de la izquierda");
+                    break;
                 case 0:
                     FiltroDeNombres("Corte Clasico Maquina", "Corte Clasico Tijera");
                     break;
@@ -91,7 +95,6 @@ namespace ProyectoPeluquería
             
             if (serviciosRealizados[indice] != buscado)
             {
-                label1.Text = buscado;
                 if (MessageBox.Show("Seguro que quieres agregar esto?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     switch (identificador)
@@ -433,13 +436,9 @@ namespace ProyectoPeluquería
             {
                 if (buscadoEliminar == serviciosRealizados[indice])
                 {
-
+                    EliminarTabla();
                 }
             }
-
-            
-
-            EliminarTabla();
         }
 
         private void MoverxPanel(object sender, MouseEventArgs e)
@@ -705,7 +704,6 @@ namespace ProyectoPeluquería
                     precio = precio - Convert.ToInt32(dgv_VentasServicios.Rows[indiceCeldasDGV].Cells[3].Value.ToString());
                     lblTotal.Text = "Precio Total: " + precio.ToString();
                     dgv_VentasServicios.Rows.RemoveAt(indiceCeldasDGV);
-
                 }
             }
             else
@@ -724,6 +722,31 @@ namespace ProyectoPeluquería
             {
                 buscado = valor2;
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void CrearPanel(string nombre)
+        {
+            int y = 890;
+            Panel panel = new Panel();
+            //PictureBox picture = new PictureBox();
+            //Label label = new Label();
+            panel.Location = new Point(10, 10);
+            panel.Dock = DockStyle.None;
+            panel.Size = new Size(414, 68);
+            panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
+            panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            //y += 88;
+            this.Controls.Add(panel);
+            panel.Name = nombre;
+            panel.Visible = true;
+            panel.Enabled = true;
+            //this.Controls.Add(label);
+            //panel.Controls.Add(picture);
         }
     }
 }
