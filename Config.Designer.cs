@@ -43,6 +43,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,24 +52,27 @@
             this.PanelInf = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.PanelTop = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnWeb = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.PanelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(14, 366);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 36);
+            this.button2.Size = new System.Drawing.Size(173, 39);
             this.button2.TabIndex = 18;
             this.button2.Text = "Verificar SQL";
             this.button2.UseVisualStyleBackColor = true;
@@ -187,6 +191,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnWeb);
             this.panel3.Location = new System.Drawing.Point(14, 68);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(556, 160);
@@ -213,6 +218,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(556, 30);
             this.panel2.TabIndex = 15;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(519, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -276,7 +290,7 @@
             // 
             this.PanelInf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.PanelInf.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelInf.Location = new System.Drawing.Point(0, 416);
+            this.PanelInf.Location = new System.Drawing.Point(0, 411);
             this.PanelInf.Name = "PanelInf";
             this.PanelInf.Size = new System.Drawing.Size(582, 20);
             this.PanelInf.TabIndex = 13;
@@ -307,26 +321,6 @@
             this.PanelTop.TabIndex = 12;
             this.PanelTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverXPanel);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(519, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(188, 366);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 36);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Verificar SQL";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -340,12 +334,51 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.Cerrar_Click);
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(193, 366);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(172, 39);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Verificar SQL";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnWeb
+            // 
+            this.btnWeb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb.Font = new System.Drawing.Font("Kelly Slab", 10F);
+            this.btnWeb.ForeColor = System.Drawing.Color.Black;
+            this.btnWeb.Location = new System.Drawing.Point(10, 10);
+            this.btnWeb.Margin = new System.Windows.Forms.Padding(10);
+            this.btnWeb.Name = "btnWeb";
+            this.btnWeb.Size = new System.Drawing.Size(134, 29);
+            this.btnWeb.TabIndex = 19;
+            this.btnWeb.Text = "Mostrar WEB";
+            this.btnWeb.UseVisualStyleBackColor = true;
+            this.btnWeb.Click += new System.EventHandler(this.btnWeb_Click);
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(371, 366);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(199, 39);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Inicio automatico";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            this.ClientSize = new System.Drawing.Size(582, 436);
+            this.ClientSize = new System.Drawing.Size(582, 431);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel4);
@@ -360,13 +393,14 @@
             this.Text = "Config";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.PanelTop.ResumeLayout(false);
             this.PanelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -400,5 +434,7 @@
         private System.Windows.Forms.Panel PanelTop;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnWeb;
+        private System.Windows.Forms.Button button3;
     }
 }

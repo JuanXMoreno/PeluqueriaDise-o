@@ -5,6 +5,8 @@ namespace ProyectoPeluquería
 {
     public partial class Config : Form
     {
+        FormWeb Web = new FormWeb();
+
         public Config()
         {
             InitializeComponent();
@@ -31,6 +33,11 @@ namespace ProyectoPeluquería
             FormAdmin Admin = Owner as FormAdmin;
             Admin.Visible = true;
             this.Close();
+        }
+
+        private void btnWeb_Click(object sender, EventArgs e)
+        {
+            Web.Show();
         }
 
         private void MoverXPanel(object sender, MouseEventArgs e)

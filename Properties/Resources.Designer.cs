@@ -321,6 +321,36 @@ namespace ProyectoPeluquería.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a async function NumNotExiting()
+        ///{
+        ///    Home = document.querySelector(&apos;div[class=&quot;_3ev9-&quot;]&apos;);
+        ///    Error0 = Home.querySelector(&apos;div[class=&quot;_3J6wB&quot;]&apos;);
+        ///    Error1 = Error0.querySelector(&apos;div[class=&quot;nne8e&quot;]&apos;);
+        ///    ErrorMSJ = Error1.querySelector(&apos;div[class=&quot;_2Nr6U&quot;]&apos;);
+        ///
+        ///    if(ErrorMSJ)
+        ///    {
+        ///        console.log(&quot;Se encontro un error.&quot;);
+        ///    }
+        ///    else
+        ///    {
+        ///        console.log(&quot;No se encontro nada.&quot;);
+        ///    }
+        ///    return true;
+        ///}
+        ///
+        /////NumNotExiting();
+        ///
+        ///
+        ///.
+        /// </summary>
+        internal static string MensajeDeError {
+            get {
+                return ResourceManager.GetString("MensajeDeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap modo_retrato {
@@ -372,6 +402,30 @@ namespace ProyectoPeluquería.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a async function DetectarInicio() {
+        ///    Carga = document.querySelector(&quot;#app &gt; div &gt; div &gt; div.g0rxnol2.lk9bdx0e.d9lyu8cj.qlylaf53.d4g41f7d &gt; progress&quot;);
+        ///    Home = document.querySelector(&quot;#side &gt; div.uwk68 &gt; div &gt; div &gt; div._16C8p &gt; div &gt; div._13NKt.copyable-text.selectable-text&quot;);
+        ///    Exito = false;
+        ///
+        ///    if (Carga) {
+        ///        console.log(&quot;[Cargando]&quot;);
+        ///    }
+        ///    else if (Home) {
+        ///        console.log(&quot;[EXITO]&quot;);
+        ///        Exito = true;
+        ///    }
+        ///    return Exito;
+        ///}
+        ///
+        ///DetectarInicio();.
+        /// </summary>
+        internal static string ProcAndHome {
+            get {
+                return ResourceManager.GetString("ProcAndHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap quitar_usuario {
@@ -388,6 +442,26 @@ namespace ProyectoPeluquería.Properties {
             get {
                 object obj = ResourceManager.GetObject("seleccione", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a async function enviarScript(scriptText){
+        ///    const lines = scriptText.split(/[\n\t]+/);
+        ///    textarea = document.querySelector(&quot;#main &gt; footer &gt; div._2BU3P.tm2tP.copyable-area &gt; div &gt; span:nth-child(2) &gt; div &gt; div._2lMWa &gt; div.p3_M1 &gt; div &gt; div.fd365im1.to2l77zo.bbv8nyr4.mwp4sxku.gfz4du6o.ag5g9lrv&quot;);
+        ///
+        ///    if(Chats)
+        ///    {
+        ///        console.log(&quot;WhatsApp Web iniciado.&quot;);
+        ///        if(main)
+        ///        {
+        ///            console.log(&quot;Chat Abierto.&quot;);
+        ///            for(const line of lines){            
+        ///              [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string Sendmsj {
+            get {
+                return ResourceManager.GetString("Sendmsj", resourceCulture);
             }
         }
         
@@ -418,6 +492,52 @@ namespace ProyectoPeluquería.Properties {
             get {
                 object obj = ResourceManager.GetObject("usd-circulo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a function VerificarInicio()
+        ///{
+        ///    Home = document.querySelector(&apos;div[class=&quot;_3ArsE&quot;]&apos;);   
+        ///    Chats = Home.querySelector(&apos;div[class=&quot;ldL67 _2i3T7 _1cpSb&quot;]&apos;);
+        ///    HomeWhats = Home.querySelector(&apos;div[class=&quot;ldL67 _3sh5K&quot;]&apos;);
+        ///    HomeWhats1 = HomeWhats.querySelector(&apos;div[class=&quot;zaKsw&quot;]&apos;);
+        ///
+        ///    if(Chats)
+        ///    {
+        ///        console.log(&quot;Listo&quot;);
+        ///    }
+        ///    else
+        ///    {
+        ///        console.log(&quot;NO&quot;);
+        ///    }
+        ///    return true;
+        ///}
+        ///
+        ///VerificarInicio();.
+        /// </summary>
+        internal static string VerificacionHomeWhatsApp {
+            get {
+                return ResourceManager.GetString("VerificacionHomeWhatsApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a async function Login() {
+        ///    Login = document.querySelector(&quot;#app &gt; div &gt; div &gt; div.landing-window &gt; div.landing-main &gt; div &gt; div._2WuPw&quot;);
+        ///
+        ///    if (Login) {
+        ///        console.log(&quot;[/lobby]&quot;);
+        ///    }
+        ///    else {
+        ///        console.log(&quot;[/not lobby]&quot;);
+        ///    }
+        ///}
+        ///Login().
+        /// </summary>
+        internal static string VeriLobby {
+            get {
+                return ResourceManager.GetString("VeriLobby", resourceCulture);
             }
         }
         
