@@ -115,6 +115,7 @@
             this.Cerrarlabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tbc_Ventas_Servicios.SuspendLayout();
             this.tbp_Ventas.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -629,16 +630,18 @@
             // 
             // pictureBox14
             // 
+            this.pictureBox14.Image = global::ProyectoPeluquería.Properties.Resources.espuma1;
             this.pictureBox14.Location = new System.Drawing.Point(3, 3);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox14.TabIndex = 2;
             this.pictureBox14.TabStop = false;
             // 
             // tbp_Servicios
             // 
             this.tbp_Servicios.AutoScroll = true;
+            this.tbp_Servicios.Controls.Add(this.label1);
             this.tbp_Servicios.Controls.Add(this.pnl_Dibujo);
             this.tbp_Servicios.Controls.Add(this.pnl_Lavado);
             this.tbp_Servicios.Controls.Add(this.pnl_CorteBarba);
@@ -881,11 +884,14 @@
             this.btn_EliminarTablaServicios.BackColor = System.Drawing.Color.Transparent;
             this.btn_EliminarTablaServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_EliminarTablaServicios.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.btn_EliminarTablaServicios.Image = global::ProyectoPeluquería.Properties.Resources.basura__2_;
+            this.btn_EliminarTablaServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_EliminarTablaServicios.Location = new System.Drawing.Point(26, 225);
             this.btn_EliminarTablaServicios.Name = "btn_EliminarTablaServicios";
             this.btn_EliminarTablaServicios.Size = new System.Drawing.Size(161, 37);
             this.btn_EliminarTablaServicios.TabIndex = 13;
             this.btn_EliminarTablaServicios.Text = "Eliminar";
+            this.btn_EliminarTablaServicios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_EliminarTablaServicios.UseVisualStyleBackColor = false;
             this.btn_EliminarTablaServicios.Click += new System.EventHandler(this.btn_EliminarTablaServicios_Click);
             // 
@@ -927,11 +933,14 @@
             this.btn_Agregar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Agregar.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.btn_Agregar.Image = global::ProyectoPeluquería.Properties.Resources.carrito_de_compra_anadir;
+            this.btn_Agregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Agregar.Location = new System.Drawing.Point(26, 158);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(161, 37);
             this.btn_Agregar.TabIndex = 12;
             this.btn_Agregar.Text = "Agregar";
+            this.btn_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Agregar.UseVisualStyleBackColor = false;
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
@@ -1175,6 +1184,16 @@
             this.btn_Aceptar.UseVisualStyleBackColor = false;
             this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(444, 330);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 24);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "0asdfa";
+            // 
             // Ventas_y_Servicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1217,6 +1236,7 @@
             this.pnl_EspumaFS.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.tbp_Servicios.ResumeLayout(false);
+            this.tbp_Servicios.PerformLayout();
             this.pnl_Dibujo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.pnl_Lavado.ResumeLayout(false);
@@ -1333,5 +1353,6 @@
         private System.Windows.Forms.Panel PanelTop;
         private System.Windows.Forms.Label Cerrarlabel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
