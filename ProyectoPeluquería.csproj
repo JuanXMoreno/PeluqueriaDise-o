@@ -216,7 +216,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Datos\MensajeDeError.js" />
-    <Content Include="Datos\Sendmsj.txt" />
+    <Content Include="Datos\NewCliente.txt" />
+    <Content Include="Datos\ProcAndHome.js" />
+    <Content Include="Datos\Sendmsj.js" />
+    <Content Include="Datos\VerificacionHomeWhatsApp.js" />
+    <Content Include="Datos\VeriLobby.js" />
     <None Include="Resources\actualizar-flecha.png" />
     <None Include="Resources\actualizar %282%29.png" />
     <None Include="Resources\corte clasico1.jpeg" />
@@ -257,7 +261,10 @@
     <None Include="Resources\gira-a-la-derecha f5 negro.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Gabriel Farias %28Stock%29\FormEmpleado\" />
+    <Folder Include="Gabriel Farias %28Stock%29\Empleado\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

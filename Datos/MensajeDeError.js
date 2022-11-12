@@ -1,21 +1,17 @@
 async function NumNotExiting()
 {
-    Home = document.querySelector('div[class="_3ev9-"]');
-    Error0 = Home.querySelector('div[class="_3J6wB"]');
-    Error1 = Error0.querySelector('div[class="nne8e"]');
-    ErrorMSJ = Error1.querySelector('div[class="_2Nr6U"]');
+    ErrorMSJ = document.querySelector("#app > div > span:nth-child(2) > div > span > div > div > div > div > div > div._2Nr6U");
+    ErMSJ = ErrorMSJ.innerHTML;
 
     if(ErrorMSJ)
     {
-        console.log("Se encontro un error.");
+        console.log("[Se encontro un error.]");
+        console.log(ErMSJ);
     }
     else
     {
-        console.log("No se encontro nada.");
+        console.log("[No se encontro nada.]");
     }
     return true;
 }
-
-//NumNotExiting();
-
-
+NumNotExiting();

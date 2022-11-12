@@ -12,23 +12,39 @@ namespace ProyectoPeluquería
         public ChromiumWebBrowser chromeBrowser;
         CefSettings settings = new CefSettings();
 
+        //Timers
+        Timer time = new Timer();
+
         public FormWeb()
         {
             InitializeComponent();
             IniciarBrowser();
         }
 
-        int PosX = 0, PosY = 0;
+        //Cola
+        String[] Cola = new string[10000];
+        String EnProceso = "";
+        String[] Confirmados = new string[10000];
+        String[] Errores = new string[10000];
+        int libre = 0;
+        bool Buscador = true;
+        //Bools comandos del CEF
+        bool InLobby = false;
+        bool WhatHome = false;
 
+        int PosX = 0, PosY = 0; //Mover Form's
+
+        /// Procesos Necesarios para el CEF Chrome
         public void IniciarBrowser()
         {
+            //Configuracion del CefSharp 
+            CefSharpSettings.ShutdownOnExit = true; // Activar el cierre del Google Chrome en caso de requerirlo
             //Configuracion del Chromme
             settings.CachePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "WhatsAppBot\\Cache");
             settings.CefCommandLineArgs.Add("disable-gpu");
             settings.CefCommandLineArgs.Add("no-proxy-server");
             //Iniciamos el Servicio
             Cef.Initialize(settings);
-
             //Se abre automaticamente en: WhatsApp.Web
             chromeBrowser = new ChromiumWebBrowser("web.whatsapp.com");
 
@@ -37,8 +53,66 @@ namespace ProyectoPeluquería
             chromeBrowser.Size = new Size(812, 530);
             chromeBrowser.Location = new Point(8, 8);
             chromeBrowser.Dock = DockStyle.Fill;
+
+            chromeBrowser.FrameLoadEnd += browser_FrameLoadEnd;
+            chromeBrowser.ConsoleMessage += browser_ConsoleMessage;
         }
 
+        public void browser_ConsoleMessage(object sender, ConsoleMessageEventArgs e)
+        {
+            try
+            {
+                var mensaje = e.Message;
+                if (mensaje == "[/lobby]" || mensaje == "Para usar WhatsApp en tu computadora:")
+                {
+                    DialogResult result = MessageBox.Show("Sesion de WhatsApp no encontrada. Vuelva a iniciar sesion para enviar mensajes.", "AVISO", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (result == DialogResult.OK)
+                    {
+                        this.Visible = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se cancelaran los mensajes en cola. Muchas gracias\nRata");
+                    }
+                }
+                if (mensaje == "[Cargando]")
+                {
+                    Console.WriteLine("Se esta cargando todo....");
+                }
+                if (mensaje == "[EXITO]")
+                {
+                    Console.WriteLine("Sesion iniciada y Preparada");
+                    MandarMsj.Enabled = true;
+                    WhatHome = true;
+                }
+                if (mensaje == "[Se encontro un error.]" || mensaje == "El número de teléfono compartido a través de la dirección URL es inválido")
+                {
+                    Console.WriteLine("Se encontro un numero no valio. se enviara a la error para revisar luego.");
+                    for (int i = 0; i < Errores.Length; i++)
+                    {
+                        if (Errores[i] == null)
+                        {
+                            Errores[i] = EnProceso;
+                            Buscador = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine("Se encontro un error de chrome: " + er);
+            }
+            //Console.WriteLine("Mensajes de Chrome: "+e.Message); ///Metodo para leer los mensajes
+        } //Lee la consola (Aqui se verifican los metodos y se envian las directivas¿) Acto #9
+
+        public void browser_FrameLoadEnd(object sender, FrameLoadEndEventArgs e) //No borrar
+        {
+            //Vacio
+        }
+        //Procesos Necesarios para el CEF Chrome
+
+
+        ///Metodos del Form
         private void PanelTop_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)
@@ -70,41 +144,147 @@ namespace ProyectoPeluquería
         {
             this.Visible = false;
         }
+        //Metodos del Form
 
+        //Metodos para la 'API'
+
+        private void label4_Click(object sender, EventArgs e) //btn para enviar la info al metodo Addcola
+        {
+            AddCola(textBox1.Text);
+        } // Acto #1
+
+        public string AddCola(string num) //Metodo para agregar los numeros al vector
+        {
+            //Agrego a la cola para enviar el mensaje.
+            for (int i = 0; i < Cola.Length; i++)
+            {
+                if (Cola[i] == null)
+                {
+                    Console.WriteLine("Se encontro un lugar disponible. N#" + i + "-------Se agregara este numero: " + num);
+                    Cola[i] = num;
+                    break;
+                }
+            }
+            IniciarBusqueda.Enabled = true;
+            return num;
+        } // Acto #2
+        private void IniciarBusquedaTimer(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Buscador == true)
+                {
+                    for (int i = 0; i < Cola.Length; i++)
+                    {
+                        Console.WriteLine("bucle for pasando: #"+i);
+                        if(Buscador == true)
+                        {
+                            if (Cola[i] != null)
+                            {
+                                BuscarUser(Cola[i].ToString());
+                                Console.WriteLine("----------\nNumero de fila #" + i + "\nNumero de telefono: " + Cola[i] + "\nEnviado.");
+                                EnProceso = Cola[i];
+                                Cola[i] = null;
+                                Buscador = false;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("" + err);
+            }
+        } // Acto #3
         public bool BuscarUser(String Numero)
         {
+            TimerBuscador.Enabled = true;
             bool Verificado = false;
             try
             {
                 chromeBrowser.Load("https://web.whatsapp.com/send?phone=" + Numero);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Se encontro un error:\n"+ex);
+                MessageBox.Show("Se encontro un error:\n" + ex);
             }
             finally
             {
 
             }
             return Verificado;
+        } //Inicia la busqueda del usuario // Acto #4
+        private void VerificadorDeEstado(object sender, EventArgs e) //Timer que verifica el estado del Chrome (Envia un scrip para ubicarse) // Acto #5
+        {
+            WhatsAppLobby();
+            WhatsAppHome();
+            WhatsAppErrorNoExist();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        //Script's
+        public void WhatsAppLobby()
         {
-            BuscarUser("+5493549630404");
-        }
+            try
+            {
+                chromeBrowser.EvaluateScriptAsync(Properties.Resources.VeriLobby);
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine("Se encontro un error en el metodo WhatsAppLobby.\nError: " + er);
+            }
+        } // Acto #6 //script
+        public void WhatsAppHome()
+        {
+            try
+            {
+                chromeBrowser.EvaluateScriptAsync(Properties.Resources.ProcAndHome);
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine("Se encontro un error en el metodo WhatsAppHome.\nError: " + er);
+            }
+        }  // Acto #7 //script
+        public void WhatsAppErrorNoExist()
+        {
+            try
+            {
+                chromeBrowser.EvaluateScriptAsync(Properties.Resources.MensajeDeError);
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine("Se encontro un error en el metodo WhatsAppErrorNoExist.\nError: " + er);
+            }
+        } // Acto # 8 //script
+        //Fin Script's
+        private void Verificar_Click(object sender, EventArgs e)
+        {
+            VerificarLista();
+        } //Verificar Lista
 
-        private void label3_Click(object sender, EventArgs e)
+        private void TimerEnviarMensaje(object sender, EventArgs e)
         {
-            MandarMSJ("Hola bro todo bien ? Tenemos alto problema");
-        }
+            try
+            {
+                StreamReader sr1 = new StreamReader(@"C:\Users\lucia\Source\Repos\PeluqueriaDise-o\Datos\NewCliente.txt", true);
+                var NewCliente = sr1.ReadToEnd();
+                sr1.Close();
+                chromeBrowser.ExecuteScriptAsync(Properties.Resources.Sendmsj + "\nenviarScript(`" + NewCliente + "`)");
 
-        public void MandarMSJ(String msj)
+                Buscador = true;
+                MandarMsj.Enabled = false;
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine("Error: " + er);
+            }
+        } //Aqui se envia el mensaje //Acto 9
+
+        public void VerificarLista() //Metodo para verificar lista
         {
-            StreamReader sr = new StreamReader(@"C:\Users\lucia\Source\Repos\PeluqueriaDise-o\Datos\Sendmsj.txt", true);
-            var Script = sr.ReadToEnd();
-            sr.Close();
-            chromeBrowser.ExecuteScriptAsync(Script + "\nenviarScript('" + msj + "').then(e => console.log(`Código finalizado, ${e} Mensaje enviado.`)).catch(console.error)");
+            for (int i = 0; i < Cola.Length; i++)
+            {
+                Console.WriteLine("Cola #" + i + " Numero contenido dentro de ella: " + Cola[i]);
+            }
         }
     }
 }

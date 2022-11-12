@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace ProyectoPeluquería
 {
@@ -22,7 +16,7 @@ namespace ProyectoPeluquería
             SqlCommand comando = new SqlCommand(consulSueldo, conexion);
             lblSueldoActual.Text = comando.ExecuteScalar().ToString();
             conexion.Close();
-          
+
             //Selecciono algunas filas de la tabla empleados y en la de HorasAsignadas 
             //multiplico las horas asignadas por el sueldo actual, sacando la suma del 
             //pago del empleado equivalente a un día.
@@ -54,9 +48,12 @@ namespace ProyectoPeluquería
             Boolean Corroboro = Esnumero(txtSueldoActual.Text.ToString());
 
 
-            if (Corroboro == false || txtSueldoActual.Text.Equals("")){
+            if (Corroboro == false || txtSueldoActual.Text.Equals(""))
+            {
                 MessageBox.Show("Falta ingresar sueldo o no hay datos válidos");
-            }else{
+            }
+            else
+            {
                 conexion.Open();
 
                 String sql = "update Empleados set Sueldos=" + txtSueldoActual.Text + "where Id_Empleado= '1'";
@@ -67,7 +64,7 @@ namespace ProyectoPeluquería
 
                 if (dr == DialogResult.OK)
                 {
-                  lblSueldoActual.Text = comando.ExecuteNonQuery().ToString();  
+                    lblSueldoActual.Text = comando.ExecuteNonQuery().ToString();
                 }
                 txtSueldoActual.Clear();
             }
@@ -79,11 +76,14 @@ namespace ProyectoPeluquería
         public Boolean Esnumero(string numero)
         {
             Boolean siES = false;
-            try{
+            try
+            {
                 Int64.Parse(numero);
                 siES = true;
 
-            }catch (Exception){
+            }
+            catch (Exception)
+            {
                 siES = false;
             }
             return siES;

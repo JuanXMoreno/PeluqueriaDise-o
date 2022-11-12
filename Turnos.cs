@@ -9,7 +9,7 @@ namespace ProyectoPeluquería
     {
         private int n = 0;
 
-        SqlConnection conexion = new SqlConnection(@"server=DESKTOP-COF6H2T;database=Peluqueria; integrated security=true");
+        SqlConnection conexion = new SqlConnection(DataBase.link);
         //DataBase
         DataBase DataB = new DataBase();
         public Turnos()
@@ -25,16 +25,6 @@ namespace ProyectoPeluquería
         }
 
         int PosX = 0, PosY = 0;
-
-        public void consulta()
-        {
-
-        }
-
-        private void Turnos_Load(object sender, EventArgs e)
-        {
-            consulta();
-        }
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
