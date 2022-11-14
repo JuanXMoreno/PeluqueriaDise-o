@@ -149,45 +149,95 @@ namespace ProyectoPeluquería
 
         private void btn_AgregarVentas_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Seguro que quieres agregar esto?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            int indice;
+
+            switch (contadorVentas)
             {
-                switch (contadorVentas)
+                case -1:
+                    MessageBox.Show("Por favor seleccione una opción de la izquierda");
+                    break;
+                case 1:
+                    buscado = "Espuma/Afeitar Foamy Sensitive";
+                    break;
+                case 2:
+                    buscado = "Espuma/Afeitar Foamy Regular";
+                    break;
+                case 3:
+                    buscado = "Shampoo Elvive Loreal Paris Arcilla Purificante";
+                    break;
+                case 4:
+                    buscado = "Shampoo Elvive Reparación Total Extreme Keratin Xs";
+                    break;
+                case 5:
+                    buscado = "Acondicionador Elvive Loreal Hidratación Hialurónico";
+                    break;
+                case 6:
+                    buscado = "Acondicionador Elvive Loreal Reparación Total Extreme";
+                    break;
+                case 7:
+                    buscado = "Gel Capilar Fijación Fuerte Algabo";
+                    break;
+                case 8:
+                    buscado = "Gel Capilar Efecto Húmedo Algabo";
+                    break;
+                case 9:
+                    buscado = "Iyosei Cera Capilar Hydro H2O Hard";
+                    break;
+                case 10:
+                    buscado = "Iyosei Cera Capilar Hydro Clásica";
+                    break;
+            }
+
+            for (indice = 0; indice <= 9 && ventasRealizadas[indice] != buscado; indice++)
+            {
+            }
+
+            if (ventasRealizadas[indice] != buscado)
+            {
+                if (MessageBox.Show("Seguro que quieres agregar esto?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    case -1:
-                        MessageBox.Show("Por favor seleccione una opción de la izquierda");
-                        break;
-                    case 1:
-                        CodigoRepetidoCaseVentas("Espuma/Afeitar Foamy Sensitive");
-                        break;
-                    case 2:
-                        CodigoRepetidoCaseVentas("Espuma/Afeitar Foamy Regular");
-                        break;
-                    case 3:
-                        CodigoRepetidoCaseVentas("Shampoo Elvive Loreal Paris Arcilla Purificante");
-                        break;
-                    case 4:
-                        CodigoRepetidoCaseVentas("Shampoo Elvive Reparación Total Extreme Keratin Xs");
-                        break;
-                    case 5:
-                        CodigoRepetidoCaseVentas("Acondicionador Elvive Loreal Hidratación Hialurónico");
-                        break;
-                    case 6:
-                        CodigoRepetidoCaseVentas("Acondicionador Elvive Loreal Reparación Total Extreme");
-                        break;
-                    case 7:
-                        CodigoRepetidoCaseVentas("Gel Capilar Fijación Fuerte Algabo");
-                        break;
-                    case 8:
-                        CodigoRepetidoCaseVentas("Gel Capilar Efecto Húmedo Algabo");
-                        break;
-                    case 9:
-                        CodigoRepetidoCaseVentas("Iyosei Cera Capilar Hydro H2O Hard");
-                        break;
-                    case 10:
-                        CodigoRepetidoCaseVentas("Iyosei Cera Capilar Hydro Clásica");
-                        break;
+                    switch (contadorVentas)
+                    {
+                        case -1:
+                            MessageBox.Show("Por favor seleccione una opción de la izquierda");
+                            break;
+                        case 1:
+                            CodigoRepetidoCaseVentas("Espuma/Afeitar Foamy Sensitive");
+                            break;
+                        case 2:
+                            CodigoRepetidoCaseVentas("Espuma/Afeitar Foamy Regular");
+                            break;
+                        case 3:
+                            CodigoRepetidoCaseVentas("Shampoo Elvive Loreal Paris Arcilla Purificante");
+                            break;
+                        case 4:
+                            CodigoRepetidoCaseVentas("Shampoo Elvive Reparación Total Extreme Keratin Xs");
+                            break;
+                        case 5:
+                            CodigoRepetidoCaseVentas("Acondicionador Elvive Loreal Hidratación Hialurónico");
+                            break;
+                        case 6:
+                            CodigoRepetidoCaseVentas("Acondicionador Elvive Loreal Reparación Total Extreme");
+                            break;
+                        case 7:
+                            CodigoRepetidoCaseVentas("Gel Capilar Fijación Fuerte Algabo");
+                            break;
+                        case 8:
+                            CodigoRepetidoCaseVentas("Gel Capilar Efecto Húmedo Algabo");
+                            break;
+                        case 9:
+                            CodigoRepetidoCaseVentas("Iyosei Cera Capilar Hydro H2O Hard");
+                            break;
+                        case 10:
+                            CodigoRepetidoCaseVentas("Iyosei Cera Capilar Hydro Clásica");
+                            break;
+                    }
+                    lblTotal.Text = "Precio Total " + precio.ToString();
                 }
-                lblTotal.Text = "Precio Total " + precio.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No se pueden ingresar dos veces el mismo producto");
             }
         }
 
@@ -418,13 +468,22 @@ namespace ProyectoPeluquería
 
         private void btn_EliminarTablaVentas_Click(object sender, EventArgs e)
         {
-            EliminarTabla();
+            string buscadoEliminar = dgv_VentasServicios.Rows[indiceCeldasDGV].Cells[0].Value.ToString();
+            int indice = 0;
+
+            for (indice = 0; indice <= 8; indice++)
+            {
+                if (buscadoEliminar == ventasRealizadas[indice])
+                {
+                    EliminarTabla();
+                    ventasRealizadas[indice] = ventasRealizadas[indice + 1];
+                }
+            }
         }
 
         private void dgv_VentasServicios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indiceCeldasDGV = dgv_VentasServicios.CurrentRow.Index;
-            
         }
 
         private void btn_EliminarTablaServicios_Click(object sender, EventArgs e)
@@ -432,11 +491,12 @@ namespace ProyectoPeluquería
             string buscadoEliminar = dgv_VentasServicios.Rows[indiceCeldasDGV].Cells[0].Value.ToString();
             int indice = 0;
 
-            for (indice = 0; indice <= 8; indice++)
+            for (indice = 0; indice <= 9; indice++)
             {
                 if (buscadoEliminar == serviciosRealizados[indice])
                 {
                     EliminarTabla();
+                    serviciosRealizados[indice] = serviciosRealizados[indice + 1];
                 }
             }
         }
@@ -722,11 +782,6 @@ namespace ProyectoPeluquería
             {
                 buscado = valor2;
             }
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-           
         }
 
         private void CrearPanel(string nombre)

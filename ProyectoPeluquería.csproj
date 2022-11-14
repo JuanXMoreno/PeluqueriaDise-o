@@ -230,6 +230,16 @@
     <Content Include="Datos\Sendmsj.js" />
     <Content Include="Datos\VerificacionHomeWhatsApp.js" />
     <Content Include="Datos\VeriLobby.js" />
+    <None Include="Resources\espuma11.png" />
+    <None Include="Resources\shampoo2.png" />
+    <None Include="Resources\shampoo1.png" />
+    <None Include="Resources\gel2.png" />
+    <None Include="Resources\gel1.png" />
+    <None Include="Resources\espuma2.png" />
+    <None Include="Resources\cera2.png" />
+    <None Include="Resources\cera1.png" />
+    <None Include="Resources\acondicionador2.png" />
+    <None Include="Resources\acondicionador1.png" />
     <None Include="Resources\actualizar-flecha.png" />
     <None Include="Resources\actualizar %282%29.png" />
     <None Include="Resources\corte clasico1.jpeg" />

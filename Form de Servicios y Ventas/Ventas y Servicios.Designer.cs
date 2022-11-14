@@ -85,6 +85,7 @@
             this.pnl_Cejas = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl_Lineas = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -115,7 +116,6 @@
             this.Cerrarlabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.tbc_Ventas_Servicios.SuspendLayout();
             this.tbp_Ventas.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -320,10 +320,11 @@
             // 
             // pictureBox17
             // 
+            this.pictureBox17.Image = global::ProyectoPeluquería.Properties.Resources.shampoo2;
             this.pictureBox17.Location = new System.Drawing.Point(3, 3);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox17.TabIndex = 4;
             this.pictureBox17.TabStop = false;
             // 
@@ -366,10 +367,11 @@
             // 
             // pictureBox29
             // 
+            this.pictureBox29.Image = global::ProyectoPeluquería.Properties.Resources.cera1;
             this.pictureBox29.Location = new System.Drawing.Point(3, 3);
             this.pictureBox29.Name = "pictureBox29";
             this.pictureBox29.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox29.TabIndex = 4;
             this.pictureBox29.TabStop = false;
             // 
@@ -399,10 +401,11 @@
             // 
             // pictureBox27
             // 
+            this.pictureBox27.Image = global::ProyectoPeluquería.Properties.Resources.gel2;
             this.pictureBox27.Location = new System.Drawing.Point(3, 3);
             this.pictureBox27.Name = "pictureBox27";
             this.pictureBox27.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox27.TabIndex = 4;
             this.pictureBox27.TabStop = false;
             // 
@@ -432,10 +435,11 @@
             // 
             // pictureBox25
             // 
+            this.pictureBox25.Image = global::ProyectoPeluquería.Properties.Resources.gel1;
             this.pictureBox25.Location = new System.Drawing.Point(3, 3);
             this.pictureBox25.Name = "pictureBox25";
             this.pictureBox25.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox25.TabIndex = 4;
             this.pictureBox25.TabStop = false;
             // 
@@ -465,10 +469,11 @@
             // 
             // pictureBox23
             // 
+            this.pictureBox23.Image = global::ProyectoPeluquería.Properties.Resources.acondicionador2;
             this.pictureBox23.Location = new System.Drawing.Point(3, 3);
             this.pictureBox23.Name = "pictureBox23";
             this.pictureBox23.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox23.TabIndex = 4;
             this.pictureBox23.TabStop = false;
             // 
@@ -498,10 +503,11 @@
             // 
             // pictureBox21
             // 
+            this.pictureBox21.Image = global::ProyectoPeluquería.Properties.Resources.acondicionador1;
             this.pictureBox21.Location = new System.Drawing.Point(3, 3);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox21.TabIndex = 4;
             this.pictureBox21.TabStop = false;
             // 
@@ -531,10 +537,11 @@
             // 
             // pictureBox19
             // 
+            this.pictureBox19.Image = global::ProyectoPeluquería.Properties.Resources.cera2;
             this.pictureBox19.Location = new System.Drawing.Point(3, 3);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox19.TabIndex = 4;
             this.pictureBox19.TabStop = false;
             // 
@@ -564,10 +571,11 @@
             // 
             // pictureBox16
             // 
+            this.pictureBox16.Image = global::ProyectoPeluquería.Properties.Resources.shampoo1;
             this.pictureBox16.Location = new System.Drawing.Point(3, 3);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox16.TabIndex = 4;
             this.pictureBox16.TabStop = false;
             // 
@@ -597,10 +605,11 @@
             // 
             // pictureBox15
             // 
+            this.pictureBox15.Image = global::ProyectoPeluquería.Properties.Resources.espuma2;
             this.pictureBox15.Location = new System.Drawing.Point(3, 3);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(89, 62);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox15.TabIndex = 4;
             this.pictureBox15.TabStop = false;
             // 
@@ -829,6 +838,16 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 15;
             this.pictureBox5.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Kelly Slab", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(458, 340);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 23);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Precio Total:";
             // 
             // pnl_Lineas
             // 
@@ -1183,16 +1202,6 @@
             this.btn_Aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Aceptar.UseVisualStyleBackColor = false;
             this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Kelly Slab", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(458, 340);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 23);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Precio Total:";
             // 
             // Ventas_y_Servicios
             // 
