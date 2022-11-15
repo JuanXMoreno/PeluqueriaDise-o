@@ -63,6 +63,26 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap acondicionador1 {
+            get {
+                object obj = ResourceManager.GetObject("acondicionador1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap acondicionador2 {
+            get {
+                object obj = ResourceManager.GetObject("acondicionador2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap actualizar__2_ {
             get {
                 object obj = ResourceManager.GetObject("actualizar (2)", resourceCulture);
@@ -183,6 +203,26 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cera1 {
+            get {
+                object obj = ResourceManager.GetObject("cera1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cera2 {
+            get {
+                object obj = ResourceManager.GetObject("cera2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap configuraciones {
             get {
                 object obj = ResourceManager.GetObject("configuraciones", resourceCulture);
@@ -263,6 +303,26 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap espuma1 {
+            get {
+                object obj = ResourceManager.GetObject("espuma1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap espuma2 {
+            get {
+                object obj = ResourceManager.GetObject("espuma2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap frente {
             get {
                 object obj = ResourceManager.GetObject("frente", resourceCulture);
@@ -276,6 +336,26 @@ namespace ProyectoPeluquería.Properties {
         internal static System.Drawing.Bitmap fuego__8_ {
             get {
                 object obj = ResourceManager.GetObject("fuego (8)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gel1 {
+            get {
+                object obj = ResourceManager.GetObject("gel1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gel2 {
+            get {
+                object obj = ResourceManager.GetObject("gel2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -446,6 +526,26 @@ namespace ProyectoPeluquería.Properties {
         internal static string Sendmsj {
             get {
                 return ResourceManager.GetString("Sendmsj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shampoo1 {
+            get {
+                object obj = ResourceManager.GetObject("shampoo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shampoo2 {
+            get {
+                object obj = ResourceManager.GetObject("shampoo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

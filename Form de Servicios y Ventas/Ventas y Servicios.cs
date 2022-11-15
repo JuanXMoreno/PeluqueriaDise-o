@@ -13,7 +13,10 @@ namespace ProyectoPeluquería
         string[] ventasRealizadas = new string[11];
         string[] serviciosRealizados = new string[10];
         string buscado ="a";
-       
+
+        int[] cantidadXVenta = new int[11];
+        int[] indiceVBDD = new int[11];
+        int[] indiceSBDD = new int[10];
 
         int posicionVR = 0;
         int posicionSR = 0;
@@ -35,7 +38,7 @@ namespace ProyectoPeluquería
         public Ventas_y_Servicios()
         {
             InitializeComponent();
-            //CrearPanel();
+            CrearPanel("holi");
         }
 
         int PosX = 0, PosY = 0;
@@ -149,45 +152,95 @@ namespace ProyectoPeluquería
 
         private void btn_AgregarVentas_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Seguro que quieres agregar esto?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            int indice;
+
+            switch (contadorVentas)
             {
-                switch (contadorVentas)
+                case -1:
+                    MessageBox.Show("Por favor seleccione una opción de la izquierda");
+                    break;
+                case 1:
+                    buscado = "Espuma/Afeitar Foamy Sensitive";
+                    break;
+                case 2:
+                    buscado = "Espuma/Afeitar Foamy Regular";
+                    break;
+                case 3:
+                    buscado = "Shampoo Elvive Loreal Paris Arcilla Purificante";
+                    break;
+                case 4:
+                    buscado = "Shampoo Elvive Reparación Total Extreme Keratin Xs";
+                    break;
+                case 5:
+                    buscado = "Acondicionador Elvive Loreal Hidratación Hialurónico";
+                    break;
+                case 6:
+                    buscado = "Acondicionador Elvive Loreal Reparación Total Extreme";
+                    break;
+                case 7:
+                    buscado = "Gel Capilar Fijación Fuerte Algabo";
+                    break;
+                case 8:
+                    buscado = "Gel Capilar Efecto Húmedo Algabo";
+                    break;
+                case 9:
+                    buscado = "Iyosei Cera Capilar Hydro H2O Hard";
+                    break;
+                case 10:
+                    buscado = "Iyosei Cera Capilar Hydro Clásica";
+                    break;
+            }
+
+            for (indice = 0; indice <= 9 && ventasRealizadas[indice] != buscado; indice++)
+            {
+            }
+
+            if (ventasRealizadas[indice] != buscado)
+            {
+                if (MessageBox.Show("Seguro que quieres agregar esto?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    case -1:
-                        MessageBox.Show("Por favor seleccione una opción de la izquierda");
-                        break;
-                    case 1:
-                        CodigoRepetidoCaseVentas("Espuma/Afeitar Foamy Sensitive");
-                        break;
-                    case 2:
-                        CodigoRepetidoCaseVentas("Espuma/Afeitar Foamy Regular");
-                        break;
-                    case 3:
-                        CodigoRepetidoCaseVentas("Shampoo Elvive Loreal Paris Arcilla Purificante");
-                        break;
-                    case 4:
-                        CodigoRepetidoCaseVentas("Shampoo Elvive Reparación Total Extreme Keratin Xs");
-                        break;
-                    case 5:
-                        CodigoRepetidoCaseVentas("Acondicionador Elvive Loreal Hidratación Hialurónico");
-                        break;
-                    case 6:
-                        CodigoRepetidoCaseVentas("Acondicionador Elvive Loreal Reparación Total Extreme");
-                        break;
-                    case 7:
-                        CodigoRepetidoCaseVentas("Gel Capilar Fijación Fuerte Algabo");
-                        break;
-                    case 8:
-                        CodigoRepetidoCaseVentas("Gel Capilar Efecto Húmedo Algabo");
-                        break;
-                    case 9:
-                        CodigoRepetidoCaseVentas("Iyosei Cera Capilar Hydro H2O Hard");
-                        break;
-                    case 10:
-                        CodigoRepetidoCaseVentas("Iyosei Cera Capilar Hydro Clásica");
-                        break;
+                    switch (contadorVentas)
+                    {
+                        case -1:
+                            MessageBox.Show("Por favor seleccione una opción de la izquierda");
+                            break;
+                        case 1:
+                            CodigoRepetidoCaseVentas(1,"Espuma/Afeitar Foamy Sensitive");
+                            break;
+                        case 2:
+                            CodigoRepetidoCaseVentas(2,"Espuma/Afeitar Foamy Regular");
+                            break;
+                        case 3:
+                            CodigoRepetidoCaseVentas(3,"Shampoo Elvive Loreal Paris Arcilla Purificante");
+                            break;
+                        case 4:
+                            CodigoRepetidoCaseVentas(4,"Shampoo Elvive Reparación Total Extreme Keratin Xs");
+                            break;
+                        case 5:
+                            CodigoRepetidoCaseVentas(5,"Acondicionador Elvive Loreal Hidratación Hialurónico");
+                            break;
+                        case 6:
+                            CodigoRepetidoCaseVentas(6,"Acondicionador Elvive Loreal Reparación Total Extreme");
+                            break;
+                        case 7:
+                            CodigoRepetidoCaseVentas(7,"Gel Capilar Fijación Fuerte Algabo");
+                            break;
+                        case 8:
+                            CodigoRepetidoCaseVentas(8,"Gel Capilar Efecto Húmedo Algabo");
+                            break;
+                        case 9:
+                            CodigoRepetidoCaseVentas(9,"Iyosei Cera Capilar Hydro H2O Hard");
+                            break;
+                        case 10:
+                            CodigoRepetidoCaseVentas(10,"Iyosei Cera Capilar Hydro Clásica");
+                            break;
+                    }
+                    lblTotal.Text = "Precio Total " + precio.ToString();
                 }
-                lblTotal.Text = "Precio Total " + precio.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No se pueden ingresar dos veces el mismo producto");
             }
         }
 
@@ -418,13 +471,22 @@ namespace ProyectoPeluquería
 
         private void btn_EliminarTablaVentas_Click(object sender, EventArgs e)
         {
-            EliminarTabla();
+            string buscadoEliminar = dgv_VentasServicios.Rows[indiceCeldasDGV].Cells[0].Value.ToString();
+            int indice = 0;
+
+            for (indice = 0; indice <= 8; indice++)
+            {
+                if (buscadoEliminar == ventasRealizadas[indice])
+                {
+                    EliminarTabla();
+                    ventasRealizadas[indice] = ventasRealizadas[indice + 1];
+                }
+            }
         }
 
         private void dgv_VentasServicios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indiceCeldasDGV = dgv_VentasServicios.CurrentRow.Index;
-            
         }
 
         private void btn_EliminarTablaServicios_Click(object sender, EventArgs e)
@@ -432,11 +494,12 @@ namespace ProyectoPeluquería
             string buscadoEliminar = dgv_VentasServicios.Rows[indiceCeldasDGV].Cells[0].Value.ToString();
             int indice = 0;
 
-            for (indice = 0; indice <= 8; indice++)
+            for (indice = 0; indice <= 9; indice++)
             {
                 if (buscadoEliminar == serviciosRealizados[indice])
                 {
                     EliminarTabla();
+                    serviciosRealizados[indice] = serviciosRealizados[indice + 1];
                 }
             }
         }
@@ -494,6 +557,17 @@ namespace ProyectoPeluquería
             this.AddOwnedForm(fdp);
             if (fdp.Visible == false)
             {
+                fdp.precioTotal = precio;
+                for (int i = 0; i < posicionVR; i++)
+                {
+                    fdp.indiceVBDDFDP[i] = indiceVBDD[i];
+                    fdp.cantidadXVentaFDP[i] = cantidadXVenta[i];
+                }
+
+                for (int i = 0; i < posicionSR; i++)
+                {
+                    fdp.indiceSBDDFDP[i] = indiceSBDD[i];
+                }
                 fdp.Show();
                 this.Visible = false;
             }
@@ -502,6 +576,8 @@ namespace ProyectoPeluquería
                 this.Visible = true;
                 fdp.Close();
             }
+
+
         }
 
         // ACA ESTAN TODOS LOS METODOS QUE YO CREE
@@ -659,16 +735,19 @@ namespace ProyectoPeluquería
             LlenarSOV(nombre, valorbdd, valorbdd);
             serviciosRealizados[posicionSR] = nombre;
             precio = precio + (int)valorbdd;
+            indiceSBDD[posicionSR] = contadorId;
             posicionSR = posicionSR + 1;
         }
 
-        private void CodigoRepetidoCaseVentas(string nombre) //codigo repetido para el boton agregar con sus respectivos "case"
+        private void CodigoRepetidoCaseVentas(int contadorId, string nombre) //codigo repetido para el boton agregar con sus respectivos "case"
         {
             int calculoMultiplicado = Convert.ToInt32(valorbddVentas) * cantidad;
             LlenarSOV(nombre, valorbddVentas, calculoMultiplicado);
             ventasRealizadas[posicionVR] = nombre;
             precio = precio + calculoMultiplicado;
+            cantidadXVenta[posicionVR] = cantidad;
             cantidad = 0;
+            indiceVBDD[posicionVR] = contadorId;
             posicionVR = posicionVR + 1;
         }
 
@@ -724,29 +803,40 @@ namespace ProyectoPeluquería
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-           
-        }
-
         private void CrearPanel(string nombre)
         {
             int y = 890;
             Panel panel = new Panel();
-            //PictureBox picture = new PictureBox();
-            //Label label = new Label();
-            panel.Location = new Point(10, 10);
-            panel.Dock = DockStyle.None;
+            PictureBox picture = new PictureBox();
+            Label label = new Label();
+            
+            label.Location = new Point(103, 0);
+            label.Size = new Size(309, 66);
+            label.Visible = true;
+            label.Enabled = false;
+            label.Text = "chimichanga";
+            label.Dock = System.Windows.Forms.DockStyle.Right;
+            label.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            label.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
+            picture.Location = new Point(3, 3);
+            picture.Size = new Size(89, 62);
+            picture.Visible = true;
+            picture.Enabled = true;
+
+            panel.Location = new Point(18, y);
             panel.Size = new Size(414, 68);
             panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //y += 88;
-            this.Controls.Add(panel);
             panel.Name = nombre;
             panel.Visible = true;
             panel.Enabled = true;
-            //this.Controls.Add(label);
-            //panel.Controls.Add(picture);
+            y += 88;
+            
+            tbp_Ventas.Controls.Add(panel);
+            panel.Controls.Add(label);
+            panel.Controls.Add(picture);
         }
     }
 }
