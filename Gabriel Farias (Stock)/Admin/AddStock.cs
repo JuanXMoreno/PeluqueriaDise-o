@@ -25,7 +25,7 @@ namespace ProyectoPeluquería
 
         private void BtnAgregar(object sender, EventArgs e)
         {
-            DataB.AgregarProducto(ruta,Nombre.Text, Stock.Text, precio.Text);
+            DataB.AgregarProducto(ruta, Nombre.Text, Stock.Text, precio.Text);
             Limpiar();
         }
 
@@ -84,7 +84,7 @@ namespace ProyectoPeluquería
         {
             if (e.KeyCode == Keys.Enter)
             {
-                DataB.AgregarProducto(ruta,Nombre.Text, Stock.Text, precio.Text);
+                DataB.AgregarProducto(ruta, Nombre.Text, Stock.Text, precio.Text);
                 Limpiar();
             }
         }

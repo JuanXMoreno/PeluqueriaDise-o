@@ -108,7 +108,7 @@ namespace ProyectoPeluquería
             return Info;
         }
 
-        public SqlTransaction AgregarProducto(byte[] ruta,String Nombre, String Stock, String precio)
+        public SqlTransaction AgregarProducto(byte[] ruta, String Nombre, String Stock, String precio)
         {
             if (Nombre != string.Empty && Stock != string.Empty && precio != string.Empty)
             {
