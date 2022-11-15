@@ -903,6 +903,7 @@
             this.checkBox1.TabIndex = 24;
             this.checkBox1.Text = "Filtrar por nombre";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -913,6 +914,7 @@
             this.checkBox2.TabIndex = 25;
             this.checkBox2.Text = "Filtrar por precio";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // Ventas_y_Servicios
             // 

@@ -803,100 +803,36 @@ namespace ProyectoPeluquería
                 buscado = valor2;
             }
         }
-
-        private void CrearPanel(string nombre, string nombre1, string nombre2)
-        {
-            dataso = DataB.InfoProductos().Replace("Informacion:  Productos Cargados : ", String.Empty);
-            nStocks = Convert.ToInt32(dataso);
-
-            for (int i = 0; i <= nStocks; i++)
-            {
-                Panel panel = new Panel();
-                PictureBox picture = new PictureBox();
-                Label label = new Label();
-
-                label.Location = new Point(103, 0);
-                label.Size = new Size(309, 66);
-                label.Visible = true;
-                label.Enabled = false;
-                label.Text = nombre + i.ToString();
-                label.Dock = System.Windows.Forms.DockStyle.Right;
-                label.Font = new System.Drawing.Font("Kelly Slab", 12F);
-                label.RightToLeft = System.Windows.Forms.RightToLeft.No;
-                label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                label.Name = nombre1 + i.ToString();
-
-                picture.Location = new Point(3, 3);
-                picture.Size = new Size(89, 62);
-                picture.Visible = true;
-                picture.Enabled = true;
-                picture.Name = nombre2 + i.ToString();
-
-                panel.Location = new Point(18, ypanel);
-                panel.Size = new Size(414, 68);
-                panel.BackColor = System.Drawing.Color.FromArgb(149, 150, 167);
-                panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                panel.Name = nombre + i.ToString();
-                panel.Visible = true;
-                panel.Enabled = true;
-                ypanel = ypanel + 88;
-
-                tbp_Ventas.Controls.Add(panel);
-                panel.Click += Estilo;
-                panel.Controls.Add(label);
-                panel.Controls.Add(picture);
-            }
-        }
-
         private void Ventas_y_Servicios_Validated(object sender, EventArgs e)
         {
             Vista.DataSource = DataB.ActualizarLista(null);
         }
-
-        private void BtnBusqueda_Click(object sender, EventArgs e)
-        {
-            Vista.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
-        }
-
         private void btnF5_Click(object sender, EventArgs e)
         {
             BoxBusqueda.Clear();
         }
-
-        private void BoxBusqueda_KeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             if(checkBox1.Checked == true)
             {
                 Vista.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
-                checkBox2.Checked = false;
             }
             else
             {
                 Vista.DataSource = DataB.ActualizarListaXPrecio(BoxBusqueda.Text);
-                checkBox1.Checked = false;
             }
         }
-
         private void Vista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
-        public void Estilo(object sender, EventArgs e)
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("GG");
-            //.BackColor = Color.FromArgb(155,155,155);
-            //CodigoRepetidoVentas(2);
-            //for (int i = 0; i < nStocks; i++)
-            //{
-            //    .BackColor = Color.Aqua;
-            //    label7.Enabled = true;
-            //}
+            checkBox1.Checked = false;
+        }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBox2.Checked = false;
         }
     }
 }
