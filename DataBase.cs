@@ -7,7 +7,7 @@ namespace ProyectoPeluquería
 {
     class DataBase
     {
-        public static string link = @"SERVER=(localdb)\Home;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
+        public static string link = @"SERVER=DESKTOP-COF6H2T;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
         SqlConnection Conectarse = null;
         SqlCommand cmd = null;
         SqlTransaction Tran = null;
@@ -108,7 +108,7 @@ namespace ProyectoPeluquería
             return Info;
         }
 
-        public SqlTransaction AgregarProducto(byte[] ruta, String Nombre, String Stock, String precio)
+        public SqlTransaction AgregarProducto(byte[] ruta,String Nombre, String Stock, String precio)
         {
             if (Nombre != string.Empty && Stock != string.Empty && precio != string.Empty)
             {
