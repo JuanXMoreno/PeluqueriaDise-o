@@ -81,6 +81,32 @@ namespace ProyectoPeluquería
             return Tabla;
         }
 
+        public DataTable ActualizarListaXPrecio(String Text)
+        {
+            DataTable Tabla = new DataTable();
+            Tabla.Clear();
+            try
+            {
+                Conectar();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "Select * From Productos where Precio like '%" + Text + "%' and Estado = 1";
+                cmd.Connection = Conectar();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(Tabla);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error:\n" + ex);
+            }
+            finally
+            {
+                Desconectar();
+            }
+            return Tabla;
+        }
+
         public String InfoProductos()
         {
             String Info = string.Empty;

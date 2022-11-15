@@ -894,22 +894,24 @@
             // 
             // checkBox1
             // 
-            this.checkBox1.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Font = new System.Drawing.Font("Kelly Slab", 10F);
             this.checkBox1.Location = new System.Drawing.Point(14, 37);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(152, 34);
             this.checkBox1.TabIndex = 24;
-            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.Text = "Filtrar por nombre";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
-            this.checkBox2.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.checkBox2.Font = new System.Drawing.Font("Kelly Slab", 10F);
             this.checkBox2.Location = new System.Drawing.Point(14, 77);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(152, 33);
             this.checkBox2.TabIndex = 25;
-            this.checkBox2.Text = "checkBox2";
+            this.checkBox2.Text = "Filtrar por precio";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // Ventas_y_Servicios

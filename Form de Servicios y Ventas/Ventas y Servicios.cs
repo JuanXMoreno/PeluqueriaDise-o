@@ -870,7 +870,16 @@ namespace ProyectoPeluquería
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Vista.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
+            if(checkBox1.Checked == true)
+            {
+                Vista.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
+                checkBox2.Checked = false;
+            }
+            else
+            {
+                Vista.DataSource = DataB.ActualizarListaXPrecio(BoxBusqueda.Text);
+                checkBox1.Checked = false;
+            }
         }
 
         private void Vista_CellClick(object sender, DataGridViewCellEventArgs e)
