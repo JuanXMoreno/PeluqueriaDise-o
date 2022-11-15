@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -10,10 +12,10 @@ namespace ProyectoPeluquería
         int contador;
         int contadorVentas = -1;
 
-        string[] ventasRealizadas = new string[11];
+        string[] ventasRealizadas = new string[22];
         string[] serviciosRealizados = new string[10];
-        string buscado ="a";
-        string[] valorNombres = new string[11];
+        string buscado = "a";
+        
 
         int[] cantidadXVenta = new int[11];
         int[] indiceVBDD = new int[11];
@@ -21,9 +23,10 @@ namespace ProyectoPeluquería
 
         int posicionVR = 0;
         int posicionSR = 0;
-        int ypanel = 890;
+     
 
         int indiceCeldasDGV = -1;
+        int indiceCeldasLST = -1;
 
         int cantidad;
 
@@ -38,10 +41,20 @@ namespace ProyectoPeluquería
 
         //CLASE DATA BASE
         DataBase DataB = new DataBase();
+
+        //
+        string dataso = "";
+        int nStocks = 0;
         public Ventas_y_Servicios()
         {
             InitializeComponent();
-            CrearPanel("asdf","fff","ggg");
+            dgv_Vista.DataSource = DataB.ActualizarLista(null);
+            dgv_Vista.Columns[0].Visible = false;
+            dgv_Vista.Columns[1].Visible = false;
+            dgv_Vista.Columns[3].Visible = false;
+            dgv_Vista.Columns[5].Visible = false;
+            dgv_Vista.Columns[6].Visible = false;
+            //CrearPanel("panelcito", "fff", "ggg");
         }
 
         int PosX = 0, PosY = 0;
@@ -98,7 +111,7 @@ namespace ProyectoPeluquería
             for (indice = 0; indice <= 8 && serviciosRealizados[indice] != buscado; indice++)
             {
             }
-            
+
             if (serviciosRealizados[indice] != buscado)
             {
                 if (MessageBox.Show("Seguro que quieres agregar esto?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -155,46 +168,12 @@ namespace ProyectoPeluquería
 
         private void btn_AgregarVentas_Click(object sender, EventArgs e)
         {
+
             int indice;
 
-            switch (contadorVentas)
-            {
-                case -1:
-                    MessageBox.Show("Por favor seleccione una opción de la izquierda");
-                    break;
-                case 1:
-                    buscado = "Espuma/Afeitar Foamy Sensitive";
-                    break;
-                case 2:
-                    buscado = "Espuma/Afeitar Foamy Regular";
-                    break;
-                case 3:
-                    buscado = "Shampoo Elvive Loreal Paris Arcilla Purificante";
-                    break;
-                case 4:
-                    buscado = "Shampoo Elvive Reparación Total Extreme Keratin Xs";
-                    break;
-                case 5:
-                    buscado = "Acondicionador Elvive Loreal Hidratación Hialurónico";
-                    break;
-                case 6:
-                    buscado = "Acondicionador Elvive Loreal Reparación Total Extreme";
-                    break;
-                case 7:
-                    buscado = "Gel Capilar Fijación Fuerte Algabo";
-                    break;
-                case 8:
-                    buscado = "Gel Capilar Efecto Húmedo Algabo";
-                    break;
-                case 9:
-                    buscado = "Iyosei Cera Capilar Hydro H2O Hard";
-                    break;
-                case 10:
-                    buscado = "Iyosei Cera Capilar Hydro Clásica";
-                    break;
-            }
+            
 
-            for (indice = 0; indice <= 9 && ventasRealizadas[indice] != buscado; indice++)
+            for (indice = 0; indice <= 20 && ventasRealizadas[indice] != buscado; indice++)
             {
             }
 
@@ -208,34 +187,34 @@ namespace ProyectoPeluquería
                             MessageBox.Show("Por favor seleccione una opción de la izquierda");
                             break;
                         case 1:
-                            CodigoRepetidoCaseVentas(1,"Espuma/Afeitar Foamy Sensitive");
+                            CodigoRepetidoCaseVentas(1, buscado);
                             break;
                         case 2:
-                            CodigoRepetidoCaseVentas(2,"Espuma/Afeitar Foamy Regular");
+                            CodigoRepetidoCaseVentas(2, buscado);
                             break;
                         case 3:
-                            CodigoRepetidoCaseVentas(3,"Shampoo Elvive Loreal Paris Arcilla Purificante");
+                            CodigoRepetidoCaseVentas(3, buscado);
                             break;
                         case 4:
-                            CodigoRepetidoCaseVentas(4,"Shampoo Elvive Reparación Total Extreme Keratin Xs");
+                            CodigoRepetidoCaseVentas(4, buscado);
                             break;
                         case 5:
-                            CodigoRepetidoCaseVentas(5,"Acondicionador Elvive Loreal Hidratación Hialurónico");
+                            CodigoRepetidoCaseVentas(5, buscado);
                             break;
                         case 6:
-                            CodigoRepetidoCaseVentas(6,"Acondicionador Elvive Loreal Reparación Total Extreme");
+                            CodigoRepetidoCaseVentas(6, buscado);
                             break;
                         case 7:
-                            CodigoRepetidoCaseVentas(7,"Gel Capilar Fijación Fuerte Algabo");
+                            CodigoRepetidoCaseVentas(7, buscado);
                             break;
                         case 8:
-                            CodigoRepetidoCaseVentas(8,"Gel Capilar Efecto Húmedo Algabo");
+                            CodigoRepetidoCaseVentas(8, buscado);
                             break;
                         case 9:
-                            CodigoRepetidoCaseVentas(9,"Iyosei Cera Capilar Hydro H2O Hard");
+                            CodigoRepetidoCaseVentas(9, buscado);
                             break;
                         case 10:
-                            CodigoRepetidoCaseVentas(10,"Iyosei Cera Capilar Hydro Clásica");
+                            CodigoRepetidoCaseVentas(10, buscado);
                             break;
                     }
                     lblTotal.Text = "Precio Total " + precio.ToString();
@@ -372,66 +351,6 @@ namespace ProyectoPeluquería
             cantidad = 1;
         }
 
-        private void pnl_EspumaFS_Click(object sender, EventArgs e)
-        {
-            CodigoRepetidoVentas(1);
-            pnl_EspumaFS.BackColor = Color.Aqua;
-        }
-
-        private void pnl_EspumaFR_Click(object sender, EventArgs e)
-        {
-            CodigoRepetidoVentas(2);
-            pnl_EspumaFR.BackColor = Color.Aqua;
-        }
-
-        private void pnl_ShampooAP_Click(object sender, EventArgs e)
-        {
-            CodigoRepetidoVentas(3);
-            pnl_ShampooAP.BackColor = Color.Aqua;
-        }
-
-        private void pnl_ShampooEK_Click(object sender, EventArgs e)
-        {
-            CodigoRepetidoVentas(4);
-            pnl_ShampooEK.BackColor = Color.Aqua;
-        }
-
-        private void pnl_AcondicionadorHH_Click(object sender, EventArgs e)
-        {
-            CodigoRepetidoVentas(5);
-            pnl_AcondicionadorHH.BackColor = Color.Aqua;
-        }
-
-        private void pnl_AcondicionadorTE_Click(object sender, EventArgs e)
-        {
-            CodigoRepetidoVentas(6);
-            pnl_AcondicionadorTE.BackColor = Color.Aqua;
-        }
-
-        private void pnl_GelFF_Click(object sender, EventArgs e)
-        {
-            CodigoRepetidoVentas(7);
-            pnl_GelFF.BackColor = Color.Aqua;
-        }
-
-        private void pnl_GelEH_Click(object sender, EventArgs e)
-        {
-            CodigoRepetidoVentas(8);
-            pnl_GelEH.BackColor = Color.Aqua;
-        }
-
-        private void pnl_CeraHH_Click(object sender, EventArgs e)
-        {
-            CodigoRepetidoVentas(9);
-            pnl_CeraHH.BackColor = Color.Aqua;
-        }
-
-        private void pnl_CeraHC_Click(object sender, EventArgs e)
-        {
-            CodigoRepetidoVentas(10);
-            pnl_CeraHC.BackColor = Color.Aqua;
-        }
-
         private void btn_AceptarCantidad_Click(object sender, EventArgs e)
         {
             if (txt_Cantidad.Text != "")
@@ -523,8 +442,8 @@ namespace ProyectoPeluquería
 
         private void Cerrar(object sender, EventArgs e)
         {
-           // FormAdmin F1 = Owner as FormAdmin;
-          //  F1.Visible = true;
+            // FormAdmin F1 = Owner as FormAdmin;
+            //  F1.Visible = true;
             this.Close();
         }
 
@@ -590,20 +509,6 @@ namespace ProyectoPeluquería
             pnl_Lavado.BackColor = Color.FromArgb(149, 150, 167);
         }
 
-        private void ColoresParejosVentas()
-        {
-            pnl_ShampooAP.BackColor = Color.FromArgb(149, 150, 167);
-            pnl_ShampooEK.BackColor = Color.FromArgb(149, 150, 167);
-            pnl_AcondicionadorHH.BackColor = Color.FromArgb(149, 150, 167);
-            pnl_AcondicionadorTE.BackColor = Color.FromArgb(149, 150, 167);
-            pnl_EspumaFR.BackColor = Color.FromArgb(149, 150, 167);
-            pnl_EspumaFS.BackColor = Color.FromArgb(149, 150, 167);
-            pnl_GelEH.BackColor = Color.FromArgb(149, 150, 167);
-            pnl_GelFF.BackColor = Color.FromArgb(149, 150, 167);
-            pnl_CeraHC.BackColor = Color.FromArgb(149, 150, 167);
-            pnl_CeraHH.BackColor = Color.FromArgb(149, 150, 167);
-        }
-
         private void Sentencia(int a, int b, string valor1, string valor2) //interactua con el contador y el label cuando el dan esos valores
         {
             if (valorCMBSeCortaCon == 0)
@@ -663,14 +568,14 @@ namespace ProyectoPeluquería
         private void BddBajaNombreProductos() //traigo los precios de los servicios de la base de datos
         {
             conexion.Open();
-            SqlCommand comando = new SqlCommand("select Nombre From Productos where Id_Producto ='" + contador + "'", conexion);
+            SqlCommand comando = new SqlCommand("select Nombre From Productos where Id_Producto ='" + contadorVentas + "'", conexion);
             SqlDataReader lector = comando.ExecuteReader();
 
             if (lector.HasRows == true)
             {
                 while (lector.Read())
                 {
-                    valorbdd = float.Parse(lector.GetString(0));
+                    buscado = lector.GetString(0);
                 }
             }
             conexion.Close();
@@ -679,7 +584,7 @@ namespace ProyectoPeluquería
         private void BddBajaIdProductos() //traigo los precios de los servicios de la base de datos
         {
             conexion.Open();
-            SqlCommand comando = new SqlCommand("select Id From Productos where Id_Producto ='" + contador + "'", conexion);
+            SqlCommand comando = new SqlCommand("select Id_Producto From Productos where Id_Producto ='" + contadorVentas + "'", conexion);
             SqlDataReader lector = comando.ExecuteReader();
 
             if (lector.HasRows == true)
@@ -720,15 +625,6 @@ namespace ProyectoPeluquería
             cmb_SeCortaCon.Items.Clear();
         }
 
-        private void CodigoRepetidoVentas(int contadorventas) //codigo repetido para cada evento de presionar un panel
-        {
-            ColoresParejosVentas();
-            contadorVentas = contadorventas;
-            bddBajaPrecioProducto();
-            cantidad = 1;
-            lblCantidad.Text = "1";
-        }
-
         private void CodigoRepetidoCaseServicios(int contadorId, string nombre) //codigo repetido para el boton agregar con sus respectivos "case"
         {
             contador = contadorId;
@@ -747,11 +643,10 @@ namespace ProyectoPeluquería
             ventasRealizadas[posicionVR] = nombre;
             precio = precio + calculoMultiplicado;
             cantidadXVenta[posicionVR] = cantidad;
-            cantidad = 0;
+            cantidad = 1;
             indiceVBDD[posicionVR] = contadorId;
             posicionVR = posicionVR + 1;
         }
-
         private void EliminarTabla() //verifico si quiere eliminar esa fila y la elimino de la tabla
         {
             if (indiceCeldasDGV >= 0)
@@ -782,31 +677,42 @@ namespace ProyectoPeluquería
         }
         private void Ventas_y_Servicios_Validated(object sender, EventArgs e)
         {
-            Vista.DataSource = DataB.ActualizarLista(null);
+            dgv_Vista.DataSource = DataB.ActualizarLista(null);
         }
         private void btnF5_Click(object sender, EventArgs e)
         {
-            BoxBusqueda.Clear();
+            txt_Busqueda.Clear();
         }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if(checkBox1.Checked == true)
-            {
-                Vista.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
-            }
-            else
-            {
-                Vista.DataSource = DataB.ActualizarListaXPrecio(BoxBusqueda.Text);
-            }
-        }
+
         private void Vista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            indiceCeldasLST = dgv_Vista.CurrentRow.Index;
+            contadorVentas = Convert.ToInt32(dgv_Vista.Rows[indiceCeldasLST].Cells[0].Value.ToString());
+            bddBajaPrecioProducto();
+            BddBajaNombreProductos();
+            BddBajaIdProductos();
+            cantidad = 1;
+            lblCantidad.Text = "1";
+            label7.Text = contadorVentas.ToString();
 
         }
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             checkBox1.Checked = false;
         }
+
+        private void txt_Busqueda_TextChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                dgv_Vista.DataSource = DataB.ActualizarLista(txt_Busqueda.Text);
+            }
+            else
+            {
+                dgv_Vista.DataSource = DataB.ActualizarListaXPrecio(txt_Busqueda.Text);
+            }
+        }
+
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             checkBox2.Checked = false;
