@@ -39,6 +39,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnImagenUp = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.SubirImagen = new System.Windows.Forms.OpenFileDialog();
             this.PanelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -137,7 +140,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 197);
+            this.panel1.Location = new System.Drawing.Point(0, 227);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(317, 13);
             this.panel1.TabIndex = 33;
@@ -149,7 +152,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::ProyectoPeluquería.Properties.Resources.agregar__2_;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(171, 156);
+            this.button1.Location = new System.Drawing.Point(171, 191);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 30);
             this.button1.TabIndex = 6;
@@ -158,12 +161,42 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.BtnAgregar);
             // 
+            // btnImagenUp
+            // 
+            this.btnImagenUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImagenUp.Font = new System.Drawing.Font("Kelly Slab", 10F);
+            this.btnImagenUp.ForeColor = System.Drawing.Color.Black;
+            this.btnImagenUp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImagenUp.Location = new System.Drawing.Point(46, 152);
+            this.btnImagenUp.Name = "btnImagenUp";
+            this.btnImagenUp.Size = new System.Drawing.Size(103, 26);
+            this.btnImagenUp.TabIndex = 35;
+            this.btnImagenUp.Text = "Subir imagen";
+            this.btnImagenUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImagenUp.UseVisualStyleBackColor = true;
+            this.btnImagenUp.Click += new System.EventHandler(this.btnImagenUp_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 159);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(28, 13);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Foto";
+            // 
+            // SubirImagen
+            // 
+            this.SubirImagen.FileName = "Subir Imagen";
+            // 
             // AddStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            this.ClientSize = new System.Drawing.Size(317, 210);
+            this.ClientSize = new System.Drawing.Size(317, 240);
+            this.Controls.Add(this.btnImagenUp);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelSup);
             this.Controls.Add(this.button1);
@@ -198,5 +231,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnImagenUp;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.OpenFileDialog SubirImagen;
     }
 }

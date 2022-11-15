@@ -230,6 +230,8 @@
     <Content Include="Datos\Sendmsj.js" />
     <Content Include="Datos\VerificacionHomeWhatsApp.js" />
     <Content Include="Datos\VeriLobby.js" />
+    <None Include="Resources\editar.png" />
+    <None Include="Resources\fuego %282%29.png" />
     <None Include="Resources\espuma11.png" />
     <None Include="Resources\shampoo2.png" />
     <None Include="Resources\shampoo1.png" />

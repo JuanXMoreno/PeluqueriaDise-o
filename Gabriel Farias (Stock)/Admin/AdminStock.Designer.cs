@@ -176,7 +176,7 @@
             // 
             this.btnBajaProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBajaProduct.Font = new System.Drawing.Font("Kelly Slab", 13F);
-            this.btnBajaProduct.ForeColor = System.Drawing.Color.Black;
+            this.btnBajaProduct.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnBajaProduct.Image = global::ProyectoPeluquería.Properties.Resources.ojos_cruzados__1_;
             this.btnBajaProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBajaProduct.Location = new System.Drawing.Point(528, 409);
@@ -206,8 +206,8 @@
             this.Btdel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Btdel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btdel.Font = new System.Drawing.Font("Kelly Slab", 13F);
-            this.Btdel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(23)))), ((int)(((byte)(75)))));
-            this.Btdel.Image = global::ProyectoPeluquería.Properties.Resources.fuego__8_;
+            this.Btdel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Btdel.Image = global::ProyectoPeluquería.Properties.Resources.fuego;
             this.Btdel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btdel.Location = new System.Drawing.Point(368, 409);
             this.Btdel.Name = "Btdel";
@@ -222,8 +222,8 @@
             // 
             this.ModStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ModStock.Font = new System.Drawing.Font("Kelly Slab", 13F);
-            this.ModStock.ForeColor = System.Drawing.Color.Orange;
-            this.ModStock.Image = global::ProyectoPeluquería.Properties.Resources.editar__2_;
+            this.ModStock.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ModStock.Image = global::ProyectoPeluquería.Properties.Resources.editar;
             this.ModStock.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ModStock.Location = new System.Drawing.Point(208, 408);
             this.ModStock.Name = "ModStock";
@@ -238,8 +238,8 @@
             // 
             this.AddPro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddPro.Font = new System.Drawing.Font("Kelly Slab", 13F);
-            this.AddPro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(47)))));
-            this.AddPro.Image = global::ProyectoPeluquería.Properties.Resources.add;
+            this.AddPro.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AddPro.Image = global::ProyectoPeluquería.Properties.Resources.agregar__2_;
             this.AddPro.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AddPro.Location = new System.Drawing.Point(12, 409);
             this.AddPro.Name = "AddPro";
