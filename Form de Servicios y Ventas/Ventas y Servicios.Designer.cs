@@ -1210,6 +1210,87 @@
             this.btn_Aceptar.UseVisualStyleBackColor = false;
             this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
+            // btnF5
+            // 
+            this.btnF5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnF5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnF5.Image = global::ProyectoPeluquería.Properties.Resources.x_b;
+            this.btnF5.Location = new System.Drawing.Point(641, 29);
+            this.btnF5.Name = "btnF5";
+            this.btnF5.Size = new System.Drawing.Size(30, 30);
+            this.btnF5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnF5.TabIndex = 32;
+            this.btnF5.TabStop = false;
+            this.btnF5.Click += new System.EventHandler(this.btnF5_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Kelly Slab", 10F);
+            this.label3.Location = new System.Drawing.Point(22, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 17);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Buscar Stock";
+            // 
+            // BoxBusqueda
+            // 
+            this.BoxBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BoxBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.BoxBusqueda.Location = new System.Drawing.Point(22, 29);
+            this.BoxBusqueda.Name = "BoxBusqueda";
+            this.BoxBusqueda.Size = new System.Drawing.Size(613, 30);
+            this.BoxBusqueda.TabIndex = 30;
+            // 
+            // BuscadorContinuo
+            // 
+            this.BuscadorContinuo.Enabled = true;
+            this.BuscadorContinuo.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.checkBox2);
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Location = new System.Drawing.Point(491, 67);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(180, 133);
+            this.panel1.TabIndex = 33;
+            // 
+            // label7
+            // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label7.Font = new System.Drawing.Font("Kelly Slab", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(178, 34);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Filtro";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Font = new System.Drawing.Font("Kelly Slab", 10F);
+            this.checkBox1.Location = new System.Drawing.Point(14, 37);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(152, 34);
+            this.checkBox1.TabIndex = 24;
+            this.checkBox1.Text = "Filtrar por nombre";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.Font = new System.Drawing.Font("Kelly Slab", 10F);
+            this.checkBox2.Location = new System.Drawing.Point(14, 77);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(152, 33);
+            this.checkBox2.TabIndex = 25;
+            this.checkBox2.Text = "Filtrar por precio";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // Ventas_y_Servicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

@@ -823,5 +823,56 @@ namespace ProyectoPeluquería
                 panel.Controls.Add(picture);
             }
         }
+
+        private void Ventas_y_Servicios_Validated(object sender, EventArgs e)
+        {
+            Vista.DataSource = DataB.ActualizarLista(null);
+        }
+
+        private void BtnBusqueda_Click(object sender, EventArgs e)
+        {
+            Vista.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
+        }
+
+        private void btnF5_Click(object sender, EventArgs e)
+        {
+            BoxBusqueda.Clear();
+        }
+
+        private void BoxBusqueda_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked == true)
+            {
+                Vista.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
+                checkBox2.Checked = false;
+            }
+            else
+            {
+                Vista.DataSource = DataB.ActualizarListaXPrecio(BoxBusqueda.Text);
+                checkBox1.Checked = false;
+            }
+        }
+
+        private void Vista_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        public void Estilo(object sender, EventArgs e)
+        {
+            MessageBox.Show("GG");
+            //.BackColor = Color.FromArgb(155,155,155);
+            //CodigoRepetidoVentas(2);
+            //for (int i = 0; i < nStocks; i++)
+            //{
+            //    .BackColor = Color.Aqua;
+            //    label7.Enabled = true;
+            //}
+        }
     }
 }
