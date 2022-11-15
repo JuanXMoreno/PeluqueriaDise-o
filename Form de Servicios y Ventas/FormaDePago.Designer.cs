@@ -32,9 +32,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panelinf = new System.Windows.Forms.Panel();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rb_CreditoDebito = new System.Windows.Forms.RadioButton();
+            this.rb_Transferencia = new System.Windows.Forms.RadioButton();
+            this.rb_Efectivo = new System.Windows.Forms.RadioButton();
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.PanelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,50 +86,50 @@
             this.Panelinf.Size = new System.Drawing.Size(443, 19);
             this.Panelinf.TabIndex = 36;
             // 
-            // radioButton4
+            // rb_CreditoDebito
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Kelly Slab", 14F);
-            this.radioButton4.Image = global::ProyectoPeluquería.Properties.Resources.tarjeta_de_credito;
-            this.radioButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton4.Location = new System.Drawing.Point(23, 92);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(176, 27);
-            this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Credito / Debito";
-            this.radioButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rb_CreditoDebito.AutoSize = true;
+            this.rb_CreditoDebito.Font = new System.Drawing.Font("Kelly Slab", 14F);
+            this.rb_CreditoDebito.Image = global::ProyectoPeluquería.Properties.Resources.tarjeta_de_credito;
+            this.rb_CreditoDebito.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rb_CreditoDebito.Location = new System.Drawing.Point(23, 92);
+            this.rb_CreditoDebito.Name = "rb_CreditoDebito";
+            this.rb_CreditoDebito.Size = new System.Drawing.Size(176, 27);
+            this.rb_CreditoDebito.TabIndex = 0;
+            this.rb_CreditoDebito.TabStop = true;
+            this.rb_CreditoDebito.Text = "Credito / Debito";
+            this.rb_CreditoDebito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rb_CreditoDebito.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rb_Transferencia
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Kelly Slab", 14F);
-            this.radioButton2.Image = global::ProyectoPeluquería.Properties.Resources.banco;
-            this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton2.Location = new System.Drawing.Point(23, 140);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(158, 27);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Transferencia";
-            this.radioButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rb_Transferencia.AutoSize = true;
+            this.rb_Transferencia.Font = new System.Drawing.Font("Kelly Slab", 14F);
+            this.rb_Transferencia.Image = global::ProyectoPeluquería.Properties.Resources.banco;
+            this.rb_Transferencia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rb_Transferencia.Location = new System.Drawing.Point(23, 140);
+            this.rb_Transferencia.Name = "rb_Transferencia";
+            this.rb_Transferencia.Size = new System.Drawing.Size(158, 27);
+            this.rb_Transferencia.TabIndex = 0;
+            this.rb_Transferencia.TabStop = true;
+            this.rb_Transferencia.Text = "Transferencia";
+            this.rb_Transferencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rb_Transferencia.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rb_Efectivo
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Kelly Slab", 14F);
-            this.radioButton1.Image = global::ProyectoPeluquería.Properties.Resources.monedas;
-            this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(23, 47);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(109, 27);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Efectivo";
-            this.radioButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rb_Efectivo.AutoSize = true;
+            this.rb_Efectivo.Font = new System.Drawing.Font("Kelly Slab", 14F);
+            this.rb_Efectivo.Image = global::ProyectoPeluquería.Properties.Resources.monedas;
+            this.rb_Efectivo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rb_Efectivo.Location = new System.Drawing.Point(23, 47);
+            this.rb_Efectivo.Name = "rb_Efectivo";
+            this.rb_Efectivo.Size = new System.Drawing.Size(109, 27);
+            this.rb_Efectivo.TabIndex = 0;
+            this.rb_Efectivo.TabStop = true;
+            this.rb_Efectivo.Text = "Efectivo";
+            this.rb_Efectivo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rb_Efectivo.UseVisualStyleBackColor = true;
             // 
             // btn_Aceptar
             // 
@@ -146,6 +146,7 @@
             this.btn_Aceptar.Text = "Aceptar";
             this.btn_Aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Aceptar.UseVisualStyleBackColor = false;
+            this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
             // FormaDePago
             // 
@@ -156,9 +157,9 @@
             this.Controls.Add(this.btn_Aceptar);
             this.Controls.Add(this.PanelSup);
             this.Controls.Add(this.Panelinf);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rb_CreditoDebito);
+            this.Controls.Add(this.rb_Transferencia);
+            this.Controls.Add(this.rb_Efectivo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormaDePago";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -173,9 +174,9 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rb_Efectivo;
+        private System.Windows.Forms.RadioButton rb_Transferencia;
+        private System.Windows.Forms.RadioButton rb_CreditoDebito;
         private System.Windows.Forms.Panel PanelSup;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
