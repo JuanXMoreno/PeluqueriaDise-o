@@ -13,6 +13,7 @@ namespace ProyectoPeluquería
         string[] ventasRealizadas = new string[11];
         string[] serviciosRealizados = new string[10];
         string buscado ="a";
+        string[] valorNombres = new string[11];
 
         int[] cantidadXVenta = new int[11];
         int[] indiceVBDD = new int[11];
@@ -20,6 +21,7 @@ namespace ProyectoPeluquería
 
         int posicionVR = 0;
         int posicionSR = 0;
+        int ypanel = 890;
 
         int indiceCeldasDGV = -1;
 
@@ -31,14 +33,15 @@ namespace ProyectoPeluquería
 
         float valorbdd;
         float valorbddVentas;
+        float valorIdProductos;
         int precio;
 
         //CLASE DATA BASE
-        //DataBase DataB = new DataBase();
+        DataBase DataB = new DataBase();
         public Ventas_y_Servicios()
         {
             InitializeComponent();
-            CrearPanel("holi");
+            CrearPanel("asdf","fff","ggg");
         }
 
         int PosX = 0, PosY = 0;
@@ -534,8 +537,8 @@ namespace ProyectoPeluquería
 
         private void Cerrar(object sender, EventArgs e)
         {
-            FormAdmin F1 = Owner as FormAdmin;
-            F1.Visible = true;
+           // FormAdmin F1 = Owner as FormAdmin;
+          //  F1.Visible = true;
             this.Close();
         }
 
@@ -576,8 +579,6 @@ namespace ProyectoPeluquería
                 this.Visible = true;
                 fdp.Close();
             }
-
-
         }
 
         // ACA ESTAN TODOS LOS METODOS QUE YO CREE
@@ -673,10 +674,10 @@ namespace ProyectoPeluquería
             conexion.Close();
         }
 
-        private void BddBajaNombre() //traigo los precios de los servicios de la base de datos
+        private void BddBajaNombreProductos() //traigo los precios de los servicios de la base de datos
         {
             conexion.Open();
-            SqlCommand comando = new SqlCommand("select Nombre From Servicios where Id_Servicio ='" + contador + "'", conexion);
+            SqlCommand comando = new SqlCommand("select Nombre From Productos where Id_Producto ='" + contador + "'", conexion);
             SqlDataReader lector = comando.ExecuteReader();
 
             if (lector.HasRows == true)
@@ -684,6 +685,22 @@ namespace ProyectoPeluquería
                 while (lector.Read())
                 {
                     valorbdd = float.Parse(lector.GetString(0));
+                }
+            }
+            conexion.Close();
+        }
+
+        private void BddBajaIdProductos() //traigo los precios de los servicios de la base de datos
+        {
+            conexion.Open();
+            SqlCommand comando = new SqlCommand("select Id From Productos where Id_Producto ='" + contador + "'", conexion);
+            SqlDataReader lector = comando.ExecuteReader();
+
+            if (lector.HasRows == true)
+            {
+                while (lector.Read())
+                {
+                    valorIdProductos = float.Parse(lector.GetString(0));
                 }
             }
             conexion.Close();
@@ -803,40 +820,47 @@ namespace ProyectoPeluquería
             }
         }
 
-        private void CrearPanel(string nombre)
+        private void CrearPanel(string nombre, string nombre1, string nombre2)
         {
-            int y = 890;
-            Panel panel = new Panel();
-            PictureBox picture = new PictureBox();
-            Label label = new Label();
-            
-            label.Location = new Point(103, 0);
-            label.Size = new Size(309, 66);
-            label.Visible = true;
-            label.Enabled = false;
-            label.Text = "chimichanga";
-            label.Dock = System.Windows.Forms.DockStyle.Right;
-            label.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            label.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            string dataso = DataB.InfoProductos().Replace("Informacion:  Productos Cargados : ", String.Empty);
+            int nStocks = Convert.ToInt32(dataso);
 
-            picture.Location = new Point(3, 3);
-            picture.Size = new Size(89, 62);
-            picture.Visible = true;
-            picture.Enabled = true;
+            for (int i = 0; i <= nStocks; i++)
+            {
+                Panel panel = new Panel();
+                PictureBox picture = new PictureBox();
+                Label label = new Label();
 
-            panel.Location = new Point(18, y);
-            panel.Size = new Size(414, 68);
-            panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
-            panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel.Name = nombre;
-            panel.Visible = true;
-            panel.Enabled = true;
-            y += 88;
-            
-            tbp_Ventas.Controls.Add(panel);
-            panel.Controls.Add(label);
-            panel.Controls.Add(picture);
+                label.Location = new Point(103, 0);
+                label.Size = new Size(309, 66);
+                label.Visible = true;
+                label.Enabled = false;
+                label.Text = nombre + i.ToString();
+                label.Dock = System.Windows.Forms.DockStyle.Right;
+                label.Font = new System.Drawing.Font("Kelly Slab", 12F);
+                label.RightToLeft = System.Windows.Forms.RightToLeft.No;
+                label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                label.Name = nombre1 + i.ToString();
+
+                picture.Location = new Point(3, 3);
+                picture.Size = new Size(89, 62);
+                picture.Visible = true;
+                picture.Enabled = true;
+                picture.Name = nombre2 + i.ToString();
+
+                panel.Location = new Point(18, ypanel);
+                panel.Size = new Size(414, 68);
+                panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
+                panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                panel.Name = nombre + i.ToString();
+                panel.Visible = true;
+                panel.Enabled = true;
+                ypanel = ypanel + 88;
+
+                tbp_Ventas.Controls.Add(panel);
+                panel.Controls.Add(label);
+                panel.Controls.Add(picture);
+            }
         }
     }
 }
