@@ -14,16 +14,15 @@
                             
             `);
             textarea.dispatchEvent(new Event('change', {bubbles: true}));
-            
             if(lines.indexOf(line) !== lines.length - 1) await new Promise(resolve => setTimeout(resolve, 250));
         }
     }
     else
     {
-        console.log("No se encontro chat");
+        console.log("[Error. No chat]");
     }
     setTimeout(() => {
-        (main.querySelector(`[data-testid="send"]`) || main.querySelector(`[data-icon="send"]`)).click();
-    }, 100);
+        (document.querySelector(`[data-testid="send"]`) || document.querySelector(`[data-icon="send"]`)).click();
+    }, 100); //Le asigne un tiempo corto
     return scriptText.length;
 }

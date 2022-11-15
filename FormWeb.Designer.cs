@@ -35,12 +35,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.Verificar = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.TimerBuscador = new System.Windows.Forms.Timer(this.components);
+            this.EnviarScript = new System.Windows.Forms.Timer(this.components);
             this.IniciarBusqueda = new System.Windows.Forms.Timer(this.components);
-            this.MandarMsj = new System.Windows.Forms.Timer(this.components);
+            this.Intervalo = new System.Windows.Forms.Timer(this.components);
+            this.Exito = new System.Windows.Forms.Timer(this.components);
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -108,6 +110,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Verificar);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label4);
@@ -116,6 +119,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(267, 167);
             this.panel1.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(19, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Panas";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Verificar
             // 
@@ -130,7 +144,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 13);
+            this.textBox1.Location = new System.Drawing.Point(113, 9);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(130, 20);
             this.textBox1.TabIndex = 6;
@@ -146,20 +160,25 @@
             this.label4.Text = "Agregar A la cola";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // TimerBuscador
+            // EnviarScript
             // 
-            this.TimerBuscador.Interval = 5000;
-            this.TimerBuscador.Tick += new System.EventHandler(this.VerificadorDeEstado);
+            this.EnviarScript.Interval = 5000;
+            this.EnviarScript.Tick += new System.EventHandler(this.EnviarScriptTime);
             // 
             // IniciarBusqueda
             // 
-            this.IniciarBusqueda.Interval = 5000;
+            this.IniciarBusqueda.Interval = 2000;
             this.IniciarBusqueda.Tick += new System.EventHandler(this.IniciarBusquedaTimer);
             // 
-            // MandarMsj
+            // Intervalo
             // 
-            this.MandarMsj.Interval = 5000;
-            this.MandarMsj.Tick += new System.EventHandler(this.TimerEnviarMensaje);
+            this.Intervalo.Interval = 5000;
+            this.Intervalo.Tick += new System.EventHandler(this.Intervalo_Tick);
+            // 
+            // Exito
+            // 
+            this.Exito.Interval = 5000;
+            this.Exito.Tick += new System.EventHandler(this.Exito_Tick);
             // 
             // FormWeb
             // 
@@ -193,9 +212,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Timer TimerBuscador;
+        private System.Windows.Forms.Timer EnviarScript;
         private System.Windows.Forms.Label Verificar;
         private System.Windows.Forms.Timer IniciarBusqueda;
-        private System.Windows.Forms.Timer MandarMsj;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer Intervalo;
+        private System.Windows.Forms.Timer Exito;
     }
 }

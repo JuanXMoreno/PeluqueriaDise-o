@@ -58,8 +58,10 @@ namespace ProyectoPeluquería
             this.button1 = new System.Windows.Forms.Button();
             this.PanelSup = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panelinf = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -67,20 +69,22 @@ namespace ProyectoPeluquería
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Hoy = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.PanelSup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panelinf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdminTurnos
@@ -339,10 +343,23 @@ namespace ProyectoPeluquería
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(9, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 16);
+            this.label7.Size = new System.Drawing.Size(170, 16);
             this.label7.TabIndex = 32;
             this.label7.Text = "Formulario Administrador";
             this.label7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverXTitu);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::ProyectoPeluquería.Properties.Resources.x;
+            this.pictureBox1.Location = new System.Drawing.Point(902, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Panelinf
             // 
@@ -368,6 +385,19 @@ namespace ProyectoPeluquería
             this.label8.Text = "Configuracion";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Image = global::ProyectoPeluquería.Properties.Resources.configuraciones;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label10
             // 
@@ -442,6 +472,9 @@ namespace ProyectoPeluquería
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.label12);
             this.panel4.Location = new System.Drawing.Point(751, 356);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(164, 134);
@@ -452,31 +485,38 @@ namespace ProyectoPeluquería
             this.Hoy.Interval = 1;
             this.Hoy.Tick += new System.EventHandler(this.Hoy_Tick);
             // 
-            // pictureBox1
+            // label12
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::ProyectoPeluquería.Properties.Resources.x;
-            this.pictureBox1.Location = new System.Drawing.Point(902, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.label12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label12.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.label12.Location = new System.Drawing.Point(0, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(162, 19);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "WhatsApp";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox2
+            // button2
             // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox2.Image = global::ProyectoPeluquería.Properties.Resources.configuraciones;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Kelly Slab", 11F);
+            this.button2.Location = new System.Drawing.Point(26, 88);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(110, 29);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Ver registro";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.label13.Location = new System.Drawing.Point(4, 23);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(151, 28);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Mensajes enviados";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormAdmin
             // 
@@ -508,12 +548,13 @@ namespace ProyectoPeluquería
             this.panel2.ResumeLayout(false);
             this.PanelSup.ResumeLayout(false);
             this.PanelSup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Panelinf.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -553,5 +594,8 @@ namespace ProyectoPeluquería
         private System.Windows.Forms.Label user3;
         private System.Windows.Forms.Label user2;
         private System.Windows.Forms.Label user1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label12;
     }
 }

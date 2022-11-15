@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -7,6 +8,7 @@ namespace ProyectoPeluquería
     {
         //Clase
         DataBase DataB = new DataBase();
+        byte[] ruta = null;
         public AddStock()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace ProyectoPeluquería
 
         private void BtnAgregar(object sender, EventArgs e)
         {
-            DataB.AgregarProducto(Nombre.Text, Stock.Text, precio.Text);
+            DataB.AgregarProducto(ruta,Nombre.Text, Stock.Text, precio.Text);
             Limpiar();
         }
 
@@ -82,8 +84,21 @@ namespace ProyectoPeluquería
         {
             if (e.KeyCode == Keys.Enter)
             {
-                DataB.AgregarProducto(Nombre.Text, Stock.Text, precio.Text);
+                DataB.AgregarProducto(ruta,Nombre.Text, Stock.Text, precio.Text);
                 Limpiar();
+            }
+        }
+
+        private void btnImagenUp_Click(object sender, EventArgs e)
+        {
+            if (SubirImagen.ShowDialog() == DialogResult.OK)
+            {
+                Stream MiStream = SubirImagen.OpenFile();
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    MiStream.CopyTo(ms);
+                    ruta = ms.ToArray();
+                }
             }
         }
     }

@@ -3,6 +3,7 @@ using CefSharp.WinForms;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -11,9 +12,6 @@ namespace ProyectoPeluquería
     {
         public ChromiumWebBrowser chromeBrowser;
         CefSettings settings = new CefSettings();
-
-        //Timers
-        Timer time = new Timer();
 
         public FormWeb()
         {
@@ -28,9 +26,6 @@ namespace ProyectoPeluquería
         String[] Errores = new string[10000];
         int libre = 0;
         bool Buscador = true;
-        //Bools comandos del CEF
-        bool InLobby = false;
-        bool WhatHome = false;
 
         int PosX = 0, PosY = 0; //Mover Form's
 
@@ -57,53 +52,6 @@ namespace ProyectoPeluquería
             chromeBrowser.FrameLoadEnd += browser_FrameLoadEnd;
             chromeBrowser.ConsoleMessage += browser_ConsoleMessage;
         }
-
-        public void browser_ConsoleMessage(object sender, ConsoleMessageEventArgs e)
-        {
-            try
-            {
-                var mensaje = e.Message;
-                if (mensaje == "[/lobby]" || mensaje == "Para usar WhatsApp en tu computadora:")
-                {
-                    DialogResult result = MessageBox.Show("Sesion de WhatsApp no encontrada. Vuelva a iniciar sesion para enviar mensajes.", "AVISO", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                    if (result == DialogResult.OK)
-                    {
-                        this.Visible = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Se cancelaran los mensajes en cola. Muchas gracias\nRata");
-                    }
-                }
-                if (mensaje == "[Cargando]")
-                {
-                    Console.WriteLine("Se esta cargando todo....");
-                }
-                if (mensaje == "[EXITO]")
-                {
-                    Console.WriteLine("Sesion iniciada y Preparada");
-                    MandarMsj.Enabled = true;
-                    WhatHome = true;
-                }
-                if (mensaje == "[Se encontro un error.]" || mensaje == "El número de teléfono compartido a través de la dirección URL es inválido")
-                {
-                    Console.WriteLine("Se encontro un numero no valio. se enviara a la error para revisar luego.");
-                    for (int i = 0; i < Errores.Length; i++)
-                    {
-                        if (Errores[i] == null)
-                        {
-                            Errores[i] = EnProceso;
-                            Buscador = true;
-                        }
-                    }
-                }
-            }
-            catch (Exception er)
-            {
-                Console.WriteLine("Se encontro un error de chrome: " + er);
-            }
-            //Console.WriteLine("Mensajes de Chrome: "+e.Message); ///Metodo para leer los mensajes
-        } //Lee la consola (Aqui se verifican los metodos y se envian las directivas¿) Acto #9
 
         public void browser_FrameLoadEnd(object sender, FrameLoadEndEventArgs e) //No borrar
         {
@@ -165,40 +113,35 @@ namespace ProyectoPeluquería
                     break;
                 }
             }
-            IniciarBusqueda.Enabled = true;
+            IniciarBusqueda.Enabled = true; //Aqui activo el buscador
             return num;
-        } // Acto #2
-        private void IniciarBusquedaTimer(object sender, EventArgs e)
+        } // Acto #2 (#1)
+        private void IniciarBusquedaTimer(object sender, EventArgs e) // Acto #3
         {
-            try
+            if (Buscador == true)
             {
-                if (Buscador == true)
+                Console.WriteLine("Buscando numeros en cola.");
+                for (int i = 0; i < Cola.Length; i++)
                 {
-                    for (int i = 0; i < Cola.Length; i++)
+                    if (Buscador == true)
                     {
-                        Console.WriteLine("bucle for pasando: #"+i);
-                        if(Buscador == true)
+                        if (Cola[i] != null)
                         {
-                            if (Cola[i] != null)
-                            {
-                                BuscarUser(Cola[i].ToString());
-                                Console.WriteLine("----------\nNumero de fila #" + i + "\nNumero de telefono: " + Cola[i] + "\nEnviado.");
-                                EnProceso = Cola[i];
-                                Cola[i] = null;
-                                Buscador = false;
-                            }
+                            Console.WriteLine("----------\nNumero de fila #" + i + "\nNumero de telefono: " + Cola[i] + "\nEnviado.");
+                            BuscarUser(Cola[i].ToString()); //Envio el numero al metodo
+                            EnProceso = Cola[i]; //Lo envio a esta variable para recordarla facilmente
+                            Cola[i] = null; //Elimino el numero
+                            Buscador = false; //Desactivo el buscador
+                            break;
                         }
                     }
                 }
             }
-            catch (Exception err)
-            {
-                MessageBox.Show("" + err);
-            }
-        } // Acto #3
-        public bool BuscarUser(String Numero)
+            IniciarBusqueda.Enabled = false; // Detengo el Timer momentaneamente
+        }
+        public bool BuscarUser(String Numero)//Inicia la busqueda del usuario // Acto #4
         {
-            TimerBuscador.Enabled = true;
+            EnviarScript.Enabled = true;
             bool Verificado = false;
             try
             {
@@ -208,20 +151,14 @@ namespace ProyectoPeluquería
             {
                 MessageBox.Show("Se encontro un error:\n" + ex);
             }
-            finally
-            {
-
-            }
             return Verificado;
-        } //Inicia la busqueda del usuario // Acto #4
-        private void VerificadorDeEstado(object sender, EventArgs e) //Timer que verifica el estado del Chrome (Envia un scrip para ubicarse) // Acto #5
+        }
+        private void EnviarScriptTime(object sender, EventArgs e)//Timer que verifica el estado del Chrome (Envia un scrip para ubicarse) // Acto #5
         {
             WhatsAppLobby();
             WhatsAppHome();
             WhatsAppErrorNoExist();
         }
-
-        //Script's
         public void WhatsAppLobby()
         {
             try
@@ -255,35 +192,115 @@ namespace ProyectoPeluquería
                 Console.WriteLine("Se encontro un error en el metodo WhatsAppErrorNoExist.\nError: " + er);
             }
         } // Acto # 8 //script
-        //Fin Script's
+        public void browser_ConsoleMessage(object sender, ConsoleMessageEventArgs e)//Lee la consola (Aqui se verifican los metodos y se envian las directivas¿) Acto #9
+        {
+            var mensaje = e.Message;
+            try
+            {
+                if (mensaje == "[/lobby]" || mensaje == "Para usar WhatsApp en tu computadora:")
+                {
+                    DialogResult result = MessageBox.Show("Sesion de WhatsApp no encontrada. Vuelva a iniciar sesion para enviar mensajes.", "AVISO", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (result == DialogResult.OK)
+                    {
+                        this.Visible = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se cancelaran los mensajes en cola. Muchas gracias\nRata");
+                        Buscador = false;
+                    }
+                }
+                if (mensaje == "[Cargando]")
+                {
+                    Console.WriteLine("Se esta cargando todo....");
+                }
+                if (mensaje == "[Se encontro un error.]" || mensaje == "El número de teléfono compartido a través de la dirección URL es inválido")
+                {
+                    Console.WriteLine("Se encontro un numero no valido. se enviara a error para revisar luego.");
+                    for (int i = 0; i < Errores.Length; i++)
+                    {
+                        if (Errores[i] == null)
+                        {
+                            Errores[i] = EnProceso;
+                            Buscador = true;
+                            break;
+                        }
+                    }
+                }
+                if (mensaje == "[EXITO]")
+                {
+                    EnviarScript.Enabled = false;
+                    mensaje = null;
+                    Console.WriteLine("Sesion iniciada y Preparada");
+                    Exito.Enabled = true;
+                }
+                if (mensaje == "[Error. No chat]")
+                {
+                    Console.WriteLine("No se encontro el chat. ERROR");
+                }
+                if (mensaje == "[Script Ejecutado]")
+                {
+                    Intervalo.Enabled = true;
+                }
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine("Se encontro un error de chrome: " + er);
+            }
+            //Console.WriteLine("Mensajes de Chrome: "+e.Message); ///Metodo para leer los mensajes
+        }
+        private void Exito_Tick(object sender, EventArgs e) //Timer, espera unos segundo antes de mandar el mensaje xd //Acto #10
+        {
+            EnviarMensj();
+            Exito.Enabled = false;
+        }
+        public void EnviarMensj()//Aqui se envia el mensaje //Acto #11
+        {
+            StreamReader sr1 = new StreamReader(@"C:\Users\lucia\Source\Repos\PeluqueriaDise-o\Datos\NewCliente.txt", true);
+            var NewCliente = sr1.ReadToEnd();
+            sr1.Close();
+            chromeBrowser.ExecuteScriptAsync(Properties.Resources.Sendmsj + "\nenviarScript(`" + NewCliente + "`).then(console.log(`[Script Ejecutado]`))");
+        }
+        private void Intervalo_Tick(object sender, EventArgs e) // Casi final
+        {
+            for (int i = 0; i < Confirmados.Length; i++)
+            {
+                if (Confirmados[i] == null)
+                {
+                    Confirmados[i] = EnProceso;
+                    break;
+                }
+            }
+            Buscador = true;
+            Intervalo.Enabled = false;
+            IniciarBusqueda.Enabled = true;
+        }
         private void Verificar_Click(object sender, EventArgs e)
         {
             VerificarLista();
         } //Verificar Lista
-
-        private void TimerEnviarMensaje(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e) //Solo es de prueba
         {
-            try
-            {
-                StreamReader sr1 = new StreamReader(@"C:\Users\lucia\Source\Repos\PeluqueriaDise-o\Datos\NewCliente.txt", true);
-                var NewCliente = sr1.ReadToEnd();
-                sr1.Close();
-                chromeBrowser.ExecuteScriptAsync(Properties.Resources.Sendmsj + "\nenviarScript(`" + NewCliente + "`)");
-
-                Buscador = true;
-                MandarMsj.Enabled = false;
-            }
-            catch (Exception er)
-            {
-                Console.WriteLine("Error: " + er);
-            }
-        } //Aqui se envia el mensaje //Acto 9
-
+            AddCola("+5493549630404");
+            AddCola("+5493549557924");
+            AddCola("+5493548596235");
+        }
         public void VerificarLista() //Metodo para verificar lista
         {
             for (int i = 0; i < Cola.Length; i++)
             {
-                Console.WriteLine("Cola #" + i + " Numero contenido dentro de ella: " + Cola[i]);
+                if(Cola[i] != null)
+                {
+                    Console.WriteLine("Cola #" + i + " Numero contenido dentro de ella: " + Cola[i]);
+                }
+                if (Confirmados[i] != null)
+                {
+                    Console.WriteLine("Confirmados #" + i + " Numero contenido dentro de ella: " + Confirmados[i]);
+                }
+                if (Errores[i] != null)
+                {
+                    Console.WriteLine("Errores #" + i + " Numero contenido dentro de ella: " + Errores[i]);
+                }
             }
         }
     }
