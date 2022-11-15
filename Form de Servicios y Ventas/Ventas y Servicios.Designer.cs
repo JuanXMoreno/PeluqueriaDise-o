@@ -630,7 +630,7 @@
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Image = global::ProyectoPeluquería.Properties.Resources.espuma1;
+            this.pictureBox14.Image = global::ProyectoPeluquería.Properties.Resources.actualizar_flecha;
             this.pictureBox14.Location = new System.Drawing.Point(3, 3);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(89, 62);
