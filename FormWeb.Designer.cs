@@ -177,7 +177,7 @@
             // 
             // Exito
             // 
-            this.Exito.Interval = 10000;
+            this.Exito.Interval = 5000;
             this.Exito.Tick += new System.EventHandler(this.Exito_Tick);
             // 
             // FormWeb
