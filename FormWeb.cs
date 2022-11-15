@@ -3,7 +3,6 @@ using CefSharp.WinForms;
 using System;
 using System.Drawing;
 using System.IO;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -289,7 +288,7 @@ namespace ProyectoPeluquería
         {
             for (int i = 0; i < Cola.Length; i++)
             {
-                if(Cola[i] != null)
+                if (Cola[i] != null)
                 {
                     Console.WriteLine("Cola #" + i + " Numero contenido dentro de ella: " + Cola[i]);
                 }

@@ -32,7 +32,7 @@ namespace ProyectoPeluquería
                 BorrarUser();
                 this.Hide();
             }
-            
+
         } //Boton para login
 
         private void PanelSup_MouseMove(object sender, MouseEventArgs e)
