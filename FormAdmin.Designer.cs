@@ -68,9 +68,9 @@ namespace ProyectoPeluquería
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.Hoy = new System.Windows.Forms.Timer(this.components);
-            this.label12 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Hoy = new System.Windows.Forms.Timer(this.components);
             this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -480,22 +480,6 @@ namespace ProyectoPeluquería
             this.panel4.Size = new System.Drawing.Size(164, 134);
             this.panel4.TabIndex = 4;
             // 
-            // Hoy
-            // 
-            this.Hoy.Interval = 1;
-            this.Hoy.Tick += new System.EventHandler(this.Hoy_Tick);
-            // 
-            // label12
-            // 
-            this.label12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label12.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label12.Location = new System.Drawing.Point(0, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(162, 19);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "WhatsApp";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
@@ -508,15 +492,31 @@ namespace ProyectoPeluquería
             this.button2.Text = "Ver registro";
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // label12
+            // 
+            this.label12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label12.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.label12.Location = new System.Drawing.Point(0, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(162, 23);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "WhatsApp";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Hoy
+            // 
+            this.Hoy.Interval = 1;
+            this.Hoy.Tick += new System.EventHandler(this.Hoy_Tick);
+            // 
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.label13.Location = new System.Drawing.Point(4, 23);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(151, 28);
+            this.label13.Size = new System.Drawing.Size(151, 62);
             this.label13.TabIndex = 7;
-            this.label13.Text = "Mensajes enviados";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label13.Text = "Estado: WhatsApp Servicio Activo";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormAdmin
             // 
@@ -594,8 +594,8 @@ namespace ProyectoPeluquería
         private System.Windows.Forms.Label user3;
         private System.Windows.Forms.Label user2;
         private System.Windows.Forms.Label user1;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

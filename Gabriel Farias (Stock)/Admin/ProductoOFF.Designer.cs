@@ -39,7 +39,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAlta = new System.Windows.Forms.Button();
-            this.BtnBusqueda = new System.Windows.Forms.Button();
             this.btnF5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PanelSup.SuspendLayout();
@@ -72,8 +71,9 @@
             this.BoxBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.BoxBusqueda.Location = new System.Drawing.Point(12, 50);
             this.BoxBusqueda.Name = "BoxBusqueda";
-            this.BoxBusqueda.Size = new System.Drawing.Size(571, 30);
+            this.BoxBusqueda.Size = new System.Drawing.Size(660, 30);
             this.BoxBusqueda.TabIndex = 30;
+            this.BoxBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.BoxBusqueda_KeyUp);
             // 
             // panel1
             // 
@@ -169,27 +169,11 @@
             this.btnAlta.UseVisualStyleBackColor = true;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
             // 
-            // BtnBusqueda
-            // 
-            this.BtnBusqueda.BackgroundImage = global::ProyectoPeluquería.Properties.Resources.busqueda;
-            this.BtnBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.BtnBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBusqueda.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnBusqueda.ForeColor = System.Drawing.Color.Black;
-            this.BtnBusqueda.Location = new System.Drawing.Point(625, 50);
-            this.BtnBusqueda.Name = "BtnBusqueda";
-            this.BtnBusqueda.Size = new System.Drawing.Size(82, 30);
-            this.BtnBusqueda.TabIndex = 28;
-            this.BtnBusqueda.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnBusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnBusqueda.UseVisualStyleBackColor = true;
-            this.BtnBusqueda.Click += new System.EventHandler(this.BtnBusqueda_Click);
-            // 
             // btnF5
             // 
             this.btnF5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnF5.Image = global::ProyectoPeluquería.Properties.Resources.x_b;
-            this.btnF5.Location = new System.Drawing.Point(589, 50);
+            this.btnF5.Location = new System.Drawing.Point(678, 50);
             this.btnF5.Name = "btnF5";
             this.btnF5.Size = new System.Drawing.Size(30, 30);
             this.btnF5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -208,7 +192,6 @@
             this.Controls.Add(this.Seleccion);
             this.Controls.Add(this.btnAlta);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.BtnBusqueda);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.BoxBusqueda);
             this.Controls.Add(this.btnF5);
@@ -231,7 +214,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button BtnBusqueda;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox BoxBusqueda;
         private System.Windows.Forms.PictureBox btnF5;

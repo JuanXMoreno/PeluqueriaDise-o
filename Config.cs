@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -38,6 +39,30 @@ namespace ProyectoPeluquería
         private void btnWeb_Click(object sender, EventArgs e)
         {
             Web.Show();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            //DialogResult result = MessageBox.Show("Se activara automaticamente la proxima vez que se iniciar el programa, desea continuar?","WhatsApp API(?",MessageBoxButtons.OK,MessageBoxIcon.Question);
+            //if(result == DialogResult.OK)
+            //{
+            //    Properties.Settings.Default.WebWhatsApp = true;
+            //    Properties.Settings.Default.Save();
+            //    label6.ForeColor = Color.ForestGreen;
+            //    label4.ForeColor = Color.Black;
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Tuvo miedo al exito.");
+            //}
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            //label4.ForeColor = Color.Maroon;
+            //label6.ForeColor = Color.Black;
+            //Properties.Settings.Default.WebWhatsApp = false;
+            //Properties.Settings.Default.Save();
         }
 
         private void MoverXPanel(object sender, MouseEventArgs e)

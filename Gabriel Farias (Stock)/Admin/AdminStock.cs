@@ -19,11 +19,6 @@ namespace ProyectoPeluquería
         int PosY = 0;
         int PosX = 0;
 
-        private void btnBusqueda_Click(object sender, EventArgs e)
-        {
-            Vista.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
-        }
-
         private void reloj_Tick(object sender, EventArgs e)
         {
             label2.Text = DataB.InfoProductos();
@@ -139,6 +134,11 @@ namespace ProyectoPeluquería
             Vista.DataSource = DataB.ActualizarLista(null);
             label2.Text = DataB.InfoProductos();
             Console.WriteLine("Se actualizo la tabla del Form stock");
+        }
+
+        private void BoxBusqueda_KeyUp(object sender, KeyEventArgs e)
+        {
+            Vista.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
         }
     }
 }

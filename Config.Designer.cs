@@ -41,6 +41,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtServer = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnWeb = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -54,7 +55,6 @@
             this.PanelTop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnWeb = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -68,7 +68,7 @@
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.button2.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(14, 366);
             this.button2.Name = "button2";
@@ -79,15 +79,15 @@
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Comic Panels", 8F);
+            this.textBox2.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.textBox2.Location = new System.Drawing.Point(395, 33);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 20);
+            this.textBox2.Size = new System.Drawing.Size(135, 26);
             this.textBox2.TabIndex = 16;
             // 
             // label9
             // 
-            this.label9.Font = new System.Drawing.Font("Comic Panels", 9F);
+            this.label9.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.label9.Location = new System.Drawing.Point(268, 33);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(121, 20);
@@ -97,15 +97,15 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Comic Panels", 8F);
+            this.textBox1.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.textBox1.Location = new System.Drawing.Point(88, 33);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 20);
+            this.textBox1.Size = new System.Drawing.Size(172, 26);
             this.textBox1.TabIndex = 14;
             // 
             // label8
             // 
-            this.label8.Font = new System.Drawing.Font("Comic Panels", 9F);
+            this.label8.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.label8.Location = new System.Drawing.Point(16, 33);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 20);
@@ -115,7 +115,7 @@
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("Comic Panels", 9F);
+            this.label7.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.label7.Location = new System.Drawing.Point(266, 7);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(123, 20);
@@ -125,15 +125,15 @@
             // 
             // txtBase
             // 
-            this.txtBase.Font = new System.Drawing.Font("Comic Panels", 8F);
+            this.txtBase.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.txtBase.Location = new System.Drawing.Point(395, 7);
             this.txtBase.Name = "txtBase";
-            this.txtBase.Size = new System.Drawing.Size(135, 20);
+            this.txtBase.Size = new System.Drawing.Size(135, 26);
             this.txtBase.TabIndex = 12;
             // 
             // label13
             // 
-            this.label13.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.label13.ForeColor = System.Drawing.Color.DarkRed;
             this.label13.Location = new System.Drawing.Point(263, 63);
             this.label13.Name = "label13";
@@ -144,7 +144,7 @@
             // 
             // label12
             // 
-            this.label12.Font = new System.Drawing.Font("Comic Panels", 9F);
+            this.label12.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.label12.Location = new System.Drawing.Point(188, 63);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 20);
@@ -172,7 +172,7 @@
             // 
             // label11
             // 
-            this.label11.Font = new System.Drawing.Font("Comic Panels", 9F);
+            this.label11.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.label11.Location = new System.Drawing.Point(14, 7);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 20);
@@ -182,10 +182,10 @@
             // 
             // txtServer
             // 
-            this.txtServer.Font = new System.Drawing.Font("Comic Panels", 8F);
+            this.txtServer.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.txtServer.Location = new System.Drawing.Point(88, 7);
             this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(172, 20);
+            this.txtServer.Size = new System.Drawing.Size(172, 26);
             this.txtServer.TabIndex = 7;
             // 
             // panel3
@@ -197,13 +197,27 @@
             this.panel3.Size = new System.Drawing.Size(556, 160);
             this.panel3.TabIndex = 16;
             // 
+            // btnWeb
+            // 
+            this.btnWeb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeb.Font = new System.Drawing.Font("Kelly Slab", 10F);
+            this.btnWeb.ForeColor = System.Drawing.Color.Black;
+            this.btnWeb.Location = new System.Drawing.Point(10, 10);
+            this.btnWeb.Margin = new System.Windows.Forms.Padding(10);
+            this.btnWeb.Name = "btnWeb";
+            this.btnWeb.Size = new System.Drawing.Size(134, 29);
+            this.btnWeb.TabIndex = 19;
+            this.btnWeb.Text = "Mostrar WEB";
+            this.btnWeb.UseVisualStyleBackColor = true;
+            this.btnWeb.Click += new System.EventHandler(this.btnWeb_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Comic Panels", 9F);
+            this.label10.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.label10.Location = new System.Drawing.Point(14, 7);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 12);
+            this.label10.Size = new System.Drawing.Size(93, 18);
             this.label10.TabIndex = 3;
             this.label10.Text = "SQL SERVER";
             // 
@@ -231,36 +245,39 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Comic Panels", 9F);
-            this.label6.Location = new System.Drawing.Point(467, 7);
+            this.label6.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(463, 6);
             this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(23, 12);
+            this.label6.Size = new System.Drawing.Size(27, 18);
             this.label6.TabIndex = 6;
             this.label6.Text = "ON";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Comic Panels", 9F);
-            this.label5.Location = new System.Drawing.Point(492, 7);
+            this.label5.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
+            this.label5.Location = new System.Drawing.Point(492, 5);
             this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(12, 12);
+            this.label5.Size = new System.Drawing.Size(14, 18);
             this.label5.TabIndex = 5;
             this.label5.Text = "/";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Comic Panels", 9F);
+            this.label4.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(506, 7);
+            this.label4.Location = new System.Drawing.Point(508, 6);
             this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 14, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.Size = new System.Drawing.Size(34, 18);
             this.label4.TabIndex = 4;
             this.label4.Text = "OFF";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel1
             // 
@@ -279,10 +296,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Comic Panels", 9F);
+            this.label3.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.label3.Location = new System.Drawing.Point(14, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 12);
+            this.label3.Size = new System.Drawing.Size(100, 18);
             this.label3.TabIndex = 3;
             this.label3.Text = "WhatsApp Bot";
             // 
@@ -337,7 +354,7 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.button1.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(193, 366);
             this.button1.Name = "button1";
@@ -346,24 +363,10 @@
             this.button1.Text = "Verificar SQL";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // btnWeb
-            // 
-            this.btnWeb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWeb.Font = new System.Drawing.Font("Kelly Slab", 10F);
-            this.btnWeb.ForeColor = System.Drawing.Color.Black;
-            this.btnWeb.Location = new System.Drawing.Point(10, 10);
-            this.btnWeb.Margin = new System.Windows.Forms.Padding(10);
-            this.btnWeb.Name = "btnWeb";
-            this.btnWeb.Size = new System.Drawing.Size(134, 29);
-            this.btnWeb.TabIndex = 19;
-            this.btnWeb.Text = "Mostrar WEB";
-            this.btnWeb.UseVisualStyleBackColor = true;
-            this.btnWeb.Click += new System.EventHandler(this.btnWeb_Click);
-            // 
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.button3.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(371, 366);
             this.button3.Name = "button3";
