@@ -22,5 +22,53 @@ namespace ProyectoPeluquería.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HMI {
+            get {
+                return ((string)(this["HMI"]));
+            }
+            set {
+                this["HMI"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HMF {
+            get {
+                return ((string)(this["HMF"]));
+            }
+            set {
+                this["HMF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HTI {
+            get {
+                return ((string)(this["HTI"]));
+            }
+            set {
+                this["HTI"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HTF {
+            get {
+                return ((string)(this["HTF"]));
+            }
+            set {
+                this["HTF"] = value;
+            }
+        }
     }
 }

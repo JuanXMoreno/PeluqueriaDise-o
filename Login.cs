@@ -9,15 +9,12 @@ namespace ProyectoPeluquería
         DataBase DataB = new DataBase();
         public Login()
         {
-            DataB.Verificacion();
             InitializeComponent();
-            
+            DataB.Verificacion();
         }
 
         int PosY = 0;
         int PosX = 0;
-
-        SqlConnection conexion = new SqlConnection(DataBase.link);
 
         //boton para ingresar al administrador con el usuario y contraseña guardadas en la base de datos
         private void button1_Click(object sender, EventArgs e)

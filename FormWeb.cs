@@ -12,17 +12,15 @@ namespace ProyectoPeluquería
         public ChromiumWebBrowser chromeBrowser;
         CefSettings settings = new CefSettings();
 
-        //MyForm
-        FormEmpleado FE = new FormEmpleado();
-        FormAdmin FA = new FormAdmin();
+        Turnos tur = new Turnos();
+        Config config = new Config();
 
         public FormWeb()
         {
             Console.WriteLine("Servicio de WhatsApp ON");
-            this.Show();
+            this.AddOwnedForm(tur);
+            this.AddOwnedForm(config);
             InitializeComponent();
-            this.AddOwnedForm(FE);
-            this.AddOwnedForm(FA);
             IniciarBrowser();
         }
 

@@ -87,5 +87,17 @@ namespace ProyectoPeluquería
                 Limpiar();
             }
         }
+
+        private void precio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || e.KeyChar == 8 || e.KeyChar == ',' || e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
