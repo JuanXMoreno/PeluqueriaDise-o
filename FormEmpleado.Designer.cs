@@ -54,6 +54,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Hoy = new System.Windows.Forms.Timer(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
             this.PanelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panelinf.SuspendLayout();
@@ -63,6 +75,12 @@
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelSup
@@ -187,7 +205,13 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel11);
+            this.panel1.Controls.Add(this.panel10);
+            this.panel1.Controls.Add(this.panel8);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.panel7);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.label3);
@@ -204,7 +228,7 @@
             this.panel7.Location = new System.Drawing.Point(380, 39);
             this.panel7.Margin = new System.Windows.Forms.Padding(25);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(167, 140);
+            this.panel7.Size = new System.Drawing.Size(167, 102);
             this.panel7.TabIndex = 7;
             // 
             // user3
@@ -213,7 +237,7 @@
             this.user3.Font = new System.Drawing.Font("Kelly Slab", 13F);
             this.user3.Location = new System.Drawing.Point(0, 0);
             this.user3.Name = "user3";
-            this.user3.Size = new System.Drawing.Size(167, 140);
+            this.user3.Size = new System.Drawing.Size(167, 102);
             this.user3.TabIndex = 3;
             this.user3.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
             this.user3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,7 +249,7 @@
             this.panel6.Location = new System.Drawing.Point(203, 39);
             this.panel6.Margin = new System.Windows.Forms.Padding(25);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(167, 140);
+            this.panel6.Size = new System.Drawing.Size(167, 102);
             this.panel6.TabIndex = 7;
             // 
             // user2
@@ -234,7 +258,7 @@
             this.user2.Font = new System.Drawing.Font("Kelly Slab", 13F);
             this.user2.Location = new System.Drawing.Point(0, 0);
             this.user2.Name = "user2";
-            this.user2.Size = new System.Drawing.Size(167, 140);
+            this.user2.Size = new System.Drawing.Size(167, 102);
             this.user2.TabIndex = 3;
             this.user2.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
             this.user2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -246,7 +270,7 @@
             this.panel5.Location = new System.Drawing.Point(25, 39);
             this.panel5.Margin = new System.Windows.Forms.Padding(25);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(167, 140);
+            this.panel5.Size = new System.Drawing.Size(167, 102);
             this.panel5.TabIndex = 6;
             // 
             // user1
@@ -255,7 +279,7 @@
             this.user1.Font = new System.Drawing.Font("Kelly Slab", 13F);
             this.user1.Location = new System.Drawing.Point(0, 0);
             this.user1.Name = "user1";
-            this.user1.Size = new System.Drawing.Size(167, 140);
+            this.user1.Size = new System.Drawing.Size(167, 102);
             this.user1.TabIndex = 2;
             this.user1.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
             this.user1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -351,6 +375,132 @@
             this.Hoy.Interval = 1;
             this.Hoy.Tick += new System.EventHandler(this.Hoy_Tick);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Location = new System.Drawing.Point(25, 166);
+            this.panel3.Margin = new System.Windows.Forms.Padding(25);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(167, 102);
+            this.panel3.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(167, 102);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Location = new System.Drawing.Point(203, 166);
+            this.panel4.Margin = new System.Windows.Forms.Padding(25);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(167, 102);
+            this.panel4.TabIndex = 7;
+            // 
+            // label12
+            // 
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.label12.Location = new System.Drawing.Point(0, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(167, 102);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.panel8.Controls.Add(this.label13);
+            this.panel8.Location = new System.Drawing.Point(380, 166);
+            this.panel8.Margin = new System.Windows.Forms.Padding(25);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(167, 102);
+            this.panel8.TabIndex = 7;
+            // 
+            // label13
+            // 
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.label13.Location = new System.Drawing.Point(0, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(167, 102);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.panel9.Controls.Add(this.label14);
+            this.panel9.Location = new System.Drawing.Point(25, 293);
+            this.panel9.Margin = new System.Windows.Forms.Padding(25);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(167, 102);
+            this.panel9.TabIndex = 6;
+            // 
+            // label14
+            // 
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.label14.Location = new System.Drawing.Point(0, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(167, 102);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.panel10.Controls.Add(this.label15);
+            this.panel10.Location = new System.Drawing.Point(203, 293);
+            this.panel10.Margin = new System.Windows.Forms.Padding(25);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(167, 102);
+            this.panel10.TabIndex = 7;
+            // 
+            // label15
+            // 
+            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label15.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.label15.Location = new System.Drawing.Point(0, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(167, 102);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.panel11.Controls.Add(this.label16);
+            this.panel11.Location = new System.Drawing.Point(380, 293);
+            this.panel11.Margin = new System.Windows.Forms.Padding(25);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(167, 102);
+            this.panel11.TabIndex = 7;
+            // 
+            // label16
+            // 
+            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.label16.Location = new System.Drawing.Point(0, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(167, 102);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +528,12 @@
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -395,11 +551,8 @@
         private System.Windows.Forms.Button btnAdminTurnos;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label user3;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label user2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label user1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
@@ -409,5 +562,20 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer Hoy;
+        private System.Windows.Forms.Panel panel11;
+        public System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel10;
+        public System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel8;
+        public System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel9;
+        public System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label user3;
+        public System.Windows.Forms.Label user2;
+        public System.Windows.Forms.Label user1;
     }
 }

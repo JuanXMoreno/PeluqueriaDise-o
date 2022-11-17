@@ -686,16 +686,19 @@ namespace ProyectoPeluquería
 
         private void Vista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex != -1)
+            {
             indiceCeldasLST = dgv_Vista.CurrentRow.Index;
             contadorVentas = Convert.ToInt32(dgv_Vista.Rows[indiceCeldasLST].Cells[0].Value.ToString());
             bddBajaPrecioProducto();
             BddBajaNombreProductos();
-            BddBajaIdProductos();
             cantidad = 1;
             lblCantidad.Text = "1";
             label7.Text = contadorVentas.ToString();
-
+            }
+            
         }
+
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             checkBox1.Checked = false;
