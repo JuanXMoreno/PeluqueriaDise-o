@@ -46,10 +46,8 @@ namespace ProyectoPeluquería
             InitializeComponent();
             dgv_Vista.DataSource = DataB.ActualizarLista(null);
             dgv_Vista.Columns[0].Visible = false;
-            dgv_Vista.Columns[1].Visible = false;
             dgv_Vista.Columns[3].Visible = false;
             dgv_Vista.Columns[5].Visible = false;
-            dgv_Vista.Columns[6].Visible = false;
         }
 
         int PosX = 0, PosY = 0;
@@ -173,42 +171,7 @@ namespace ProyectoPeluquería
             {
                 if (MessageBox.Show("Seguro que quieres agregar esto?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    switch (contadorVentas)
-                    {
-                        case -1:
-                            MessageBox.Show("Por favor seleccione una opción de la izquierda");
-                            break;
-                        case 1:
-                            CodigoRepetidoCaseVentas(1, buscado);
-                            break;
-                        case 2:
-                            CodigoRepetidoCaseVentas(2, buscado);
-                            break;
-                        case 3:
-                            CodigoRepetidoCaseVentas(3, buscado);
-                            break;
-                        case 4:
-                            CodigoRepetidoCaseVentas(4, buscado);
-                            break;
-                        case 5:
-                            CodigoRepetidoCaseVentas(5, buscado);
-                            break;
-                        case 6:
-                            CodigoRepetidoCaseVentas(6, buscado);
-                            break;
-                        case 7:
-                            CodigoRepetidoCaseVentas(7, buscado);
-                            break;
-                        case 8:
-                            CodigoRepetidoCaseVentas(8, buscado);
-                            break;
-                        case 9:
-                            CodigoRepetidoCaseVentas(9, buscado);
-                            break;
-                        case 10:
-                            CodigoRepetidoCaseVentas(10, buscado);
-                            break;
-                    }
+                    CodigoRepetidoCaseVentas((int)valorIdProductos, buscado);
                     lblTotal.Text = "Precio Total " + precio.ToString();
                 }
             }
@@ -583,7 +546,7 @@ namespace ProyectoPeluquería
             {
                 while (lector.Read())
                 {
-                    valorIdProductos = lector.GetDouble(0);
+                    valorIdProductos = lector.GetInt32(0);
                 }
             }
             conexion.Close();
@@ -620,8 +583,8 @@ namespace ProyectoPeluquería
         private void CodigoRepetidoCaseServicios(int contadorId, string nombre) //codigo repetido para el boton agregar con sus respectivos "case"
         {
             contador = contadorId;
-            BddBajaPrecio();
-            LlenarSOV(nombre, valorbdd, valorbdd);
+            BddBajaPrecio();// Obtengo el precio de la base de datos
+            LlenarSOV(nombre, valorbdd, valorbdd); //llegar servios y ventas
             serviciosRealizados[posicionSR] = nombre;
             precio = precio + (int)valorbdd;
             indiceSBDD[posicionSR] = contadorId;

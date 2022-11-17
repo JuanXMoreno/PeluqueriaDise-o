@@ -29,7 +29,6 @@ namespace ProyectoPeluquería
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnAdminTurnos = new System.Windows.Forms.Button();
             this.btnAdminEmpleados = new System.Windows.Forms.Button();
             this.btnAdminServicios = new System.Windows.Forms.Button();
@@ -171,7 +170,7 @@ namespace ProyectoPeluquería
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.panel10.Controls.Add(this.label16);
-            this.panel10.Location = new System.Drawing.Point(380, 293);
+            this.panel10.Location = new System.Drawing.Point(379, 301);
             this.panel10.Margin = new System.Windows.Forms.Padding(25);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(167, 102);
@@ -192,7 +191,7 @@ namespace ProyectoPeluquería
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.panel11.Controls.Add(this.label17);
-            this.panel11.Location = new System.Drawing.Point(203, 293);
+            this.panel11.Location = new System.Drawing.Point(202, 301);
             this.panel11.Margin = new System.Windows.Forms.Padding(25);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(167, 102);
@@ -213,7 +212,7 @@ namespace ProyectoPeluquería
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(380, 166);
+            this.panel3.Location = new System.Drawing.Point(379, 174);
             this.panel3.Margin = new System.Windows.Forms.Padding(25);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(167, 102);
@@ -234,7 +233,7 @@ namespace ProyectoPeluquería
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.panel12.Controls.Add(this.label18);
-            this.panel12.Location = new System.Drawing.Point(25, 293);
+            this.panel12.Location = new System.Drawing.Point(24, 301);
             this.panel12.Margin = new System.Windows.Forms.Padding(25);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(167, 102);
@@ -255,7 +254,7 @@ namespace ProyectoPeluquería
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.panel7.Controls.Add(this.user3);
-            this.panel7.Location = new System.Drawing.Point(380, 39);
+            this.panel7.Location = new System.Drawing.Point(379, 47);
             this.panel7.Margin = new System.Windows.Forms.Padding(25);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 102);
@@ -276,7 +275,7 @@ namespace ProyectoPeluquería
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.panel8.Controls.Add(this.label14);
-            this.panel8.Location = new System.Drawing.Point(203, 166);
+            this.panel8.Location = new System.Drawing.Point(202, 174);
             this.panel8.Margin = new System.Windows.Forms.Padding(25);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(167, 102);
@@ -297,7 +296,7 @@ namespace ProyectoPeluquería
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.panel6.Controls.Add(this.user2);
-            this.panel6.Location = new System.Drawing.Point(203, 39);
+            this.panel6.Location = new System.Drawing.Point(202, 47);
             this.panel6.Margin = new System.Windows.Forms.Padding(25);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(167, 102);
@@ -318,7 +317,7 @@ namespace ProyectoPeluquería
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.panel9.Controls.Add(this.label15);
-            this.panel9.Location = new System.Drawing.Point(25, 166);
+            this.panel9.Location = new System.Drawing.Point(24, 174);
             this.panel9.Margin = new System.Windows.Forms.Padding(25);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(167, 102);
@@ -339,7 +338,7 @@ namespace ProyectoPeluquería
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.panel5.Controls.Add(this.user1);
-            this.panel5.Location = new System.Drawing.Point(25, 39);
+            this.panel5.Location = new System.Drawing.Point(24, 47);
             this.panel5.Margin = new System.Windows.Forms.Padding(25);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 102);
@@ -381,10 +380,7 @@ namespace ProyectoPeluquería
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
@@ -453,7 +449,7 @@ namespace ProyectoPeluquería
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(9, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 16);
+            this.label7.Size = new System.Drawing.Size(170, 16);
             this.label7.TabIndex = 32;
             this.label7.Text = "Formulario Administrador";
             this.label7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverXTitu);
@@ -527,8 +523,6 @@ namespace ProyectoPeluquería
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.label12);
             this.panel4.Location = new System.Drawing.Point(751, 356);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(164, 134);
@@ -537,70 +531,12 @@ namespace ProyectoPeluquería
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label13.Location = new System.Drawing.Point(4, 23);
+            this.label13.Location = new System.Drawing.Point(6, 8);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(151, 62);
             this.label13.TabIndex = 7;
             this.label13.Text = "Estado: WhatsApp Servicio Activo";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Kelly Slab", 11F);
-            this.button2.Location = new System.Drawing.Point(26, 88);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 29);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Ver registro";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // label12
-            // 
-            this.label12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label12.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label12.Location = new System.Drawing.Point(0, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(162, 23);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "WhatsApp";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Hoy
-            // 
-            this.Hoy.Interval = 1;
-            this.Hoy.Tick += new System.EventHandler(this.Hoy_Tick);
-            // 
-            // label19
-            // 
-            this.label19.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label19.Location = new System.Drawing.Point(8, 278);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(148, 23);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "0";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label6.Location = new System.Drawing.Point(7, 156);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(148, 23);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "0";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label20
-            // 
-            this.label20.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label20.Location = new System.Drawing.Point(7, 54);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(148, 23);
-            this.label20.TabIndex = 6;
-            this.label20.Text = "0";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormAdmin
             // 

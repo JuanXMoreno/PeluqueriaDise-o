@@ -11,7 +11,7 @@ namespace ProyectoPeluquería
         public FormAdmin()
         {
             InitializeComponent();
-            //label19.Text = DataB.CargarSuma().ToString();
+            label19.Text = DataB.CargarSuma().ToString();
         }
 
         int PosY = 0;

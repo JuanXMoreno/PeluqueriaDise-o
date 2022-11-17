@@ -159,11 +159,10 @@
             // precio
             // 
             this.precio.Location = new System.Drawing.Point(8, 126);
-            this.precio.Mask = "99999";
+            this.precio.Mask = "999,999";
             this.precio.Name = "precio";
             this.precio.Size = new System.Drawing.Size(293, 20);
             this.precio.TabIndex = 35;
-            this.precio.ValidatingType = typeof(int);
             // 
             // AddStock
             // 
