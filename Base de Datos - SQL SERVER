@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Peluqueria]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  Database [Peluqueria]    Script Date: 17/11/2022 13:49:24 ******/
 CREATE DATABASE [Peluqueria]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,24 +80,35 @@ ALTER DATABASE [Peluqueria] SET QUERY_STORE = OFF
 GO
 USE [Peluqueria]
 GO
-/****** Object:  Table [dbo].[Clientes]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  Table [dbo].[Turnos]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Clientes](
-	[Id_Cliente] [int] IDENTITY(1,1) NOT NULL,
+CREATE TABLE [dbo].[Turnos](
+	[Id_Turno] [int] IDENTITY(1,1) NOT NULL,
 	[Nombre] [varchar](50) NULL,
-	[Apellido] [varchar](50) NULL,
+	[Telefono] [varchar](50) NULL,
 	[FechaNac] [datetime] NULL,
-	[FechaAlta] [datetime] NULL,
- CONSTRAINT [PK__Clientes__3DD0A8CB31A98917] PRIMARY KEY CLUSTERED 
+	[FechaBaja] [datetime] NULL,
+	[Id_Empleado] [int] NOT NULL,
+ CONSTRAINT [PK_Turnos] PRIMARY KEY CLUSTERED 
 (
-	[Id_Cliente] ASC
+	[Id_Turno] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Empleados]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  View [dbo].[VistaTurnos]    Script Date: 17/11/2022 13:49:24 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE VIEW [dbo].[VistaTurnos]
+AS
+SELECT        Id_Turno AS ID, Nombre AS Cliente, Telefono, FechaNac AS [Fecha de nacimiento], FechaBaja AS [Fecha de turno], Id_Empleado AS [ID Empleado]
+FROM            dbo.Turnos
+GO
+/****** Object:  Table [dbo].[Empleados]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -121,7 +132,7 @@ CREATE TABLE [dbo].[Empleados](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Productos]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  Table [dbo].[Productos]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -131,7 +142,7 @@ CREATE TABLE [dbo].[Productos](
 	[Nombre] [varchar](100) NULL,
 	[Stock] [int] NULL,
 	[Precio] [decimal](12, 2) NULL,
-	[FechaAlta] [datetime] NULL,
+	[FechaAlta] [datetime] NOT NULL,
 	[Estado] [bit] NULL,
  CONSTRAINT [PK__Producto__2085A9CF4B6DC0B1] PRIMARY KEY CLUSTERED 
 (
@@ -139,7 +150,7 @@ CREATE TABLE [dbo].[Productos](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Servicios]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  Table [dbo].[Servicios]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -155,29 +166,29 @@ CREATE TABLE [dbo].[Servicios](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ServiciosRealizados]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  Table [dbo].[ServiciosRealizados]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[ServiciosRealizados](
-	[Id_ServicioRealizado] [int] NOT NULL,
-	[Id_Servicio1] [int] NULL,
-	[Id_Servicio2] [int] NULL,
-	[Id_Servicio3] [int] NULL,
-	[Id_Servicio4] [int] NULL,
-	[Id_Servicio5] [int] NULL,
-	[Id_Servicio6] [int] NULL,
-	[Id_Servicio7] [int] NULL,
-	[Id_Servicio8] [int] NULL,
-	[Id_Servicio9] [int] NULL,
+	[Id_ServicioRealizado] [int] IDENTITY(1,1) NOT NULL,
+	[Id_Servicio1] [int] NOT NULL,
+	[Id_Servicio2] [int] NOT NULL,
+	[Id_Servicio3] [int] NOT NULL,
+	[Id_Servicio4] [int] NOT NULL,
+	[Id_Servicio5] [int] NOT NULL,
+	[Id_Servicio6] [int] NOT NULL,
+	[Id_Servicio7] [int] NOT NULL,
+	[Id_Servicio8] [int] NOT NULL,
+	[Id_Servicio9] [int] NOT NULL,
  CONSTRAINT [PK_ServiciosRealizados] PRIMARY KEY CLUSTERED 
 (
 	[Id_ServicioRealizado] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TiposdePago]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  Table [dbo].[TiposdePago]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -193,24 +204,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Turnos]    Script Date: 17/11/2022 00:01:01 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Turnos](
-	[Id_Turno] [int] NOT NULL,
-	[Dia] [datetime] NULL,
-	[Hora] [datetime] NULL,
-	[Id_Cliente] [int] NOT NULL,
-	[Id_Empleado] [int] NOT NULL,
- CONSTRAINT [PK_Turnos] PRIMARY KEY CLUSTERED 
-(
-	[Id_Turno] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[TurnosLaborales]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  Table [dbo].[TurnosLaborales]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -227,7 +221,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Ventas]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  Table [dbo].[Ventas]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -245,7 +239,7 @@ CREATE TABLE [dbo].[Ventas](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[VentasDetalles]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  Table [dbo].[VentasDetalles]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -262,7 +256,7 @@ CREATE TABLE [dbo].[VentasDetalles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[VentasRealizadas]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  Table [dbo].[VentasRealizadas]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -347,20 +341,10 @@ REFERENCES [dbo].[Servicios] ([Id_Servicio])
 GO
 ALTER TABLE [dbo].[ServiciosRealizados] CHECK CONSTRAINT [FK_ServiciosRealizados_Servicios8]
 GO
-ALTER TABLE [dbo].[Turnos]  WITH CHECK ADD  CONSTRAINT [FK_Turnos_Clientes] FOREIGN KEY([Id_Cliente])
-REFERENCES [dbo].[Clientes] ([Id_Cliente])
-GO
-ALTER TABLE [dbo].[Turnos] CHECK CONSTRAINT [FK_Turnos_Clientes]
-GO
 ALTER TABLE [dbo].[Turnos]  WITH CHECK ADD  CONSTRAINT [FK_Turnos_Empleados] FOREIGN KEY([Id_Empleado])
 REFERENCES [dbo].[Empleados] ([Id_Empleado])
 GO
 ALTER TABLE [dbo].[Turnos] CHECK CONSTRAINT [FK_Turnos_Empleados]
-GO
-ALTER TABLE [dbo].[Ventas]  WITH CHECK ADD  CONSTRAINT [FK_Ventas_Clientes] FOREIGN KEY([Id_Cliente])
-REFERENCES [dbo].[Clientes] ([Id_Cliente])
-GO
-ALTER TABLE [dbo].[Ventas] CHECK CONSTRAINT [FK_Ventas_Clientes]
 GO
 ALTER TABLE [dbo].[Ventas]  WITH CHECK ADD  CONSTRAINT [FK_Ventas_Empleados] FOREIGN KEY([Id_Empleado])
 REFERENCES [dbo].[Empleados] ([Id_Empleado])
@@ -432,7 +416,7 @@ REFERENCES [dbo].[Productos] ([Id_Producto])
 GO
 ALTER TABLE [dbo].[VentasRealizadas] CHECK CONSTRAINT [FK_VentasRealizadas_Productos9]
 GO
-/****** Object:  StoredProcedure [dbo].[CrearProducto]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  StoredProcedure [dbo].[CrearProducto]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -461,7 +445,37 @@ rollback tran
 set @veri = 0
 end
 GO
-/****** Object:  StoredProcedure [dbo].[DarAltaProducto]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  StoredProcedure [dbo].[CrearTurno]    Script Date: 17/11/2022 13:49:24 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create proc [dbo].[CrearTurno](
+@nombre varchar(50),
+@fono varchar(50),
+@Fnac datetime,
+@Turno datetime,
+@IdEmpleado int,
+@veri int output
+)
+as
+begin
+begin tran
+Insert into Turnos(Nombre,Telefono,FechaNac,FechaBaja,Id_Empleado)
+values(@nombre,@fono,@Fnac,@Turno,@IdEmpleado)
+if @@ERROR > 0
+goto error
+
+commit tran
+set @veri = 1
+return
+
+error:
+rollback tran
+set @veri = 0
+end
+GO
+/****** Object:  StoredProcedure [dbo].[DarAltaProducto]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -488,7 +502,7 @@ rollback tran
 set @veri = 0
 end
 GO
-/****** Object:  StoredProcedure [dbo].[EliminarProducto]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  StoredProcedure [dbo].[EliminarProducto]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -514,7 +528,7 @@ error:
 set @veri =0
 end
 GO
-/****** Object:  StoredProcedure [dbo].[MdfProduct]    Script Date: 17/11/2022 00:01:01 ******/
+/****** Object:  StoredProcedure [dbo].[MdfProduct]    Script Date: 17/11/2022 13:49:24 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -683,6 +697,149 @@ Begin DesignProperties =
                Right = 587
             End
       ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'VistaCompleta'
+GO
+/****** Object:  StoredProcedure [dbo].[ModTurnos]    Script Date: 17/11/2022 13:49:24 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create procedure [dbo].[ModTurnos](
+@id int,
+@Nombre varchar(50),
+@telefono varchar(50),
+@fechan datetime,
+@turno datetime,
+@idemp int,
+@veri int out
+)
+as
+begin
+begin tran
+Update Turnos
+set Nombre = @Nombre, Telefono = @telefono, FechaNac = @fechan,FechaBaja=@turno,Id_Empleado=@idemp
+Where Id_Turno = @id
+if @@ERROR > 0
+goto error
+
+commit tran
+set @veri = 1
+return
+
+error:
+rollback tran
+set @veri = 0
+end
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPane1', @value=N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
+Begin DesignProperties = 
+   Begin PaneConfigurations = 
+      Begin PaneConfiguration = 0
+         NumPanes = 4
+         Configuration = "(H (1[41] 4[33] 2[8] 3) )"
+      End
+      Begin PaneConfiguration = 1
+         NumPanes = 3
+         Configuration = "(H (1 [50] 4 [25] 3))"
+      End
+      Begin PaneConfiguration = 2
+         NumPanes = 3
+         Configuration = "(H (1 [50] 2 [25] 3))"
+      End
+      Begin PaneConfiguration = 3
+         NumPanes = 3
+         Configuration = "(H (4 [30] 2 [40] 3))"
+      End
+      Begin PaneConfiguration = 4
+         NumPanes = 2
+         Configuration = "(H (1 [56] 3))"
+      End
+      Begin PaneConfiguration = 5
+         NumPanes = 2
+         Configuration = "(H (2 [66] 3))"
+      End
+      Begin PaneConfiguration = 6
+         NumPanes = 2
+         Configuration = "(H (4 [50] 3))"
+      End
+      Begin PaneConfiguration = 7
+         NumPanes = 1
+         Configuration = "(V (3))"
+      End
+      Begin PaneConfiguration = 8
+         NumPanes = 3
+         Configuration = "(H (1[56] 4[18] 2) )"
+      End
+      Begin PaneConfiguration = 9
+         NumPanes = 2
+         Configuration = "(H (1 [75] 4))"
+      End
+      Begin PaneConfiguration = 10
+         NumPanes = 2
+         Configuration = "(H (1[66] 2) )"
+      End
+      Begin PaneConfiguration = 11
+         NumPanes = 2
+         Configuration = "(H (4 [60] 2))"
+      End
+      Begin PaneConfiguration = 12
+         NumPanes = 1
+         Configuration = "(H (1) )"
+      End
+      Begin PaneConfiguration = 13
+         NumPanes = 1
+         Configuration = "(V (4))"
+      End
+      Begin PaneConfiguration = 14
+         NumPanes = 1
+         Configuration = "(V (2))"
+      End
+      ActivePaneConfig = 0
+   End
+   Begin DiagramPane = 
+      Begin Origin = 
+         Top = 0
+         Left = 0
+      End
+      Begin Tables = 
+         Begin Table = "Turnos"
+            Begin Extent = 
+               Top = 6
+               Left = 38
+               Bottom = 136
+               Right = 208
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 1680
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'VistaTurnos'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=1 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'VistaTurnos'
 GO
 USE [master]
 GO
