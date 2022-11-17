@@ -229,6 +229,7 @@
             this.PanelSup.Name = "PanelSup";
             this.PanelSup.Size = new System.Drawing.Size(951, 25);
             this.PanelSup.TabIndex = 33;
+            this.PanelSup.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelSup_Paint);
             this.PanelSup.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverXPanel);
             // 
             // label6
