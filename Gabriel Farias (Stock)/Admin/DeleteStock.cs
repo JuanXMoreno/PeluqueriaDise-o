@@ -25,11 +25,6 @@ namespace ProyectoPeluquería
             BoxBusqueda.Clear();
         }
 
-        private void BtnBusqueda_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
-        }
-
         private void Buscar(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Esta seguro que desea eliminar el Producto ID:" + DeleteID + "?", "Dar de Baja", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
@@ -43,7 +38,7 @@ namespace ProyectoPeluquería
         {
             try
             {
-                if (e.RowIndex <= dataGridView1.RowCount)
+                if (e.RowIndex > -1)
                 {
                     Console.Write("Se selecciono un dato");
                     DeleteID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
@@ -97,6 +92,11 @@ namespace ProyectoPeluquería
             AdminStock AS = Owner as AdminStock;
             AS.Visible = true;
             this.Close();
+        }
+
+        private void BoxBusqueda_KeyUp(object sender, KeyEventArgs e)
+        {
+            dataGridView1.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
         }
     }
 }

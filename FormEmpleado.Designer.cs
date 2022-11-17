@@ -54,6 +54,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Hoy = new System.Windows.Forms.Timer(this.components);
+            this.btnStock = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -102,7 +103,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(9, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(152, 16);
+            this.label7.Size = new System.Drawing.Size(151, 16);
             this.label7.TabIndex = 32;
             this.label7.Text = "Formulario Empleados";
             this.label7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverXTitu);
@@ -501,11 +502,27 @@
             this.label16.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnStock
+            // 
+            this.btnStock.BackColor = System.Drawing.Color.White;
+            this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStock.Font = new System.Drawing.Font("Kelly Slab", 15F);
+            this.btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnStock.Location = new System.Drawing.Point(12, 217);
+            this.btnStock.Name = "btnStock";
+            this.btnStock.Size = new System.Drawing.Size(161, 87);
+            this.btnStock.TabIndex = 44;
+            this.btnStock.Text = "Stock";
+            this.btnStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStock.UseVisualStyleBackColor = false;
+            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
+            // 
             // FormEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 526);
+            this.Controls.Add(this.btnStock);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAdminServicios);
@@ -562,6 +579,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer Hoy;
+        private System.Windows.Forms.Button btnStock;
         private System.Windows.Forms.Panel panel11;
         public System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel10;

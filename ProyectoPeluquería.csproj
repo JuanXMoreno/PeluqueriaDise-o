@@ -110,6 +110,12 @@
     <Compile Include="FormWeb.Designer.cs">
       <DependentUpon>FormWeb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gabriel Farias %28Stock%29\Empleado\StockEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gabriel Farias %28Stock%29\Empleado\StockEmpleado.Designer.cs">
+      <DependentUpon>StockEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormWeb.resx">
       <DependentUpon>FormWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gabriel Farias %28Stock%29\Empleado\StockEmpleado.resx">
+      <DependentUpon>StockEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -281,9 +290,7 @@
     <None Include="Resources\fuego %288%29.png" />
     <None Include="Resources\gira-a-la-derecha f5 negro.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Gabriel Farias %28Stock%29\Empleado\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

@@ -128,5 +128,21 @@ namespace ProyectoPeluquería
         {
             Hoy.Interval = 300;
         }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+            StockEmpleado SE = new StockEmpleado();
+            this.AddOwnedForm(SE);
+            if (SE.Visible == false)
+            {
+                SE.Visible = true;
+                this.Visible = false;
+            }
+            else
+            {
+                this.Visible = true;
+                SE.Visible = false;
+            }
+        }
     }
 }

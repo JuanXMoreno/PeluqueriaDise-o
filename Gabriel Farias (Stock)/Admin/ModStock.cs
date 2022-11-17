@@ -18,17 +18,19 @@ namespace ProyectoPeluquería
         int PosY = 0;
         int PosX = 0;
 
-        private void BtnBusqueda_Click(object sender, EventArgs e)
-        {
-            Vistas.DataSource = dt.ActualizarLista(textBox1.Text);
-        }
-
         private void Vistas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Idtex.Text = Vistas.Rows[e.RowIndex].Cells[0].Value.ToString();
-            Nombre.Text = Vistas.Rows[e.RowIndex].Cells[1].Value.ToString();
-            Stock.Text = Vistas.Rows[e.RowIndex].Cells[2].Value.ToString();
-            precio.Text = Vistas.Rows[e.RowIndex].Cells[3].Value.ToString();
+            if(e.RowIndex > -1)
+            {
+                Idtex.Text = Vistas.Rows[e.RowIndex].Cells[0].Value.ToString();
+                Nombre.Text = Vistas.Rows[e.RowIndex].Cells[1].Value.ToString();
+                Stock.Text = Vistas.Rows[e.RowIndex].Cells[2].Value.ToString();
+                precio.Text = Vistas.Rows[e.RowIndex].Cells[3].Value.ToString();
+            }
+            else
+            {
+                Console.WriteLine("Se selecciono otra cosa");
+            }
         }
 
         private void btnMod_Click(object sender, EventArgs e)
@@ -75,6 +77,11 @@ namespace ProyectoPeluquería
             AdminStock AS = Owner as AdminStock;
             AS.Visible = true;
             this.Close();
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            Vistas.DataSource = dt.ActualizarLista(textBox1.Text);
         }
     }
 }

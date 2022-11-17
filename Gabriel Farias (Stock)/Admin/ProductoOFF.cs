@@ -17,13 +17,6 @@ namespace ProyectoPeluquería
         int ID = 0;
         int PosY = 0;
         int PosX = 0;
-
-
-        private void BtnBusqueda_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = DataB.ProductosOFF(BoxBusqueda.Text);
-        }
-
         private void btnF5_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = DataB.ProductosOFF(null);
@@ -75,6 +68,11 @@ namespace ProyectoPeluquería
                 Left = Left + (e.X - PosX);
                 Top = Top + (e.Y - PosY);
             }
+        }
+
+        private void BoxBusqueda_KeyUp(object sender, KeyEventArgs e)
+        {
+            dataGridView1.DataSource = DataB.ProductosOFF(BoxBusqueda.Text);
         }
     }
 }

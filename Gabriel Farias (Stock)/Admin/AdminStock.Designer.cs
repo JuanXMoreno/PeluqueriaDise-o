@@ -41,11 +41,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBajaProduct = new System.Windows.Forms.Button();
-            this.btnF5 = new System.Windows.Forms.PictureBox();
             this.Btdel = new System.Windows.Forms.Button();
             this.ModStock = new System.Windows.Forms.Button();
             this.AddPro = new System.Windows.Forms.Button();
-            this.BtnBusqueda = new System.Windows.Forms.Button();
+            this.btnF5 = new System.Windows.Forms.PictureBox();
             this.Panelinf.SuspendLayout();
             this.Informacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Vista)).BeginInit();
@@ -127,8 +126,9 @@
             this.BoxBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.BoxBusqueda.Location = new System.Drawing.Point(12, 53);
             this.BoxBusqueda.Name = "BoxBusqueda";
-            this.BoxBusqueda.Size = new System.Drawing.Size(571, 30);
+            this.BoxBusqueda.Size = new System.Drawing.Size(659, 30);
             this.BoxBusqueda.TabIndex = 19;
+            this.BoxBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.BoxBusqueda_KeyUp);
             // 
             // Reloj
             // 
@@ -179,7 +179,7 @@
             this.btnBajaProduct.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnBajaProduct.Image = global::ProyectoPeluquería.Properties.Resources.ojos_cruzados__1_;
             this.btnBajaProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBajaProduct.Location = new System.Drawing.Point(528, 409);
+            this.btnBajaProduct.Location = new System.Drawing.Point(528, 408);
             this.btnBajaProduct.Name = "btnBajaProduct";
             this.btnBajaProduct.Size = new System.Drawing.Size(179, 48);
             this.btnBajaProduct.TabIndex = 30;
@@ -187,19 +187,6 @@
             this.btnBajaProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBajaProduct.UseVisualStyleBackColor = true;
             this.btnBajaProduct.Click += new System.EventHandler(this.btnProductOff);
-            // 
-            // btnF5
-            // 
-            this.btnF5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnF5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnF5.Image = global::ProyectoPeluquería.Properties.Resources.x_b;
-            this.btnF5.Location = new System.Drawing.Point(589, 53);
-            this.btnF5.Name = "btnF5";
-            this.btnF5.Size = new System.Drawing.Size(30, 30);
-            this.btnF5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnF5.TabIndex = 28;
-            this.btnF5.TabStop = false;
-            this.btnF5.Click += new System.EventHandler(this.btnF5_Click);
             // 
             // Btdel
             // 
@@ -209,7 +196,7 @@
             this.Btdel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Btdel.Image = global::ProyectoPeluquería.Properties.Resources.fuego;
             this.Btdel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Btdel.Location = new System.Drawing.Point(368, 409);
+            this.Btdel.Location = new System.Drawing.Point(368, 408);
             this.Btdel.Name = "Btdel";
             this.Btdel.Size = new System.Drawing.Size(154, 48);
             this.Btdel.TabIndex = 16;
@@ -250,21 +237,18 @@
             this.AddPro.UseVisualStyleBackColor = true;
             this.AddPro.Click += new System.EventHandler(this.AddPro_Click);
             // 
-            // BtnBusqueda
+            // btnF5
             // 
-            this.BtnBusqueda.BackgroundImage = global::ProyectoPeluquería.Properties.Resources.busqueda;
-            this.BtnBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.BtnBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBusqueda.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnBusqueda.ForeColor = System.Drawing.Color.Black;
-            this.BtnBusqueda.Location = new System.Drawing.Point(625, 53);
-            this.BtnBusqueda.Name = "BtnBusqueda";
-            this.BtnBusqueda.Size = new System.Drawing.Size(82, 30);
-            this.BtnBusqueda.TabIndex = 12;
-            this.BtnBusqueda.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnBusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnBusqueda.UseVisualStyleBackColor = true;
-            this.BtnBusqueda.Click += new System.EventHandler(this.btnBusqueda_Click);
+            this.btnF5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnF5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnF5.Image = global::ProyectoPeluquería.Properties.Resources.x_b;
+            this.btnF5.Location = new System.Drawing.Point(677, 53);
+            this.btnF5.Name = "btnF5";
+            this.btnF5.Size = new System.Drawing.Size(30, 30);
+            this.btnF5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnF5.TabIndex = 28;
+            this.btnF5.TabStop = false;
+            this.btnF5.Click += new System.EventHandler(this.btnF5_Click);
             // 
             // AdminStock
             // 
@@ -281,7 +265,6 @@
             this.Controls.Add(this.ModStock);
             this.Controls.Add(this.AddPro);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.BtnBusqueda);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.BoxBusqueda);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -309,15 +292,14 @@
         private System.Windows.Forms.Button ModStock;
         private System.Windows.Forms.Button AddPro;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button BtnBusqueda;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox BoxBusqueda;
         private System.Windows.Forms.Timer Reloj;
-        private System.Windows.Forms.PictureBox btnF5;
         private System.Windows.Forms.Button btnBajaProduct;
         private System.Windows.Forms.DataGridView Vista;
         private System.Windows.Forms.Panel PanelSup;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox btnF5;
     }
 }
