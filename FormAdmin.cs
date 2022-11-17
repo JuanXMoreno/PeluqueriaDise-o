@@ -148,7 +148,7 @@ namespace ProyectoPeluquería
 
         private void label3_Click(object sender, EventArgs e)
         {
-            DataB.TurnosHoy();
+            DataB.TurnosHoy(); //
             user1.Text = DataB.TurnosHoyString[0];
             user2.Text = DataB.TurnosHoyString[1];
             user3.Text = DataB.TurnosHoyString[2];
