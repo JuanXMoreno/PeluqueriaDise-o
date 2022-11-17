@@ -46,7 +46,7 @@ namespace ProyectoPeluquería
             }
             else
             {
-                string sql = "insert into Turnos(Dia,Hora,Id_Cliente,Id_Empleado) values ('" + txtDia.Text + "','" + txtHora.Value + "')";
+                string sql = "insert into Turnos(Dia,Hora,Id_Cliente,Id_Empleado) values ('" + txtDia.Text + "','" + txtHora.Value + "''" + txtCliente.Text + "','" + TxtBNum.Text + "')";
             }
             conexion.Close();
         }
@@ -55,10 +55,11 @@ namespace ProyectoPeluquería
         {
             n = e.RowIndex;
         }
-
+        
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             dgvDatos.Rows.RemoveAt(n);
+           
         }
 
         private void txtDia_TextChanged(object sender, EventArgs e)
@@ -87,10 +88,29 @@ namespace ProyectoPeluquería
         {
             HabilitarBoton();
         }
-
+       
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            if (txtCliente.Text.Equals("") || TxtBNum.Text.Equals(""))
+                MessageBox.Show("No se puede modificar porque hay datos incompletos");
+            else
+            {
+                conexion.Open();
+                String sql = "update Turnos set Id_TurnoLaboral='1', Cliente='" + txtCliente.Text + "',Telefono='" + TxtBNum.Text;
+                SqlCommand comando = new SqlCommand(sql, conexion);
+                DialogResult dr = MessageBox.Show("¿Realmente desea modificar a este turno?", "Modificar turno", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
+                if (dr == DialogResult.OK)
+                {
+                    comando.ExecuteNonQuery();
+                }
+                consulta();
+               
+
+                conexion.Close();
+
+
+            }
         }
 
         private void Cerrarpic_Click(object sender, EventArgs e)
