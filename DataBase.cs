@@ -163,6 +163,10 @@ namespace ProyectoPeluquería
                     {
                         cmd.Parameters.AddWithValue("@precio", Convert.ToDecimal(precio));
                     }
+                    else
+                    {
+                        MessageBox.Show("Estas poniendo letras. Saldra error por ello. :(");
+                    }
                     SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
                     Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
                     cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
@@ -609,47 +613,54 @@ namespace ProyectoPeluquería
         public bool CrearTurno(string Nombre, String Numero, String FechaNac, String FechaTurno, int IDEmpleado) //Creado por lucho :3 pinche jaz a :v (hechado bardo)
         {
             bool Exito = false;
-            try
+            if(Nombre != null && Numero != null && FechaNac != null && FechaTurno != null && IDEmpleado != 0)
             {
-                Conectarse = new SqlConnection();
-                Conectarse.ConnectionString = link;
-                Conectarse.Open();
-                Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
-                cmd = new SqlCommand("CrearTurno", Conectarse, Tran);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombre", Nombre);
-                cmd.Parameters.AddWithValue("@fono", Numero);
-                cmd.Parameters.AddWithValue("@Fnac", FechaNac);
-                cmd.Parameters.AddWithValue("@Turno", FechaTurno);
-                cmd.Parameters.AddWithValue("@IdEmpleado", IDEmpleado);
-                SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int);
-                Parametros.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(Parametros);
-                cmd.ExecuteNonQuery();
-                int ParametroDeEntrada = 0;
-                ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
-                if (ParametroDeEntrada == 1)
+                try
                 {
-                    Exito = true;
+                    Conectarse = new SqlConnection();
+                    Conectarse.ConnectionString = link;
+                    Conectarse.Open();
+                    Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
+                    cmd = new SqlCommand("CrearTurno", Conectarse, Tran);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@nombre", Nombre);
+                    cmd.Parameters.AddWithValue("@fono", Numero);
+                    cmd.Parameters.AddWithValue("@Fnac", FechaNac);
+                    cmd.Parameters.AddWithValue("@Turno", FechaTurno);
+                    cmd.Parameters.AddWithValue("@IdEmpleado", IDEmpleado);
+                    SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int);
+                    Parametros.Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add(Parametros);
+                    cmd.ExecuteNonQuery();
+                    int ParametroDeEntrada = 0;
+                    ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
+                    if (ParametroDeEntrada == 1)
+                    {
+                        Exito = true;
+                    }
+                }
+                catch (SqlException Err)
+                {
+                    MessageBox.Show("Se encotro un error: " + Err);
+                    MessageBox.Show("Por favor, contacte con el tecnico.");
+                }
+                finally
+                {
+                    if (Exito)
+                    {
+                        Tran.Commit();
+                    }
+                    else
+                    {
+                        Tran.Rollback();
+                    }
+                    Conectarse.Close();
                 }
             }
-            catch (SqlException Err)
+            else
             {
-                MessageBox.Show("Se encotro un error: " + Err);
-                MessageBox.Show("Por favor, contacte con el tecnico.");
-            }
-            finally
-            {
-                if (Exito)
-                {
-                    Tran.Commit();
-                }
-                else
-                {
-                    Tran.Rollback();
-                }
-                Conectarse.Close();
+                MessageBox.Show("Falta 1 dato");
             }
             return Exito;
         }
@@ -668,7 +679,14 @@ namespace ProyectoPeluquería
 
                 while (lector.Read())
                 {
-                    sumaTotal = (float)lector.GetDecimal(0);
+                    if(!lector.IsDBNull(0))
+                    {
+                        sumaTotal = (float)lector.GetDecimal(0);
+                    }
+                    else
+                    {
+                        sumaTotal = 0;
+                    }
                 }
             }
             catch (SqlException er)

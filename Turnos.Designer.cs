@@ -37,6 +37,9 @@
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.txtDia = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Horarios = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.FechaNac = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.TxtBNum = new System.Windows.Forms.TextBox();
             this.PanelSup = new System.Windows.Forms.Panel();
@@ -47,9 +50,6 @@
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.FechaNac = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.Horarios = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.PanelSup.SuspendLayout();
@@ -169,6 +169,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Turnos";
             // 
+            // Horarios
+            // 
+            this.Horarios.FormattingEnabled = true;
+            this.Horarios.Location = new System.Drawing.Point(158, 139);
+            this.Horarios.Name = "Horarios";
+            this.Horarios.Size = new System.Drawing.Size(191, 23);
+            this.Horarios.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 87);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(142, 15);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Fecha de nacimiento";
+            // 
+            // FechaNac
+            // 
+            this.FechaNac.CustomFormat = "";
+            this.FechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaNac.Location = new System.Drawing.Point(158, 81);
+            this.FechaNac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.FechaNac.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.FechaNac.Name = "FechaNac";
+            this.FechaNac.Size = new System.Drawing.Size(191, 23);
+            this.FechaNac.TabIndex = 10;
+            this.FechaNac.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -186,6 +216,8 @@
             this.TxtBNum.Name = "TxtBNum";
             this.TxtBNum.Size = new System.Drawing.Size(191, 23);
             this.TxtBNum.TabIndex = 8;
+            this.TxtBNum.Text = "+5493549";
+            this.TxtBNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBNum_KeyPress);
             // 
             // PanelSup
             // 
@@ -297,36 +329,6 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModificar.UseVisualStyleBackColor = false;
-            // 
-            // FechaNac
-            // 
-            this.FechaNac.CustomFormat = "";
-            this.FechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaNac.Location = new System.Drawing.Point(158, 81);
-            this.FechaNac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.FechaNac.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.FechaNac.Name = "FechaNac";
-            this.FechaNac.Size = new System.Drawing.Size(191, 23);
-            this.FechaNac.TabIndex = 10;
-            this.FechaNac.Value = new System.DateTime(2022, 11, 17, 0, 0, 0, 0);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 87);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(142, 15);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Fecha de nacimiento";
-            // 
-            // Horarios
-            // 
-            this.Horarios.FormattingEnabled = true;
-            this.Horarios.Location = new System.Drawing.Point(158, 139);
-            this.Horarios.Name = "Horarios";
-            this.Horarios.Size = new System.Drawing.Size(191, 23);
-            this.Horarios.TabIndex = 12;
             // 
             // Turnos
             // 

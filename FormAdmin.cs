@@ -5,13 +5,12 @@ namespace ProyectoPeluquería
 {
     public partial class FormAdmin : Form
     {
-        Login f3 = new Login();
         DataBase DataB = new DataBase();
 
         public FormAdmin()
         {
             InitializeComponent();
-            label19.Text = DataB.CargarSuma().ToString();
+            label1.Text = "Ganancia total de ventas y servicios:\n"+DataB.CargarSuma().ToString();
         }
 
         int PosY = 0;
@@ -35,6 +34,7 @@ namespace ProyectoPeluquería
 
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Login f3 = new Login();
             f3.Close();
         }
 
@@ -121,26 +121,10 @@ namespace ProyectoPeluquería
 
         private void label10_Click(object sender, EventArgs e)
         {
+            Login f3 = new Login();
             f3.Visible = true;
             this.Close();
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Config config = new Config();
-            this.AddOwnedForm(config);
-            if (config.Visible == false)
-            {
-                config.Visible = true;
-                this.Visible = false;
-            }
-            else
-            {
-                this.Visible = true;
-                config.Visible = false;
-            }
-        }
-
         private void label8_Click(object sender, EventArgs e)
         {
             Config config = new Config();
@@ -156,12 +140,5 @@ namespace ProyectoPeluquería
                 config.Visible = false;
             }
         }
-
-        private void Hoy_Tick(object sender, EventArgs e)
-        {
-            Hoy.Interval = 300;
-        }
-
-
     }
 }

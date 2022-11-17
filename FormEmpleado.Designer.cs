@@ -33,8 +33,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panelinf = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnAdminServicios = new System.Windows.Forms.Button();
             this.btnAdminTurnos = new System.Windows.Forms.Button();
@@ -72,7 +70,6 @@
             this.PanelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panelinf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -105,7 +102,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(9, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(152, 16);
+            this.label7.Size = new System.Drawing.Size(151, 16);
             this.label7.TabIndex = 32;
             this.label7.Text = "Formulario Empleados";
             this.label7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverXTitu);
@@ -126,40 +123,12 @@
             // Panelinf
             // 
             this.Panelinf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.Panelinf.Controls.Add(this.label8);
-            this.Panelinf.Controls.Add(this.pictureBox2);
             this.Panelinf.Controls.Add(this.label10);
             this.Panelinf.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Panelinf.Location = new System.Drawing.Point(0, 500);
             this.Panelinf.Name = "Panelinf";
             this.Panelinf.Size = new System.Drawing.Size(927, 26);
             this.Panelinf.TabIndex = 38;
-            // 
-            // label8
-            // 
-            this.label8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label8.Font = new System.Drawing.Font("Kelly Slab", 8F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(28, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(98, 26);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Configuracion";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox2.Image = global::ProyectoPeluquería.Properties.Resources.configuraciones;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label10
             // 
@@ -562,7 +531,6 @@
             this.PanelSup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Panelinf.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -585,8 +553,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel Panelinf;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnAdminServicios;
         private System.Windows.Forms.Button btnAdminTurnos;

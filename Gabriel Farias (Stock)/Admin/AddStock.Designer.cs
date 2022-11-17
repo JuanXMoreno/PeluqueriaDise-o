@@ -39,7 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.SubirImagen = new System.Windows.Forms.OpenFileDialog();
             this.Stock = new System.Windows.Forms.MaskedTextBox();
-            this.precio = new System.Windows.Forms.MaskedTextBox();
+            this.precio = new System.Windows.Forms.TextBox();
             this.PanelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -159,10 +159,10 @@
             // precio
             // 
             this.precio.Location = new System.Drawing.Point(8, 126);
-            this.precio.Mask = "999,999";
             this.precio.Name = "precio";
             this.precio.Size = new System.Drawing.Size(293, 20);
             this.precio.TabIndex = 35;
+            this.precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precio_KeyPress);
             // 
             // AddStock
             // 
@@ -204,6 +204,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.OpenFileDialog SubirImagen;
         private System.Windows.Forms.MaskedTextBox Stock;
-        private System.Windows.Forms.MaskedTextBox precio;
+        private System.Windows.Forms.TextBox precio;
     }
 }

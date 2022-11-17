@@ -59,9 +59,12 @@ namespace ProyectoPeluquería
         {
             String[] ExtraEmpleado = cmbPeluquero.Text.Split('.');
             int idEmpleado = Convert.ToInt32(ExtraEmpleado[0]);
-            //MessageBox.Show(txtDia.Text + " " + Horarios.Text);
             DataB.CrearTurno(txtCliente.Text,TxtBNum.Text,FechaNac.Text.Replace("/","-"),txtDia.Text.Replace("/", "-") + " "+Horarios.Text,idEmpleado);
-            MessageBox.Show(ExtraEmpleado[0]);
+            FormWeb FW = Owner as FormWeb;
+            if(TxtBNum.Text != null || TxtBNum.Text != string.Empty)
+            {
+                FW.AddCola(TxtBNum.Text);
+            }
         }
 
         private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -157,6 +160,18 @@ namespace ProyectoPeluquería
         private void txtDia_ValueChanged(object sender, EventArgs e)
         {
             VDH();
+        }
+
+        private void TxtBNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || e.KeyChar == 8 || e.KeyChar == '+')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void MoverXPanel(object sender, MouseEventArgs e)
