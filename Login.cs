@@ -19,18 +19,24 @@ namespace ProyectoPeluquería
         //boton para ingresar al administrador con el usuario y contraseña guardadas en la base de datos
         private void button1_Click(object sender, EventArgs e)
         {
-            DataB.AuthEmpleado(txtNombreUsuario.Text, txtContraseña.Text);
-            DataB.Auth(txtNombreUsuario.Text, txtContraseña.Text);
-            if (DataB.SiHay == false)
+            if (txtContraseña.Text != "" && txtNombreUsuario.Text != "")
             {
-                MessageBox.Show("Por favor, ingrese un usuario y/o contraseña correctos");
+                DataB.AuthEmpleado(txtNombreUsuario.Text, txtContraseña.Text);
+                DataB.Auth(txtNombreUsuario.Text, txtContraseña.Text);
+                if (DataB.SiHay == false)
+                {
+                    MessageBox.Show("Por favor, ingrese un usuario y/o contraseña correctos");
+                }
+                else
+                {
+                    BorrarUser();
+                    this.Hide();
+                }
             }
             else
             {
-                BorrarUser();
-                this.Hide();
+                MessageBox.Show("Por favor, complete las casillas");
             }
-
         } //Boton para login
 
         private void PanelSup_MouseMove(object sender, MouseEventArgs e)
