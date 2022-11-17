@@ -12,7 +12,8 @@ namespace ProyectoPeluquería
         {
             InitializeComponent();
             label1.Text = "Ganancia total de ventas y servicios:\n"+DataB.CargarSuma().ToString();
-            DataB.TurnosHoy();
+            label5.Text = "Ventas / servicios realizados:\n" + DataB.VSR.ToString();
+            ActualizarPanel();
         }
 
         int PosY = 0;
@@ -147,6 +148,11 @@ namespace ProyectoPeluquería
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+            ActualizarPanel();
+        }
+
+        private void ActualizarPanel()
         {
             DataB.TurnosHoy(); //
             user1.Text = DataB.TurnosHoyString[0];

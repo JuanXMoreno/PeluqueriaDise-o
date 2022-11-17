@@ -82,5 +82,17 @@ namespace ProyectoPeluquería.Properties {
                 this["WhatsAppStart"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TurnosHoy {
+            get {
+                return ((bool)(this["TurnosHoy"]));
+            }
+            set {
+                this["TurnosHoy"] = value;
+            }
+        }
     }
 }

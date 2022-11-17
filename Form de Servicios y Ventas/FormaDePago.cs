@@ -6,6 +6,7 @@ namespace ProyectoPeluquería
 {
     public partial class FormaDePago : Form
     {
+        DataBase DataB = new DataBase();
         public FormaDePago()
         {
             InitializeComponent();
@@ -46,21 +47,19 @@ namespace ProyectoPeluquería
         {
             if (MessageBox.Show("Confirme la compra/servicio", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-
-            }
-            conexion.Open();
-            for (int i = 0; i < indiceSBDDFDP.Length; i++)
-            {
-                if (indiceSBDDFDP[i] == 0)
+                conexion.Open();
+                for (int i = 0; i < indiceSBDDFDP.Length; i++)
                 {
-                    Console.WriteLine(indiceSBDDFDP[i].ToString());
-                    indiceSBDDFDP[i] = 14;
+                    if (indiceSBDDFDP[i] == 0)
+                    {
+                        Console.WriteLine(indiceSBDDFDP[i].ToString());
+                        indiceSBDDFDP[i] = 14;
+                    }
                 }
-            }
-            string servicios = "Insert Into ServiciosRealizados (Id_Servicio1, Id_Servicio2, Id_Servicio3 ,Id_Servicio4 ,Id_Servicio5 ,Id_Servicio6 ,Id_Servicio7 ,Id_Servicio8, Id_Servicio9)" +
-                " values('" + indiceSBDDFDP[0] + "','" + indiceSBDDFDP[1] + "','" + indiceSBDDFDP[2] + "','" + indiceSBDDFDP[3] + "','" + indiceSBDDFDP[4] + "','" + indiceSBDDFDP[5] + "','" + indiceSBDDFDP[6] + "','" + indiceSBDDFDP[7] + "','" + indiceSBDDFDP[8] + "')";
-            string ventas = "insert into VentasRealizadas (Id_Producto1, Cantidad1 ,Id_Producto2 ,Cantidad2 ,Id_Producto3 ,Cantidad3 ,Id_Producto4, Cantidad4, Id_Producto5, Cantidad5, Id_Producto6, Cantidad6, Id_Producto7, Cantidad7, Id_Producto8, Cantidad8, Id_Producto9, Cantidad9, Id_Producto10, Cantidad10)" +
-                " values('" + indiceVBDDFDP[0] + "','" + cantidadXVentaFDP[0] + "','" + indiceVBDDFDP[1] + "','" + cantidadXVentaFDP[1] + "','" + indiceVBDDFDP[2] + "','" + cantidadXVentaFDP[2] + "','" + indiceVBDDFDP[3] + "','" + cantidadXVentaFDP[3] + "','" + indiceVBDDFDP[4] + "','" + cantidadXVentaFDP[4] + "','" + indiceVBDDFDP[5] + "','" + cantidadXVentaFDP[5] + "','" + indiceVBDDFDP[6] + "','" + cantidadXVentaFDP[6] + "','" + indiceVBDDFDP[7] + "','" + cantidadXVentaFDP[7] + "','" + indiceVBDDFDP[8] + "','" + cantidadXVentaFDP[8] + "', '" + indiceVBDDFDP[9] + "','" + cantidadXVentaFDP[9] + "')";
+                string servicios = "Insert Into ServiciosRealizados (Id_Servicio1, Id_Servicio2, Id_Servicio3 ,Id_Servicio4 ,Id_Servicio5 ,Id_Servicio6 ,Id_Servicio7 ,Id_Servicio8, Id_Servicio9)" +
+                    " values('" + indiceSBDDFDP[0] + "','" + indiceSBDDFDP[1] + "','" + indiceSBDDFDP[2] + "','" + indiceSBDDFDP[3] + "','" + indiceSBDDFDP[4] + "','" + indiceSBDDFDP[5] + "','" + indiceSBDDFDP[6] + "','" + indiceSBDDFDP[7] + "','" + indiceSBDDFDP[8] + "')";
+                string ventas = "insert into VentasRealizadas (Id_Producto1, Cantidad1 ,Id_Producto2 ,Cantidad2 ,Id_Producto3 ,Cantidad3 ,Id_Producto4, Cantidad4, Id_Producto5, Cantidad5, Id_Producto6, Cantidad6, Id_Producto7, Cantidad7, Id_Producto8, Cantidad8, Id_Producto9, Cantidad9, Id_Producto10, Cantidad10)" +
+                    " values('" + indiceVBDDFDP[0] + "','" + cantidadXVentaFDP[0] + "','" + indiceVBDDFDP[1] + "','" + cantidadXVentaFDP[1] + "','" + indiceVBDDFDP[2] + "','" + cantidadXVentaFDP[2] + "','" + indiceVBDDFDP[3] + "','" + cantidadXVentaFDP[3] + "','" + indiceVBDDFDP[4] + "','" + cantidadXVentaFDP[4] + "','" + indiceVBDDFDP[5] + "','" + cantidadXVentaFDP[5] + "','" + indiceVBDDFDP[6] + "','" + cantidadXVentaFDP[6] + "','" + indiceVBDDFDP[7] + "','" + cantidadXVentaFDP[7] + "','" + indiceVBDDFDP[8] + "','" + cantidadXVentaFDP[8] + "', '" + indiceVBDDFDP[9] + "','" + cantidadXVentaFDP[9] + "')";
 
                 if (rb_CreditoDebito.Checked == true)
                 {
@@ -77,16 +76,20 @@ namespace ProyectoPeluquería
 
                 string formaDePago = "insert into Ventas(Id_TipoDePago) values('" + tipoDePago + "')";
 
-            SqlCommand comando = new SqlCommand(servicios, conexion);
-            SqlCommand comand = new SqlCommand(ventas, conexion);
-            SqlCommand comandos = new SqlCommand(formaDePago, conexion);
+                SqlCommand comando = new SqlCommand(servicios, conexion);
+                SqlCommand comand = new SqlCommand(ventas, conexion);
+                SqlCommand comandos = new SqlCommand(formaDePago, conexion);
 
-            comando.ExecuteNonQuery();
-            comand.ExecuteNonQuery();
-            comandos.ExecuteNonQuery();
+                comando.ExecuteNonQuery();
+                comand.ExecuteNonQuery();
+                comandos.ExecuteNonQuery();
 
-            conexion.Close();
+                DataB.VSR = DataB.VSR + 1;
+
+                conexion.Close();
+            }
         }
+            
 
         private void MoverXPanel(object sender, MouseEventArgs e)
         {

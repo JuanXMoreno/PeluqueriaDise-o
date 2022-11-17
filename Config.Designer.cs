@@ -28,23 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtBase = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtServer = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnWeb = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,10 +51,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
-            this.panel4.SuspendLayout();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -77,132 +60,10 @@
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(14, 366);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(173, 39);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Verificar SQL";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
-            this.textBox2.Location = new System.Drawing.Point(395, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 26);
-            this.textBox2.TabIndex = 16;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
-            this.label9.Location = new System.Drawing.Point(268, 33);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(121, 20);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Pass";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
-            this.textBox1.Location = new System.Drawing.Point(88, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 26);
-            this.textBox1.TabIndex = 14;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
-            this.label8.Location = new System.Drawing.Point(16, 33);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 20);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "User";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
-            this.label7.Location = new System.Drawing.Point(266, 7);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(123, 20);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Base de datos";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtBase
-            // 
-            this.txtBase.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
-            this.txtBase.Location = new System.Drawing.Point(395, 7);
-            this.txtBase.Name = "txtBase";
-            this.txtBase.Size = new System.Drawing.Size(135, 26);
-            this.txtBase.TabIndex = 12;
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
-            this.label13.ForeColor = System.Drawing.Color.DarkRed;
-            this.label13.Location = new System.Drawing.Point(263, 63);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(123, 20);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "Inactivo";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
-            this.label12.Location = new System.Drawing.Point(188, 63);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 20);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "Estado:";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.textBox2);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.txtBase);
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.txtServer);
-            this.panel4.Location = new System.Drawing.Point(14, 265);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(556, 95);
-            this.panel4.TabIndex = 17;
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
-            this.label11.Location = new System.Drawing.Point(14, 7);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 20);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Server";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtServer
-            // 
-            this.txtServer.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
-            this.txtServer.Location = new System.Drawing.Point(88, 7);
-            this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(172, 26);
-            this.txtServer.TabIndex = 7;
-            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.btnWeb);
             this.panel3.Location = new System.Drawing.Point(14, 68);
             this.panel3.Name = "panel3";
@@ -222,37 +83,6 @@
             this.btnWeb.Text = "Ver registro";
             this.btnWeb.UseVisualStyleBackColor = true;
             this.btnWeb.Click += new System.EventHandler(this.btnWeb_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
-            this.label10.Location = new System.Drawing.Point(14, 7);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 18);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "SQL SERVER";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(14, 231);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5, 0, 0, 1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(556, 30);
-            this.panel2.TabIndex = 15;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(519, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -319,7 +149,7 @@
             // 
             this.PanelInf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.PanelInf.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelInf.Location = new System.Drawing.Point(0, 411);
+            this.PanelInf.Location = new System.Drawing.Point(0, 282);
             this.PanelInf.Name = "PanelInf";
             this.PanelInf.Size = new System.Drawing.Size(582, 20);
             this.PanelInf.TabIndex = 13;
@@ -368,24 +198,26 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(193, 366);
+            this.button1.Location = new System.Drawing.Point(14, 234);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(172, 39);
             this.button1.TabIndex = 19;
             this.button1.Text = "Verificar SQL";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(371, 366);
+            this.button3.Location = new System.Drawing.Point(192, 231);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(199, 39);
+            this.button3.Size = new System.Drawing.Size(378, 42);
             this.button3.TabIndex = 20;
             this.button3.Text = "Inicio automatico";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel5
             // 
@@ -490,20 +322,31 @@
             this.label16.TabIndex = 3;
             this.label16.Text = "Horarios de trabajo";
             // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Kelly Slab", 10F);
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(163, 10);
+            this.button2.Margin = new System.Windows.Forms.Padding(10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(134, 52);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Iniciar Sesion";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            this.ClientSize = new System.Drawing.Size(582, 431);
+            this.ClientSize = new System.Drawing.Size(582, 302);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelInf);
             this.Controls.Add(this.PanelTop);
@@ -511,12 +354,7 @@
             this.Name = "Config";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Config";
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.PanelTop.ResumeLayout(false);
@@ -531,23 +369,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtBase;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtServer;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -570,5 +392,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button button2;
     }
 }

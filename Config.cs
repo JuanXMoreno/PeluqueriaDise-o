@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,6 +7,7 @@ namespace ProyectoPeluquería
 {
     public partial class Config : Form
     {
+        DataBase DataB = new DataBase();
         public Config()
         {
             InitializeComponent();
@@ -90,6 +92,34 @@ namespace ProyectoPeluquería
             Properties.Settings.Default.HTI = comboBox3.Text;
             Properties.Settings.Default.HTF = comboBox4.Text;
             Properties.Settings.Default.Save();
+            MessageBox.Show("Se guardo exitosamente");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            reg.SetValue("Projecto Peluqueria", Application.ExecutablePath.ToString());
+            MessageBox.Show("Inicio Automatico:Activo.");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool Exito = DataB.Verificacion();
+            if(Exito)
+            {
+                MessageBox.Show("SQL Verificada y Activa");
+            }
+            else
+            {
+                MessageBox.Show("SQL Verificada. No activa");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Iniciar sesion en WhatsAppWeb, una vez inciado reiniciar programa");
+            FormWeb FW = new FormWeb();
+            FW.Show();
         }
 
         private void MoverXPanel(object sender, MouseEventArgs e)

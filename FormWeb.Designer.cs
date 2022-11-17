@@ -43,9 +43,11 @@
             this.IniciarBusqueda = new System.Windows.Forms.Timer(this.components);
             this.Intervalo = new System.Windows.Forms.Timer(this.components);
             this.Exito = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelInf
@@ -60,6 +62,7 @@
             // PanelTop
             // 
             this.PanelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.PanelTop.Controls.Add(this.pictureBox2);
             this.PanelTop.Controls.Add(this.pictureBox1);
             this.PanelTop.Controls.Add(this.label1);
             this.PanelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -181,6 +184,19 @@
             this.Exito.Interval = 5000;
             this.Exito.Tick += new System.EventHandler(this.Exito_Tick);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox2.Image = global::ProyectoPeluquería.Properties.Resources.actualizar__2_;
+            this.pictureBox2.Location = new System.Drawing.Point(812, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // FormWeb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -224,5 +241,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer Intervalo;
         private System.Windows.Forms.Timer Exito;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

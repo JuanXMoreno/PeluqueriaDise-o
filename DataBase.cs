@@ -10,8 +10,9 @@ namespace ProyectoPeluquería
     {
         //DESKTOP-COF6H2T Juan
         //(localdb)\Home lucho
-        public static string link = @"SERVER=DESKTOP-COF6H2T;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
-        public String[] TurnosHoyString = new string[7];
+        public static string link = @"SERVER=(localdb)\Home;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
+        public String[] TurnosHoyString = new string[50];
+        public int VSR = 0;
         SqlConnection Conectarse = null;
         SqlCommand cmd = null;
         SqlTransaction Tran = null;
@@ -657,6 +658,8 @@ namespace ProyectoPeluquería
                     Tran.Rollback();
                 }
                 Conectarse.Close();
+                Properties.Settings.Default.TurnosHoy = true;
+                Properties.Settings.Default.Save();
             }
             return Exito;
         }
@@ -759,31 +762,38 @@ namespace ProyectoPeluquería
 
         public void TurnosHoy()
         {
-            try
+            if(Properties.Settings.Default.TurnosHoy != false)
             {
-                Console.WriteLine("Se inicio");
-                Conectar();
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "Select * From Turnos where FechaBaja = '"+DateTime.Now+"'";
-                cmd.Connection = Conectar();
-                SqlDataReader Lector = cmd.ExecuteReader();
-                int i = 0;
-                while(Lector.Read())
+                try
                 {
-                    MessageBox.Show(Lector.GetString(1) + "\n" + Lector.GetDateTime(4));
-                    TurnosHoyString[i] = Lector.GetString(1) + "\n" + Lector.GetDateTime(4);
-                        i++;
+                    Console.WriteLine("Se inicio");
+                    Conectar();
+
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "Select * From Turnos WHERE  (DATEPART(yy, FechaBaja) = "+DateTime.Now.Year+" and DATEPART(mm, FechaBaja) = "+DateTime.Now.Month+" AND DATEPART(dd, FechaBaja) = "+DateTime.Now.Day+")" +
+                        "Order by FechaBaja asc";
+                    cmd.Connection = Conectar();
+                    SqlDataReader Lector = cmd.ExecuteReader();
+                    int i = 0;
+                    while (Lector.Read())
+                    {
+                        if (!Lector.IsDBNull(0))
+                        {
+                            //MessageBox.Show(Lector.GetString(1) + "\n" + Lector.GetDateTime(4));
+                            TurnosHoyString[i] = Lector.GetString(1) + "\n" + Lector.GetDateTime(4);
+                            i++;
+                        }
+                    }
                 }
-            }
-            catch (SqlException Errores)
-            {
-                MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
-                Console.WriteLine("Se encontraron errores: " + Errores);
-            }
-            finally
-            {
-                Desconectar();
+                catch (SqlException Errores)
+                {
+                    MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
+                    Console.WriteLine("Se encontraron errores: " + Errores);
+                }
+                finally
+                {
+                    Desconectar();
+                }
             }
         }
     }

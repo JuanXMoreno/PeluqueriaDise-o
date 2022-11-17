@@ -39,34 +39,41 @@ namespace ProyectoPeluquería
 
         public void CargarHorarios()
         {
-            String[] HMIS = Properties.Settings.Default.HMI.Split(':');
-            String[] HMFS = Properties.Settings.Default.HMF.Split(':');
-            String[] HTIS = Properties.Settings.Default.HTI.Split(':');
-            String[] HTFS = Properties.Settings.Default.HTF.Split(':');
-
-            int HMI = Convert.ToInt32(HMIS[0]);
-            int HMF = Convert.ToInt32(HMFS[0]);
-            int HTI = Convert.ToInt32(HTIS[0]);
-            int HTF = Convert.ToInt32(HTFS[0]);
-
-            int EntreMañana = HMF - HMI;
-            int EntreTarde = HTF - HTI;
-
-            DateTime InicioM = Convert.ToDateTime(HMI+":00");
-            DateTime InicioT = Convert.ToDateTime(HTI + ":00");
-            Horarios.Items.Add(InicioM.ToShortTimeString() + ":00");
-            for (int i = 0; i<(EntreMañana);i++)
+            try
             {
-                InicioM += TimeSpan.FromMinutes(60);
-                Horarios.Items.Add(InicioM.ToShortTimeString()+":00");
-                EspacioTotales++;
-            }
-            Horarios.Items.Add(InicioT.ToShortTimeString() + ":00");
-            for (int i = 0; i < (EntreTarde); i++)
-            {
-                InicioT += TimeSpan.FromMinutes(60);
+                String[] HMIS = Properties.Settings.Default.HMI.Split(':');
+                String[] HMFS = Properties.Settings.Default.HMF.Split(':');
+                String[] HTIS = Properties.Settings.Default.HTI.Split(':');
+                String[] HTFS = Properties.Settings.Default.HTF.Split(':');
+
+                int HMI = Convert.ToInt32(HMIS[0]);
+                int HMF = Convert.ToInt32(HMFS[0]);
+                int HTI = Convert.ToInt32(HTIS[0]);
+                int HTF = Convert.ToInt32(HTFS[0]);
+
+                int EntreMañana = HMF - HMI;
+                int EntreTarde = HTF - HTI;
+
+                DateTime InicioM = Convert.ToDateTime(HMI + ":00");
+                DateTime InicioT = Convert.ToDateTime(HTI + ":00");
+                Horarios.Items.Add(InicioM.ToShortTimeString() + ":00");
+                for (int i = 0; i < (EntreMañana); i++)
+                {
+                    InicioM += TimeSpan.FromMinutes(60);
+                    Horarios.Items.Add(InicioM.ToShortTimeString() + ":00");
+                    EspacioTotales++;
+                }
                 Horarios.Items.Add(InicioT.ToShortTimeString() + ":00");
-                EspacioTotales++;
+                for (int i = 0; i < (EntreTarde); i++)
+                {
+                    InicioT += TimeSpan.FromMinutes(60);
+                    Horarios.Items.Add(InicioT.ToShortTimeString() + ":00");
+                    EspacioTotales++;
+                }
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show("Error: "+error);
             }
         }
         private void btnInsertar_Click(object sender, EventArgs e)
@@ -123,6 +130,7 @@ namespace ProyectoPeluquería
         private void pbF5_Click(object sender, EventArgs e)
         {
             dgvDatos.DataSource = DataB.ActualizarListaTurnos();
+            VDH();
         }
 
         private void txtDia_CloseUp(object sender, EventArgs e)
@@ -227,6 +235,11 @@ namespace ProyectoPeluquería
             {
                 Console.WriteLine("Se selecciono otra cosa");
             }
+        }
+
+        private void Turnos_Validated(object sender, EventArgs e)
+        {
+            VDH();
         }
 
         private void PanelSup_Paint(object sender, PaintEventArgs e)

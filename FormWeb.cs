@@ -306,6 +306,11 @@ namespace ProyectoPeluquería
             }
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
         public void Log(string msj)
         {
             StreamWriter sw = new StreamWriter("log.txt",true);
