@@ -44,6 +44,10 @@ namespace ProyectoPeluquería
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Confirme la compra/servicio", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+            }
             conexion.Open();
             for (int i = 0; i < indiceSBDDFDP.Length; i++)
             {
@@ -74,7 +78,13 @@ namespace ProyectoPeluquería
                 string formaDePago = "insert into Ventas(Id_TipoDePago) values('" + tipoDePago + "')";
 
             SqlCommand comando = new SqlCommand(servicios, conexion);
+            SqlCommand comand = new SqlCommand(ventas, conexion);
+            SqlCommand comandos = new SqlCommand(formaDePago, conexion);
+
             comando.ExecuteNonQuery();
+            comand.ExecuteNonQuery();
+            comandos.ExecuteNonQuery();
+
             conexion.Close();
         }
 
