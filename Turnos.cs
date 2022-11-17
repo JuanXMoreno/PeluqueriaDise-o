@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Threading;
 using System.Windows.Forms;
 
 
@@ -9,16 +10,29 @@ namespace ProyectoPeluquería
     {
         private int n = 0;
         int EspacioTotales = 0;
+        int ID = 0;
 
         SqlConnection conexion = new SqlConnection(DataBase.link);
         //DataBase
         DataBase DataB = new DataBase();
+        FormWeb FW = new FormWeb();
         public Turnos()
         {
             InitializeComponent();
             dgvDatos.DataSource = DataB.ActualizarListaTurnos();
             cmbPeluquero.DataSource = DataB.ExtraerEmpleados();
+            dgvDatos.Columns[0].Visible = false;
             CargarHorarios();
+            AbrirWhatsApp();
+        }
+
+
+        public void AbrirWhatsApp()
+        {
+            if (Properties.Settings.Default.WhatsAppStart == true)
+            {
+                FW.Show(); FW.Visible = false;
+            }
         }
 
         int PosX = 0, PosY = 0;
@@ -59,17 +73,25 @@ namespace ProyectoPeluquería
         {
             String[] ExtraEmpleado = cmbPeluquero.Text.Split('.');
             int idEmpleado = Convert.ToInt32(ExtraEmpleado[0]);
-            DataB.CrearTurno(txtCliente.Text,TxtBNum.Text,FechaNac.Text.Replace("/","-"),txtDia.Text.Replace("/", "-") + " "+Horarios.Text,idEmpleado);
-            FormWeb FW = Owner as FormWeb;
-            if(TxtBNum.Text != null || TxtBNum.Text != string.Empty)
+            bool Exito = DataB.CrearTurno(txtCliente.Text, TxtBNum.Text, Convert.ToDateTime(FechaNac.Text), Convert.ToDateTime(txtDia.Text+ " " + Horarios.Text), idEmpleado);
+            if(Exito)
             {
-                FW.AddCola(TxtBNum.Text);
+                if(TxtBNum.Text != null || TxtBNum.Text != String.Empty)
+                {
+                    FW.AddCola(TxtBNum.Text);
+                }
             }
+            Reset();
         }
-
-        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        public void Reset()
         {
-            n = e.RowIndex;
+            txtCliente.ResetText();
+            TxtBNum.ResetText();
+            FechaNac.ResetText();
+            txtDia.ResetText();
+            Horarios.ResetText();
+            cmbPeluquero.ResetText();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -81,7 +103,7 @@ namespace ProyectoPeluquería
         {
             FormAdmin F1 = Owner as FormAdmin;
             F1.Visible = true;
-            this.Close();
+            this.Hide();
         }
 
         private void label6_MouseMove(object sender, MouseEventArgs e)
@@ -124,7 +146,7 @@ namespace ProyectoPeluquería
                 while (Lector.Read())
                 {
                     Console.WriteLine("Leyendo");
-                    for (int i = 0; i < EspacioTotales; i++)
+                    for (int i = 0; i < (Horarios.Items.Count - EspacioTotales); i++)
                     {
                         String HorarioB = Lector.GetDateTime(4).ToString();
                         //MessageBox.Show(HorarioB); // Fechas de base de datos
@@ -171,6 +193,39 @@ namespace ProyectoPeluquería
             else
             {
                 e.Handled = true;
+            }
+        }
+
+        private void Horarios_Click(object sender, EventArgs e)
+        {
+            VDH();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            String[] ExtraEmpleado = cmbPeluquero.Text.Split('.');
+            int idEmpleado = Convert.ToInt32(ExtraEmpleado[0]);
+            DataB.ModificarTurnos(ID,txtCliente.Text, TxtBNum.Text, Convert.ToDateTime(FechaNac.Text), Convert.ToDateTime(txtDia.Text + " " + Horarios.Text), idEmpleado);
+            Reset();
+        }
+
+        private void dgvDatos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                ID = Convert.ToInt32(dgvDatos.Rows[e.RowIndex].Cells[0].Value);
+                txtCliente.Text = dgvDatos.Rows[e.RowIndex].Cells[1].Value.ToString();
+                TxtBNum.Text = dgvDatos.Rows[e.RowIndex].Cells[2].Value.ToString();
+                FechaNac.Text = dgvDatos.Rows[e.RowIndex].Cells[3].Value.ToString();
+                DateTime FechaD = Convert.ToDateTime(dgvDatos.Rows[e.RowIndex].Cells[4].Value.ToString());
+                txtDia.Text = FechaD.ToShortDateString();
+                DateTime Part = Convert.ToDateTime(dgvDatos.Rows[e.RowIndex].Cells[4].Value.ToString());
+                Horarios.Text = Part.ToShortTimeString()+":00";
+                cmbPeluquero.Text = dgvDatos.Rows[e.RowIndex].Cells[5].Value.ToString();
+            }
+            else
+            {
+                Console.WriteLine("Se selecciono otra cosa");
             }
         }
 

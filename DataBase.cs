@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -9,7 +10,8 @@ namespace ProyectoPeluquería
     {
         //DESKTOP-COF6H2T Juan
         //(localdb)\Home lucho
-        public static string link = @"SERVER=DESKTOP-COF6H2T;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
+        public static string link = @"SERVER=(localdb)\Home;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
+        public String[] TurnosHoyString = new string[7];
         SqlConnection Conectarse = null;
         SqlCommand cmd = null;
         SqlTransaction Tran = null;
@@ -42,6 +44,10 @@ namespace ProyectoPeluquería
                 esVerdadero = true;
                 Console.WriteLine("Se conecto la base de datos");
                 Aviso = "Se conecto la base de datos.";
+
+                //Creamos log (por las dudas)
+                StreamWriter sw = new StreamWriter("log.txt", true);
+                sw.Close();
             }
             catch (SqlException sqlEx)
             {
@@ -553,9 +559,8 @@ namespace ProyectoPeluquería
             return source;
         }
 
-        public bool Auth(String user, String pass)
+        public void Auth(String user, String pass)
         {
-            bool Entro = false;
             try
             {
                 Conectar();
@@ -571,20 +576,18 @@ namespace ProyectoPeluquería
                     SiHay = true;
                 }
             }
-            catch (SqlException)
+            catch (SqlException err)
             {
-
+                Console.WriteLine(err);
             }
             finally
             {
                 Desconectar();
             }
-            return true;
         }
 
-        public bool AuthEmpleado(String user, String pass)
+        public void AuthEmpleado(String user, String pass)
         {
-            bool Entro = false;
             try
             {
                 Conectar();
@@ -600,67 +603,60 @@ namespace ProyectoPeluquería
                     SiHay = true;
                 }
             }
-            catch (SqlException)
+            catch (SqlException err)
             {
-
+                Console.WriteLine(err);
             }
             finally
             {
                 Desconectar();
             }
-            return true;
         }
-        public bool CrearTurno(string Nombre, String Numero, String FechaNac, String FechaTurno, int IDEmpleado) //Creado por lucho :3 pinche jaz a :v (hechado bardo)
+        public bool CrearTurno(string Nombre, String Numero, DateTime FechaNac, DateTime FechaTurno, int IDEmpleado) //Creado por lucho :3 pinche jaz a :v (hechado bardo)
         {
             bool Exito = false;
-            if(Nombre != null && Numero != null && FechaNac != null && FechaTurno != null && IDEmpleado != 0)
+            try
             {
-                try
+                Conectarse = new SqlConnection();
+                Conectarse.ConnectionString = link;
+                Conectarse.Open();
+                Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
+                cmd = new SqlCommand("CrearTurno", Conectarse, Tran);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nombre", Nombre);
+                cmd.Parameters.AddWithValue("@fono", Numero);
+                cmd.Parameters.AddWithValue("@Fnac", FechaNac);
+                cmd.Parameters.AddWithValue("@Turno", FechaTurno);
+                cmd.Parameters.AddWithValue("@IdEmpleado", IDEmpleado);
+                SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int);
+                Parametros.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(Parametros);
+
+                cmd.ExecuteNonQuery();
+                int ParametroDeEntrada = 0;
+                ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
+                if (ParametroDeEntrada == 1)
                 {
-                    Conectarse = new SqlConnection();
-                    Conectarse.ConnectionString = link;
-                    Conectarse.Open();
-                    Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
-                    cmd = new SqlCommand("CrearTurno", Conectarse, Tran);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@nombre", Nombre);
-                    cmd.Parameters.AddWithValue("@fono", Numero);
-                    cmd.Parameters.AddWithValue("@Fnac", FechaNac);
-                    cmd.Parameters.AddWithValue("@Turno", FechaTurno);
-                    cmd.Parameters.AddWithValue("@IdEmpleado", IDEmpleado);
-                    SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int);
-                    Parametros.Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add(Parametros);
-                    cmd.ExecuteNonQuery();
-                    int ParametroDeEntrada = 0;
-                    ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
-                    if (ParametroDeEntrada == 1)
-                    {
-                        Exito = true;
-                    }
-                }
-                catch (SqlException Err)
-                {
-                    MessageBox.Show("Se encotro un error: " + Err);
-                    MessageBox.Show("Por favor, contacte con el tecnico.");
-                }
-                finally
-                {
-                    if (Exito)
-                    {
-                        Tran.Commit();
-                    }
-                    else
-                    {
-                        Tran.Rollback();
-                    }
-                    Conectarse.Close();
+                    Exito = true;
                 }
             }
-            else
+            catch (SqlException Err)
             {
-                MessageBox.Show("Falta 1 dato");
+                MessageBox.Show("Se encotro un error: " + Err);
+                MessageBox.Show("Por favor, contacte con el tecnico.");
+            }
+            finally
+            {
+                if (Exito)
+                {
+                    Tran.Commit();
+                }
+                else
+                {
+                    Tran.Rollback();
+                }
+                Conectarse.Close();
             }
             return Exito;
         }
@@ -700,5 +696,95 @@ namespace ProyectoPeluquería
             return sumaTotal;
         }
 
+        public SqlTransaction ModificarTurnos(int ID, string Nombre, String Numero, DateTime FechaNac, DateTime FechaTurno, int IDEmpleado)
+        {
+            bool Exito = false;
+            try
+            {
+                Conectarse = new SqlConnection();
+                Conectarse.ConnectionString = link;
+                Conectarse.Open();
+
+                //se inicia la transacción
+                Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
+
+                cmd = new SqlCommand("ModTurnos", Conectarse, Tran);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(ID));
+                cmd.Parameters.AddWithValue("@Nombre", Nombre);
+                cmd.Parameters.AddWithValue("@telefono", Numero);
+                cmd.Parameters.AddWithValue("@fechan", FechaNac);
+                cmd.Parameters.AddWithValue("@turno", FechaNac);
+                cmd.Parameters.AddWithValue("@idemp", IDEmpleado);
+
+                SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
+                Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
+                cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
+
+                cmd.ExecuteNonQuery(); //Ejecutamos el comando
+
+                int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
+
+                ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
+                if (ParametroDeEntrada == 1)
+                {
+                    Exito = true;
+                }
+            }
+            catch (SqlException Errores)
+            {
+                MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
+                Console.WriteLine("Se encontraron errores: " + Errores);
+            }
+            finally
+            {
+                if (Exito)
+                {
+                    Console.WriteLine("Salio bien.");
+                    Tran.Commit();
+                    MessageBox.Show("Se modifico el turno con exito.");
+                }
+                else
+                {
+                    Console.WriteLine("Algo salio mal.");
+                    Tran.Rollback();
+                    MessageBox.Show("Algo no salio bien.", "Ok");
+                }
+                Conectarse.Close();
+            }
+            return Tran;
+        }
+
+        public void TurnosHoy()
+        {
+            try
+            {
+                Console.WriteLine("Se inicio");
+                Conectar();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "Select * From Turnos where FechaBaja = '"+DateTime.Now+"'";
+                cmd.Connection = Conectar();
+                SqlDataReader Lector = cmd.ExecuteReader();
+                int i = 0;
+                while(Lector.Read())
+                {
+                    MessageBox.Show(Lector.GetString(1) + "\n" + Lector.GetDateTime(4));
+                    TurnosHoyString[i] = Lector.GetString(1) + "\n" + Lector.GetDateTime(4);
+                        i++;
+                }
+            }
+            catch (SqlException Errores)
+            {
+                MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
+                Console.WriteLine("Se encontraron errores: " + Errores);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
     }
 }

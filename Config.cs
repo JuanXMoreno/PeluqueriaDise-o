@@ -56,10 +56,7 @@ namespace ProyectoPeluquería
 
         private void btnWeb_Click(object sender, EventArgs e)
         {
-            //FormWeb FW = new FormWeb();
-            FormWeb FW = Owner as FormWeb;
-            FW.Visible = true;
-            this.Visible = false;
+            System.Diagnostics.Process.Start("log.txt");
         }
 
         private void label6_Click(object sender, EventArgs e)

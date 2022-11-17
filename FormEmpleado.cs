@@ -5,6 +5,8 @@ namespace ProyectoPeluquería
 {
     public partial class FormEmpleado : Form
     {
+
+        Turnos Tur = new Turnos();
         Login f3 = new Login();
 
         public FormEmpleado()
@@ -17,7 +19,6 @@ namespace ProyectoPeluquería
 
         private void btnAdminTurnos_Click(object sender, EventArgs e)
         {
-            Turnos Tur = new Turnos();
             this.AddOwnedForm(Tur);
             if (Tur.Visible == false)
             {

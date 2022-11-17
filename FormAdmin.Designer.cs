@@ -35,15 +35,15 @@ namespace ProyectoPeluquería
             this.btnAdminStock = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.user6 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.user3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
+            this.user5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.user2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.user4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.user1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,6 +61,7 @@ namespace ProyectoPeluquería
             this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -156,23 +157,23 @@ namespace ProyectoPeluquería
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.user6);
             this.panel3.Location = new System.Drawing.Point(379, 184);
             this.panel3.Margin = new System.Windows.Forms.Padding(25);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(167, 102);
             this.panel3.TabIndex = 10;
             // 
-            // label9
+            // user6
             // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Kelly Slab", 13F);
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(167, 102);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.user6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.user6.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.user6.Location = new System.Drawing.Point(0, 0);
+            this.user6.Name = "user6";
+            this.user6.Size = new System.Drawing.Size(167, 102);
+            this.user6.TabIndex = 3;
+            this.user6.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.user6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel7
             // 
@@ -198,23 +199,23 @@ namespace ProyectoPeluquería
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.panel8.Controls.Add(this.label14);
+            this.panel8.Controls.Add(this.user5);
             this.panel8.Location = new System.Drawing.Point(202, 184);
             this.panel8.Margin = new System.Windows.Forms.Padding(25);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(167, 102);
             this.panel8.TabIndex = 9;
             // 
-            // label14
+            // user5
             // 
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("Kelly Slab", 13F);
-            this.label14.Location = new System.Drawing.Point(0, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(167, 102);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.user5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.user5.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.user5.Location = new System.Drawing.Point(0, 0);
+            this.user5.Name = "user5";
+            this.user5.Size = new System.Drawing.Size(167, 102);
+            this.user5.TabIndex = 3;
+            this.user5.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.user5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
@@ -240,23 +241,23 @@ namespace ProyectoPeluquería
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.panel9.Controls.Add(this.label15);
+            this.panel9.Controls.Add(this.user4);
             this.panel9.Location = new System.Drawing.Point(24, 184);
             this.panel9.Margin = new System.Windows.Forms.Padding(25);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(167, 102);
             this.panel9.TabIndex = 8;
             // 
-            // label15
+            // user4
             // 
-            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("Kelly Slab", 13F);
-            this.label15.Location = new System.Drawing.Point(0, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(167, 102);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.user4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.user4.Font = new System.Drawing.Font("Kelly Slab", 13F);
+            this.user4.Location = new System.Drawing.Point(0, 0);
+            this.user4.Name = "user4";
+            this.user4.Size = new System.Drawing.Size(167, 102);
+            this.user4.TabIndex = 2;
+            this.user4.Text = "[Hora]\r\n\r\n[Nombre]\r\n";
+            this.user4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
@@ -283,11 +284,12 @@ namespace ProyectoPeluquería
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Kelly Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(202, 324);
+            this.label3.Location = new System.Drawing.Point(235, 324);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 19);
+            this.label3.Size = new System.Drawing.Size(80, 19);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Turnos restantes: 0";
+            this.label3.Text = "Actualizar";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -435,6 +437,7 @@ namespace ProyectoPeluquería
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(150)))), ((int)(((byte)(167)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Location = new System.Drawing.Point(751, 263);
             this.panel4.Name = "panel4";
@@ -443,13 +446,29 @@ namespace ProyectoPeluquería
             // 
             // label13
             // 
+            this.label13.Dock = System.Windows.Forms.DockStyle.Top;
             this.label13.Font = new System.Drawing.Font("Kelly Slab", 12F);
-            this.label13.Location = new System.Drawing.Point(3, 60);
+            this.label13.Location = new System.Drawing.Point(0, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(151, 62);
+            this.label13.Size = new System.Drawing.Size(162, 30);
             this.label13.TabIndex = 7;
-            this.label13.Text = "Estado: WhatsApp Servicio Activo";
+            this.label13.Text = "WhatsApp";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Kelly Slab", 12F);
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(10, 92);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(142, 31);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Ver registro";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormAdmin
             // 
@@ -522,13 +541,14 @@ namespace ProyectoPeluquería
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label user6;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label user5;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label user4;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button button1;
     }
 }

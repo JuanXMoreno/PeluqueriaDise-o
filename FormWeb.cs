@@ -12,14 +12,9 @@ namespace ProyectoPeluquería
         public ChromiumWebBrowser chromeBrowser;
         CefSettings settings = new CefSettings();
 
-        Turnos tur = new Turnos();
-        Config config = new Config();
-
         public FormWeb()
         {
             Console.WriteLine("Servicio de WhatsApp ON");
-            this.AddOwnedForm(tur);
-            this.AddOwnedForm(config);
             InitializeComponent();
             IniciarBrowser();
         }
@@ -227,10 +222,11 @@ namespace ProyectoPeluquería
                         if (Errores[i] == null)
                         {
                             Errores[i] = EnProceso;
-                            Buscador = true;
                             break;
                         }
                     }
+                    Log("Errores: " + EnProceso);
+                    Buscador = true;
                 }
                 if (mensaje == "[EXITO]")
                 {
@@ -273,6 +269,7 @@ namespace ProyectoPeluquería
                 if (Confirmados[i] == null)
                 {
                     Confirmados[i] = EnProceso;
+                    Log("Confirmado: "+EnProceso);
                     break;
                 }
             }
@@ -307,6 +304,14 @@ namespace ProyectoPeluquería
                     Console.WriteLine("Errores #" + i + " Numero contenido dentro de ella: " + Errores[i]);
                 }
             }
+        }
+
+        public void Log(string msj)
+        {
+            StreamWriter sw = new StreamWriter("log.txt",true);
+            sw.WriteLine(msj);
+            sw.Flush();
+            sw.Close();
         }
     }
 }

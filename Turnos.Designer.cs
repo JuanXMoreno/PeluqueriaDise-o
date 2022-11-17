@@ -130,7 +130,7 @@
             this.dgvDatos.Size = new System.Drawing.Size(547, 272);
             this.dgvDatos.TabIndex = 11;
             this.dgvDatos.TabStop = false;
-            this.dgvDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellContentClick);
+            this.dgvDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellClick);
             // 
             // txtDia
             // 
@@ -138,7 +138,7 @@
             this.txtDia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtDia.Location = new System.Drawing.Point(158, 110);
             this.txtDia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtDia.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
+            this.txtDia.MinDate = new System.DateTime(1779, 12, 9, 0, 0, 0, 0);
             this.txtDia.Name = "txtDia";
             this.txtDia.Size = new System.Drawing.Size(191, 23);
             this.txtDia.TabIndex = 1;
@@ -176,6 +176,7 @@
             this.Horarios.Name = "Horarios";
             this.Horarios.Size = new System.Drawing.Size(191, 23);
             this.Horarios.TabIndex = 12;
+            this.Horarios.Click += new System.EventHandler(this.Horarios_Click);
             // 
             // label7
             // 
@@ -329,6 +330,7 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // Turnos
             // 

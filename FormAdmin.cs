@@ -6,24 +6,17 @@ namespace ProyectoPeluquería
     public partial class FormAdmin : Form
     {
         DataBase DataB = new DataBase();
+        Turnos Tur = new Turnos();
 
         public FormAdmin()
         {
             InitializeComponent();
             label1.Text = "Ganancia total de ventas y servicios:\n"+DataB.CargarSuma().ToString();
-            WhatsAppBot();
+            DataB.TurnosHoy();
         }
 
         int PosY = 0;
         int PosX = 0;
-        public void WhatsAppBot()
-        {
-            if(Properties.Settings.Default.WhatsAppStart == true)
-            {
-                FormWeb FW = new FormWeb();
-                FW.Show();FW.Visible = false;
-            }
-        }
         private void btnAdminServicios_Click(object sender, EventArgs e)
         {
             Ventas_y_Servicios f1 = new Ventas_y_Servicios();
@@ -97,7 +90,6 @@ namespace ProyectoPeluquería
 
         private void btnAdminTurnos_Click(object sender, EventArgs e)
         {
-            Turnos Tur = new Turnos();
             this.AddOwnedForm(Tur);
             if (Tur.Visible == false)
             {
@@ -147,6 +139,22 @@ namespace ProyectoPeluquería
                 this.Visible = true;
                 config.Visible = false;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("log.txt");
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            DataB.TurnosHoy();
+            user1.Text = DataB.TurnosHoyString[0];
+            user2.Text = DataB.TurnosHoyString[1];
+            user3.Text = DataB.TurnosHoyString[2];
+            user4.Text = DataB.TurnosHoyString[3];
+            user5.Text = DataB.TurnosHoyString[4];
+            user6.Text = DataB.TurnosHoyString[5];
         }
     }
 }

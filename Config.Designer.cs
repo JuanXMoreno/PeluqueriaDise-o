@@ -214,12 +214,12 @@
             this.btnWeb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWeb.Font = new System.Drawing.Font("Kelly Slab", 10F);
             this.btnWeb.ForeColor = System.Drawing.Color.Black;
-            this.btnWeb.Location = new System.Drawing.Point(14, 10);
+            this.btnWeb.Location = new System.Drawing.Point(17, 10);
             this.btnWeb.Margin = new System.Windows.Forms.Padding(10);
             this.btnWeb.Name = "btnWeb";
             this.btnWeb.Size = new System.Drawing.Size(134, 52);
             this.btnWeb.TabIndex = 19;
-            this.btnWeb.Text = "Mostrar WEB";
+            this.btnWeb.Text = "Ver registro";
             this.btnWeb.UseVisualStyleBackColor = true;
             this.btnWeb.Click += new System.EventHandler(this.btnWeb_Click);
             // 
