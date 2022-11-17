@@ -93,11 +93,10 @@ namespace ProyectoPeluquería
             Horarios.ResetText();
             cmbPeluquero.ResetText();
         }
-        
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             dgvDatos.Rows.RemoveAt(n);
-           
         }
 
         private void Cerrarpic_Click(object sender, EventArgs e)
@@ -130,6 +129,16 @@ namespace ProyectoPeluquería
         {
             VDH();
         }
+        public void VDH()
+        {
+            SqlConnection Conectarse = null;
+            SqlCommand cmd = null;
+            SqlDataReader Lector = null;
+            try
+            {
+                Console.WriteLine("me conecto");
+                Conectarse = new SqlConnection(DataBase.link);
+                Conectarse.Open();
 
                 cmd = new SqlCommand("Select * From Turnos", Conectarse);
 
@@ -142,6 +151,32 @@ namespace ProyectoPeluquería
                         String HorarioB = Lector.GetDateTime(4).ToString();
                         //MessageBox.Show(HorarioB); // Fechas de base de datos
 
+                        String FechaSeleccion = txtDia.Text + " " + Horarios.Items[i];
+                        //MessageBox.Show(FechaSeleccion); // Fechas del sistema.
+
+                        if (FechaSeleccion == HorarioB)
+                        {
+                            Horarios.Items.RemoveAt(i);
+                            EspacioTotales--;
+                            Console.WriteLine("Se encontro coincidencia: " + FechaSeleccion);
+                        }
+                        else
+                        {
+                            Horarios.Items.Clear();
+                            CargarHorarios();
+                        }
+                    }
+                }
+            }
+            catch (SqlException Error)
+            {
+                MessageBox.Show("Error:\n" + Error);
+                return;
+            }
+            finally
+            {
+                Conectarse.Close();
+            }
         }
 
         private void txtDia_ValueChanged(object sender, EventArgs e)
@@ -159,11 +194,6 @@ namespace ProyectoPeluquería
             {
                 e.Handled = true;
             }
-        }
-
-        private void PanelSup_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void Horarios_Click(object sender, EventArgs e)
@@ -197,6 +227,11 @@ namespace ProyectoPeluquería
             {
                 Console.WriteLine("Se selecciono otra cosa");
             }
+        }
+
+        private void PanelSup_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void MoverXPanel(object sender, MouseEventArgs e)
