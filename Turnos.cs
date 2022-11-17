@@ -130,6 +130,7 @@ namespace ProyectoPeluquería
         private void pbF5_Click(object sender, EventArgs e)
         {
             dgvDatos.DataSource = DataB.ActualizarListaTurnos();
+            VDH();
         }
 
         private void txtDia_CloseUp(object sender, EventArgs e)
@@ -234,6 +235,11 @@ namespace ProyectoPeluquería
             {
                 Console.WriteLine("Se selecciono otra cosa");
             }
+        }
+
+        private void Turnos_Validated(object sender, EventArgs e)
+        {
+            VDH();
         }
 
         private void MoverXPanel(object sender, MouseEventArgs e)
