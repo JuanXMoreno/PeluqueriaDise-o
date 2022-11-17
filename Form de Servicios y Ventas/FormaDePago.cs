@@ -58,20 +58,20 @@ namespace ProyectoPeluquería
             string ventas = "insert into VentasRealizadas (Id_Producto1, Cantidad1 ,Id_Producto2 ,Cantidad2 ,Id_Producto3 ,Cantidad3 ,Id_Producto4, Cantidad4, Id_Producto5, Cantidad5, Id_Producto6, Cantidad6, Id_Producto7, Cantidad7, Id_Producto8, Cantidad8, Id_Producto9, Cantidad9, Id_Producto10, Cantidad10)" +
                 " values('" + indiceVBDDFDP[0] + "','" + cantidadXVentaFDP[0] + "','" + indiceVBDDFDP[1] + "','" + cantidadXVentaFDP[1] + "','" + indiceVBDDFDP[2] + "','" + cantidadXVentaFDP[2] + "','" + indiceVBDDFDP[3] + "','" + cantidadXVentaFDP[3] + "','" + indiceVBDDFDP[4] + "','" + cantidadXVentaFDP[4] + "','" + indiceVBDDFDP[5] + "','" + cantidadXVentaFDP[5] + "','" + indiceVBDDFDP[6] + "','" + cantidadXVentaFDP[6] + "','" + indiceVBDDFDP[7] + "','" + cantidadXVentaFDP[7] + "','" + indiceVBDDFDP[8] + "','" + cantidadXVentaFDP[8] + "', '" + indiceVBDDFDP[9] + "','" + cantidadXVentaFDP[9] + "')";
 
-            if (rb_CreditoDebito.Checked == true)
-            {
-                tipoDePago = 2;
-            }
-            else if (rb_Efectivo.Checked == true)
-            {
-                tipoDePago = 1;
-            }
-            else if (rb_Transferencia.Checked == true)
-            {
-                tipoDePago = 3;
-            }
+                if (rb_CreditoDebito.Checked == true)
+                {
+                    tipoDePago = 2;
+                }
+                else if (rb_Efectivo.Checked == true)
+                {
+                    tipoDePago = 1;
+                }
+                else if (rb_Transferencia.Checked == true)
+                {
+                    tipoDePago = 3;
+                }
 
-            string formaDePago = "insert into Ventas(Id_TipoDePago) values('" + tipoDePago + "')";
+                string formaDePago = "insert into Ventas(Id_TipoDePago) values('" + tipoDePago + "')";
 
             SqlCommand comando = new SqlCommand(servicios, conexion);
             comando.ExecuteNonQuery();
