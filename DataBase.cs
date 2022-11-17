@@ -9,7 +9,7 @@ namespace ProyectoPeluquería
     {
         //DESKTOP-COF6H2T Juan
         //(localdb)\Home lucho
-        public static string link = @"SERVER=(localdb)\Home;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
+        public static string link = @"SERVER=DESKTOP-COF6H2T;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
         SqlConnection Conectarse = null;
         SqlCommand cmd = null;
         SqlTransaction Tran = null;
@@ -559,7 +559,7 @@ namespace ProyectoPeluquería
             try
             {
                 Conectar();
-                string consulta = "select * From Empleados where Usuario ='" + user + "' and Contraseña='" + pass + "' and EsAdmin = 'True'"; //verifico que el usuario y contraseña estan registrados en la base de datos
+                string consulta = "select * From Empleados where Usuario ='" + user + "' COLLATE SQL_Latin1_General_CP1_CS_AS and Contraseña='" + pass + "' COLLATE SQL_Latin1_General_CP1_CS_AS and EsAdmin = 'True'"; //verifico que el usuario y contraseña estan registrados en la base de datos
                 SqlCommand comando = new SqlCommand(consulta, Conectar());
                 SqlDataReader lector;
                 lector = comando.ExecuteReader();
@@ -588,7 +588,7 @@ namespace ProyectoPeluquería
             try
             {
                 Conectar();
-                string consulta = "select * From Empleados where Usuario ='" + user + "' and Contraseña='" + pass + "' and EsAdmin = 'False'"; //verifico que el usuario y contraseña estan registrados en la base de datos
+                string consulta = "select * From Empleados where Usuario ='" + user + "' COLLATE SQL_Latin1_General_CP1_CS_AS and Contraseña='" + pass + "' COLLATE SQL_Latin1_General_CP1_CS_AS and EsAdmin = 'False'"; //verifico que el usuario y contraseña estan registrados en la base de datos
                 SqlCommand comando = new SqlCommand(consulta, Conectar());
                 SqlDataReader lector;
                 lector = comando.ExecuteReader();
