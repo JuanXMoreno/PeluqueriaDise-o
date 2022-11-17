@@ -9,7 +9,7 @@ namespace ProyectoPeluquería
     {
         //DESKTOP-COF6H2T Juan
         //(localdb)\Home lucho
-        public static string link = @"SERVER=DESKTOP-COF6H2T;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
+        public static string link = @"SERVER=(localdb)\Home;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
         SqlConnection Conectarse = null;
         SqlCommand cmd = null;
         SqlTransaction Tran = null;
@@ -506,7 +506,7 @@ namespace ProyectoPeluquería
             try
             {
                 Conectar();
-                String sql = "select " + "Id_Turnos,Dia,Hora,Turnos.Id_Cliente,Id_Empleado,Telefono, Clientes.Nombre AS Cliente from Turnos INNER JOIN Clientes ON Turnos.Id_Cliente = Clientes.Id_Cliente";
+                String sql = "Select * From VistaTurnos";
                 SqlDataAdapter adaptador = new SqlDataAdapter(sql, Conectar());
                 adaptador.Fill(tabla);
             }
@@ -535,8 +535,7 @@ namespace ProyectoPeluquería
                 SqlDataReader Lector = cmd.ExecuteReader();
                 while (Lector.Read())
                 {
-
-                    source.Add(Lector.GetString(1));
+                    source.Add(Lector.GetInt32(0) + ". " + Lector.GetString(1) + " " + Lector.GetString(2));
                 }
             }
             catch (SqlException er)
@@ -550,8 +549,9 @@ namespace ProyectoPeluquería
             return source;
         }
 
-        public void Auth(String user, String pass)
+        public bool Auth(String user, String pass)
         {
+            bool Entro = false;
             try
             {
                 Conectar();
@@ -575,10 +575,12 @@ namespace ProyectoPeluquería
             {
                 Desconectar();
             }
+            return true;
         }
 
-        public void AuthEmpleado(String user, String pass)
+        public bool AuthEmpleado(String user, String pass)
         {
+            bool Entro = false;
             try
             {
                 Conectar();
@@ -602,6 +604,54 @@ namespace ProyectoPeluquería
             {
                 Desconectar();
             }
+            return true;
+        }
+        public bool CrearTurno(string Nombre, String Numero, String FechaNac, String FechaTurno, int IDEmpleado) //Creado por lucho :3 pinche jaz a :v (hechado bardo)
+        {
+            bool Exito = false;
+            try
+            {
+                Conectarse = new SqlConnection();
+                Conectarse.ConnectionString = link;
+                Conectarse.Open();
+                Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
+                cmd = new SqlCommand("CrearTurno", Conectarse, Tran);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nombre", Nombre);
+                cmd.Parameters.AddWithValue("@fono", Numero);
+                cmd.Parameters.AddWithValue("@Fnac", FechaNac);
+                cmd.Parameters.AddWithValue("@Turno", FechaTurno);
+                cmd.Parameters.AddWithValue("@IdEmpleado", IDEmpleado);
+                SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int);
+                Parametros.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(Parametros);
+                cmd.ExecuteNonQuery();
+                int ParametroDeEntrada = 0;
+                ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
+                if (ParametroDeEntrada == 1)
+                {
+                    Exito = true;
+                }
+            }
+            catch (SqlException Err)
+            {
+                MessageBox.Show("Se encotro un error: " + Err);
+                MessageBox.Show("Por favor, contacte con el tecnico.");
+            }
+            finally
+            {
+                if (Exito)
+                {
+                    Tran.Commit();
+                }
+                else
+                {
+                    Tran.Rollback();
+                }
+                Conectarse.Close();
+            }
+            return Exito;
         }
     }
 }

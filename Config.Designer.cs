@@ -56,6 +56,16 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,6 +73,8 @@
             this.panel1.SuspendLayout();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -194,7 +206,7 @@
             this.panel3.Controls.Add(this.btnWeb);
             this.panel3.Location = new System.Drawing.Point(14, 68);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(556, 160);
+            this.panel3.Size = new System.Drawing.Size(556, 74);
             this.panel3.TabIndex = 16;
             // 
             // btnWeb
@@ -375,13 +387,118 @@
             this.button3.Text = "Inicio automatico";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.btnGuardar);
+            this.panel5.Controls.Add(this.comboBox4);
+            this.panel5.Controls.Add(this.comboBox3);
+            this.panel5.Controls.Add(this.comboBox2);
+            this.panel5.Controls.Add(this.comboBox1);
+            this.panel5.Controls.Add(this.label14);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Location = new System.Drawing.Point(14, 179);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(556, 49);
+            this.panel5.TabIndex = 18;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Silver;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label16);
+            this.panel6.Location = new System.Drawing.Point(14, 145);
+            this.panel6.Margin = new System.Windows.Forms.Padding(5, 0, 0, 1);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(556, 30);
+            this.panel6.TabIndex = 17;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
+            this.label16.Location = new System.Drawing.Point(11, 5);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(134, 18);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Horarios de trabajo";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
+            this.label2.Location = new System.Drawing.Point(18, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 18);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Mañana";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Kelly Slab", 11.25F);
+            this.label14.Location = new System.Drawing.Point(242, 16);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(45, 18);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Tarde";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(84, 13);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(73, 21);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(163, 13);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(73, 21);
+            this.comboBox2.TabIndex = 11;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(293, 13);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(73, 21);
+            this.comboBox3.TabIndex = 12;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(372, 13);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(73, 21);
+            this.comboBox4.TabIndex = 13;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Kelly Slab", 8F);
+            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardar.Location = new System.Drawing.Point(451, 12);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(94, 22);
+            this.btnGuardar.TabIndex = 21;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.ClientSize = new System.Drawing.Size(582, 431);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.button3);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel4);
@@ -405,6 +522,10 @@
             this.PanelTop.ResumeLayout(false);
             this.PanelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -439,5 +560,15 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnWeb;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

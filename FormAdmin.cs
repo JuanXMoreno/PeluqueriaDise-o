@@ -158,7 +158,7 @@ namespace ProyectoPeluquería
 
         private void Hoy_Tick(object sender, EventArgs e)
         {
-            Hoy.Interval = 300;
+            Hoy.Interval = 3600;
 
 
         }

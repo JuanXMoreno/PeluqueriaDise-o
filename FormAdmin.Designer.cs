@@ -72,9 +72,6 @@ namespace ProyectoPeluquería
             this.label12 = new System.Windows.Forms.Label();
             this.Hoy = new System.Windows.Forms.Timer(this.components);
             this.label13 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.Hoy = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();

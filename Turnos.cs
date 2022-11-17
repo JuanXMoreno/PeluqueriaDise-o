@@ -8,6 +8,7 @@ namespace ProyectoPeluquería
     public partial class Turnos : Form
     {
         private int n = 0;
+        int EspacioTotales = 0;
 
         SqlConnection conexion = new SqlConnection(DataBase.link);
         //DataBase
@@ -17,27 +18,50 @@ namespace ProyectoPeluquería
             InitializeComponent();
             dgvDatos.DataSource = DataB.ActualizarListaTurnos();
             cmbPeluquero.DataSource = DataB.ExtraerEmpleados();
-            //cmbPeluquero.ValueMember = "Id_empleado";
-            //cmbPeluquero.DisplayMember = "Nombre";
-            dgvDatos.Columns[0].Visible = false;
-            dgvDatos.Columns[3].Visible = false;
-            dgvDatos.Columns[4].Visible = false;
+            CargarHorarios();
         }
 
         int PosX = 0, PosY = 0;
 
+        public void CargarHorarios()
+        {
+            String[] HMIS = Properties.Settings.Default.HMI.Split(':');
+            String[] HMFS = Properties.Settings.Default.HMF.Split(':');
+            String[] HTIS = Properties.Settings.Default.HTI.Split(':');
+            String[] HTFS = Properties.Settings.Default.HTF.Split(':');
+
+            int HMI = Convert.ToInt32(HMIS[0]);
+            int HMF = Convert.ToInt32(HMFS[0]);
+            int HTI = Convert.ToInt32(HTIS[0]);
+            int HTF = Convert.ToInt32(HTFS[0]);
+
+            int EntreMañana = HMF - HMI;
+            int EntreTarde = HTF - HTI;
+
+            DateTime InicioM = Convert.ToDateTime(HMI+":00");
+            DateTime InicioT = Convert.ToDateTime(HTI + ":00");
+            Horarios.Items.Add(InicioM.ToShortTimeString() + ":00");
+            for (int i = 0; i<(EntreMañana);i++)
+            {
+                InicioM += TimeSpan.FromMinutes(60);
+                Horarios.Items.Add(InicioM.ToShortTimeString()+":00");
+                EspacioTotales++;
+            }
+            Horarios.Items.Add(InicioT.ToShortTimeString() + ":00");
+            for (int i = 0; i < (EntreTarde); i++)
+            {
+                InicioT += TimeSpan.FromMinutes(60);
+                Horarios.Items.Add(InicioT.ToShortTimeString() + ":00");
+                EspacioTotales++;
+            }
+        }
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            conexion.Open();
-            if (txtCliente.Text == "" || cmbPeluquero.SelectedIndex == -1)
-            {
-                MessageBox.Show("Faltan datos");
-            }
-            else
-            {
-                string sql = "insert into Turnos(Dia,Hora,Id_Cliente,Id_Empleado) values ('" + txtDia.Text + "','" + txtHora.Value + "')";
-            }
-            conexion.Close();
+            String[] ExtraEmpleado = cmbPeluquero.Text.Split('.');
+            int idEmpleado = Convert.ToInt32(ExtraEmpleado[0]);
+            //MessageBox.Show(txtDia.Text + " " + Horarios.Text);
+            DataB.CrearTurno(txtCliente.Text,TxtBNum.Text,FechaNac.Text.Replace("/","-"),txtDia.Text.Replace("/", "-") + " "+Horarios.Text,idEmpleado);
+            MessageBox.Show(ExtraEmpleado[0]);
         }
 
         private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -48,38 +72,6 @@ namespace ProyectoPeluquería
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             dgvDatos.Rows.RemoveAt(n);
-        }
-
-        private void txtDia_TextChanged(object sender, EventArgs e)
-        {
-            HabilitarBoton();
-        }
-
-        void HabilitarBoton()
-        {
-            if (txtDia.Text != "" && txtHora.Text != "" && txtCliente.Text != "")
-                btnInsertar.Enabled = true;
-            else btnInsertar.Enabled = false;
-        }
-
-        private void txtCliente_TextChanged(object sender, EventArgs e)
-        {
-            HabilitarBoton();
-        }
-
-        private void txtHora_ValueChanged(object sender, EventArgs e)
-        {
-            HabilitarBoton();
-        }
-
-        private void cmbPeluquero_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            HabilitarBoton();
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Cerrarpic_Click(object sender, EventArgs e)
@@ -106,6 +98,65 @@ namespace ProyectoPeluquería
         private void pbF5_Click(object sender, EventArgs e)
         {
             dgvDatos.DataSource = DataB.ActualizarListaTurnos();
+        }
+
+        private void txtDia_CloseUp(object sender, EventArgs e)
+        {
+            VDH();
+        }
+        public void VDH()
+        {
+            SqlConnection Conectarse = null;
+            SqlCommand cmd = null;
+            SqlDataReader Lector = null;
+            try
+            {
+                Console.WriteLine("me conecto");
+                Conectarse = new SqlConnection(DataBase.link);
+                Conectarse.Open();
+
+                cmd = new SqlCommand("Select * From Turnos", Conectarse);
+
+                Lector = cmd.ExecuteReader();
+                while (Lector.Read())
+                {
+                    Console.WriteLine("Leyendo");
+                    for (int i = 0; i < EspacioTotales; i++)
+                    {
+                        String HorarioB = Lector.GetDateTime(4).ToString();
+                        //MessageBox.Show(HorarioB); // Fechas de base de datos
+
+                        String FechaSeleccion = txtDia.Text + " " + Horarios.Items[i];
+                        //MessageBox.Show(FechaSeleccion); // Fechas del sistema.
+
+                        if (FechaSeleccion == HorarioB)
+                        {
+                            Horarios.Items.RemoveAt(i);
+                            EspacioTotales--;
+                            Console.WriteLine("Se encontro coincidencia: " + FechaSeleccion);
+                        }
+                        else
+                        {
+                            Horarios.Items.Clear();
+                            CargarHorarios();
+                        }
+                    }
+                }
+            }
+            catch (SqlException Error)
+            {
+                MessageBox.Show("Error:\n" + Error);
+                return;
+            }
+            finally
+            {
+                Conectarse.Close();
+            }
+        }
+
+        private void txtDia_ValueChanged(object sender, EventArgs e)
+        {
+            VDH();
         }
 
         private void MoverXPanel(object sender, MouseEventArgs e)
