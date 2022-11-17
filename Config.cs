@@ -6,8 +6,6 @@ namespace ProyectoPeluquería
 {
     public partial class Config : Form
     {
-        FormWeb Web = new FormWeb();
-
         public Config()
         {
             InitializeComponent();
@@ -58,31 +56,34 @@ namespace ProyectoPeluquería
 
         private void btnWeb_Click(object sender, EventArgs e)
         {
-            Web.Show();
+            //FormWeb FW = new FormWeb();
+            FormWeb FW = Owner as FormWeb;
+            FW.Visible = true;
+            this.Visible = false;
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-            //DialogResult result = MessageBox.Show("Se activara automaticamente la proxima vez que se iniciar el programa, desea continuar?","WhatsApp API(?",MessageBoxButtons.OK,MessageBoxIcon.Question);
-            //if(result == DialogResult.OK)
-            //{
-            //    Properties.Settings.Default.WebWhatsApp = true;
-            //    Properties.Settings.Default.Save();
-            //    label6.ForeColor = Color.ForestGreen;
-            //    label4.ForeColor = Color.Black;
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Tuvo miedo al exito.");
-            //}
+            DialogResult result = MessageBox.Show("Se activara automaticamente la proxima vez que se iniciar el programa, desea continuar?", "WhatsApp API(?", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                Properties.Settings.Default.WhatsAppStart = true;
+                Properties.Settings.Default.Save();
+                label6.ForeColor = Color.ForestGreen;
+                label4.ForeColor = Color.Black;
+            }
+            else
+            {
+                Console.WriteLine("Tuvo miedo al exito.");
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            //label4.ForeColor = Color.Maroon;
-            //label6.ForeColor = Color.Black;
-            //Properties.Settings.Default.WebWhatsApp = false;
-            //Properties.Settings.Default.Save();
+            label4.ForeColor = Color.Maroon;
+            label6.ForeColor = Color.Black;
+            Properties.Settings.Default.WhatsAppStart = false;
+            Properties.Settings.Default.Save();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

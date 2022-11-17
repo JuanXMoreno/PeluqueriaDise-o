@@ -28,7 +28,7 @@ namespace ProyectoPeluquería
             else
             {
                 BorrarUser();
-                this.Hide();
+                this.Close();
             }
 
         } //Boton para login
