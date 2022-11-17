@@ -11,17 +11,12 @@ namespace ProyectoPeluquería
         {
             InitializeComponent();
             dataGridView1.DataSource = DataB.ProductosOFF(null);
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[0].Visible = false;
         }
         int ID = 0;
         int PosY = 0;
         int PosX = 0;
-
-
-        private void BtnBusqueda_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = DataB.ProductosOFF(BoxBusqueda.Text);
-        }
-
         private void btnF5_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = DataB.ProductosOFF(null);
@@ -30,6 +25,8 @@ namespace ProyectoPeluquería
         private void btnAlta_Click(object sender, EventArgs e)
         {
             DataB.LevantarProducto(ID.ToString());
+            dataGridView1.DataSource = DataB.ActualizarLista(null);
+            Seleccion.Text = "Se selecciono:";
         }
 
         private void SeleccionarCelda(object sender, DataGridViewCellEventArgs e)
@@ -40,9 +37,9 @@ namespace ProyectoPeluquería
 
         private void Cerrar(object sender, EventArgs e)
         {
-            this.Visible = false;
             AdminStock AS = Owner as AdminStock;
             AS.Visible = true;
+            this.Close();
         }
 
         private void MoverXPanel(object sender, MouseEventArgs e)
@@ -71,6 +68,11 @@ namespace ProyectoPeluquería
                 Left = Left + (e.X - PosX);
                 Top = Top + (e.Y - PosY);
             }
+        }
+
+        private void BoxBusqueda_KeyUp(object sender, KeyEventArgs e)
+        {
+            dataGridView1.DataSource = DataB.ProductosOFF(BoxBusqueda.Text);
         }
     }
 }

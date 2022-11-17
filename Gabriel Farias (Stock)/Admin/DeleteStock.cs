@@ -13,6 +13,8 @@ namespace ProyectoPeluquería
         {
             InitializeComponent();
             dataGridView1.DataSource = DataB.ActualizarLista(null);
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[0].Visible = false;
         }
 
         int PosY = 0;
@@ -21,11 +23,6 @@ namespace ProyectoPeluquería
         private void btnF5_Click(object sender, EventArgs e)
         {
             BoxBusqueda.Clear();
-        }
-
-        private void BtnBusqueda_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
         }
 
         private void Buscar(object sender, EventArgs e)
@@ -39,12 +36,27 @@ namespace ProyectoPeluquería
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DeleteID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            try
+            {
+                if (e.RowIndex > -1)
+                {
+                    Console.Write("Se selecciono un dato");
+                    DeleteID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    Seleccion.Text = "Se selecciono: " + DeleteID;
+                }
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine("Error: " + er);
+                return;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             DataB.EliminarProducto(DeleteID.ToString());
+            dataGridView1.DataSource = DataB.ActualizarLista(null);
+            Seleccion.Text = "Se selecciono:";
         }
 
         private void MoverPanel(object sender, MouseEventArgs e)
@@ -77,9 +89,14 @@ namespace ProyectoPeluquería
 
         private void cerrar(object sender, EventArgs e)
         {
-            this.Visible = false;
             AdminStock AS = Owner as AdminStock;
             AS.Visible = true;
+            this.Close();
+        }
+
+        private void BoxBusqueda_KeyUp(object sender, KeyEventArgs e)
+        {
+            dataGridView1.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
         }
     }
 }

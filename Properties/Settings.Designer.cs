@@ -23,13 +23,63 @@ namespace ProyectoPeluquería.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-SK840FQ;Integrated Security=True")]
-        public string Conexion {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HMI {
             get {
-                return ((string)(this["Conexion"]));
+                return ((string)(this["HMI"]));
+            }
+            set {
+                this["HMI"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HMF {
+            get {
+                return ((string)(this["HMF"]));
+            }
+            set {
+                this["HMF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HTI {
+            get {
+                return ((string)(this["HTI"]));
+            }
+            set {
+                this["HTI"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HTF {
+            get {
+                return ((string)(this["HTF"]));
+            }
+            set {
+                this["HTF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool WhatsAppStart {
+            get {
+                return ((bool)(this["WhatsAppStart"]));
+            }
+            set {
+                this["WhatsAppStart"] = value;
             }
         }
     }

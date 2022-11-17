@@ -11,27 +11,32 @@ namespace ProyectoPeluquería
         {
             InitializeComponent();
             Vistas.DataSource = dt.ActualizarLista(null);
+            Vistas.Columns[0].Visible = false;
+            Vistas.Columns[5].Visible = false;
         }
 
         int PosY = 0;
         int PosX = 0;
 
-        private void BtnBusqueda_Click(object sender, EventArgs e)
-        {
-            Vistas.DataSource = dt.ActualizarLista(textBox1.Text);
-        }
-
         private void Vistas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Idtex.Text = Vistas.Rows[e.RowIndex].Cells[0].Value.ToString();
-            Nombre.Text = Vistas.Rows[e.RowIndex].Cells[1].Value.ToString();
-            Stock.Text = Vistas.Rows[e.RowIndex].Cells[2].Value.ToString();
-            precio.Text = Vistas.Rows[e.RowIndex].Cells[3].Value.ToString();
+            if(e.RowIndex > -1)
+            {
+                Idtex.Text = Vistas.Rows[e.RowIndex].Cells[0].Value.ToString();
+                Nombre.Text = Vistas.Rows[e.RowIndex].Cells[1].Value.ToString();
+                Stock.Text = Vistas.Rows[e.RowIndex].Cells[2].Value.ToString();
+                precio.Text = Vistas.Rows[e.RowIndex].Cells[3].Value.ToString();
+            }
+            else
+            {
+                Console.WriteLine("Se selecciono otra cosa");
+            }
         }
 
         private void btnMod_Click(object sender, EventArgs e)
         {
             dt.ModificarProducto(Idtex.Text, Nombre.Text, Stock.Text, precio.Text);
+            Vistas.DataSource = dt.ActualizarLista(null);
         }
 
         private void btnF5_Click(object sender, EventArgs e)
@@ -69,9 +74,14 @@ namespace ProyectoPeluquería
 
         private void Cerrar(object sender, EventArgs e)
         {
-            this.Visible = false;
             AdminStock AS = Owner as AdminStock;
             AS.Visible = true;
+            this.Close();
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            Vistas.DataSource = dt.ActualizarLista(textBox1.Text);
         }
     }
 }

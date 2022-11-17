@@ -32,13 +32,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.TextBox();
-            this.Stock = new System.Windows.Forms.TextBox();
-            this.precio = new System.Windows.Forms.TextBox();
             this.PanelSup = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.SubirImagen = new System.Windows.Forms.OpenFileDialog();
+            this.Stock = new System.Windows.Forms.MaskedTextBox();
+            this.precio = new System.Windows.Forms.TextBox();
             this.PanelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -76,20 +77,7 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(293, 20);
             this.Nombre.TabIndex = 3;
-            // 
-            // Stock
-            // 
-            this.Stock.Location = new System.Drawing.Point(8, 87);
-            this.Stock.Name = "Stock";
-            this.Stock.Size = new System.Drawing.Size(293, 20);
-            this.Stock.TabIndex = 4;
-            // 
-            // precio
-            // 
-            this.precio.Location = new System.Drawing.Point(8, 126);
-            this.precio.Name = "precio";
-            this.precio.Size = new System.Drawing.Size(293, 20);
-            this.precio.TabIndex = 5;
+            this.Nombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Nombre_KeyUp);
             // 
             // PanelSup
             // 
@@ -117,15 +105,6 @@
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoverPanel);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 197);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(317, 13);
-            this.panel1.TabIndex = 33;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -139,6 +118,15 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.Cerrar);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 194);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(317, 13);
+            this.panel1.TabIndex = 33;
+            // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -146,7 +134,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::ProyectoPeluquería.Properties.Resources.agregar__2_;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(171, 156);
+            this.button1.Location = new System.Drawing.Point(171, 155);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 30);
             this.button1.TabIndex = 6;
@@ -155,17 +143,38 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.BtnAgregar);
             // 
+            // SubirImagen
+            // 
+            this.SubirImagen.FileName = "Subir Imagen";
+            // 
+            // Stock
+            // 
+            this.Stock.Location = new System.Drawing.Point(8, 87);
+            this.Stock.Mask = "99999";
+            this.Stock.Name = "Stock";
+            this.Stock.Size = new System.Drawing.Size(293, 20);
+            this.Stock.TabIndex = 34;
+            this.Stock.ValidatingType = typeof(int);
+            // 
+            // precio
+            // 
+            this.precio.Location = new System.Drawing.Point(8, 126);
+            this.precio.Name = "precio";
+            this.precio.Size = new System.Drawing.Size(293, 20);
+            this.precio.TabIndex = 35;
+            this.precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precio_KeyPress);
+            // 
             // AddStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            this.ClientSize = new System.Drawing.Size(317, 210);
+            this.ClientSize = new System.Drawing.Size(317, 207);
+            this.Controls.Add(this.precio);
+            this.Controls.Add(this.Stock);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelSup);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.precio);
-            this.Controls.Add(this.Stock);
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -188,12 +197,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Nombre;
-        private System.Windows.Forms.TextBox Stock;
-        private System.Windows.Forms.TextBox precio;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel PanelSup;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.OpenFileDialog SubirImagen;
+        private System.Windows.Forms.MaskedTextBox Stock;
+        private System.Windows.Forms.TextBox precio;
     }
 }

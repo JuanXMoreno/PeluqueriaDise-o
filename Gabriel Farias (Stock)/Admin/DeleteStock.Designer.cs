@@ -38,8 +38,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.BtnBusqueda = new System.Windows.Forms.Button();
             this.btnF5 = new System.Windows.Forms.PictureBox();
+            this.Seleccion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PanelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,10 +48,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 97);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(696, 230);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -89,8 +92,9 @@
             this.BoxBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.BoxBusqueda.Location = new System.Drawing.Point(12, 54);
             this.BoxBusqueda.Name = "BoxBusqueda";
-            this.BoxBusqueda.Size = new System.Drawing.Size(571, 30);
+            this.BoxBusqueda.Size = new System.Drawing.Size(660, 30);
             this.BoxBusqueda.TabIndex = 23;
+            this.BoxBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.BoxBusqueda_KeyUp);
             // 
             // panel3
             // 
@@ -155,27 +159,11 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // BtnBusqueda
-            // 
-            this.BtnBusqueda.BackgroundImage = global::ProyectoPeluquería.Properties.Resources.busqueda;
-            this.BtnBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.BtnBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBusqueda.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnBusqueda.ForeColor = System.Drawing.Color.Black;
-            this.BtnBusqueda.Location = new System.Drawing.Point(625, 54);
-            this.BtnBusqueda.Name = "BtnBusqueda";
-            this.BtnBusqueda.Size = new System.Drawing.Size(82, 30);
-            this.BtnBusqueda.TabIndex = 21;
-            this.BtnBusqueda.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnBusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnBusqueda.UseVisualStyleBackColor = true;
-            this.BtnBusqueda.Click += new System.EventHandler(this.BtnBusqueda_Click);
-            // 
             // btnF5
             // 
             this.btnF5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnF5.Image = global::ProyectoPeluquería.Properties.Resources.x_b;
-            this.btnF5.Location = new System.Drawing.Point(589, 54);
+            this.btnF5.Location = new System.Drawing.Point(678, 54);
             this.btnF5.Name = "btnF5";
             this.btnF5.Size = new System.Drawing.Size(30, 30);
             this.btnF5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -183,17 +171,27 @@
             this.btnF5.TabStop = false;
             this.btnF5.Click += new System.EventHandler(this.btnF5_Click);
             // 
+            // Seleccion
+            // 
+            this.Seleccion.AutoSize = true;
+            this.Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Seleccion.Location = new System.Drawing.Point(12, 352);
+            this.Seleccion.Name = "Seleccion";
+            this.Seleccion.Size = new System.Drawing.Size(100, 17);
+            this.Seleccion.TabIndex = 38;
+            this.Seleccion.Text = "Se selecciono:";
+            // 
             // DeleteStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.ClientSize = new System.Drawing.Size(720, 397);
+            this.Controls.Add(this.Seleccion);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.PanelSup);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.BtnBusqueda);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.BoxBusqueda);
             this.Controls.Add(this.btnF5);
@@ -219,7 +217,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox btnF5;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button BtnBusqueda;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox BoxBusqueda;
         private System.Windows.Forms.Button btnEliminar;
@@ -227,5 +224,6 @@
         private System.Windows.Forms.Panel PanelSup;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label Seleccion;
     }
 }

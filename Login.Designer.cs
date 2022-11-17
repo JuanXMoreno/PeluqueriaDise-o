@@ -59,6 +59,7 @@ namespace ProyectoPeluquería
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(261, 31);
             this.txtContraseña.TabIndex = 2;
+            this.txtContraseña.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtContraseña_KeyUp);
             // 
             // btnAceptar
             // 
@@ -80,6 +81,7 @@ namespace ProyectoPeluquería
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(285, 31);
             this.txtNombreUsuario.TabIndex = 1;
+            this.txtNombreUsuario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNombreUsuario_KeyUp);
             // 
             // PanelSup
             // 

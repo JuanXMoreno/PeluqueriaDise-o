@@ -5,11 +5,6 @@ namespace ProyectoPeluquería
 {
     public partial class AdminStock : Form
     {
-        //Forms
-        AddStock AddS = new AddStock();
-        ModStock ModS = new ModStock();
-        DeleteStock DeleS = new DeleteStock();
-        ProductoOFF POFF = new ProductoOFF();
         //Clase
         DataBase DataB = new DataBase();
 
@@ -17,15 +12,12 @@ namespace ProyectoPeluquería
         {
             InitializeComponent();
             Vista.DataSource = DataB.ActualizarLista(null);
+            Vista.Columns[0].Visible = false;
+            Vista.Columns[5].Visible = false;
         }
 
         int PosY = 0;
         int PosX = 0;
-
-        private void btnBusqueda_Click(object sender, EventArgs e)
-        {
-            Vista.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
-        }
 
         private void reloj_Tick(object sender, EventArgs e)
         {
@@ -34,6 +26,7 @@ namespace ProyectoPeluquería
         }
         private void AddPro_Click(object sender, EventArgs e)
         {
+            AddStock AddS = new AddStock();
             this.AddOwnedForm(AddS);
             if (AddS.Visible == false)
             {
@@ -49,6 +42,7 @@ namespace ProyectoPeluquería
 
         private void ModStock_Click(object sender, EventArgs e)
         {
+            ModStock ModS = new ModStock();
             this.AddOwnedForm(ModS);
             if (ModS.Visible == false)
             {
@@ -64,6 +58,7 @@ namespace ProyectoPeluquería
 
         private void BtnDelete(object sender, EventArgs e)
         {
+            DeleteStock DeleS = new DeleteStock();
             this.AddOwnedForm(DeleS);
             if (DeleS.Visible == false)
             {
@@ -79,6 +74,7 @@ namespace ProyectoPeluquería
 
         private void btnProductOff(object sender, EventArgs e)
         {
+            ProductoOFF POFF = new ProductoOFF();
             this.AddOwnedForm(POFF);
             if (POFF.Visible == false)
             {
@@ -115,8 +111,8 @@ namespace ProyectoPeluquería
         private void Cerrar(object sender, EventArgs e)
         {
             FormAdmin FA = Owner as FormAdmin;
-            this.Visible = false;
             FA.Visible = true;
+            this.Close();
         }
 
         private void MoverTitulo(object sender, MouseEventArgs e)
@@ -131,6 +127,18 @@ namespace ProyectoPeluquería
                 Left = Left + (e.X - PosX);
                 Top = Top + (e.Y - PosY);
             }
+        }
+
+        private void AdminStock_Activated(object sender, EventArgs e)
+        {
+            Vista.DataSource = DataB.ActualizarLista(null);
+            label2.Text = DataB.InfoProductos();
+            Console.WriteLine("Se actualizo la tabla del Form stock");
+        }
+
+        private void BoxBusqueda_KeyUp(object sender, KeyEventArgs e)
+        {
+            Vista.DataSource = DataB.ActualizarLista(BoxBusqueda.Text);
         }
     }
 }

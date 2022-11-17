@@ -35,9 +35,11 @@
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.cmbPeluquero = new System.Windows.Forms.ComboBox();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
-            this.txtHora = new System.Windows.Forms.DateTimePicker();
             this.txtDia = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Horarios = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.FechaNac = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.TxtBNum = new System.Windows.Forms.TextBox();
             this.PanelSup = new System.Windows.Forms.Panel();
@@ -59,7 +61,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 30);
+            this.label1.Location = new System.Drawing.Point(8, 116);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 15);
@@ -69,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 59);
+            this.label2.Location = new System.Drawing.Point(8, 142);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 15);
@@ -79,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 85);
+            this.label3.Location = new System.Drawing.Point(8, 25);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 15);
@@ -89,33 +91,31 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 141);
+            this.label4.Location = new System.Drawing.Point(8, 171);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 30);
+            this.label4.Size = new System.Drawing.Size(151, 15);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Peluquero \r\nencargado:";
+            this.label4.Text = "Peluquero encargado:";
             // 
             // txtCliente
             // 
-            this.txtCliente.Location = new System.Drawing.Point(97, 82);
+            this.txtCliente.Location = new System.Drawing.Point(158, 22);
             this.txtCliente.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(252, 23);
+            this.txtCliente.Size = new System.Drawing.Size(191, 23);
             this.txtCliente.TabIndex = 3;
-            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // cmbPeluquero
             // 
             this.cmbPeluquero.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbPeluquero.FormattingEnabled = true;
             this.cmbPeluquero.ItemHeight = 15;
-            this.cmbPeluquero.Location = new System.Drawing.Point(97, 144);
+            this.cmbPeluquero.Location = new System.Drawing.Point(159, 168);
             this.cmbPeluquero.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbPeluquero.Name = "cmbPeluquero";
-            this.cmbPeluquero.Size = new System.Drawing.Size(252, 23);
+            this.cmbPeluquero.Size = new System.Drawing.Size(191, 23);
             this.cmbPeluquero.TabIndex = 7;
-            this.cmbPeluquero.SelectedIndexChanged += new System.EventHandler(this.cmbPeluquero_SelectedIndexChanged);
             // 
             // dgvDatos
             // 
@@ -127,39 +127,36 @@
             this.dgvDatos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
-            this.dgvDatos.Size = new System.Drawing.Size(547, 245);
+            this.dgvDatos.Size = new System.Drawing.Size(547, 272);
             this.dgvDatos.TabIndex = 11;
             this.dgvDatos.TabStop = false;
             this.dgvDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellContentClick);
             // 
-            // txtHora
-            // 
-            this.txtHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.txtHora.Location = new System.Drawing.Point(97, 52);
-            this.txtHora.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtHora.Name = "txtHora";
-            this.txtHora.Size = new System.Drawing.Size(252, 23);
-            this.txtHora.TabIndex = 2;
-            this.txtHora.ValueChanged += new System.EventHandler(this.txtHora_ValueChanged);
-            // 
             // txtDia
             // 
-            this.txtDia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtDia.Location = new System.Drawing.Point(97, 22);
+            this.txtDia.CustomFormat = "";
+            this.txtDia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtDia.Location = new System.Drawing.Point(158, 110);
             this.txtDia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtDia.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.txtDia.Name = "txtDia";
-            this.txtDia.Size = new System.Drawing.Size(252, 23);
+            this.txtDia.Size = new System.Drawing.Size(191, 23);
             this.txtDia.TabIndex = 1;
+            this.txtDia.Value = new System.DateTime(2022, 11, 17, 0, 0, 0, 0);
+            this.txtDia.CloseUp += new System.EventHandler(this.txtDia_CloseUp);
+            this.txtDia.ValueChanged += new System.EventHandler(this.txtDia_ValueChanged);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Horarios);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.FechaNac);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.TxtBNum);
             this.groupBox1.Controls.Add(this.txtDia);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtHora);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtCliente);
             this.groupBox1.Controls.Add(this.cmbPeluquero);
@@ -167,15 +164,45 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(370, 183);
+            this.groupBox1.Size = new System.Drawing.Size(370, 204);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Turnos";
             // 
+            // Horarios
+            // 
+            this.Horarios.FormattingEnabled = true;
+            this.Horarios.Location = new System.Drawing.Point(158, 139);
+            this.Horarios.Name = "Horarios";
+            this.Horarios.Size = new System.Drawing.Size(191, 23);
+            this.Horarios.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 87);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(142, 15);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Fecha de nacimiento";
+            // 
+            // FechaNac
+            // 
+            this.FechaNac.CustomFormat = "";
+            this.FechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaNac.Location = new System.Drawing.Point(158, 81);
+            this.FechaNac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.FechaNac.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.FechaNac.Name = "FechaNac";
+            this.FechaNac.Size = new System.Drawing.Size(191, 23);
+            this.FechaNac.TabIndex = 10;
+            this.FechaNac.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 113);
+            this.label5.Location = new System.Drawing.Point(8, 55);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 15);
@@ -184,11 +211,13 @@
             // 
             // TxtBNum
             // 
-            this.TxtBNum.Location = new System.Drawing.Point(97, 110);
+            this.TxtBNum.Location = new System.Drawing.Point(158, 52);
             this.TxtBNum.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtBNum.Name = "TxtBNum";
-            this.TxtBNum.Size = new System.Drawing.Size(252, 23);
+            this.TxtBNum.Size = new System.Drawing.Size(191, 23);
             this.TxtBNum.TabIndex = 8;
+            this.TxtBNum.Text = "+5493549";
+            this.TxtBNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBNum_KeyPress);
             // 
             // PanelSup
             // 
@@ -232,7 +261,7 @@
             this.Panelinf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.Panelinf.Controls.Add(this.pbF5);
             this.Panelinf.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Panelinf.Location = new System.Drawing.Point(0, 282);
+            this.Panelinf.Location = new System.Drawing.Point(0, 309);
             this.Panelinf.Name = "Panelinf";
             this.Panelinf.Size = new System.Drawing.Size(951, 20);
             this.Panelinf.TabIndex = 34;
@@ -253,15 +282,14 @@
             // btnInsertar
             // 
             this.btnInsertar.BackColor = System.Drawing.Color.Transparent;
-            this.btnInsertar.Enabled = false;
             this.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsertar.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.btnInsertar.Image = global::ProyectoPeluquería.Properties.Resources.agregar_tiempo;
             this.btnInsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInsertar.Location = new System.Drawing.Point(14, 220);
+            this.btnInsertar.Location = new System.Drawing.Point(14, 241);
             this.btnInsertar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(183, 56);
+            this.btnInsertar.Size = new System.Drawing.Size(183, 62);
             this.btnInsertar.TabIndex = 5;
             this.btnInsertar.Text = "Agregar";
             this.btnInsertar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -293,15 +321,14 @@
             this.btnModificar.Font = new System.Drawing.Font("Kelly Slab", 12F);
             this.btnModificar.Image = global::ProyectoPeluquería.Properties.Resources.seleccione;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModificar.Location = new System.Drawing.Point(205, 220);
+            this.btnModificar.Location = new System.Drawing.Point(205, 241);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(178, 55);
+            this.btnModificar.Size = new System.Drawing.Size(178, 62);
             this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // Turnos
             // 
@@ -309,7 +336,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            this.ClientSize = new System.Drawing.Size(951, 302);
+            this.ClientSize = new System.Drawing.Size(951, 329);
             this.Controls.Add(this.Panelinf);
             this.Controls.Add(this.PanelSup);
             this.Controls.Add(this.groupBox1);
@@ -324,7 +351,6 @@
             this.Name = "Turnos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Turnos";
-            this.Load += new System.EventHandler(this.Turnos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -349,7 +375,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgvDatos;
-        private System.Windows.Forms.DateTimePicker txtHora;
         private System.Windows.Forms.DateTimePicker txtDia;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel PanelSup;
@@ -359,5 +384,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TxtBNum;
         private System.Windows.Forms.PictureBox pbF5;
+        private System.Windows.Forms.ComboBox Horarios;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker FechaNac;
     }
 }

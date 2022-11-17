@@ -9,37 +9,34 @@ namespace ProyectoPeluquería
         DataBase DataB = new DataBase();
         public Login()
         {
-            DataB.Verificacion();
             InitializeComponent();
+            DataB.Verificacion();
         }
 
         int PosY = 0;
         int PosX = 0;
 
-        SqlConnection conexion = new SqlConnection(@"server=DESKTOP-SK840FQ;database=Peluqueria; integrated security=true");
-
         //boton para ingresar al administrador con el usuario y contraseña guardadas en la base de datos
         private void button1_Click(object sender, EventArgs e)
         {
-            conexion.Open();
-            string consulta = "select * From Empleados where Usuario ='" + txtNombreUsuario.Text + "' and Contraseña='" + txtContraseña.Text + "' and EsAdmin = 'True'"; //verifico que el usuario y contraseña estan registrados en la base de datos
-            SqlCommand comando = new SqlCommand(consulta, conexion);
-            SqlDataReader lector;
-            lector = comando.ExecuteReader();
-
-            if (lector.HasRows == true) //verifico que el codigo se leyó para poder abrir el form
+            if (txtContraseña.Text != "" && txtNombreUsuario.Text != "")
             {
-                FormAdmin f3 = new FormAdmin();
-                this.AddOwnedForm(f3);
-                f3.Show();
-                this.Hide();
+                DataB.AuthEmpleado(txtNombreUsuario.Text, txtContraseña.Text);
+                DataB.Auth(txtNombreUsuario.Text, txtContraseña.Text);
+                if (DataB.SiHay == false)
+                {
+                    MessageBox.Show("Por favor, ingrese un usuario y/o contraseña correctos");
+                }
+                else
+                {
+                    BorrarUser();
+                    this.Hide();
+                }
             }
-            else //mensaje de aviso en caso de errarle
+            else
             {
-                MessageBox.Show("Por favor, ingrese un usuario y/o contraseña válidos.");
+                MessageBox.Show("Por favor, complete las casillas");
             }
-            conexion.Close();
-            BorrarUser();
         } //Boton para login
 
         private void PanelSup_MouseMove(object sender, MouseEventArgs e)
@@ -94,6 +91,23 @@ namespace ProyectoPeluquería
         {
             txtNombreUsuario.Clear();
             txtContraseña.Clear();
+        }
+
+        private void txtNombreUsuario_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                txtContraseña.Focus();
+            }
+        }
+
+        private void txtContraseña_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                DataB.Auth(txtNombreUsuario.Text, txtContraseña.Text);
+                this.Hide();
+            }
         }
     }
 }

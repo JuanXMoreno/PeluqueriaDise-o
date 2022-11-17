@@ -13,7 +13,7 @@ namespace ProyectoPeluquería
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Turnos());
+            Application.Run(new Login());
         }
     }
 }

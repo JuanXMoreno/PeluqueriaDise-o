@@ -7,12 +7,16 @@ namespace ProyectoPeluquería
 {
     class DataBase
     {
-        public static string link = @"SERVER=DESKTOP-SK840FQ;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
+        //DESKTOP-COF6H2T Juan
+        //(localdb)\Home lucho
+        public static string link = @"SERVER=DESKTOP-COF6H2T;DATABASE=Peluqueria;integrated security=true"; //Agrege esto para no tener que cambiar manualmente la clave en cada metodo
         SqlConnection Conectarse = null;
         SqlCommand cmd = null;
         SqlTransaction Tran = null;
         SqlDataReader Lector = null;
         String Aviso = "";
+
+        public Boolean SiHay = false;
 
         public SqlConnection Conectar() //metodo para conectar la base de datos al c#
         {
@@ -43,8 +47,8 @@ namespace ProyectoPeluquería
             {
                 MessageBox.Show("Error:" + sqlEx, "Error DataBase");
                 Aviso = "Error al conectar la base de datos.";
-                esVerdadero = false;
                 Environment.Exit(-1);
+                esVerdadero = false;
             }
             finally
             {
@@ -63,6 +67,32 @@ namespace ProyectoPeluquería
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = "Select * From Productos where Nombre like '%" + Text + "%' and Estado = 1";
+                cmd.Connection = Conectar();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(Tabla);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error:\n" + ex);
+            }
+            finally
+            {
+                Desconectar();
+            }
+            return Tabla;
+        }
+
+        public DataTable ActualizarListaXPrecio(String Text)
+        {
+            DataTable Tabla = new DataTable();
+            Tabla.Clear();
+            try
+            {
+                Conectar();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "Select * From Productos where Precio like '%" + Text + "%' and Estado = 1";
                 cmd.Connection = Conectar();
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -108,118 +138,167 @@ namespace ProyectoPeluquería
 
         public SqlTransaction AgregarProducto(String Nombre, String Stock, String precio)
         {
-            bool Exito = false;
-            try
+            if (Nombre != string.Empty && Stock != string.Empty && precio != string.Empty)
             {
-                Conectarse = new SqlConnection();
-                Conectarse.ConnectionString = link;
-                Conectarse.Open();
-
-                //se inicia la transacción
-                Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
-
-                cmd = new SqlCommand("CrearProducto", Conectarse, Tran);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombre", Nombre);
-                cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(Stock));
-                cmd.Parameters.AddWithValue("@precio", Convert.ToDecimal(precio));
-
-                SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
-                Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
-                cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
-
-                cmd.ExecuteNonQuery(); //Ejecutamos el comando
-
-                int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
-
-                ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
-                if (ParametroDeEntrada == 1)
+                bool Exito = false;
+                try
                 {
-                    Exito = true;
+                    Conectarse = new SqlConnection();
+                    Conectarse.ConnectionString = link;
+                    Conectarse.Open();
+
+                    //se inicia la transacción
+                    Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
+
+                    cmd = new SqlCommand("CrearProducto", Conectarse, Tran);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@nombre", Nombre);
+                    if (EsNumero(Stock) == true)
+                    {
+                        cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(Stock));
+                    }
+                    if (EsDecimal(precio) == true)
+                    {
+                        cmd.Parameters.AddWithValue("@precio", Convert.ToDecimal(precio));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Estas poniendo letras. Saldra error por ello. :(");
+                    }
+                    SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
+                    Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
+                    cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
+
+                    cmd.ExecuteNonQuery(); //Ejecutamos el comando
+
+                    int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
+
+                    ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
+                    if (ParametroDeEntrada == 1)
+                    {
+                        Exito = true;
+                    }
+                }
+                catch (SqlException Errores)
+                {
+                    MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
+                    Console.WriteLine("Se encontraron errores: " + Errores);
+                }
+                finally
+                {
+                    if (Exito)
+                    {
+                        Console.WriteLine("Salio bien.");
+                        Tran.Commit();
+                        Conectarse.Close();
+                        MessageBox.Show("Se cargo el producto con exito.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Algo salio mal.");
+                        Tran.Rollback();
+                        Conectarse.Close();
+                        MessageBox.Show("Algo no salio bien.", "Ok");
+                    }
                 }
             }
-            catch (SqlException Errores)
+            else
             {
-                MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
-                Console.WriteLine("Se encontraron errores: " + Errores);
-            }
-            finally
-            {
-                if (Exito)
-                {
-                    Console.WriteLine("Salio bien.");
-                    Tran.Commit();
-                    Conectarse.Close();
-                    MessageBox.Show("Se cargo el producto con exito.");
-                }
-                else
-                {
-                    Console.WriteLine("Algo salio mal.");
-                    Tran.Rollback();
-                    Conectarse.Close();
-                    MessageBox.Show("Algo no salio bien.", "Ok");
-                }
+                MessageBox.Show("Por favor, rellene todos los campos antes.");
             }
             return Tran;
+        }
+
+        public bool EsNumero(String Dato) //Verificar Si es un numero
+        {
+            int Verificarint;
+            bool EsNumb = int.TryParse(Dato, out Verificarint);
+            if (EsNumb)
+            {
+                Console.WriteLine("Es un numero: " + Verificarint);
+            }
+            else
+            {
+                Console.WriteLine("No es numero: " + Verificarint);
+            }
+            return EsNumb;
+        }
+
+        public bool EsDecimal(String Dato)
+        {
+            Decimal EsVerificar;
+            bool EsDeci = decimal.TryParse(Dato, out EsVerificar);
+            if (EsDeci)
+            {
+                Console.Write("Es un decimal: " + EsVerificar);
+            }
+            else
+            {
+                Console.Write("No es un decimal: " + EsVerificar);
+            }
+            return EsDeci;
         }
 
         public SqlTransaction ModificarProducto(String ID, String Nombre, String Stock, String precio)
         {
             bool Exito = false;
-            try
+            if (ID != string.Empty && Nombre != string.Empty && precio != string.Empty)
             {
-                Conectarse = new SqlConnection();
-                Conectarse.ConnectionString = link;
-                Conectarse.Open();
-
-                //se inicia la transacción
-                Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
-
-                cmd = new SqlCommand("MdfProduct", Conectarse, Tran);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(ID));
-                cmd.Parameters.AddWithValue("@nombre", Nombre);
-                cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(Stock));
-                cmd.Parameters.AddWithValue("@precio", Convert.ToDecimal(precio));
-
-                SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
-                Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
-                cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
-
-                cmd.ExecuteNonQuery(); //Ejecutamos el comando
-
-                int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
-
-                ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
-                if (ParametroDeEntrada == 1)
+                try
                 {
-                    Exito = true;
+                    Conectarse = new SqlConnection();
+                    Conectarse.ConnectionString = link;
+                    Conectarse.Open();
+
+                    //se inicia la transacción
+                    Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
+
+                    cmd = new SqlCommand("MdfProduct", Conectarse, Tran);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(ID));
+                    cmd.Parameters.AddWithValue("@nombre", Nombre);
+                    cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(Stock));
+                    cmd.Parameters.AddWithValue("@precio", Convert.ToDecimal(precio));
+
+                    SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
+                    Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
+                    cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
+
+                    cmd.ExecuteNonQuery(); //Ejecutamos el comando
+
+                    int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
+
+                    ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
+                    if (ParametroDeEntrada == 1)
+                    {
+                        Exito = true;
+                    }
                 }
-            }
-            catch (SqlException Errores)
-            {
-                MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
-                Console.WriteLine("Se encontraron errores: " + Errores);
-            }
-            finally
-            {
-                if (Exito)
+                catch (SqlException Errores)
                 {
-                    Console.WriteLine("Salio bien.");
-                    Tran.Commit();
-                    Conectarse.Close();
-                    MessageBox.Show("Se modifico el producto con exito.");
+                    MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
+                    Console.WriteLine("Se encontraron errores: " + Errores);
                 }
-                else
+                finally
                 {
-                    Console.WriteLine("Algo salio mal.");
-                    Tran.Rollback();
-                    Conectarse.Close();
-                    MessageBox.Show("Algo no salio bien.", "Ok");
+                    if (Exito)
+                    {
+                        Console.WriteLine("Salio bien.");
+                        Tran.Commit();
+                        Conectarse.Close();
+                        MessageBox.Show("Se modifico el producto con exito.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Algo salio mal.");
+                        Tran.Rollback();
+                        Conectarse.Close();
+                        MessageBox.Show("Algo no salio bien.", "Ok");
+                    }
                 }
             }
             return Tran;
@@ -228,55 +307,58 @@ namespace ProyectoPeluquería
         public SqlTransaction EliminarProducto(String Text)
         {
             bool Exito = false;
-            try
+            if (Text != string.Empty)
             {
-                Conectarse = new SqlConnection();
-                Conectarse.ConnectionString = link;
-                Conectarse.Open();
-
-                //se inicia la transacción
-                Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
-
-                cmd = new SqlCommand("EliminarProducto", Conectarse, Tran);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(Text));
-
-                SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
-                Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
-                cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
-
-                cmd.ExecuteNonQuery(); //Ejecutamos el comando
-
-                int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
-
-                ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
-                if (ParametroDeEntrada == 1)
+                try
                 {
-                    Exito = true;
+                    Conectarse = new SqlConnection();
+                    Conectarse.ConnectionString = link;
+                    Conectarse.Open();
+
+                    //se inicia la transacción
+                    Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
+
+                    cmd = new SqlCommand("EliminarProducto", Conectarse, Tran);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(Text));
+
+                    SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
+                    Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
+                    cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
+
+                    cmd.ExecuteNonQuery(); //Ejecutamos el comando
+
+                    int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
+
+                    ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
+                    if (ParametroDeEntrada == 1)
+                    {
+                        Exito = true;
+                    }
                 }
-            }
-            catch (SqlException Errores)
-            {
-                MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
-                Console.WriteLine("Se encontraron errores: " + Errores);
-            }
-            finally
-            {
-                if (Exito)
+                catch (SqlException Errores)
                 {
-                    Console.WriteLine("Salio bien.");
-                    Tran.Commit(); //Confirmacion de base de datos
-                    Conectarse.Close(); // Cierro la base de datos feliz de la vida :)
-                    MessageBox.Show("Se dio de baja con exito.");
+                    MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
+                    Console.WriteLine("Se encontraron errores: " + Errores);
                 }
-                else
+                finally
                 {
-                    Console.WriteLine("Algo salio mal.");
-                    Tran.Rollback(); //Se deshace la transacion
-                    Conectarse.Close(); // Cierro la base de datos feliz pero enojado :(
-                    MessageBox.Show("Algo no salio bien.", "Ok.");
+                    if (Exito)
+                    {
+                        Console.WriteLine("Salio bien.");
+                        Tran.Commit(); //Confirmacion de base de datos
+                        Conectarse.Close(); // Cierro la base de datos feliz de la vida :)
+                        MessageBox.Show("Se dio de baja con exito.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Algo salio mal.");
+                        Tran.Rollback(); //Se deshace la transacion
+                        Conectarse.Close(); // Cierro la base de datos feliz pero enojado :(
+                        MessageBox.Show("Algo no salio bien.", "Ok.");
+                    }
                 }
             }
             return Tran;
@@ -311,63 +393,65 @@ namespace ProyectoPeluquería
         public SqlTransaction LevantarProducto(String ID)
         {
             bool Exito = false;
-            try
+            if (ID != string.Empty)
             {
-                Conectarse = new SqlConnection();
-                Conectarse.ConnectionString = link;
-                Conectarse.Open();
-
-                Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
-
-                cmd = new SqlCommand("DarAltaProducto", Conectarse, Tran);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(ID));
-
-                SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
-                Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
-                cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
-
-                cmd.ExecuteNonQuery(); //Ejecutamos el comando
-
-                int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
-
-                ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
-                if (ParametroDeEntrada == 1)
+                try
                 {
-                    Exito = true;
+                    Conectarse = new SqlConnection();
+                    Conectarse.ConnectionString = link;
+                    Conectarse.Open();
+
+                    Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
+
+                    cmd = new SqlCommand("DarAltaProducto", Conectarse, Tran);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(ID));
+
+                    SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int); //Comando de retorno de datos
+                    Parametros.Direction = ParameterDirection.Output; //Se asigna la direccion que tendra
+                    cmd.Parameters.Add(Parametros); //Agregamos el parametro recien creado
+
+                    cmd.ExecuteNonQuery(); //Ejecutamos el comando
+
+                    int ParametroDeEntrada = 0; //Creamos la variable que guardara el datos de retorno
+
+                    ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
+                    if (ParametroDeEntrada == 1)
+                    {
+                        Exito = true;
+                    }
                 }
-            }
-            catch (SqlException Errores)
-            {
-                MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
-                Console.WriteLine("Se encontraron errores: " + Errores);
-            }
-            finally
-            {
-                if (Exito)
+                catch (SqlException Errores)
                 {
-                    Console.WriteLine("Salio bien.");
-                    Tran.Commit();
-                    Conectarse.Close();
-                    MessageBox.Show("Se modifico el producto con exito.");
+                    MessageBox.Show("Algo salio mal..Actual normal: " + Errores);
+                    Console.WriteLine("Se encontraron errores: " + Errores);
                 }
-                else
+                finally
                 {
-                    Console.WriteLine("Algo salio mal.");
-                    Tran.Rollback();
-                    Conectarse.Close();
-                    MessageBox.Show("Algo no salio bien.", "Ok");
+                    if (Exito)
+                    {
+                        Console.WriteLine("Salio bien.");
+                        Tran.Commit();
+                        Conectarse.Close();
+                        MessageBox.Show("Se modifico el producto con exito.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Algo salio mal.");
+                        Tran.Rollback();
+                        Conectarse.Close();
+                        MessageBox.Show("Algo no salio bien.", "Ok");
+                    }
                 }
             }
             return Tran;
         }
 
-        public String Hoy(String Cancel,String Realizadas,String Servicios,String Stock)
+        public String Hoy(String Cancel, String Realizadas, String Servicios, String Stock)
         { //IMPORTANTE ####### LE PUSE S a las ventadetalle
-            bool Exito = false;
-            String Actuales="", Ganancia="", Cancelados = "";
+            String Actuales = "", Ganancia = "";
             try
             {
                 Conectar();
@@ -388,7 +472,7 @@ namespace ProyectoPeluquería
                 {
                     if (!Lector.IsDBNull(0))
                     {
-                       Ganancia = "Ganancia Aproximada: " + Lector.GetDecimal(0).ToString();
+                        Ganancia = "Ganancia Aproximada: " + Lector.GetDecimal(0).ToString();
                     }
                     else
                     {
@@ -426,13 +510,13 @@ namespace ProyectoPeluquería
             try
             {
                 Conectar();
-                String sql = "select " + "Id_Turnos,Dia,Hora,Turnos.Id_Cliente,Id_Empleado,Telefono, Clientes.Nombre AS Cliente from Turnos INNER JOIN Clientes ON Turnos.Id_Cliente = Clientes.Id_Cliente";
+                String sql = "Select * From VistaTurnos";
                 SqlDataAdapter adaptador = new SqlDataAdapter(sql, Conectar());
                 adaptador.Fill(tabla);
             }
-            catch(SqlException er)
-            { 
-                MessageBox.Show("Error:\n"+er);
+            catch (SqlException er)
+            {
+                MessageBox.Show("Error:\n" + er);
             }
             finally
             {
@@ -455,19 +539,165 @@ namespace ProyectoPeluquería
                 SqlDataReader Lector = cmd.ExecuteReader();
                 while (Lector.Read())
                 {
-                    
-                    source.Add( Lector.GetString(1));
+                    source.Add(Lector.GetInt32(0) + ". " + Lector.GetString(1) + " " + Lector.GetString(2));
                 }
             }
-            catch(SqlException er)
+            catch (SqlException er)
             {
-                MessageBox.Show("Error:\n"+er);
+                MessageBox.Show("Error:\n" + er);
             }
             finally
             {
                 Desconectar();
             }
             return source;
+        }
+
+        public bool Auth(String user, String pass)
+        {
+            bool Entro = false;
+            try
+            {
+                Conectar();
+                string consulta = "select * From Empleados where Usuario ='" + user + "' COLLATE SQL_Latin1_General_CP1_CS_AS and Contraseña='" + pass + "' COLLATE SQL_Latin1_General_CP1_CS_AS and EsAdmin = 'True'"; //verifico que el usuario y contraseña estan registrados en la base de datos
+                SqlCommand comando = new SqlCommand(consulta, Conectar());
+                SqlDataReader lector;
+                lector = comando.ExecuteReader();
+
+                if (lector.HasRows == true) //verifico que el codigo se leyó para poder abrir el form
+                {
+                    FormAdmin f3 = new FormAdmin();
+                    f3.Show();
+                    SiHay = true;
+                }
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                Desconectar();
+            }
+            return true;
+        }
+
+        public bool AuthEmpleado(String user, String pass)
+        {
+            bool Entro = false;
+            try
+            {
+                Conectar();
+                string consulta = "select * From Empleados where Usuario ='" + user + "' COLLATE SQL_Latin1_General_CP1_CS_AS and Contraseña='" + pass + "' COLLATE SQL_Latin1_General_CP1_CS_AS and EsAdmin = 'False'"; //verifico que el usuario y contraseña estan registrados en la base de datos
+                SqlCommand comando = new SqlCommand(consulta, Conectar());
+                SqlDataReader lector;
+                lector = comando.ExecuteReader();
+
+                if (lector.HasRows == true) //verifico que el codigo se leyó para poder abrir el form
+                {
+                    FormEmpleado f3 = new FormEmpleado();
+                    f3.Show();
+                    SiHay = true;
+                }
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                Desconectar();
+            }
+            return true;
+        }
+        public bool CrearTurno(string Nombre, String Numero, String FechaNac, String FechaTurno, int IDEmpleado) //Creado por lucho :3 pinche jaz a :v (hechado bardo)
+        {
+            bool Exito = false;
+            if(Nombre != null && Numero != null && FechaNac != null && FechaTurno != null && IDEmpleado != 0)
+            {
+                try
+                {
+                    Conectarse = new SqlConnection();
+                    Conectarse.ConnectionString = link;
+                    Conectarse.Open();
+                    Tran = Conectarse.BeginTransaction(System.Data.IsolationLevel.Serializable);
+                    cmd = new SqlCommand("CrearTurno", Conectarse, Tran);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@nombre", Nombre);
+                    cmd.Parameters.AddWithValue("@fono", Numero);
+                    cmd.Parameters.AddWithValue("@Fnac", FechaNac);
+                    cmd.Parameters.AddWithValue("@Turno", FechaTurno);
+                    cmd.Parameters.AddWithValue("@IdEmpleado", IDEmpleado);
+                    SqlParameter Parametros = new SqlParameter("@veri", SqlDbType.Int);
+                    Parametros.Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add(Parametros);
+                    cmd.ExecuteNonQuery();
+                    int ParametroDeEntrada = 0;
+                    ParametroDeEntrada = Convert.ToInt32(Parametros.Value);
+                    if (ParametroDeEntrada == 1)
+                    {
+                        Exito = true;
+                    }
+                }
+                catch (SqlException Err)
+                {
+                    MessageBox.Show("Se encotro un error: " + Err);
+                    MessageBox.Show("Por favor, contacte con el tecnico.");
+                }
+                finally
+                {
+                    if (Exito)
+                    {
+                        Tran.Commit();
+                    }
+                    else
+                    {
+                        Tran.Rollback();
+                    }
+                    Conectarse.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Falta 1 dato");
+            }
+            return Exito;
+        }
+
+       public float CargarSuma()
+        {
+            float sumaTotal = 0;
+            try
+            {
+                Conectar();
+
+                string consulta = "select SUM(Total) From Ventas ";
+                SqlCommand comando = new SqlCommand(consulta, Conectar());
+                SqlDataReader lector;
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    if(!lector.IsDBNull(0))
+                    {
+                        sumaTotal = (float)lector.GetDecimal(0);
+                    }
+                    else
+                    {
+                        sumaTotal = 0;
+                    }
+                }
+            }
+            catch (SqlException er)
+            {
+                MessageBox.Show("Error:\n" + er);
+            }
+            finally
+            {
+                Desconectar();
+            }
+            return sumaTotal;
         }
 
     }

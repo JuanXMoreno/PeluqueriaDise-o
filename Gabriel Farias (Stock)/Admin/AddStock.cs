@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ProyectoPeluquería
@@ -14,12 +15,17 @@ namespace ProyectoPeluquería
         int PosY = 0;
         int PosX = 0;
 
-        private void BtnAgregar(object sender, EventArgs e)
+        public void Limpiar()
         {
-            DataB.AgregarProducto(Nombre.Text, Stock.Text, precio.Text);
             Nombre.Clear();
             Stock.Clear();
             precio.Clear();
+        }
+
+        private void BtnAgregar(object sender, EventArgs e)
+        {
+            DataB.AgregarProducto(Nombre.Text, Stock.Text, precio.Text);
+            Limpiar();
         }
 
         private void PanelSup_MouseMove(object sender, MouseEventArgs e)
@@ -52,9 +58,46 @@ namespace ProyectoPeluquería
 
         private void Cerrar(object sender, EventArgs e)
         {
-            this.Visible = false;
             AdminStock AS = Owner as AdminStock;
             AS.Visible = true;
+            this.Close();
+        }
+
+        private void Nombre_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Stock.Focus();
+            }
+        }
+
+        private void Stock_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                precio.Focus();
+            }
+        }
+
+        private void precio_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                DataB.AgregarProducto(Nombre.Text, Stock.Text, precio.Text);
+                Limpiar();
+            }
+        }
+
+        private void precio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || e.KeyChar == 8 || e.KeyChar == ',' || e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

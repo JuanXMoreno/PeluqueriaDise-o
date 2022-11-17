@@ -63,6 +63,26 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap acondicionador1 {
+            get {
+                object obj = ResourceManager.GetObject("acondicionador1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap acondicionador2 {
+            get {
+                object obj = ResourceManager.GetObject("acondicionador2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap actualizar__2_ {
             get {
                 object obj = ResourceManager.GetObject("actualizar (2)", resourceCulture);
@@ -76,16 +96,6 @@ namespace ProyectoPeluquería.Properties {
         internal static System.Drawing.Bitmap actualizar_flecha {
             get {
                 object obj = ResourceManager.GetObject("actualizar-flecha", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap add {
-            get {
-                object obj = ResourceManager.GetObject("add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,6 +193,26 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cera1 {
+            get {
+                object obj = ResourceManager.GetObject("cera1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cera2 {
+            get {
+                object obj = ResourceManager.GetObject("cera2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap configuraciones {
             get {
                 object obj = ResourceManager.GetObject("configuraciones", resourceCulture);
@@ -253,9 +283,29 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap editar__2_ {
+        internal static System.Drawing.Bitmap editar {
             get {
-                object obj = ResourceManager.GetObject("editar (2)", resourceCulture);
+                object obj = ResourceManager.GetObject("editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap espuma1 {
+            get {
+                object obj = ResourceManager.GetObject("espuma1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap espuma2 {
+            get {
+                object obj = ResourceManager.GetObject("espuma2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +323,29 @@ namespace ProyectoPeluquería.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fuego__8_ {
+        internal static System.Drawing.Bitmap fuego {
             get {
-                object obj = ResourceManager.GetObject("fuego (8)", resourceCulture);
+                object obj = ResourceManager.GetObject("fuego", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gel1 {
+            get {
+                object obj = ResourceManager.GetObject("gel1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gel2 {
+            get {
+                object obj = ResourceManager.GetObject("gel2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -307,6 +377,31 @@ namespace ProyectoPeluquería.Properties {
             get {
                 object obj = ResourceManager.GetObject("lavado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a async function NumNotExiting()
+        ///{
+        ///    ErrorMSJ = document.querySelector(&quot;#app &gt; div &gt; span:nth-child(2) &gt; div &gt; span &gt; div &gt; div &gt; div &gt; div &gt; div &gt; div._2Nr6U&quot;);
+        ///    ErMSJ = ErrorMSJ.innerHTML;
+        ///
+        ///    if(ErrorMSJ)
+        ///    {
+        ///        console.log(&quot;[Se encontro un error.]&quot;);
+        ///        console.log(ErMSJ);
+        ///    }
+        ///    else
+        ///    {
+        ///        console.log(&quot;[No se encontro nada.]&quot;);
+        ///    }
+        ///    return true;
+        ///}
+        ///NumNotExiting();.
+        /// </summary>
+        internal static string MensajeDeError {
+            get {
+                return ResourceManager.GetString("MensajeDeError", resourceCulture);
             }
         }
         
@@ -362,6 +457,29 @@ namespace ProyectoPeluquería.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a async function DetectarInicio() {
+        ///    Carga = document.querySelector(&quot;#app &gt; div &gt; div &gt; div.g0rxnol2.lk9bdx0e.d9lyu8cj.qlylaf53.d4g41f7d &gt; progress&quot;);
+        ///    Home = document.querySelector(&quot;#main &gt; footer &gt; div._2BU3P.tm2tP.copyable-area &gt; div &gt; span:nth-child(2) &gt; div &gt; div._2lMWa &gt; div.p3_M1&quot;);
+        ///    Exito = false;
+        ///
+        ///    if (Carga) {
+        ///        console.log(&quot;[Cargando]&quot;);
+        ///    }
+        ///    else if (Home) {
+        ///        console.log(&quot;[EXITO]&quot;);
+        ///        Exito = true;
+        ///    }
+        ///    else if(!Home)
+        ///    {
+        ///        console.log [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string ProcAndHome {
+            get {
+                return ResourceManager.GetString("ProcAndHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap quitar_usuario {
@@ -377,6 +495,46 @@ namespace ProyectoPeluquería.Properties {
         internal static System.Drawing.Bitmap seleccione {
             get {
                 object obj = ResourceManager.GetObject("seleccione", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a async function enviarScript(scriptText){
+        ///    const lines = scriptText.split(/[\n\t]+/);
+        ///    textarea = document.querySelector(&quot;#main &gt; footer &gt; div._2BU3P.tm2tP.copyable-area &gt; div &gt; span:nth-child(2) &gt; div &gt; div._2lMWa &gt; div.p3_M1&quot;);
+        ///
+        ///    if(textarea)
+        ///    {
+        ///        console.log(&quot;[Chat Abierto]&quot;);
+        ///        for(const line of lines){            
+        ///            textarea.focus();
+        ///            document.execCommand(&apos;insertText&apos;, false, line+`                
+        ///                            
+        ///                      [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string Sendmsj {
+            get {
+                return ResourceManager.GetString("Sendmsj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shampoo1 {
+            get {
+                object obj = ResourceManager.GetObject("shampoo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shampoo2 {
+            get {
+                object obj = ResourceManager.GetObject("shampoo2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -408,6 +566,56 @@ namespace ProyectoPeluquería.Properties {
             get {
                 object obj = ResourceManager.GetObject("usd-circulo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a function VerificarInicio()
+        ///{
+        ///    Home = document.querySelector(&apos;div[class=&quot;_3ArsE&quot;]&apos;);   
+        ///    Chats = Home.querySelector(&apos;div[class=&quot;ldL67 _2i3T7 _1cpSb&quot;]&apos;);
+        ///    HomeWhats = Home.querySelector(&apos;div[class=&quot;ldL67 _3sh5K&quot;]&apos;);
+        ///    HomeWhats1 = HomeWhats.querySelector(&apos;div[class=&quot;zaKsw&quot;]&apos;);
+        ///
+        ///    if(Chats)
+        ///    {
+        ///        console.log(&quot;Listo&quot;);
+        ///    }
+        ///    else
+        ///    {
+        ///        console.log(&quot;NO&quot;);
+        ///    }
+        ///    return true;
+        ///}
+        ///
+        ///VerificarInicio();.
+        /// </summary>
+        internal static string VerificacionHomeWhatsApp {
+            get {
+                return ResourceManager.GetString("VerificacionHomeWhatsApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a async function Login() {
+        ///    Login = document.querySelector(&quot;#app &gt; div &gt; div &gt; div.landing-window &gt; div.landing-main &gt; div &gt; div._2WuPw &gt; div&quot;);
+        ///    Exmsj = Login.innerText;
+        ///
+        ///    if (Login) {
+        ///        console.log(&quot;[/lobby]&quot;);
+        ///        console.log(Exmsj);
+        ///        return true;
+        ///    }
+        ///    else {
+        ///        console.log(&quot;[/not lobby]&quot;);
+        ///        return false;
+        ///    }
+        ///}
+        ///Login();.
+        /// </summary>
+        internal static string VeriLobby {
+            get {
+                return ResourceManager.GetString("VeriLobby", resourceCulture);
             }
         }
         

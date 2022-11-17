@@ -5,18 +5,25 @@ namespace ProyectoPeluquería
 {
     public partial class FormAdmin : Form
     {
-        AdminStock AS = new AdminStock();
-        Login f3 = new Login();
+        DataBase DataB = new DataBase();
 
         public FormAdmin()
         {
             InitializeComponent();
-            this.AddOwnedForm(AS);
+            label1.Text = "Ganancia total de ventas y servicios:\n"+DataB.CargarSuma().ToString();
+            WhatsAppBot();
         }
 
         int PosY = 0;
         int PosX = 0;
-
+        public void WhatsAppBot()
+        {
+            if(Properties.Settings.Default.WhatsAppStart == true)
+            {
+                FormWeb FW = new FormWeb();
+                FW.Show();FW.Visible = false;
+            }
+        }
         private void btnAdminServicios_Click(object sender, EventArgs e)
         {
             Ventas_y_Servicios f1 = new Ventas_y_Servicios();
@@ -35,11 +42,14 @@ namespace ProyectoPeluquería
 
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Login f3 = new Login();
             f3.Close();
         }
 
         private void btnAdminStock_Click(object sender, EventArgs e)
         {
+            AdminStock AS = new AdminStock();
+            this.AddOwnedForm(AS);
             if (AS.Visible == false)
             {
                 AS.Visible = true;
@@ -119,27 +129,10 @@ namespace ProyectoPeluquería
 
         private void label10_Click(object sender, EventArgs e)
         {
-            Login login = Owner as Login;
-            login.Visible = true;
+            Login f3 = new Login();
+            f3.Visible = true;
             this.Close();
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Config config = new Config();
-            this.AddOwnedForm(config);
-            if (config.Visible == false)
-            {
-                config.Visible = true;
-                this.Visible = false;
-            }
-            else
-            {
-                this.Visible = true;
-                config.Visible = false;
-            }
-        }
-
         private void label8_Click(object sender, EventArgs e)
         {
             Config config = new Config();
@@ -154,13 +147,6 @@ namespace ProyectoPeluquería
                 this.Visible = true;
                 config.Visible = false;
             }
-        }
-
-        private void Hoy_Tick(object sender, EventArgs e)
-        {
-            Hoy.Interval = 300;
-
-
         }
     }
 }

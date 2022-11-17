@@ -63,8 +63,6 @@ namespace ProyectoPeluquería
 
                 consulta();
                 limpiar_celdas();
-
-
             }
             conexion.Close();
         }
@@ -179,6 +177,12 @@ namespace ProyectoPeluquería
                 Left = Left + (e.X - PosX);
                 Top = Top + (e.Y - PosY);
             }
+        }
+
+        private void btnSueldos_Click(object sender, EventArgs e)
+        {
+            Sueldos s = new Sueldos();
+            s.Show();
         }
     }
 }

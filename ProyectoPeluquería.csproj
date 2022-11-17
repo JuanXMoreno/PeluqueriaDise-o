@@ -49,6 +49,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -73,29 +74,35 @@
     <Compile Include="Empleados.Designer.cs">
       <DependentUpon>Empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form de StockAdmin\AddStock.cs">
+    <Compile Include="FormEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form de StockAdmin\AddStock.Designer.cs">
+    <Compile Include="FormEmpleado.Designer.cs">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gabriel Farias %28Stock%29\Admin\AddStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gabriel Farias %28Stock%29\Admin\AddStock.Designer.cs">
       <DependentUpon>AddStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form de StockAdmin\AdminStock.cs">
+    <Compile Include="Gabriel Farias %28Stock%29\Admin\AdminStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form de StockAdmin\AdminStock.Designer.cs">
+    <Compile Include="Gabriel Farias %28Stock%29\Admin\AdminStock.Designer.cs">
       <DependentUpon>AdminStock.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
-    <Compile Include="Form de StockAdmin\DeleteStock.cs">
+    <Compile Include="Gabriel Farias %28Stock%29\Admin\DeleteStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form de StockAdmin\DeleteStock.Designer.cs">
+    <Compile Include="Gabriel Farias %28Stock%29\Admin\DeleteStock.Designer.cs">
       <DependentUpon>DeleteStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormaDePago.cs">
+    <Compile Include="Form de Servicios y Ventas\FormaDePago.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormaDePago.Designer.cs">
+    <Compile Include="Form de Servicios y Ventas\FormaDePago.Designer.cs">
       <DependentUpon>FormaDePago.cs</DependentUpon>
     </Compile>
     <Compile Include="FormWeb.cs">
@@ -103,6 +110,12 @@
     </Compile>
     <Compile Include="FormWeb.Designer.cs">
       <DependentUpon>FormWeb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gabriel Farias %28Stock%29\Empleado\StockEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gabriel Farias %28Stock%29\Empleado\StockEmpleado.Designer.cs">
+      <DependentUpon>StockEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -116,30 +129,36 @@
     <Compile Include="FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form de StockAdmin\ModStock.cs">
+    <Compile Include="Gabriel Farias %28Stock%29\Admin\ModStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form de StockAdmin\ModStock.Designer.cs">
+    <Compile Include="Gabriel Farias %28Stock%29\Admin\ModStock.Designer.cs">
       <DependentUpon>ModStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form de StockAdmin\ProductoOFF.cs">
+    <Compile Include="Gabriel Farias %28Stock%29\Admin\ProductoOFF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form de StockAdmin\ProductoOFF.Designer.cs">
+    <Compile Include="Gabriel Farias %28Stock%29\Admin\ProductoOFF.Designer.cs">
       <DependentUpon>ProductoOFF.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sueldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sueldos.Designer.cs">
+      <DependentUpon>Sueldos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Turnos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Turnos.Designer.cs">
       <DependentUpon>Turnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventas y Servicios.cs">
+    <Compile Include="Form de Servicios y Ventas\Ventas y Servicios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas y Servicios.Designer.cs">
+    <Compile Include="Form de Servicios y Ventas\Ventas y Servicios.Designer.cs">
       <DependentUpon>Ventas y Servicios.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Config.resx">
@@ -148,20 +167,26 @@
     <EmbeddedResource Include="Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form de StockAdmin\AddStock.resx">
+    <EmbeddedResource Include="FormEmpleado.resx">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gabriel Farias %28Stock%29\Admin\AddStock.resx">
       <DependentUpon>AddStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form de StockAdmin\AdminStock.resx">
+    <EmbeddedResource Include="Gabriel Farias %28Stock%29\Admin\AdminStock.resx">
       <DependentUpon>AdminStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form de StockAdmin\DeleteStock.resx">
+    <EmbeddedResource Include="Gabriel Farias %28Stock%29\Admin\DeleteStock.resx">
       <DependentUpon>DeleteStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormaDePago.resx">
+    <EmbeddedResource Include="Form de Servicios y Ventas\FormaDePago.resx">
       <DependentUpon>FormaDePago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWeb.resx">
       <DependentUpon>FormWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gabriel Farias %28Stock%29\Empleado\StockEmpleado.resx">
+      <DependentUpon>StockEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -169,26 +194,29 @@
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form de StockAdmin\ModStock.resx">
+    <EmbeddedResource Include="Gabriel Farias %28Stock%29\Admin\ModStock.resx">
       <DependentUpon>ModStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form de StockAdmin\ProductoOFF.resx">
+    <EmbeddedResource Include="Gabriel Farias %28Stock%29\Admin\ProductoOFF.resx">
       <DependentUpon>ProductoOFF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Sueldos.resx">
+      <DependentUpon>Sueldos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Turnos.resx">
       <DependentUpon>Turnos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas y Servicios.resx">
+    <EmbeddedResource Include="Form de Servicios y Ventas\Ventas y Servicios.resx">
       <DependentUpon>Ventas y Servicios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -206,7 +234,24 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Datos\Script.txt" />
+    <Content Include="Datos\MensajeDeError.js" />
+    <Content Include="Datos\NewCliente.txt" />
+    <Content Include="Datos\ProcAndHome.js" />
+    <Content Include="Datos\Sendmsj.js" />
+    <Content Include="Datos\VerificacionHomeWhatsApp.js" />
+    <Content Include="Datos\VeriLobby.js" />
+    <None Include="Resources\editar.png" />
+    <None Include="Resources\fuego %282%29.png" />
+    <None Include="Resources\espuma11.png" />
+    <None Include="Resources\shampoo2.png" />
+    <None Include="Resources\shampoo1.png" />
+    <None Include="Resources\gel2.png" />
+    <None Include="Resources\gel1.png" />
+    <None Include="Resources\espuma2.png" />
+    <None Include="Resources\cera2.png" />
+    <None Include="Resources\cera1.png" />
+    <None Include="Resources\acondicionador2.png" />
+    <None Include="Resources\acondicionador1.png" />
     <None Include="Resources\actualizar-flecha.png" />
     <None Include="Resources\actualizar %282%29.png" />
     <None Include="Resources\corte clasico1.jpeg" />
@@ -245,6 +290,10 @@
     <None Include="Resources\editar %282%29.png" />
     <None Include="Resources\fuego %288%29.png" />
     <None Include="Resources\gira-a-la-derecha f5 negro.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
