@@ -70,5 +70,17 @@ namespace ProyectoPeluquería.Properties {
                 this["HTF"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool WhatsAppStart {
+            get {
+                return ((bool)(this["WhatsAppStart"]));
+            }
+            set {
+                this["WhatsAppStart"] = value;
+            }
+        }
     }
 }

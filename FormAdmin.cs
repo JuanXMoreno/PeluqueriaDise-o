@@ -11,11 +11,19 @@ namespace ProyectoPeluquería
         {
             InitializeComponent();
             label1.Text = "Ganancia total de ventas y servicios:\n"+DataB.CargarSuma().ToString();
+            WhatsAppBot();
         }
 
         int PosY = 0;
         int PosX = 0;
-
+        public void WhatsAppBot()
+        {
+            if(Properties.Settings.Default.WhatsAppStart == true)
+            {
+                FormWeb FW = new FormWeb();
+                FW.Show();FW.Visible = false;
+            }
+        }
         private void btnAdminServicios_Click(object sender, EventArgs e)
         {
             Ventas_y_Servicios f1 = new Ventas_y_Servicios();
