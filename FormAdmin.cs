@@ -6,10 +6,12 @@ namespace ProyectoPeluquería
     public partial class FormAdmin : Form
     {
         Login f3 = new Login();
+        DataBase DataB = new DataBase();
 
         public FormAdmin()
         {
             InitializeComponent();
+            //label19.Text = DataB.CargarSuma().ToString();
         }
 
         int PosY = 0;
@@ -119,8 +121,7 @@ namespace ProyectoPeluquería
 
         private void label10_Click(object sender, EventArgs e)
         {
-            Login login = Owner as Login;
-            login.Visible = true;
+            f3.Visible = true;
             this.Close();
         }
 
@@ -159,8 +160,8 @@ namespace ProyectoPeluquería
         private void Hoy_Tick(object sender, EventArgs e)
         {
             Hoy.Interval = 300;
-
-
         }
+
+
     }
 }

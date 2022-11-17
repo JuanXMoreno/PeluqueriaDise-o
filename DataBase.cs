@@ -603,5 +603,34 @@ namespace ProyectoPeluquería
                 Desconectar();
             }
         }
+
+       public float CargarSuma()
+        {
+            float sumaTotal = 0;
+            try
+            {
+                Conectar();
+
+                string consulta = "select SUM(Total) From Ventas ";
+                SqlCommand comando = new SqlCommand(consulta, Conectar());
+                SqlDataReader lector;
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    sumaTotal = (float)lector.GetDecimal(0);
+                }
+            }
+            catch (SqlException er)
+            {
+                MessageBox.Show("Error:\n" + er);
+            }
+            finally
+            {
+                Desconectar();
+            }
+            return sumaTotal;
+        }
+
     }
 }

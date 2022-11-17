@@ -36,15 +36,11 @@ namespace ProyectoPeluquería
 
         float valorbdd;
         float valorbddVentas;
-        float valorIdProductos;
+        double valorIdProductos;
         int precio;
 
         //CLASE DATA BASE
         DataBase DataB = new DataBase();
-
-        //
-        string dataso = "";
-        int nStocks = 0;
         public Ventas_y_Servicios()
         {
             InitializeComponent();
@@ -54,7 +50,6 @@ namespace ProyectoPeluquería
             dgv_Vista.Columns[3].Visible = false;
             dgv_Vista.Columns[5].Visible = false;
             dgv_Vista.Columns[6].Visible = false;
-            //CrearPanel("panelcito", "fff", "ggg");
         }
 
         int PosX = 0, PosY = 0;
@@ -168,10 +163,7 @@ namespace ProyectoPeluquería
 
         private void btn_AgregarVentas_Click(object sender, EventArgs e)
         {
-
             int indice;
-
-            
 
             for (indice = 0; indice <= 20 && ventasRealizadas[indice] != buscado; indice++)
             {
@@ -581,7 +573,7 @@ namespace ProyectoPeluquería
             conexion.Close();
         }
 
-        private void BddBajaIdProductos() //traigo los precios de los servicios de la base de datos
+        private void BddBajaIdProductos() //traigo los ids de los servicios de la base de datos
         {
             conexion.Open();
             SqlCommand comando = new SqlCommand("select Id_Producto From Productos where Id_Producto ='" + contadorVentas + "'", conexion);
@@ -591,7 +583,7 @@ namespace ProyectoPeluquería
             {
                 while (lector.Read())
                 {
-                    valorIdProductos = float.Parse(lector.GetString(0));
+                    valorIdProductos = lector.GetDouble(0);
                 }
             }
             conexion.Close();
@@ -692,11 +684,11 @@ namespace ProyectoPeluquería
             contadorVentas = Convert.ToInt32(dgv_Vista.Rows[indiceCeldasLST].Cells[0].Value.ToString());
             bddBajaPrecioProducto();
             BddBajaNombreProductos();
+            BddBajaIdProductos();
             cantidad = 1;
             lblCantidad.Text = "1";
-            label7.Text = contadorVentas.ToString();
+            label7.Text = valorIdProductos.ToString();
             }
-            
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
