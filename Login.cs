@@ -11,6 +11,7 @@ namespace ProyectoPeluquería
         {
             DataB.Verificacion();
             InitializeComponent();
+            
         }
 
         int PosY = 0;

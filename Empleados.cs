@@ -63,8 +63,6 @@ namespace ProyectoPeluquería
 
                 consulta();
                 limpiar_celdas();
-
-
             }
             conexion.Close();
         }
