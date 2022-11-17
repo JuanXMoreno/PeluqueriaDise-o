@@ -5,13 +5,16 @@ namespace ProyectoPeluquería
 {
     public partial class FormEmpleado : Form
     {
-
+        DataBase DataB = new DataBase();
         Turnos Tur = new Turnos();
         Login f3 = new Login();
 
         public FormEmpleado()
         {
             InitializeComponent();
+            label1.Text = "Ganancia total de ventas y servicios:\n" + DataB.CargarSuma().ToString();
+            label5.Text = "Ventas / servicios realizados:\n" + DataB.VSR.ToString();
+            ActualizarPanel();
         }
 
         int PosY = 0;
@@ -144,6 +147,21 @@ namespace ProyectoPeluquería
                 this.Visible = true;
                 SE.Visible = false;
             }
+        }
+        private void ActualizarPanel()
+        {
+            DataB.TurnosHoy(); //
+            user1.Text = DataB.TurnosHoyString[0];
+            user2.Text = DataB.TurnosHoyString[1];
+            user3.Text = DataB.TurnosHoyString[2];
+            user4.Text = DataB.TurnosHoyString[3];
+            user5.Text = DataB.TurnosHoyString[4];
+            user6.Text = DataB.TurnosHoyString[5];
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            ActualizarPanel();
         }
     }
 }
